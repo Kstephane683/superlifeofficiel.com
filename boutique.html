@@ -3,243 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique Superlife Côte d'Ivoire | STC30 Prix & Bienfaits</title>
+    <title>Boutique Officielle Superlife CI | Prix, Bienfaits & Commande en ligne</title>
+    <meta name="description" content="Achetez vos produits Superlife STC30, SIC, SNC, SCC+ au meilleur prix en Côte d'Ivoire. Livraison gratuite et paiement à la livraison.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #2A6A3B; --secondary: #F8B400; --accent: #FF6B6B; --light: #f4f7f6; --dark: #1a1a1a; }
+        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --secondary: #F8B400; --accent: #FF6B6B; --light: #f4f7f6; --dark: #1a1a1a; --whatsapp: #25D366; --telegram: #0088cc; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         body { background: #fff; color: var(--dark); line-height: 1.6; }
 
-        header { background: #fff; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; text-align: center; }
-        .logo { max-height: 50px; }
+        /* Header & Banner */
+        .promo-banner { background: var(--primary); color: white; text-align: center; padding: 10px; font-size: 0.85rem; font-weight: bold; position: sticky; top: 0; z-index: 1100; }
+        header { background: #fff; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; }
+        .logo { max-height: 60px; }
 
-        .promo-banner { background: var(--primary); color: white; text-align: center; padding: 10px; font-size: 0.85rem; font-weight: bold; }
-        
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        h1 { text-align: center; color: var(--primary); margin: 20px 0; font-size: 1.8rem; }
-        .intro-text { text-align: center; color: #666; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        h1 { text-align: center; color: var(--primary); margin: 20px 0; font-size: 2.2rem; font-weight: 800; line-height: 1.1; }
+        .intro-text { text-align: center; color: #666; margin-bottom: 40px; max-width: 850px; margin-left: auto; margin-right: auto; }
 
-        /* Grille Produits */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .product-card { background: white; border: 1px solid #eee; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        /* Grille Produits Premium */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; }
+        .product-card { background: white; border: 1px solid #eee; border-radius: 25px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
         
-        .img-box { background: #f9f9f9; padding: 20px; text-align: center; position: relative; }
-        .img-box img { max-width: 100%; height: 200px; object-fit: contain; }
-        .badge { position: absolute; top: 15px; right: 15px; background: var(--secondary); color: var(--dark); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; }
+        .img-box { background: #fdfdfd; padding: 25px; text-align: center; position: relative; height: 300px; display: flex; align-items: center; justify-content: center; }
+        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .badge { position: absolute; top: 15px; left: 15px; background: var(--accent); color: white; padding: 6px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 800; box-shadow: 0 4px 10px rgba(255,107,107,0.3); }
 
-        .info-box { padding: 20px; flex-grow: 1; }
-        .product-name { font-size: 1.25rem; color: var(--primary); margin-bottom: 10px; font-weight: bold; }
-        .product-desc { font-size: 0.9rem; color: #555; margin-bottom: 15px; }
+        .info-box { padding: 25px; flex-grow: 1; }
+        .product-name { font-size: 1.5rem; color: var(--primary); margin-bottom: 12px; font-weight: 800; line-height: 1.2; }
+        .product-desc { font-size: 0.95rem; color: #555; margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px; font-style: italic; }
         
         .benefit-list { list-style: none; margin-bottom: 20px; }
-        .benefit-list li { font-size: 0.85rem; margin-bottom: 5px; display: flex; align-items: center; color: #444; }
-        .benefit-list li i { color: var(--primary); margin-right: 10px; font-size: 0.9rem; }
+        .benefit-list li { font-size: 0.95rem; margin-bottom: 10px; display: flex; align-items: flex-start; color: #333; }
+        .benefit-list li i { color: var(--primary); margin-right: 12px; margin-top: 5px; font-size: 1rem; }
 
-        .price-row { display: flex; align-items: center; justify-content: space-between; padding-top: 15px; border-top: 1px solid #eee; }
-        .current-price { font-size: 1.4rem; font-weight: bold; color: var(--dark); }
-        .btn-buy { background: var(--primary); color: white; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.2s; }
-
-        /* Modal */
-        #modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center; padding: 15px; }
-        .modal-content { background: #fff; width: 100%; max-width: 500px; border-radius: 15px; overflow: hidden; position: relative; }
-        .modal-header { background: var(--primary); color: white; padding: 20px; text-align: center; }
-        .modal-body { padding: 20px; max-height: 80vh; overflow-y: auto; }
-        .close-btn { position: absolute; right: 20px; top: 15px; color: white; font-size: 24px; cursor: pointer; }
-
-        .form-group { margin-bottom: 15px; }
-        label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; }
-        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+        .usage-box { background: #f0f7f1; padding: 15px; border-radius: 15px; font-size: 0.85rem; border-left: 5px solid var(--primary); margin-bottom: 20px; color: #2e4a34; }
         
-        .total-box { background: #fff3e0; padding: 15px; border-radius: 8px; text-align: center; margin: 15px 0; border: 1px solid #ffe0b2; }
-        .total-amount { color: #e65100; font-size: 1.5rem; font-weight: bold; }
+        .price-footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 25px; background: #fafafa; border-top: 1px solid #eee; }
+        .price-display { display: flex; flex-direction: column; }
+        .price-display .label { font-size: 0.7rem; color: #888; text-transform: uppercase; font-weight: bold; }
+        .price-display .amt { font-size: 1.7rem; font-weight: 900; color: var(--dark); }
         
-        .submit-btn { background: #25D366; color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn-order { background: var(--primary); color: white; border: none; padding: 15px 25px; border-radius: 15px; cursor: pointer; font-weight: 800; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
+        .btn-order:hover { background: var(--primary-dark); transform: scale(1.05); }
+
+        /* Modal & Formulaire */
+        #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(8px); }
+        .modal-card { background: #fff; width: 100%; max-width: 520px; border-radius: 30px; overflow: hidden; position: relative; animation: slideUp 0.4s ease-out; }
+        @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .modal-header { background: var(--primary); color: white; padding: 25px; text-align: center; }
+        .modal-body { padding: 30px; max-height: 80vh; overflow-y: auto; }
+        .close-modal { position: absolute; right: 20px; top: 20px; color: white; font-size: 32px; cursor: pointer; z-index: 10; }
+
+        .form-group { margin-bottom: 18px; }
+        label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; color: #444; }
+        input, select, textarea { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 15px; font-size: 1rem; color: var(--dark); }
+        input:focus { border-color: var(--primary); outline: none; background: #f9fffb; }
+        
+        .total-summary { background: #fff9e6; padding: 20px; border-radius: 20px; text-align: center; margin-bottom: 25px; border: 2px dashed var(--secondary); }
+        .total-val { color: var(--primary); font-size: 2rem; font-weight: 900; }
+        
+        .btn-submit { border: none; width: 100%; padding: 18px; border-radius: 18px; font-weight: 800; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; transition: 0.3s; color: white; }
+        .btn-tg { background: var(--telegram); }
+        .btn-wa { background: var(--whatsapp); }
+        .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
 
         @media (max-width: 600px) {
             .product-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 1.5rem; }
+            h1 { font-size: 1.7rem; }
+            .img-box { height: 250px; }
+            .modal-body { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-<div class="promo-banner">🚚 Livraison Gratuite à Abidjan sous 24h !</div>
+<div class="promo-banner"><i class="fas fa-bolt"></i> LIVRAISON GRATUITE À ABIDJAN EN 24H • PAIEMENT CASH À LA RÉCEPTION</div>
 
 <header>
-    <img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" alt="Superlife Officiel" class="logo">
+    <img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" alt="Superlife Côte d'Ivoire" class="logo">
 </header>
 
 <div class="container">
-    <h1>Boutique Superlife Officielle CI</h1>
+    <h1>Boutique Officielle Superlife CI</h1>
     <p class="intro-text">
-        Retrouvez toute la gamme Superlife originale. Nos produits à base de <strong>cellules souches végétales</strong> vous aident à régénérer votre santé naturellement.
+        Accédez à la puissance des <strong>cellules souches végétales</strong>. 
+        Nos compléments sont authentiques et formulés pour agir à la source de votre santé.
     </p>
 
-    <div class="product-grid" id="main-grid">
+    <div class="product-grid" id="main-shop">
         </div>
 </div>
 
-<div id="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div class="modal-header">
-            <h2 id="m-name">Commander</h2>
-        </div>
+<div id="order-modal">
+    <div class="modal-card">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-header"><h2 id="m-title">Commander</h2></div>
         <div class="modal-body">
-            <div id="m-desc" style="font-size: 0.85rem; color: #666; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed #ddd;"></div>
-            
             <form id="order-form">
                 <div class="form-group">
-                    <label>Choisir votre pack :</label>
-                    <select id="m-pack" onchange="updatePrice()"></select>
+                    <label>Sélectionnez votre offre :</label>
+                    <select id="m-pack" onchange="updateTotal()"></select>
                 </div>
+                <div class="total-summary">
+                    Total à payer : <br><span class="total-val" id="m-price">0</span> <span class="total-val">FCFA</span>
+                </div>
+                <div class="form-group"><input type="text" id="m-name" placeholder="Nom et Prénoms" required></div>
+                <div class="form-group"><input type="tel" id="m-phone" placeholder="Numéro de téléphone (WhatsApp)" required></div>
+                <div class="form-group"><textarea id="m-address" placeholder="Adresse de livraison (Commune, Quartier, Repère)" rows="2" required></textarea></div>
 
-                <div class="total-box">
-                    Prix Total : <span class="total-amount" id="m-total">0</span> <strong>FCFA</strong>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" id="m-user" placeholder="Nom et Prénoms" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="m-phone" placeholder="Numéro WhatsApp" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="m-address" placeholder="Adresse précise (Commune, Quartier, Repère)" rows="2" required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> VALIDER MA COMMANDE</button>
+                <button type="button" onclick="handleOrder('telegram')" class="btn-submit btn-tg">
+                    <i class="fab fa-telegram-plane"></i> COMMANDE DIRECTE (BOT)
+                </button>
+                <button type="button" onclick="handleOrder('whatsapp')" class="btn-submit btn-wa">
+                    <i class="fab fa-whatsapp"></i> COMMANDER PAR WHATSAPP
+                </button>
             </form>
         </div>
     </div>
 </div>
 
 <script>
-    // Configuration Telegram (Sécurisée)
-    const T1 = '8760593501'; const T2 = 'AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg';
-    const BTN = T1 + ':' + T2; const CID = '8441274889';
+    const CONFIG = {
+        TK: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
+        CID: '8441274889',
+        WA_PHONE: '2250700000000' // À modifier par votre numéro
+    };
 
-    const products = [
+    const PRODUCTS = [
         {
             id: 'stc30',
             name: 'Superlife STC30',
-            img: 'https://i.ibb.co/L6Yp0Ym/stc30.png',
-            tag: 'Top Vente',
-            short: 'Régénération cellulaire complète.',
-            usage: '1 sachet le matin à jeun sous la langue.',
-            benefits: ['Répare les cellules endommagées', 'Booste l\'immunité', 'Anti-âge naturel'],
+            img: 'https://i.ibb.co/CKxjdJ1s/IMG-2262.png',
+            tag: 'N°1 RÉGÉNÉRATION',
+            desc: 'Thérapie cellulaire agissant sur plus de 130 maladies.',
+            usage: '1 sachet le matin à jeun sous la langue (sublingual). Laisser fondre.',
+            benefits: ['Répare les cellules endommagées', 'Booste l\'immunité', 'Action anti-âge'],
             packs: [
                 {n: '1 Boîte (15 sachets)', p: 45000},
-                {n: '2 Boîtes (Pack Économie)', p: 80000},
-                {n: '10 Boîtes (Pack Membre)', p: 400000}
+                {n: '2 Boîtes (Pack Éco)', p: 80000},
+                {n: '8 Boîtes (Pack Curatif)', p: 300000},
+                {n: '20 Boîtes (Pack Business)', p: 750000}
             ]
         },
         {
             id: 'coffee',
             name: 'Super Root Coffee',
-            img: 'https://i.ibb.co/hR0V8S0/coffee.png',
-            tag: 'Vigueur',
-            short: 'Énergie, Performance et Libido.',
-            usage: '1 sachet dans de l\'eau chaude le matin.',
-            benefits: ['Améliore la virilité', 'Énergie physique durable', 'Réduit le stress'],
+            img: 'https://i.ibb.co/Hvkhkfv/IMG-2263.png',
+            tag: 'VIGUEUR & ÉNERGIE',
+            desc: 'Performance physique et vitalité masculine.',
+            usage: '1 sachet dans de l\'eau chaude le matin ou avant l\'effort.',
+            benefits: ['Énergie durable', 'Vigueur masculine boostée', 'Réduit le stress'],
             packs: [
-                {n: '1 Boîte', p: 15000},
-                {n: '2 Boîtes (Duo Vigueur)', p: 25000}
+                {n: '1 Boîte', p: 25000},
+                {n: '2 Boîtes (Duo Énergie)', p: 40000}
+            ]
+        },
+        {
+            id: 'sic',
+            name: 'Superlife SIC',
+            img: 'https://i.ibb.co/7JSvPNyL/IMG-2264.png',
+            tag: 'BOUCLIER IMMUNITAIRE',
+            desc: 'Renforce les défenses naturelles et purifie le sang.',
+            usage: '1 sachet dans un verre d\'eau, remuer et boire.',
+            benefits: ['Détoxifie l\'organisme', 'Aide contre les infections', 'Régule le pH'],
+            packs: [
+                {n: '1 Boîte (15 sachets)', p: 50000},
+                {n: '2 Boîtes (Réduction 10k)', p: 90000},
+                {n: '8 Boîtes (Stock Famille)', p: 330000},
+                {n: '19 Boîtes (Grossiste)', p: 885000}
+            ]
+        },
+        {
+            id: 'snc',
+            name: 'Superlife SNC',
+            img: 'https://i.ibb.co/NgtYqVTT/IMG-2265.png',
+            tag: 'VISION & CERVEAU',
+            desc: 'Soin des neurones et de l\'acuité visuelle.',
+            usage: '1 sachet par jour sous la langue pour une absorption nerveuse.',
+            benefits: ['Améliore la vue', 'Booste la mémoire', 'Concentration maximale'],
+            packs: [
+                {n: '1 Boîte', p: 50000},
+                {n: '2 Boîtes', p: 90000},
+                {n: '8 Boîtes', p: 330000},
+                {n: '19 Boîtes', p: 885000}
+            ]
+        },
+        {
+            id: 'scc',
+            name: 'Superlife SCC+',
+            img: 'https://i.ibb.co/YFrdBmMj/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png',
+            tag: 'DÉTOX & MINCEUR',
+            desc: 'Nettoyage du colon et gestion saine du poids.',
+            usage: '1 sachet le soir dans 200ml d\'eau avant le coucher.',
+            benefits: ['Ventre plat', 'Élimine les toxines', 'Améliore le transit'],
+            packs: [
+                {n: '1 Boîte', p: 55000},
+                {n: '2 Boîtes (Réduction 15k)', p: 95000},
+                {n: '8 Boîtes', p: 355000},
+                {n: '18 Boîtes', p: 815000}
             ]
         },
         {
             id: 'mixte',
             name: 'Pack Mixte STC30 + SIC',
-            img: 'https://i.ibb.co/mS6vPzG/stc30-sic.png',
-            tag: 'Combo Santé',
-            short: 'Le duo parfait pour l\'immunité.',
-            usage: 'STC30 le matin, SIC le soir.',
-            benefits: ['Régénération + Protection', 'Action renforcée', 'Meilleur rapport qualité/prix'],
-            packs: [{n: '1 STC30 + 1 SIC', p: 90000}]
-        },
-        {
-            id: 'scc',
-            name: 'Superlife SCC+ (Colon)',
-            img: 'https://i.ibb.co/vX7yY5H/scc.png',
-            tag: 'Détox',
-            short: 'Nettoyage du colon et Digestion.',
-            usage: '1 sachet le soir dans 200ml d\'eau.',
-            benefits: ['Purifie le système digestif', 'Aide à la perte de poids', 'Riche en fibres'],
-            packs: [{n: '1 Boîte', p: 45000}]
+            img: 'https://i.ibb.co/LzWWLZHf/IMG-0984.webp',
+            tag: 'COMBO SANTÉ TOTAL',
+            desc: 'Le duo parfait : Régénération + Immunité.',
+            usage: 'STC30 le matin (jeun), SIC le soir.',
+            benefits: ['Soin complet du corps', 'Résultats accélérés', 'Prix spécial pack'],
+            packs: [
+                {n: '1 STC30 + 1 SIC', p: 85000},
+                {n: '4 STC30 + 4 SIC', p: 315000},
+                {n: '10 STC30 + 9 SIC', p: 770000}
+            ]
         }
     ];
 
-    function renderProducts() {
-        const grid = document.getElementById('main-grid');
-        grid.innerHTML = products.map(p => `
+    function init() {
+        const shop = document.getElementById('main-shop');
+        shop.innerHTML = PRODUCTS.map(p => `
             <div class="product-card">
                 <div class="img-box">
                     <span class="badge">${p.tag}</span>
                     <img src="${p.img}" alt="${p.name}">
                 </div>
                 <div class="info-box">
-                    <h3 class="product-name">${p.name}</h3>
-                    <p class="product-desc">${p.short}</p>
+                    <h2 class="product-name">${p.name}</h2>
+                    <p class="product-desc">${p.desc}</p>
                     <ul class="benefit-list">
                         ${p.benefits.map(b => `<li><i class="fas fa-check-circle"></i> ${b}</li>`).join('')}
                     </ul>
+                    <div class="usage-box"><strong>Mode d'emploi :</strong> ${p.usage}</div>
                 </div>
-                <div class="price-row">
-                    <div class="current-price">${p.packs[0].p.toLocaleString()} FCFA</div>
-                    <button class="btn-buy" onclick="openOrder('${p.id}')">ACHETER</button>
+                <div class="price-footer">
+                    <div class="price-display">
+                        <span class="label">Prix dès</span>
+                        <span class="amt">${p.packs[0].p.toLocaleString()} FCFA</span>
+                    </div>
+                    <button class="btn-order" onclick="openModal('${p.id}')">Commander</button>
                 </div>
             </div>
         `).join('');
     }
 
-    let activeProduct = null;
-    function openOrder(id) {
-        activeProduct = products.find(p => p.id === id);
-        document.getElementById('m-name').innerText = activeProduct.name;
-        document.getElementById('m-desc').innerHTML = `<strong>Conseil :</strong> ${activeProduct.usage}`;
-        
-        const select = document.getElementById('m-pack');
-        select.innerHTML = activeProduct.packs.map(pk => `<option value="${pk.p}">${pk.n}</option>`).join('');
-        
-        updatePrice();
-        document.getElementById('modal').style.display = 'flex';
+    let currentProd = null;
+    function openModal(id) {
+        currentProd = PRODUCTS.find(p => p.id === id);
+        document.getElementById('m-title').innerText = currentProd.name;
+        const sel = document.getElementById('m-pack');
+        sel.innerHTML = currentProd.packs.map(pk => `<option value="${pk.p}">${pk.n}</option>`).join('');
+        updateTotal();
+        document.getElementById('order-modal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     }
 
-    function updatePrice() {
-        const val = document.getElementById('m-pack').value;
-        document.getElementById('m-total').innerText = Number(val).toLocaleString();
+    function updateTotal() {
+        const v = document.getElementById('m-pack').value;
+        document.getElementById('m-price').innerText = Number(v).toLocaleString();
     }
 
-    function closeModal() { document.getElementById('modal').style.display = 'none'; }
+    function closeModal() {
+        document.getElementById('order-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
 
-    document.getElementById('order-form').onsubmit = async (e) => {
-        e.preventDefault();
-        const btn = e.target.querySelector('button');
-        btn.disabled = true; btn.innerText = "Envoi en cours...";
+    async function handleOrder(type) {
+        const name = document.getElementById('m-name').value;
+        const phone = document.getElementById('m-phone').value;
+        const addr = document.getElementById('m-address').value;
+        const pack = document.getElementById('m-pack').selectedOptions[0].text;
+        const total = document.getElementById('m-price').innerText;
 
-        const msg = `🛍️ *NOUVELLE COMMANDE*\n\n` +
-                    `📦 *Produit:* ${activeProduct.name}\n` +
-                    `🎁 *Pack:* ${document.getElementById('m-pack').selectedOptions[0].text}\n` +
-                    `💰 *Prix:* ${document.getElementById('m-total').innerText} FCFA\n\n` +
-                    `👤 *Client:* ${document.getElementById('m-user').value}\n` +
-                    `📞 *WhatsApp:* ${document.getElementById('m-phone').value}\n` +
-                    `📍 *Adresse:* ${document.getElementById('m-address').value}`;
+        if(!name || !phone || !addr) return alert("Veuillez remplir tous les champs.");
 
-        try {
-            await fetch(`https://api.telegram.org/bot${BTN}/sendMessage`, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ chat_id: CID, text: msg, parse_mode: 'Markdown' })
-            });
-            alert("Votre commande a été transmise avec succès ! Nous vous contactons par WhatsApp.");
+        const text = `🛒 *COMMANDE ${type.toUpperCase()}*\n\n` +
+                     `🔥 *Produit:* ${currentProd.name}\n` +
+                     `📦 *Pack:* ${pack}\n` +
+                     `💰 *Total:* ${total} FCFA\n\n` +
+                     `👤 *Client:* ${name}\n` +
+                     `📞 *Tel:* ${phone}\n` +
+                     `📍 *Lieu:* ${addr}`;
+
+        if(type === 'telegram') {
+            const b = document.querySelector('.btn-tg'); b.disabled = true; b.innerText = "Envoi...";
+            try {
+                await fetch(`https://api.telegram.org/bot${CONFIG.TK}/sendMessage`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ chat_id: CONFIG.CID, text: text, parse_mode: 'Markdown' })
+                });
+                alert("✅ Commande envoyée ! Nous vous appellerons sous peu.");
+                closeModal();
+            } catch (e) { alert("Erreur. Essayez WhatsApp."); }
+            finally { b.disabled = false; b.innerHTML = '<i class="fab fa-telegram-plane"></i> COMMANDE DIRECTE (BOT)'; }
+        } else {
+            window.open(`https://wa.me/${CONFIG.WA_PHONE}?text=${encodeURIComponent(text)}`, '_blank');
             closeModal();
-            e.target.reset();
-        } catch (err) { alert("Erreur d'envoi. Vérifiez votre connexion."); }
-        finally { btn.disabled = false; btn.innerText = "VALIDER MA COMMANDE"; }
-    };
+        }
+    }
 
-    renderProducts();
+    init();
 </script>
 </body>
 </html>
