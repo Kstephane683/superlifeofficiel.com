@@ -6,6 +6,7 @@
     <title>Boutique Officielle Superlife CI | Commande Rapide</title>
     
     <link rel="icon" type="image/png" href="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG">
+    <link rel="shortcut icon" type="image/png" href="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG">
     <link rel="apple-touch-icon" href="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,7 +38,6 @@
         .price-display .amt { font-size: 1.7rem; font-weight: 900; }
         .btn-order { background: var(--primary); color: white; border: none; padding: 15px 25px; border-radius: 15px; cursor: pointer; font-weight: 800; text-transform: uppercase; }
 
-        /* MODALS */
         #order-modal, #success-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(8px); }
         .modal-card { background: #fff; width: 100%; max-width: 520px; border-radius: 30px; overflow: hidden; position: relative; }
         .modal-header { background: var(--primary); color: white; padding: 25px; text-align: center; }
@@ -52,7 +52,6 @@
         .btn-tg { background: var(--telegram); }
         .btn-wa { background: var(--whatsapp); }
 
-        /* Style Success Modal */
         .success-content { text-align: center; padding: 20px; }
         .success-icon { font-size: 4rem; color: var(--primary); margin-bottom: 20px; }
         .success-title { font-size: 1.5rem; color: var(--primary); font-weight: 800; margin-bottom: 10px; }
@@ -121,11 +120,11 @@
     };
 
     const PRODUCTS = [
-        { id: 'stc30', name: 'Superlife STC30', img: 'https://i.ibb.co/CKxjdJ1s/IMG-2262.png', tag: 'RÉGÉNÉRATION', desc: 'Thérapie cellulaire agissant sur plus de 130 pathologies.', usage: '1 sachet le matin à jeun sous la langue.', benefits: ['Répare les cellules', 'Booste l\'immunité', 'Action anti-âge'], packs: [{n: '1 Boîte (15 sachets)', p: 45000}, {n: '2 Boîtes (Pack Éco)', p: 80000}, {n: '8 Boîtes (Cure Complète)', p: 300000}, {n: '20 Boîtes (Pack Membre)', p: 750000}] },
-        { id: 'coffee', name: 'Super Root Coffee', img: 'https://i.ibb.co/Hvkhkfv/IMG-2263.png', tag: 'VIGUEUR', desc: 'Performance physique et vitalité masculine.', usage: '1 sachet dans de l\'eau chaude le matin.', benefits: ['Énergie durable', 'Vigueur masculine', 'Anti-stress'], packs: [{n: '1 Boîte', p: 25000}, {n: '2 Boîtes (Duo Vigueur)', p: 40000}] },
-        { id: 'sic', name: 'Superlife SIC', img: 'https://i.ibb.co/7JSvPNyL/IMG-2264.png', tag: 'IMMUNITÉ', desc: 'Renforce les défenses et purifie le sang.', usage: '1 sachet dans un verre d\'eau.', benefits: ['Détoxifie le sang', 'Aide contre les infections', 'Régule le pH'], packs: [{n: '1 Boîte (15 sachets)', p: 50000}, {n: '2 Boîtes (Promo)', p: 90000}, {n: '8 Boîtes', p: 330000}, {n: '19 Boîtes', p: 885000}] },
-        { id: 'snc', name: 'Superlife SNC', img: 'https://i.ibb.co/NgtYqVTT/IMG-2265.png', tag: 'VISION & CERVEAU', desc: 'Soin des neurones et de l\'acuité visuelle.', usage: '1 sachet par jour sous la langue.', benefits: ['Améliore la vue', 'Booste la mémoire', 'Focus mental'], packs: [{n: '1 Boîte', p: 50000}, {n: '2 Boîtes', p: 90000}, {n: '8 Boîtes', p: 330000}, {n: '19 Boîtes', p: 885000}] },
-        { id: 'scc', name: 'Superlife SCC+', img: 'https://i.ibb.co/YFrdBmMj/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', tag: 'DÉTOX', desc: 'Nettoyage du colon et gestion du poids.', usage: '1 sachet le soir avant le coucher.', benefits: ['Ventre plat', 'Élimine les toxines', 'Confort digestif'], packs: [{n: '1 Boîte', p: 55000}, {n: '2 Boîtes (Promo)', p: 95000}, {n: '8 Boîtes', p: 355000}, {n: '18 Boîtes', p: 815000}] },
+        { id: 'stc30', name: 'Superlife STC30', img: 'https://i.ibb.co/CKxjdJ1s/IMG-2262.png', tag: 'RÉGÉNÉRATION', desc: 'Thérapie cellulaire agissant sur plus de 130 pathologies.', usage: '1 sachet le matin à jeun sous la langue.', benefits: ['Répare les cellules', 'Booste l\'immunité', 'Action anti-âge'], packs: [{n: '1 Boite (15 sachets)', p: 45000}, {n: '2 Boites (Pack Eco)', p: 80000}, {n: '8 Boites (Cure Complete)', p: 300000}, {n: '20 Boites (Pack Membre)', p: 750000}] },
+        { id: 'coffee', name: 'Super Root Coffee', img: 'https://i.ibb.co/Hvkhkfv/IMG-2263.png', tag: 'VIGUEUR', desc: 'Performance physique et vitalité masculine.', usage: '1 sachet dans de l\'eau chaude le matin.', benefits: ['Énergie durable', 'Vigueur masculine', 'Anti-stress'], packs: [{n: '1 Boite', p: 25000}, {n: '2 Boites (Duo Vigueur)', p: 40000}] },
+        { id: 'sic', name: 'Superlife SIC', img: 'https://i.ibb.co/7JSvPNyL/IMG-2264.png', tag: 'IMMUNITÉ', desc: 'Renforce les défenses et purifie le sang.', usage: '1 sachet dans un verre d\'eau.', benefits: ['Détoxifie le sang', 'Aide contre les infections', 'Régule le pH'], packs: [{n: '1 Boite (15 sachets)', p: 50000}, {n: '2 Boites (Promo)', p: 90000}, {n: '8 Boites', p: 330000}, {n: '19 Boites', p: 885000}] },
+        { id: 'snc', name: 'Superlife SNC', img: 'https://i.ibb.co/NgtYqVTT/IMG-2265.png', tag: 'VISION & CERVEAU', desc: 'Soin des neurones et de l\'acuité visuelle.', usage: '1 sachet par jour sous la langue.', benefits: ['Améliore la vue', 'Booste la mémoire', 'Focus mental'], packs: [{n: '1 Boite', p: 50000}, {n: '2 Boites', p: 90000}, {n: '8 Boites', p: 330000}, {n: '19 Boites', p: 885000}] },
+        { id: 'scc', name: 'Superlife SCC+', img: 'https://i.ibb.co/YFrdBmMj/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', tag: 'DÉTOX', desc: 'Nettoyage du colon et gestion du poids.', usage: '1 sachet le soir avant le coucher.', benefits: ['Ventre plat', 'Élimine les toxines', 'Confort digestif'], packs: [{n: '1 Boite', p: 55000}, {n: '2 Boites (Promo)', p: 95000}, {n: '8 Boites', p: 355000}, {n: '18 Boites', p: 815000}] },
         { id: 'mixte', name: 'Pack Mixte STC30 + SIC', img: 'https://i.ibb.co/LzWWLZHf/IMG-0984.webp', tag: 'OFFRE SPÉCIALE', desc: 'Le duo complet : Régénération + Immunité.', usage: 'STC30 le matin, SIC le soir.', benefits: ['Soin complet', 'Résultats rapides', 'Prix pack réduit'], packs: [{n: '1 STC30 + 1 SIC', p: 85000}, {n: '4 STC30 + 4 SIC', p: 315000}, {n: '10 STC30 + 9 SIC', p: 770000}] }
     ];
 
@@ -176,13 +175,14 @@
 
         if(!name || !phone || !addr) return alert("Veuillez remplir les informations.");
 
-        const text = `🛍️ *NOUVELLE COMMANDE*\n\n` +
-                     `🔥 *Produit:* ${currentProd.name}\n` +
-                     `📦 *Pack:* ${pack}\n` +
-                     `💰 *Total:* ${total} FCFA\n\n` +
-                     `👤 *Client:* ${name}\n` +
-                     `📞 *Tel:* ${phone}\n` +
-                     `📍 *Lieu:* ${addr}`;
+        // Version ultra-compatible sans caractères accentués risqués pour les URLs
+        const plainText = `NOUVELLE COMMANDE\n\n` +
+                          `Produit: ${currentProd.name}\n` +
+                          `Pack: ${pack}\n` +
+                          `Total: ${total} FCFA\n\n` +
+                          `Client: ${name}\n` +
+                          `Tel: ${phone}\n` +
+                          `Lieu: ${addr}`;
 
         if(type === 'direct') {
             const b = document.querySelector('.btn-tg'); b.disabled = true; b.innerText = "Traitement...";
@@ -190,14 +190,16 @@
                 await fetch(`https://api.telegram.org/bot${CONFIG.TK}/sendMessage`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: CONFIG.CID, text: text, parse_mode: 'Markdown' })
+                    body: JSON.stringify({ chat_id: CONFIG.CID, text: plainText })
                 });
                 document.getElementById('order-modal').style.display = 'none';
                 document.getElementById('success-modal').style.display = 'flex';
             } catch (e) { alert("Erreur de connexion. Essayez WhatsApp."); }
             finally { b.disabled = false; b.innerHTML = '<i class="fas fa-check-circle"></i> VALIDER MA COMMANDE'; }
         } else {
-            window.open(`https://wa.me/${CONFIG.WA_PHONE}?text=${encodeURIComponent(text)}`, '_blank');
+            // Encodage robuste
+            const waUrl = `https://wa.me/${CONFIG.WA_PHONE}?text=${encodeURIComponent(plainText)}`;
+            window.open(waUrl, '_blank');
             closeModal();
         }
     }
