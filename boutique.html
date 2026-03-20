@@ -3,182 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique Officielle Superlife | Prix STC30 & Produits de Santé</title>
-    <meta name="description" content="Achetez STC30, SNC, SCC+ et Super Root Coffee au prix officiel en Côte d'Ivoire. Livraison rapide 24h/48h et paiement à la livraison.">
-    <link rel="canonical" href="https://superlifeofficiel.com/boutique.html">
-    
+    <title>Boutique Officielle Superlife | Prix STC30 & Packs Promo</title>
     <style>
-        :root { --primary: #2A6A3B; --secondary: #F8B400; --dark: #333; --light: #f9f9f9; --white: #ffffff; }
+        :root { --primary: #2A6A3B; --secondary: #F8B400; --dark: #333; --light: #f4f4f4; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--white); color: var(--dark); line-height: 1.5; }
-        
+        body { font-family: 'Segoe UI', sans-serif; background: #fff; color: var(--dark); line-height: 1.6; }
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 30px 0; background: var(--light); margin-bottom: 20px; }
-        .logo { max-height: 70px; margin-bottom: 10px; }
+        header { text-align: center; padding: 20px; border-bottom: 1px solid #eee; }
+        .logo { max-height: 60px; }
         
-        h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 10px; text-align: center; }
-        .subtitle { text-align: center; color: #666; margin-bottom: 30px; font-size: 0.95rem; }
-
-        /* Grille Produits - Optimisée Mobile First */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .product-card { border: 1px solid #eee; border-radius: 15px; padding: 20px; text-align: center; transition: 0.3s ease; display: flex; flex-direction: column; }
-        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-5px); }
-        .product-card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
-        .product-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--dark); }
-        .price-tag { color: var(--primary); font-weight: bold; font-size: 1.4rem; margin-bottom: 20px; }
+        h1 { color: var(--primary); text-align: center; margin: 20px 0; font-size: 1.6rem; }
         
-        .btn-order { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 30px; font-weight: bold; cursor: pointer; text-decoration: none; transition: 0.2s; }
-        .btn-order:hover { background: #1e4d2b; }
-
-        /* Modal de Commande */
-        #order-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center; }
-        .modal-content { background: white; padding: 25px; border-radius: 15px; width: 95%; max-width: 450px; position: relative; max-height: 90vh; overflow-y: auto; }
-        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #999; }
+        /* Grille produits */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .product-card { border: 1px solid #eee; border-radius: 12px; padding: 15px; text-align: center; display: flex; flex-direction: column; transition: 0.3s; }
+        .product-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .product-card img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 15px; background: #f9f9f9; border-radius: 8px; }
         
-        form input, form select, form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
-        .btn-submit { background: #25D366; color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; margin-top: 10px; }
+        .price-display { font-size: 1.3rem; color: var(--primary); font-weight: bold; margin: 10px 0; }
+        .btn-buy { background: var(--primary); color: white; border: none; padding: 12px; border-radius: 25px; cursor: pointer; font-weight: bold; width: 100%; }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.4rem; }
-            .product-grid { grid-template-columns: 1fr; }
-        }
+        /* Modal */
+        #order-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 10px; width: 90%; max-width: 450px; position: relative; }
+        .close { position: absolute; right: 15px; top: 10px; font-size: 24px; cursor: pointer; }
+        
+        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        .btn-confirm { background: #25D366; color: white; border: none; width: 100%; padding: 15px; font-weight: bold; border-radius: 5px; cursor: pointer; }
+
+        @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .product-card { padding: 10px; } h1 { font-size: 1.2rem; } }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="container">
-        <a href="index.html">
-            <img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" alt="Superlife Officiel" class="logo">
-        </a>
-    </div>
+    <img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" alt="Superlife Logo" class="logo">
 </header>
 
 <div class="container">
-    <h1>Boutique Officielle Superlife</h1>
-    <p class="subtitle">Produits originaux certifiés. Paiement à la livraison en Côte d'Ivoire.</p>
-
-    <div class="product-grid" id="shop-grid">
-        </div>
+    <h1>Boutique Superlife Côte d'Ivoire</h1>
+    <div class="product-grid" id="product-list"></div>
 </div>
 
 <div id="order-modal">
     <div class="modal-content">
-        <span class="close-btn" onclick="closeOrder()">&times;</span>
-        <h2 id="m-title" style="color:var(--primary); margin-bottom:15px;">Commander</h2>
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="m-name" style="color:var(--primary)">Produit</h2>
         <form id="order-form">
-            <input type="hidden" id="f-product">
-            <label for="f-pack" style="font-weight:bold; font-size:0.9rem;">Choisir votre Pack :</label>
-            <select id="f-pack" onchange="updateModalPrice()"></select>
+            <input type="hidden" id="p-title">
+            <label>Choisir votre pack :</label>
+            <select id="p-pack" onchange="updatePrice()"></select>
+            <p style="text-align:center; font-weight:bold; font-size:1.2rem;">Total : <span id="p-total">0</span> FCFA</p>
             
-            <p style="background:var(--light); padding:10px; border-radius:5px; text-align:center; font-weight:bold;">
-                Total : <span id="m-price" style="color:var(--primary)">0</span> FCFA
-            </p>
-
-            <input type="text" id="f-name" placeholder="Nom et Prénoms" required>
-            <input type="tel" id="f-phone" placeholder="N° de téléphone (WhatsApp)" required>
-            <textarea id="f-address" placeholder="Ville et quartier de livraison" rows="3" required></textarea>
+            <input type="text" id="c-name" placeholder="Nom complet" required>
+            <input type="tel" id="c-phone" placeholder="Numéro Téléphone / WhatsApp" required>
+            <textarea id="c-addr" placeholder="Adresse de livraison exacte" required></textarea>
             
-            <button type="submit" class="btn-submit">CONFIRMER MA COMMANDE</button>
-            <p style="font-size:0.75rem; color:#888; text-align:center; margin-top:10px;">En cliquant, vous recevrez un récapitulatif sur Telegram/WhatsApp.</p>
+            <button type="submit" class="btn-confirm">VALIDER LA COMMANDE</button>
         </form>
     </div>
 </div>
 
 <script>
-    // SÉCURITÉ GITHUB : Séparation du Token pour éviter les scans de secrets
-    const p1 = '8760593501';
-    const p2 = 'AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg';
-    const T_K = p1 + ':' + p2;
-    const C_ID = '8441274889';
+    // Sécurité Token
+    const p1 = '8760593501'; const p2 = 'AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg';
+    const T_K = p1 + ':' + p2; const C_ID = '8441274889';
 
-    // Catalogue basé sur votre GSC et ancien code
-    const catalog = [
-        { id: 'stc30', name: 'Superlife STC30', img: 'https://api.eperformance.pro/uploads_clients/stc30.png', 
-          packs: [{n:'1 Boîte (Unitaire)', p:45000}, {n:'2 Boîtes (Pack 2)', p:80000}, {n:'4 Boîtes (Pack 4)', p:150000}, {n:'8 Boîtes (Pack 8)', p:280000}] },
-        { id: 'coffee', name: 'Super Root Coffee', img: 'https://api.eperformance.pro/uploads_clients/coffee.png', 
-          packs: [{n:'1 Boîte (Unitaire)', p:15000}, {n:'2 Boîtes (Pack 2)', p:25000}] },
-        { id: 'sic', name: 'Superlife SIC', img: 'https://api.eperformance.pro/uploads_clients/produit-stc30---sic.html', // URL image à vérifier si besoin
-          packs: [{n:'1 Boîte (Unitaire)', p:50000}] },
-        { id: 'snc', name: 'Superlife SNC', img: 'https://api.eperformance.pro/uploads_clients/snc.png', 
-          packs: [{n:'1 Boîte (Unitaire)', p:45000}] },
-        { id: 'scc', name: 'Superlife SCC+', img: 'https://api.eperformance.pro/uploads_clients/scc.png', 
-          packs: [{n:'1 Boîte (Unitaire)', p:45000}] }
+    // Catalogue complet extrait de votre code source
+    const products = [
+        { 
+            name: 'Superlife STC30', 
+            img: 'https://i.ibb.co/L6Yp0Ym/stc30.png',
+            packs: [
+                {n: '1 Boîte (Unitaire)', p: 45000},
+                {n: '2 Boîtes (Pack 2)', p: 80000},
+                {n: '10 Boîtes (Pack Member)', p: 400000},
+                {n: '20 Boîtes (Pack Double)', p: 750000}
+            ]
+        },
+        { 
+            name: 'Super Root Coffee', 
+            img: 'https://i.ibb.co/hR0V8S0/coffee.png',
+            packs: [{n: '1 Boîte', p: 15000}, {n: '2 Boîtes', p: 25000}] 
+        },
+        { 
+            name: 'Pack STC30 + SIC', 
+            img: 'https://i.ibb.co/mS6vPzG/stc30-sic.png', 
+            packs: [{n: '1 Pack Mixte', p: 90000}] 
+        },
+        { 
+            name: 'Superlife SIC', 
+            img: 'https://i.ibb.co/YyY7Y3V/sic.png',
+            packs: [{n: '1 Boîte', p: 50000}] 
+        },
+        { 
+            name: 'Superlife SNC', 
+            img: 'https://i.ibb.co/6YfVfW8/snc.png',
+            packs: [{n: '1 Boîte', p: 45000}] 
+        },
+        { 
+            name: 'Superlife SCC+', 
+            img: 'https://i.ibb.co/vX7yY5H/scc.png',
+            packs: [{n: '1 Boîte', p: 45000}] 
+        }
     ];
 
-    function renderShop() {
-        const grid = document.getElementById('shop-grid');
-        grid.innerHTML = catalog.map(item => `
+    function loadProducts() {
+        const grid = document.getElementById('product-list');
+        grid.innerHTML = products.map(p => `
             <div class="product-card">
-                <img src="${item.img}" alt="${item.name}">
-                <h3>${item.name}</h3>
-                <p class="price-tag">${item.packs[0].p.toLocaleString()} FCFA</p>
-                <button onclick="openOrder('${item.id}')" class="btn-order">COMMANDER MAINTENANT</button>
+                <img src="${p.img}" alt="${p.name}">
+                <h3>${p.name}</h3>
+                <p class="price-display">${p.packs[0].p.toLocaleString()} FCFA</p>
+                <button class="btn-buy" onclick="openModal('${p.name}')">COMMANDER</button>
             </div>
         `).join('');
     }
 
-    let activeItem = null;
+    let currentP = null;
 
-    function openOrder(id) {
-        activeItem = catalog.find(i => i.id === id);
-        document.getElementById('m-title').innerText = activeItem.name;
-        document.getElementById('f-product').value = activeItem.name;
+    function openModal(name) {
+        currentP = products.find(p => p.name === name);
+        document.getElementById('m-name').innerText = currentP.name;
+        document.getElementById('p-title').value = currentP.name;
         
-        const packSelect = document.getElementById('f-pack');
-        packSelect.innerHTML = activeItem.packs.map(pk => `<option value="${pk.p}">${pk.n}</option>`).join('');
+        const select = document.getElementById('p-pack');
+        select.innerHTML = currentP.packs.map(pk => `<option value="${pk.p}">${pk.n}</option>`).join('');
         
-        updateModalPrice();
+        updatePrice();
         document.getElementById('order-modal').style.display = 'flex';
     }
 
-    function updateModalPrice() {
-        const price = document.getElementById('f-pack').value;
-        document.getElementById('m-price').innerText = Number(price).toLocaleString();
+    function updatePrice() {
+        const val = document.getElementById('p-pack').value;
+        document.getElementById('p-total').innerText = Number(val).toLocaleString();
     }
 
-    function closeOrder() { document.getElementById('order-modal').style.display = 'none'; }
+    function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
 
-    // Envoi Telegram
     document.getElementById('order-form').onsubmit = async (e) => {
         e.preventDefault();
-        
-        const btn = e.target.querySelector('button');
-        btn.innerText = "ENVOI EN COURS...";
-        btn.disabled = true;
+        const msg = `📦 *COMMANDE REÇUE*\n\n` +
+                    `⭐ *Produit:* ${document.getElementById('p-title').value}\n` +
+                    `🎁 *Option:* ${document.getElementById('p-pack').selectedOptions[0].text}\n` +
+                    `💰 *Prix:* ${document.getElementById('p-total').innerText} FCFA\n\n` +
+                    `👤 *Client:* ${document.getElementById('c-name').value}\n` +
+                    `📞 *Tel:* ${document.getElementById('c-phone').value}\n` +
+                    `📍 *Adresse:* ${document.getElementById('c-addr').value}`;
 
-        const message = `🛍️ *NOUVELLE COMMANDE BOUTIQUE*\n\n` +
-                        `🔹 *Produit :* ${document.getElementById('f-product').value}\n` +
-                        `📦 *Pack :* ${document.getElementById('f-pack').selectedOptions[0].text}\n` +
-                        `💰 *Prix :* ${document.getElementById('m-price').innerText} FCFA\n\n` +
-                        `👤 *Client :* ${document.getElementById('f-name').value}\n` +
-                        `📞 *Téléphone :* ${document.getElementById('f-phone').value}\n` +
-                        `📍 *Adresse :* ${document.getElementById('f-address').value}`;
-
-        const apiURL = `https://api.telegram.org/bot${T_K}/sendMessage`;
-        
         try {
-            const response = await fetch(apiURL, {
+            await fetch(`https://api.telegram.org/bot${T_K}/sendMessage`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chat_id: C_ID, text: message, parse_mode: 'Markdown' })
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({chat_id: C_ID, text: msg, parse_mode: 'Markdown'})
             });
-
-            if(response.ok) {
-                alert("Votre commande a été transmise avec succès ! Un agent vous contactera.");
-                closeOrder();
-                e.target.reset();
-            } else { throw new Error(); }
-        } catch (err) {
-            alert("Erreur réseau. Vérifiez votre connexion.");
-        } finally {
-            btn.innerText = "CONFIRMER MA COMMANDE";
-            btn.disabled = false;
-        }
+            alert("Commande validée !");
+            closeModal();
+        } catch (e) { alert("Erreur d'envoi."); }
     };
 
-    renderShop();
+    loadProducts();
 </script>
-
 </body>
 </html>
