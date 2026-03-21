@@ -26,6 +26,9 @@
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
+        
+        /* Menu Burger Mobile */
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
         .hero { background: linear-gradient(rgba(8,8,12,0.85), rgba(8,8,12,0.85)), url('https://i.ibb.co/nNCc3NRP/IMG-2262.png'); background-size: cover; background-position: center; color: var(--white); padding: 100px 5% 140px; text-align: center; }
         .hero h1 { font-size: 2.4rem; color: var(--gold); margin-bottom: 20px; line-height: 1.2; text-transform: uppercase; }
@@ -77,7 +80,9 @@
         .float-wa { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); z-index: 2000; text-decoration: none; }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .nav-links { display: none; width: 100%; position: absolute; top: 100%; left: 0; background: var(--white); flex-direction: column; padding: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+            .nav-links.active { display: flex; }
             .hero h1 { font-size: 1.8rem; }
             .certs-strip { grid-template-columns: repeat(2, 1fr); margin-top: -40px; }
             .price-card.featured { transform: scale(1); }
@@ -88,10 +93,11 @@
 
 <nav>
     <a href="https://www.superlifeofficiel.com"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="50" alt="Superlife Officiel"></a>
-    <div class="nav-links">
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <div class="nav-links" id="navLinks">
         <a href="https://www.superlifeofficiel.com">Accueil</a>
-        <a href="#packs">Packs</a>
-        <a href="#contact">Contact</a>
+        <a href="#packs" onclick="toggleMenu()">Packs</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
         <a href="https://wa.me/2250152917584" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">Postuler</a>
     </div>
 </nav>
@@ -244,6 +250,7 @@
 <a href="https://wa.me/2250152917584" class="float-wa"><i class="fab fa-whatsapp"></i></a>
 
 <script>
+    // FAQ Toggle
     document.querySelectorAll('.faq-question').forEach(q => {
         q.addEventListener('click', () => {
             const answer = q.nextElementSibling;
@@ -257,6 +264,12 @@
             }
         });
     });
+
+    // Mobile Menu Toggle
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+    }
 </script>
 
 <script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
