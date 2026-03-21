@@ -25,8 +25,12 @@
         
         /* NAVIGATION */
         nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-links { display: flex; gap: 15px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Mobile Menu Toggle */
+        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
@@ -60,14 +64,36 @@
         footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
         .footer-links a { color: white; margin: 0 10px; text-decoration: none; font-size: 0.8rem; opacity: 0.8; }
 
-        @media (max-width: 600px) { .benefits-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+        @media (max-width: 768px) { 
+            .benefits-grid { grid-template-columns: 1fr; } 
+            .menu-btn { display: block; }
+            .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background: white; 
+                padding: 20px; 
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
+                text-align: center;
+                gap: 15px;
+            }
+            .nav-links.active { display: flex; }
+        }
     </style>
 </head>
 <body>
 
 <nav>
     <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="45" alt="Superlife Logo"></a>
-    <ul class="nav-links">
+    
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Boutique</a></li>
         <li><a href="conseils-sante-cellulaire-superlife.html">Blog</a></li>
         <li><a href="devenir-distributeur-superlife-cote-divoire.html">Opportunité</a></li>
@@ -168,6 +194,12 @@
         TG_TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
         TG_CHAT_ID: '8441274889'
     };
+
+    // FONCTION MENU MOBILE AJOUTÉE
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+    }
 
     function openModal(packName = '', price = 0) {
         document.getElementById('order-modal').style.display = 'flex';
