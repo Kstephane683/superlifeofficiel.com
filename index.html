@@ -32,12 +32,10 @@
         .hero { text-align: center; padding: 40px 20px; background: #f9fbf9; border-radius: 20px; margin-bottom: 30px; }
         h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 10px; }
         
-        /* Grille de produits optimisée */
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .product-card { border: 1px solid #eee; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: 0.4s; background: white; }
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
         
-        /* Zone Image Agrandie */
         .img-box { height: 300px; padding: 15px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; }
         .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s ease; }
         .product-card:hover .img-box img { transform: scale(1.1); }
@@ -51,7 +49,6 @@
         .btn-details { background: #fff; color: var(--primary); border: 2px solid var(--primary); padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; transition: 0.3s; font-size: 0.95rem; }
         .btn-details:hover { background: var(--primary); color: white; }
 
-        /* Modal de Commande */
         #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
         .modal-card { background: #fff; width: 95%; max-width: 450px; border-radius: 25px; padding: 30px; position: relative; }
         input, select, textarea { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem; }
@@ -206,5 +203,17 @@
 
     init();
 </script>
+
+<script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
+<script>
+  merchantWidgetScript.addEventListener('load', function () {
+    merchantwidget.start({
+         merchant_id: 5735182675,
+         position: 'BOTTOM_RIGHT',
+         region: 'CI'
+    });
+  });
+</script>
+
 </body>
 </html>
