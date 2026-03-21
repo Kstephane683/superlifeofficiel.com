@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+  <channel>
+    <title>Superlife Officiel Côte d'Ivoire</title>
+    <link>https://superlifeofficiel.com/</link>
+    <description>Boutique officielle des produits de santé cellulaire Superlife en Côte d'Ivoire : STC30, SCC+, SNC, SIC et Root Coffee.</description>
+    
+    <item>
+      <g:id>stc30_ci_01</g:id>
+      <g:title>Superlife STC30 - Cellules Souches Végétales</g:title>
+      <g:description>Le STC30 aide à la régénération cellulaire et renforce le système immunitaire. Produit original certifié Superlife.</g:description>
+      <g:link>https://superlifeofficiel.com/superlife-stc30-prix-ci.html</g:link>
+      <g:image_link>https://i.ibb.co/CKxjdJ1s/IMG-2262.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>45000 XOF</g:price>
+      <g:brand>Superlife</g:brand>
+      <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition &gt; Vitamins &amp; Supplements</g:google_product_category>
+      <g:shipping>
+        <g:country>CI</g:country>
+        <g:service>Livraison Express Abidjan</g:service>
+        <g:price>2000 XOF</g:price>
+      </g:shipping>
+    </item>
+
+    <item>
+      <g:id>snc_ci_02</g:id>
+      <g:title>Superlife SNC - Cerveau et Vision</g:title>
+      <g:description>Optimisez votre mémoire, votre concentration et protégez votre vision avec le Superlife SNC.</g:description>
+      <g:link>https://superlifeofficiel.com/superlife-snc-cerveau-vision.html</g:link>
+      <g:image_link>https://i.ibb.co/NgtYqVTT/IMG-2265.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>50000 XOF</g:price>
+      <g:brand>Superlife</g:brand>
+      <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition &gt; Vitamins &amp; Supplements</g:google_product_category>
+    </item>
+
+    <item>
+      <g:id>sic_ci_03</g:id>
+      <g:title>Superlife SIC - Booster d'Immunité</g:title>
+      <g:description>Renforcez vos défenses naturelles avec le Superlife Immune Care (SIC). Idéal pour la résistance aux infections.</g:description>
+      <g:link>https://superlifeofficiel.com/superlife-sic-immunite.html</g:link>
+      <g:image_link>https://i.ibb.co/7JSvPNyL/IMG-2264.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>50000 XOF</g:price>
+      <g:brand>Superlife</g:brand>
+      <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition &gt; Vitamins &amp; Supplements</g:google_product_category>
+    </item>
+
+    <item>
+      <g:id>scc_ci_04</g:id>
+      <g:title>Superlife SCC+ - Colon Care &amp; Ventre Plat</g:title>
+      <g:description>Détoxifiez votre côlon, facilitez la digestion et retrouvez un ventre plat avec le SCC+.</g:description>
+      <g:link>https://superlifeofficiel.com/superlife-scc-plus-colon.html</g:link>
+      <g:image_link>https://i.ibb.co/YFrdBmMj/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>55000 XOF</g:price>
+      <g:brand>Superlife</g:brand>
+      <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition &gt; Vitamins &amp; Supplements</g:google_product_category>
+    </item>
+
+    <item>
+      <g:id>coffee_ci_05</g:id>
+      <g:title>Super Root Coffee - Vigueur Masculine</g:title>
+      <g:description>Améliorez votre vitalité et votre performance masculine avec le café enrichi Super Root Coffee.</g:description>
+      <g:link>https://superlifeofficiel.com/super-root-coffee-puissance.html</g:link>
+      <g:image_link>https://i.ibb.co/Hvkhkfv/IMG-2263.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>25000 XOF</g:price>
+      <g:brand>Superlife</g:brand>
+      <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Beverages &gt; Coffee</g:google_product_category>
+    </item>
+
+  </channel>
+</rss>
