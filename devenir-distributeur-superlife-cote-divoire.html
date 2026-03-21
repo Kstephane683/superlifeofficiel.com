@@ -21,167 +21,181 @@
     <style>
         :root { --primary: #2A6A3B; --secondary: #1e4d29; --accent: #f39c12; --text: #2d3436; --bg: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background: var(--bg); color: var(--text); line-height: 1.6; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
+        /* NAVIGATION RESPONSIVE */
         nav { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
-        .hero-opp { background: linear-gradient(rgba(42, 106, 59, 0.9), rgba(30, 77, 41, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: white; padding: 80px 5%; text-align: center; }
-        .hero-opp h1 { font-size: 2.8rem; margin-bottom: 20px; }
-        .hero-opp p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; }
+        /* HERO SECTION */
+        .hero-opp { background: linear-gradient(rgba(42, 106, 59, 0.85), rgba(30, 77, 41, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: white; padding: 60px 5%; text-align: center; }
+        .hero-opp h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 20px; line-height: 1.2; }
+        .hero-opp p { font-size: clamp(1rem, 3vw, 1.2rem); max-width: 800px; margin: 0 auto 30px; }
 
-        .section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .section { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
         
-        .card-opp { background: #f9fbf9; padding: 30px; border-radius: 20px; border-bottom: 4px solid var(--primary); transition: 0.3s; }
-        .card-opp:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .card-opp i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
-        .card-opp h3 { margin-bottom: 15px; color: var(--secondary); }
+        /* GRID CARDS */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .card-opp { background: #f9fbf9; padding: 30px; border-radius: 20px; border-bottom: 4px solid var(--primary); transition: 0.3s; height: 100%; }
+        .card-opp i { font-size: 2.2rem; color: var(--primary); margin-bottom: 20px; }
+        .card-opp h3 { margin-bottom: 15px; color: var(--secondary); font-size: 1.3rem; }
 
-        .cta-box { background: #f4f4f4; border-radius: 30px; padding: 50px; text-align: center; margin: 40px 0; }
-        .btn-main { display: inline-flex; align-items: center; gap: 10px; background: var(--primary); color: #fff; padding: 18px 40px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: 0.3s; }
-        .btn-main:hover { background: var(--secondary); transform: scale(1.05); }
+        /* TABLEAU RESPONSIVE */
+        .table-container { width: 100%; overflow-x: auto; margin-top: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; background: white; min-width: 600px; }
+        th { background: var(--primary); color: white; padding: 18px 15px; text-align: left; font-weight: 600; }
+        td { padding: 15px; border-bottom: 1px solid #eee; font-size: 1rem; }
+        tr:last-child td { border-bottom: none; }
+        .price-tag { font-weight: 800; color: var(--primary); }
+
+        /* CONTENT FLEX */
+        .flex-content { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-top: 40px; }
+        .flex-text { flex: 1; min-width: 300px; }
+        .flex-img { flex: 1; min-width: 300px; }
+        .flex-img img { width: 100%; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+
+        /* BOUTONS */
+        .btn-main { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--primary); color: #fff; padding: 16px 35px; border-radius: 40px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.3s; width: auto; }
+        .btn-main:hover { background: var(--secondary); transform: translateY(-3px); }
         .btn-whatsapp { background: #25D366; }
 
+        .cta-box { background: #f4f4f4; border-radius: 30px; padding: 40px 20px; text-align: center; margin: 40px 0; }
+
         .bonus-list { list-style: none; margin-top: 20px; }
-        .bonus-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; font-size: 1.1rem; }
-        .bonus-list li i { color: var(--primary); }
+        .bonus-list li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; font-size: 1.05rem; }
+        .bonus-list li i { color: var(--primary); margin-top: 5px; }
 
-        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        th { background: var(--primary); color: white; padding: 15px; text-align: left; }
-        td { padding: 15px; border-bottom: 1px solid #eee; }
-
-        footer { background: var(--secondary); color: #fff; padding: 50px 5%; text-align: center; margin-top: 80px; }
-        .social-icons a { color: #fff; font-size: 1.8rem; margin: 0 15px; opacity: 0.8; }
+        footer { background: var(--secondary); color: #fff; padding: 50px 5%; text-align: center; margin-top: 60px; }
+        .social-icons a { color: #fff; font-size: 1.6rem; margin: 0 12px; opacity: 0.8; }
         
         @media (max-width: 768px) {
-            .hero-opp h1 { font-size: 1.8rem; }
             .nav-links { display: none; }
+            .section { padding: 30px 20px; }
+            .flex-content { gap: 25px; }
+            .hero-opp { padding: 50px 20px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="50" alt="Superlife CI Logo"></a>
+    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="45" alt="Superlife CI Logo"></a>
     <div class="nav-links">
         <a href="index.html">Boutique</a>
-        <a href="conseils-sante-cellulaire-superlife.html">Blog & Conseils</a>
+        <a href="conseils-sante-cellulaire-superlife.html">Blog</a>
         <a href="contact-superlife-cote-divoire.html">Contact</a>
     </div>
 </nav>
 
 <div class="hero-opp">
     <h1>Devenez Partenaire Superlife en Côte d'Ivoire</h1>
-    <p>Ne soyez pas un simple consommateur. Transformez votre santé en une source de revenus durable avec le plan marketing le plus généreux de l'industrie.</p>
-    <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20des%20informations%20pour%20devenir%20distributeur%20Superlife" class="btn-main btn-whatsapp">
-        <i class="fab fa-whatsapp"></i> Rejoindre l'équipe maintenant
+    <p>Transformez votre santé en une source de revenus durable avec le plan marketing le plus performant du marché.</p>
+    <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20m'inscrire%20comme%20distributeur%20Superlife" class="btn-main btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> Rejoindre l'équipe
     </a>
 </div>
 
 <div class="section">
-    <div style="text-align: center; margin-bottom: 50px;">
-        <h2 style="font-size: 2.2rem; color: var(--primary);">Pourquoi choisir l'opportunité Superlife ?</h2>
-        <p>Une entreprise mondiale, des produits uniques et un système qui paye chaque jour.</p>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: clamp(1.5rem, 4vw, 2.2rem); color: var(--primary);">Pourquoi devenir distributeur ?</h2>
     </div>
 
     <div class="grid-3">
         <div class="card-opp">
-            <i class="fas fa-chart-line"></i>
-            <h3>Revenus Illimités</h3>
-            <p>Gagnez des bonus de parrainage, des bonus de paire et des commissions sur les ventes de votre équipe. Pas de plafond de gain.</p>
+            <i class="fas fa-wallet"></i>
+            <h3>Gains Quotidiens</h3>
+            <p>Le système Superlife permet de générer des bonus payés chaque jour. Une opportunité idéale pour la liberté financière.</p>
         </div>
         <div class="card-opp">
-            <i class="fas fa-microchip"></i>
-            <h3>Produits Innovants</h3>
-            <p>Le STC30 est une révolution mondiale. Un produit qui se vend "tout seul" grâce à son efficacité prouvée sur les cellules souches.</p>
+            <i class="fas fa-certificate"></i>
+            <h3>Produits Uniques</h3>
+            <p>Distribuez le STC30, une technologie de pointe certifiée qui répond à un besoin de santé réel et massif en Afrique.</p>
         </div>
         <div class="card-opp">
-            <i class="fas fa-users-cog"></i>
-            <h3>Formation & Support</h3>
-            <p>En rejoignant notre réseau, vous bénéficiez de formations gratuites sur le marketing digital et la vente pour réussir rapidement.</p>
+            <i class="fas fa-rocket"></i>
+            <h3>Accompagnement</h3>
+            <p>Profitez de nos stratégies de marketing digital pour trouver des clients et des partenaires sans vous déplacer.</p>
         </div>
     </div>
 </div>
 
-<div class="section" style="background: #fdfdfd; border-radius: 50px;">
-    <div style="max-width: 900px; margin: 0 auto;">
-        <h2 style="text-align: center; color: var(--primary); margin-bottom: 30px;">Les Packs de Démarrage Officiels</h2>
-        <p style="text-align: center;">Choisissez le pack qui correspond à votre ambition. Vous pouvez upgrader votre pack à tout moment.</p>
-        
+<div class="section" style="background: #fdfdfd; border-radius: 30px;">
+    <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Les Packs de Démarrage</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 30px;">Inscrivez-vous officiellement et lancez votre business.</p>
+    
+    <div class="table-container">
         <table>
             <thead>
                 <tr>
-                    <th>Pack</th>
-                    <th>Investissement</th>
-                    <th>Produits inclus</th>
-                    <th>Potentiel de Gain</th>
+                    <th>NOM DU PACK</th>
+                    <th>PRIX (FCFA)</th>
+                    <th>PRODUITS</th>
+                    <th>VOTRE POTENTIEL</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><strong>STAR</strong></td>
-                    <td>65 000 FCFA</td>
+                    <td class="price-tag">80 000 FCFA</td>
                     <td>2 Boîtes STC30</td>
-                    <td>Complément de revenu</td>
+                    <td>Démarrage Business</td>
                 </tr>
                 <tr>
                     <td><strong>SUPREME</strong></td>
-                    <td>330 000 FCFA</td>
-                    <td>10 Boîtes STC30</td>
-                    <td>Business Rentable</td>
+                    <td class="price-tag">300 000 FCFA</td>
+                    <td>08 Boîtes STC30</td>
+                    <td>Revenu Semi-Pro</td>
                 </tr>
                 <tr>
                     <td><strong>SUPER</strong></td>
-                    <td>850 000 FCFA</td>
-                    <td>28 Boîtes STC30</td>
-                    <td>Liberté Financière</td>
+                    <td class="price-tag">750 000 FCFA</td>
+                    <td>20 Boîtes STC30</td>
+                    <td><strong>Maximum de Gains</strong></td>
                 </tr>
             </tbody>
         </table>
-        <p style="font-size: 0.8rem; margin-top: 10px; color: gray;">*Les prix peuvent varier légèrement selon le taux du dollar et les promotions en cours.</p>
     </div>
 </div>
 
 <div class="section">
-    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-        <div style="flex: 1; min-width: 300px;">
-            <h2 style="color: var(--primary); margin-bottom: 20px;">Le Plan de Compensation</h2>
-            <p>Superlife utilise un système binaire hybride qui récompense l'effort collectif. Voici comment vous gagnez de l'argent :</p>
+    <div class="flex-content">
+        <div class="flex-text">
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Le Succès n'attend que vous</h2>
+            <p>Superlife récompense l'effort par plusieurs types de bonus cumulables :</p>
             <ul class="bonus-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Bonus Direct :</strong> Jusqu'à 45% sur chaque nouvelle inscription.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Bonus de Paire :</strong> Payé chaque jour sur l'équilibre de vos deux jambes.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Bonus de Roll-up :</strong> Pour les membres Super uniquement.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Key-in Bonus :</strong> Gagnez de l'argent juste pour enregistrer des membres.</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Bonus de Parrainage :</strong> Gain immédiat sur chaque recommandation.</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Bonus Binaire (Pairing) :</strong> Équilibrez vos équipes et gagnez chaque jour.</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Bonus de Saisie (Key-in) :</strong> Commission exclusive pour l'enregistrement.</li>
             </ul>
         </div>
-        <div style="flex: 1; min-width: 300px;">
-            <img src="https://images.unsplash.com/photo-1573497620053-ea5310f94f17?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Réussite Superlife" style="width: 100%; border-radius: 20px; shadow: 0 10px 20px rgba(0,0,0,0.1);">
+        <div class="flex-img">
+            <img src="https://i.ibb.co/vvKnh78x/IMG-2269.jpg" alt="Réussite et remise de prix Superlife">
         </div>
     </div>
 </div>
 
 <div class="cta-box section">
-    <h2 style="margin-bottom: 20px;">Prêt à démarrer votre propre entreprise ?</h2>
-    <p style="margin-bottom: 30px;">Contactez-nous aujourd'hui pour votre inscription officielle et recevez votre kit de bienvenue.</p>
-    <a href="https://wa.me/2250152917584?text=Je%20veux%20m'inscrire%20en%20tant%20que%20distributeur%20Superlife" class="btn-main btn-whatsapp">
+    <h2 style="margin-bottom: 15px;">Prêt à changer de vie ?</h2>
+    <p style="margin-bottom: 25px;">Rejoignez le réseau leader en Côte d'Ivoire. Nous vous guidons pas à pas.</p>
+    <a href="https://wa.me/2250152917584?text=Je%20veux%20plus%20d'infos%20sur%20le%20pack%20Superlife" class="btn-main btn-whatsapp">
         <i class="fab fa-whatsapp"></i> WhatsApp : +225 01 52 91 75 84
     </a>
 </div>
 
 <footer>
     <div style="margin-bottom: 30px;">
-        <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px;">Accueil</a> |
-        <a href="conseils-sante-cellulaire-superlife.html" style="color: white; text-decoration: none; margin: 0 15px;">Blog</a> |
-        <a href="contact-superlife-cote-divoire.html" style="color: white; text-decoration: none; margin: 0 15px;">Contact</a>
+        <a href="index.html" style="color: white; text-decoration: none; margin: 0 10px;">Boutique</a> |
+        <a href="conseils-sante-cellulaire-superlife.html" style="color: white; text-decoration: none; margin: 0 10px;">Blog</a> |
+        <a href="contact-superlife-cote-divoire.html" style="color: white; text-decoration: none; margin: 0 10px;">Contact</a>
     </div>
     <div class="social-icons">
         <a href="https://www.facebook.com/superlifeofficiels/" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/superlifeofficiel/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-    <p style="margin-top: 30px; opacity: 0.7;">&copy; 2026 Distributeur Agréé Superlife Côte d'Ivoire</p>
-    <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.5;">GMB ID: 17825388617888444853</p>
+    <p style="margin-top: 30px; opacity: 0.7; font-size: 0.9rem;">&copy; 2026 Distributeur Officiel Superlife Côte d'Ivoire</p>
+    <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.5;">GMB: 17825388617888444853 | <a href="https://share.google/y29dZwWEn5aDD1HlQ" style="color:white">Google Maps</a></p>
 </footer>
 
 </body>
