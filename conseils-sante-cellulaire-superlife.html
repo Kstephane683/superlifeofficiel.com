@@ -23,11 +23,17 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
 
-        /* HEADER */
+        /* HEADER & NAVIGATION */
         nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 45px; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        
+        /* Menu Desktop */
+        .nav-links { display: flex; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; margin-left: 25px; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
+
+        /* Bouton Menu Mobile */
+        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
 
         .hero-blog { background: linear-gradient(rgba(42, 106, 59, 0.9), rgba(42, 106, 59, 0.9)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: white; padding: 60px 5%; text-align: center; }
         .hero-blog h1 { font-size: 2.5rem; margin-bottom: 15px; }
@@ -55,7 +61,26 @@
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; opacity: 0.7; }
 
-        @media (max-width: 768px) { .hero-blog h1 { font-size: 1.8rem; } .nav-links { display: none; } }
+        /* RESPONSIVE */
+        @media (max-width: 768px) { 
+            .hero-blog h1 { font-size: 1.8rem; } 
+            .menu-btn { display: block; }
+            .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background: var(--white); 
+                padding: 20px; 
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                text-align: center;
+                gap: 15px;
+            }
+            .nav-links a { margin-left: 0; font-size: 1rem; }
+            .nav-links.active { display: flex; }
+        }
     </style>
 </head>
 <body>
@@ -64,9 +89,15 @@
     <a href="index.html" class="logo">
         <img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" alt="Superlife CI Logo">
     </a>
-    <div class="nav-links">
+    
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="navLinks">
         <a href="index.html">Boutique</a>
         <a href="superlife-stc30-prix-ci.html">STC30</a>
+        <a href="devenir-distributeur-superlife-cote-divoire.html">Opportunité</a>
         <a href="contact-superlife-cote-divoire.html">Contact</a>
     </div>
 </nav>
@@ -85,8 +116,7 @@
 </div>
 
 <div class="container">
-    <div class="blog-grid" id="article-grid">
-        </div>
+    <div class="blog-grid" id="article-grid"></div>
 </div>
 
 <a href="https://wa.me/2250152917584" class="wa-float" target="_blank">
@@ -116,6 +146,12 @@
 </footer>
 
 <script>
+    // FONCTION MENU MOBILE
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+    }
+
     // Base de données des 50 articles stratégiques
     const articles = [
         { t: "STC30 et Diabète : Comment réguler son taux de sucre", c: "STC30", s: "stc30-diabete-regule-sucre" },
@@ -196,7 +232,7 @@
 
     function filterArticles(cat) {
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
+        if(event) event.target.classList.add('active');
         renderArticles(cat);
     }
 
