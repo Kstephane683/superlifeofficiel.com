@@ -32,38 +32,48 @@
         .hero { text-align: center; padding: 40px 20px; background: #f9fbf9; border-radius: 20px; margin-bottom: 30px; }
         h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 10px; }
         
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .product-card { border: 1px solid #eee; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; background: white; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .img-box { height: 220px; padding: 20px; display: flex; align-items: center; justify-content: center; }
-        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        /* Grille de produits optimisée */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { border: 1px solid #eee; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: 0.4s; background: white; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        
+        /* Zone Image Agrandie */
+        .img-box { height: 300px; padding: 15px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; }
+        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s ease; }
+        .product-card:hover .img-box img { transform: scale(1.1); }
+        
         .info-box { padding: 20px; text-align: center; flex-grow: 1; }
+        .info-box h3 { font-size: 1.4rem; color: var(--primary-dark); }
         
         .price-footer { padding: 20px; background: #fdfdfd; border-top: 1px solid #eee; }
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .btn-order { background: var(--primary); color: white; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; }
-        .btn-details { background: #fff; color: var(--primary); border: 2px solid var(--primary); padding: 12px; border-radius: 10px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; transition: 0.3s; }
+        .btn-order { background: var(--primary); color: white; border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; font-size: 0.95rem; }
+        .btn-details { background: #fff; color: var(--primary); border: 2px solid var(--primary); padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; transition: 0.3s; font-size: 0.95rem; }
         .btn-details:hover { background: var(--primary); color: white; }
 
-        #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center; }
-        .modal-card { background: #fff; width: 95%; max-width: 450px; border-radius: 20px; padding: 25px; position: relative; }
-        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; }
-        .btn-submit { width: 100%; padding: 15px; border-radius: 10px; border: none; color: white; font-weight: bold; cursor: pointer; margin-bottom: 10px; }
+        /* Modal de Commande */
+        #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal-card { background: #fff; width: 95%; max-width: 450px; border-radius: 25px; padding: 30px; position: relative; }
+        input, select, textarea { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem; }
+        .btn-submit { width: 100%; padding: 16px; border-radius: 12px; border: none; color: white; font-weight: bold; cursor: pointer; margin-bottom: 10px; font-size: 1rem; transition: 0.3s; }
+        .btn-submit:hover { opacity: 0.9; transform: scale(0.98); }
 
-        footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 60px; }
-        .footer-links { margin-bottom: 20px; }
-        .footer-links a { color: white; margin: 0 10px; text-decoration: none; opacity: 0.8; font-size: 0.9rem; }
+        footer { background: var(--primary); color: white; padding: 50px 20px; text-align: center; margin-top: 60px; border-radius: 40px 40px 0 0; }
+        .footer-links { margin-bottom: 25px; }
+        .footer-links a { color: white; margin: 0 12px; text-decoration: none; opacity: 0.9; font-size: 0.95rem; font-weight: 500; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             h1 { font-size: 1.8rem; }
+            .img-box { height: 260px; }
+            .product-grid { gap: 20px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="50" alt="Superlife CI"></a>
+    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="55" alt="Superlife CI"></a>
     <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="conseils-sante-cellulaire-superlife.html">Conseils Santé</a></li>
@@ -75,7 +85,7 @@
 <div class="container">
     <div class="hero">
         <h1>Boutique Officielle Superlife</h1>
-        <p>Retrouvez vos produits de santé cellulaire originaux. Livraison rapide partout en Côte d'Ivoire.</p>
+        <p>Commandez vos produits de santé cellulaire originaux. <br>Livraison express à domicile partout en Côte d'Ivoire.</p>
     </div>
 
     <div class="product-grid" id="main-shop"></div>
@@ -83,30 +93,33 @@
 
 <div id="order-modal">
     <div class="modal-card">
-        <h3 id="m-title" style="margin-bottom:20px; color:var(--primary)"></h3>
+        <h3 id="m-title" style="margin-bottom:20px; color:var(--primary); text-align:center;"></h3>
+        <p style="text-align:center; font-size:0.9rem; color:gray; margin-bottom:10px;">Choisissez votre pack :</p>
         <select id="m-pack" onchange="updatePrice()"></select>
-        <div style="text-align:center; margin-bottom:20px; font-size:1.6rem; font-weight:bold; color:var(--primary)"><span id="m-price">0</span> FCFA</div>
-        <input type="text" id="m-name" placeholder="Nom Complet">
-        <input type="tel" id="m-phone" placeholder="Numéro WhatsApp">
-        <textarea id="m-address" placeholder="Adresse de livraison (Ville/Quartier)" rows="2"></textarea>
-        <button onclick="sendOrder('direct')" class="btn-submit" style="background:var(--telegram)">VALIDER LA COMMANDE</button>
-        <button onclick="sendOrder('whatsapp')" class="btn-submit" style="background:var(--whatsapp)">COMMANDER SUR WHATSAPP</button>
-        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer">Fermer</button>
+        <div style="text-align:center; margin-bottom:25px; font-size:1.8rem; font-weight:800; color:var(--primary)"><span id="m-price">0</span> FCFA</div>
+        
+        <input type="text" id="m-name" placeholder="Votre Nom Complet">
+        <input type="tel" id="m-phone" placeholder="Numéro WhatsApp (Ex: 0707...)">
+        <textarea id="m-address" placeholder="Ville et Quartier de livraison" rows="2"></textarea>
+        
+        <button onclick="sendOrder('direct')" class="btn-submit" style="background:var(--telegram)"><i class="fab fa-telegram-plane"></i> CONFIRMER LA COMMANDE</button>
+        <button onclick="sendOrder('whatsapp')" class="btn-submit" style="background:var(--whatsapp)"><i class="fab fa-whatsapp"></i> COMMANDER VIA WHATSAPP</button>
+        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer; margin-top:10px;">Annuler</button>
     </div>
 </div>
 
 <footer>
     <div class="footer-links">
         <a href="index.html">Boutique</a> | 
-        <a href="conseils-sante-cellulaire-superlife.html">Blog & Conseils</a> | 
-        <a href="devenir-distributeur-superlife-cote-divoire.html">Opportunité</a> |
+        <a href="conseils-sante-cellulaire-superlife.html">Blog</a> | 
+        <a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Distributeur</a> |
         <a href="contact-superlife-cote-divoire.html">Contact</a>
     </div>
     <div style="margin-top:20px">
-        <a href="https://www.facebook.com/superlifeofficiels/" target="_blank" style="color:white; font-size:1.5rem; margin:0 10px"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/superlifeofficiel/" target="_blank" style="color:white; font-size:1.5rem; margin:0 10px"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/superlifeofficiels/" target="_blank" style="color:white; font-size:1.8rem; margin:0 15px"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/superlifeofficiel/" target="_blank" style="color:white; font-size:1.8rem; margin:0 15px"><i class="fab fa-instagram"></i></a>
     </div>
-    <p style="margin-top:20px; font-size:0.8rem; opacity:0.7">&copy; 2026 Superlife Officiel CI - Santé Cellulaire & Bien-être</p>
+    <p style="margin-top:25px; font-size:0.85rem; opacity:0.8">Certifié Produit Original &copy; 2026 Superlife Officiel CI</p>
 </footer>
 
 <script>
@@ -117,11 +130,11 @@
     };
 
     const PRODUCTS = [
-        { id: 'stc30', name: 'Superlife STC30', link: 'superlife-stc30-prix-ci.html', img: 'https://i.ibb.co/CKxjdJ1s/IMG-2262.png', packs: [{n: '1 Boîte', p: 45000}, {n: '2 Boîtes', p: 80000}] },
-        { id: 'snc', name: 'Superlife SNC', link: 'superlife-snc-cerveau-vision.html', img: 'https://i.ibb.co/NgtYqVTT/IMG-2265.png', packs: [{n: '1 Boîte', p: 50000}, {n: '2 Boîtes', p: 90000}] },
-        { id: 'sic', name: 'Superlife SIC', link: 'superlife-sic-immunite.html', img: 'https://i.ibb.co/7JSvPNyL/IMG-2264.png', packs: [{n: '1 Boîte', p: 50000}, {n: '2 Boîtes', p: 90000}] },
-        { id: 'scc', name: 'Superlife SCC+', link: 'superlife-scc-plus-colon.html', img: 'https://i.ibb.co/YFrdBmMj/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', packs: [{n: '1 Boîte', p: 55000}, {n: '2 Boîtes', p: 100000}] },
-        { id: 'coffee', name: 'Super Root Coffee', link: 'super-root-coffee-puissance.html', img: 'https://i.ibb.co/Hvkhkfv/IMG-2263.png', packs: [{n: '1 Boîte', p: 25000}, {n: '2 Boîtes', p: 45000}] }
+        { id: 'stc30', name: 'Superlife STC30', link: 'superlife-stc30-prix-ci.html', img: 'https://i.ibb.co/nNCc3NRP/IMG-2262.png', packs: [{n: '1 Boîte (15 sachets)', p: 45000}, {n: '2 Boîtes', p: 80000}] },
+        { id: 'scc', name: 'Superlife SCC+', link: 'superlife-scc-plus-colon.html', img: 'https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', packs: [{n: '1 Boîte (15 sachets)', p: 55000}, {n: '2 Boîtes', p: 100000}] },
+        { id: 'snc', name: 'Superlife SNC', link: 'superlife-snc-cerveau-vision.html', img: 'https://i.ibb.co/Xk6sgfCK/IMG-2265.png', packs: [{n: '1 Boîte (15 sachets)', p: 50000}, {n: '2 Boîtes', p: 90000}] },
+        { id: 'sic', name: 'Superlife SIC', link: 'superlife-sic-immunite.html', img: 'https://i.ibb.co/rGYnfVwM/IMG-2264.png', packs: [{n: '1 Boîte (15 sachets)', p: 50000}, {n: '2 Boîtes', p: 90000}] },
+        { id: 'coffee', name: 'Super Root Coffee', link: 'super-root-coffee-puissance.html', img: 'https://i.ibb.co/6R1mLbyh/IMG-2263.png', packs: [{n: '1 Boîte (15 sachets)', p: 25000}, {n: '2 Boîtes', p: 45000}] }
     ];
 
     function init() {
@@ -131,15 +144,15 @@
                 <div class="img-box"><img src="${p.img}" alt="${p.name}"></div>
                 <div class="info-box">
                     <h3>${p.name}</h3>
-                    <p style="font-size:0.85rem; color:gray; margin-top:5px">Produit Original Certifié</p>
+                    <p style="font-size:0.9rem; color:#666; margin-top:8px">Santé cellulaire & Régénération</p>
                 </div>
                 <div class="price-footer">
-                    <div style="display:flex; justify-content:space-between; font-weight:bold">
-                        <span>À partir de</span>
+                    <div style="display:flex; justify-content:space-between; align-items:center; font-weight:800; font-size:1.1rem">
+                        <span style="font-size:0.8rem; color:gray; font-weight:normal">Dès</span>
                         <span style="color:var(--primary)">${p.packs[0].p.toLocaleString()} FCFA</span>
                     </div>
                     <div class="btn-group">
-                        <a href="${p.link}" class="btn-details">En savoir plus</a>
+                        <a href="${p.link}" class="btn-details">Détails</a>
                         <button class="btn-order" onclick="openOrder('${p.id}')">Commander</button>
                     </div>
                 </div>
@@ -169,22 +182,22 @@
         const pack = document.getElementById('m-pack').selectedOptions[0].text;
         const total = document.getElementById('m-price').innerText;
 
-        if(!name || !phone || !addr) return alert("Veuillez remplir toutes les informations.");
+        if(!name || !phone || !addr) return alert("Veuillez remplir vos coordonnées pour la livraison.");
 
-        const msg = `🛒 NOUVELLE COMMANDE\n--------------------------\nProduit: ${activeProduct.name}\nPack: ${pack}\nTotal: ${total} FCFA\n\nClient: ${name}\nTel: ${phone}\nLieu: ${addr}`;
+        const msg = `🛒 *NOUVELLE COMMANDE*\n--------------------------\n*Produit:* ${activeProduct.name}\n*Pack:* ${pack}\n*Total:* ${total} FCFA\n\n*Client:* ${name}\n*WhatsApp:* ${phone}\n*Lieu:* ${addr}`;
 
         if(type === 'direct') {
             try {
                 await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg })
+                    body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
                 });
-                alert("Commande validée avec succès ! Nous vous contacterons sous peu.");
+                alert("Merci ! Votre commande a été transmise au service logistique.");
                 closeModal();
                 gtag('event', 'purchase', { "value": total.replace(/\s/g, ''), "currency": "XOF" });
             } catch (e) {
-                alert("Erreur réseau. Veuillez commander via WhatsApp.");
+                alert("Oups, une erreur réseau. Passez par WhatsApp !");
             }
         } else {
             window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
