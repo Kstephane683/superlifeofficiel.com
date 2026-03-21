@@ -1,3 +1,28 @@
+# Fichier robots.txt pour https://superlifeofficiel.com/
+# Optimisé pour Superlife Officiel CI - Mars 2026
+
 User-agent: *
 Allow: /
+
+# Autoriser l'indexation de la boutique et du blog
+Allow: /index.html
+Allow: /conseils-sante-cellulaire-superlife.html
+Allow: /devenir-distributeur-superlife-cote-divoire.html
+Allow: /blog/
+
+# Empêcher l'exploration de fichiers sensibles ou de dossiers de configuration (si présents)
+Disallow: /private/
+Disallow: /config/
+Disallow: /admin/
+Disallow: /tmp/
+
+# Optimisation pour Googlebot-Image (Google Images)
+User-agent: Googlebot-Image
+Allow: /
+
+# Lien vers le sitemap (remplacez par l'URL exacte si vous générez un sitemap.xml)
 Sitemap: https://superlifeofficiel.com/sitemap.xml
+
+# Informations de contact (Commentaire pour les robots)
+# GMB ID: 17825388617888444853
+# Merchant Center: 5735182675
