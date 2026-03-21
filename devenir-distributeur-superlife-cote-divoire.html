@@ -22,7 +22,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--white); color: var(--dark); line-height: 1.6; }
         
-        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav { background: var(--white); padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
         .hero { background: linear-gradient(rgba(8,8,12,0.85), rgba(8,8,12,0.85)), url('https://i.ibb.co/nNCc3NRP/IMG-2262.png'); background-size: cover; background-position: center; color: var(--white); padding: 100px 5% 140px; text-align: center; }
         .hero h1 { font-size: 2.4rem; color: var(--gold); margin-bottom: 20px; line-height: 1.2; text-transform: uppercase; }
         .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 35px; opacity: 0.9; }
@@ -73,6 +77,7 @@
         .float-wa { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); z-index: 2000; text-decoration: none; }
 
         @media (max-width: 768px) {
+            .nav-links { display: none; }
             .hero h1 { font-size: 1.8rem; }
             .certs-strip { grid-template-columns: repeat(2, 1fr); margin-top: -40px; }
             .price-card.featured { transform: scale(1); }
@@ -82,8 +87,13 @@
 <body>
 
 <nav>
-    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="50" alt="Superlife Officiel"></a>
-    <a href="https://wa.me/2250152917584" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">Postuler</a>
+    <a href="https://www.superlifeofficiel.com"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="50" alt="Superlife Officiel"></a>
+    <div class="nav-links">
+        <a href="https://www.superlifeofficiel.com">Accueil</a>
+        <a href="#packs">Packs</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/2250152917584" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">Postuler</a>
+    </div>
 </nav>
 
 <section class="hero">
@@ -205,7 +215,7 @@
     </div>
 </div>
 
-<footer>
+<footer id="contact">
     <div class="container">
         <div class="footer-grid">
             <div>
