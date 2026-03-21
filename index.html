@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superlife Officiel CI | Boutique Santé & Cellules Souches</title>
-    
     <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
     <meta name="description" content="Distributeur Officiel Superlife en Côte d'Ivoire. Retrouvez le STC30, SCC+, SNC et SIC aux prix officiels. Livraison rapide à Abidjan et partout en CI.">
     <link rel="canonical" href="https://superlifeofficiel.com/">
@@ -19,50 +18,36 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --whatsapp: #25D366; --telegram: #0088cc; --dark: #1a1a1a; }
+        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --whatsapp: #25D366; --telegram: #0088cc; --dark: #1a1a1a; --gold: #c9a96e; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background: #fff; color: var(--dark); line-height: 1.6; }
-        
         nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .nav-links { display: flex; gap: 20px; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .hero { text-align: center; padding: 40px 20px; background: #f9fbf9; border-radius: 20px; margin-bottom: 30px; }
+        .hero { text-align: center; padding: 40px 20px; background: #f9fbf9; border-radius: 20px; margin-bottom: 30px; border: 1px solid #eef2ee; }
         h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 10px; }
-        
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .product-card { border: 1px solid #eee; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: 0.4s; background: white; }
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        
-        .img-box { height: 300px; padding: 15px; display: flex; align-items: center; justify-content: center; background: #fff; overflow: hidden; }
+        .img-box { height: 280px; padding: 20px; display: flex; align-items: center; justify-content: center; background: #fff; }
         .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s ease; }
-        .product-card:hover .img-box img { transform: scale(1.1); }
-        
         .info-box { padding: 20px; text-align: center; flex-grow: 1; }
-        .info-box h3 { font-size: 1.4rem; color: var(--primary-dark); }
-        
-        .price-footer { padding: 20px; background: #fdfdfd; border-top: 1px solid #eee; }
+        .info-box h3 { font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 5px; }
+        .price-footer { padding: 20px; background: #fafafa; border-top: 1px solid #eee; }
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
         .btn-order { background: var(--primary); color: white; border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; font-size: 0.95rem; }
         .btn-details { background: #fff; color: var(--primary); border: 2px solid var(--primary); padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; transition: 0.3s; font-size: 0.95rem; }
-        .btn-details:hover { background: var(--primary); color: white; }
-
         #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
         .modal-card { background: #fff; width: 95%; max-width: 450px; border-radius: 25px; padding: 30px; position: relative; }
-        input, select, textarea { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem; }
-        .btn-submit { width: 100%; padding: 16px; border-radius: 12px; border: none; color: white; font-weight: bold; cursor: pointer; margin-bottom: 10px; font-size: 1rem; transition: 0.3s; }
-        .btn-submit:hover { opacity: 0.9; transform: scale(0.98); }
-
-        footer { background: var(--primary); color: white; padding: 50px 20px; text-align: center; margin-top: 60px; border-radius: 40px 40px 0 0; }
-        .footer-links { margin-bottom: 25px; }
-        .footer-links a { color: white; margin: 0 12px; text-decoration: none; opacity: 0.9; font-size: 0.95rem; font-weight: 500; }
-
+        input, select, textarea { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem; outline: none; }
+        .btn-submit { width: 100%; padding: 16px; border-radius: 12px; border: none; color: white; font-weight: bold; cursor: pointer; margin-bottom: 10px; font-size: 1rem; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; margin-top: 60px; }
+        .footer-links a { color: white; margin: 0 10px; text-decoration: none; opacity: 0.8; font-size: 0.9rem; }
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            h1 { font-size: 1.8rem; }
-            .img-box { height: 260px; }
+            h1 { font-size: 1.7rem; }
             .product-grid { gap: 20px; }
         }
     </style>
@@ -72,51 +57,46 @@
 <nav>
     <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="55" alt="Superlife CI"></a>
     <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html">Boutique</a></li>
         <li><a href="conseils-sante-cellulaire-superlife.html">Conseils Santé</a></li>
-        <li><a href="devenir-distributeur-superlife-cote-divoire.html">Opportunité</a></li>
+        <li><a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Partenaire</a></li>
         <li><a href="contact-superlife-cote-divoire.html">Contact</a></li>
     </ul>
 </nav>
 
 <div class="container">
     <div class="hero">
-        <h1>Boutique Officielle Superlife</h1>
-        <p>Commandez vos produits de santé cellulaire originaux. <br>Livraison express à domicile partout en Côte d'Ivoire.</p>
+        <h1>Boutique Officielle Superlife CI</h1>
+        <p>Améliorez votre santé avec la thérapie par cellules souches. <br>Produits authentiques, livraison express sécurisée.</p>
     </div>
-
     <div class="product-grid" id="main-shop"></div>
 </div>
 
 <div id="order-modal">
     <div class="modal-card">
-        <h3 id="m-title" style="margin-bottom:20px; color:var(--primary); text-align:center;"></h3>
-        <p style="text-align:center; font-size:0.9rem; color:gray; margin-bottom:10px;">Choisissez votre pack :</p>
+        <h3 id="m-title" style="margin-bottom:15px; color:var(--primary); text-align:center;"></h3>
         <select id="m-pack" onchange="updatePrice()"></select>
-        <div style="text-align:center; margin-bottom:25px; font-size:1.8rem; font-weight:800; color:var(--primary)"><span id="m-price">0</span> FCFA</div>
-        
-        <input type="text" id="m-name" placeholder="Votre Nom Complet">
-        <input type="tel" id="m-phone" placeholder="Numéro WhatsApp (Ex: 0707...)">
+        <div style="text-align:center; margin-bottom:20px; font-size:1.8rem; font-weight:800; color:var(--primary)"><span id="m-price">0</span> FCFA</div>
+        <input type="text" id="m-name" placeholder="Nom complet">
+        <input type="tel" id="m-phone" placeholder="Numéro WhatsApp">
         <textarea id="m-address" placeholder="Ville et Quartier de livraison" rows="2"></textarea>
-        
-        <button onclick="sendOrder('direct')" class="btn-submit" style="background:var(--telegram)"><i class="fab fa-telegram-plane"></i> CONFIRMER LA COMMANDE</button>
-        <button onclick="sendOrder('whatsapp')" class="btn-submit" style="background:var(--whatsapp)"><i class="fab fa-whatsapp"></i> COMMANDER VIA WHATSAPP</button>
-        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer; margin-top:10px;">Annuler</button>
+        <button onclick="sendOrder('direct')" class="btn-submit" style="background:var(--telegram)"><i class="fab fa-telegram-plane"></i> VALIDER MA COMMANDE</button>
+        <button onclick="sendOrder('whatsapp')" class="btn-submit" style="background:var(--whatsapp)"><i class="fab fa-whatsapp"></i> COMMANDER SUR WHATSAPP</button>
+        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer; margin-top:10px;">Fermer</button>
     </div>
 </div>
 
 <footer>
     <div class="footer-links">
-        <a href="index.html">Boutique</a> | 
-        <a href="conseils-sante-cellulaire-superlife.html">Blog</a> | 
-        <a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Distributeur</a> |
-        <a href="contact-superlife-cote-divoire.html">Contact</a>
+        <a href="index.html">Accueil</a>
+        <a href="devenir-distributeur-superlife-cote-divoire.html">Distributeur</a>
+        <a href="contact-superlife-cote-divoire.html">Aide</a>
     </div>
-    <div style="margin-top:20px">
-        <a href="https://www.facebook.com/superlifeofficiels/" target="_blank" style="color:white; font-size:1.8rem; margin:0 15px"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/superlifeofficiel/" target="_blank" style="color:white; font-size:1.8rem; margin:0 15px"><i class="fab fa-instagram"></i></a>
+    <div style="margin: 25px 0;">
+        <a href="https://www.facebook.com/superlifeofficiels/" target="_blank" style="color:white; font-size:1.5rem; margin:0 10px"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/superlifeofficiel/" target="_blank" style="color:white; font-size:1.5rem; margin:0 10px"><i class="fab fa-instagram"></i></a>
     </div>
-    <p style="margin-top:25px; font-size:0.85rem; opacity:0.8">Certifié Produit Original &copy; 2026 Superlife Officiel CI</p>
+    <p style="font-size:0.75rem; opacity:0.6">© 2026 Superlife Officiel CI - Distributeur Agréé</p>
 </footer>
 
 <script>
@@ -141,15 +121,15 @@
                 <div class="img-box"><img src="${p.img}" alt="${p.name}"></div>
                 <div class="info-box">
                     <h3>${p.name}</h3>
-                    <p style="font-size:0.9rem; color:#666; margin-top:8px">Santé cellulaire & Régénération</p>
+                    <p style="font-size:0.85rem; color:#777">Régénération Cellulaire</p>
                 </div>
                 <div class="price-footer">
-                    <div style="display:flex; justify-content:space-between; align-items:center; font-weight:800; font-size:1.1rem">
-                        <span style="font-size:0.8rem; color:gray; font-weight:normal">Dès</span>
-                        <span style="color:var(--primary)">${p.packs[0].p.toLocaleString()} FCFA</span>
+                    <div style="display:flex; justify-content:space-between; align-items:center; font-weight:800;">
+                        <span style="font-size:0.8rem; color:gray; font-weight:400">Dès</span>
+                        <span style="color:var(--primary); font-size:1.15rem">${p.packs[0].p.toLocaleString()} FCFA</span>
                     </div>
                     <div class="btn-group">
-                        <a href="${p.link}" class="btn-details">Détails</a>
+                        <a href="${p.link}" class="btn-details" onclick="trackClick('view_item', '${p.name}')">Détails</a>
                         <button class="btn-order" onclick="openOrder('${p.id}')">Commander</button>
                     </div>
                 </div>
@@ -164,6 +144,7 @@
         document.getElementById('m-pack').innerHTML = activeProduct.packs.map(pk => `<option value="${pk.p}">${pk.n}</option>`).join('');
         updatePrice();
         document.getElementById('order-modal').style.display = 'flex';
+        gtag('event', 'begin_checkout', { items: [{ item_name: activeProduct.name }] });
     }
 
     function updatePrice() {
@@ -172,16 +153,20 @@
 
     function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
 
+    function trackClick(evt, label) {
+        gtag('event', evt, { 'item_name': label });
+    }
+
     async function sendOrder(type) {
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
-        const pack = document.getElementById('m-pack').selectedOptions[0].text;
-        const total = document.getElementById('m-price').innerText;
+        const packText = document.getElementById('m-pack').selectedOptions[0].text;
+        const priceVal = document.getElementById('m-pack').value;
 
-        if(!name || !phone || !addr) return alert("Veuillez remplir vos coordonnées pour la livraison.");
+        if(!name || !phone || !addr) return alert("Veuillez remplir vos informations de livraison.");
 
-        const msg = `🛒 *NOUVELLE COMMANDE*\n--------------------------\n*Produit:* ${activeProduct.name}\n*Pack:* ${pack}\n*Total:* ${total} FCFA\n\n*Client:* ${name}\n*WhatsApp:* ${phone}\n*Lieu:* ${addr}`;
+        const msg = `🛒 *NOUVELLE COMMANDE*\n--------------------------\n*Produit:* ${activeProduct.name}\n*Option:* ${packText}\n*Prix:* ${Number(priceVal).toLocaleString()} FCFA\n\n*Client:* ${name}\n*Tel:* ${phone}\n*Adresse:* ${addr}`;
 
         if(type === 'direct') {
             try {
@@ -190,30 +175,23 @@
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
                 });
-                alert("Merci ! Votre commande a été transmise au service logistique.");
+                gtag('event', 'purchase', { "value": parseFloat(priceVal), "currency": "XOF", "items": [{ "item_name": activeProduct.name }] });
+                alert("Commande reçue ! Nous vous contacterons sous peu pour la livraison.");
                 closeModal();
-                gtag('event', 'purchase', { "value": total.replace(/\s/g, ''), "currency": "XOF" });
-            } catch (e) {
-                alert("Oups, une erreur réseau. Passez par WhatsApp !");
-            }
+            } catch (e) { alert("Erreur de connexion. Essayez via WhatsApp."); }
         } else {
+            gtag('event', 'generate_lead', { 'item_name': activeProduct.name });
             window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     }
-
     init();
 </script>
 
 <script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
 <script>
   merchantWidgetScript.addEventListener('load', function () {
-    merchantwidget.start({
-         merchant_id: 5735182675,
-         position: 'BOTTOM_RIGHT',
-         region: 'CI'
-    });
+    merchantwidget.start({ merchant_id: 5735182675, position: 'BOTTOM_RIGHT', region: 'CI' });
   });
 </script>
-
 </body>
 </html>
