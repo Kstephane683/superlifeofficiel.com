@@ -23,9 +23,9 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         body { background: var(--light); color: var(--dark); line-height: 1.6; }
         
-        /* NAVIGATION MISE À JOUR */
+        /* NAVIGATION */
         nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-links { display: flex; gap: 15px; list-style: none; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
         
@@ -37,26 +37,23 @@
         
         /* GRILLE DE CONTACT */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .contact-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .contact-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; }
         .contact-card:hover { transform: translateY(-5px); }
-        .icon-circle { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; color: #fff; }
+        .icon-circle { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; color: #fff; }
 
         /* FORMULAIRE */
         .form-section { background: #fff; border-radius: 20px; padding: 30px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem; outline: none; transition: 0.3s; }
         input:focus, textarea:focus { border-color: var(--primary); }
-        .btn-submit { width: 100%; padding: 15px; border-radius: 10px; border: none; color: white; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.3s; }
+        .btn-submit { width: 100%; padding: 15px; border-radius: 10px; border: none; color: white; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.3s; background: var(--primary); }
 
-        /* BADGES & WHATSAPP */
-        .official-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px; opacity: 0.8; }
-        .badge-item { background: #eee; padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; color: #666; }
+        /* WHATSAPP FLOAT */
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37,211,102,0.4); z-index: 9999; text-decoration: none; animation: pulse 2s infinite; }
-        
         @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37,211,102, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); } }
 
         footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
 
-        /* RESPONSIVE MOBILE - MENU BURGER */
+        /* RESPONSIVE MOBILE - RÉPARÉ */
         @media (max-width: 768px) {
             .menu-btn { display: block; }
             .nav-links { 
@@ -68,4 +65,99 @@
                 width: 100%; 
                 background: #fff; 
                 padding: 20px; 
-                box-shadow
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
+                text-align: center;
+                gap: 15px;
+            }
+            .nav-links.active { display: flex; }
+            .contact-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="45" alt="Superlife Logo"></a>
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Boutique</a></li>
+        <li><a href="superlife-stc30-prix-ci.html">STC30</a></li>
+        <li><a href="conseils-sante-cellulaire-superlife.html">Blog</a></li>
+        <li><a href="contact-superlife-cote-divoire.html" style="color:var(--primary)">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="contact-header">
+        <h1>Contactez-nous</h1>
+        <p>Une question ? Besoin d'un conseil ? Notre équipe est à votre écoute.</p>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-card">
+            <div class="icon-circle" style="background:var(--whatsapp)"><i class="fab fa-whatsapp"></i></div>
+            <h3>WhatsApp</h3>
+            <p>Réponse rapide pour vos commandes</p>
+            <a href="https://wa.me/2250152917584" style="color:var(--whatsapp); font-weight:bold; text-decoration:none;">+225 01 52 91 75 84</a>
+        </div>
+        <div class="contact-card">
+            <div class="icon-circle" style="background:var(--telegram)"><i class="fab fa-telegram"></i></div>
+            <h3>Telegram</h3>
+            <p>Support client 7j/7</p>
+            <a href="https://t.me/superlife_ci" style="color:var(--telegram); font-weight:bold; text-decoration:none;">@superlife_ci</a>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h2 style="margin-bottom:20px; color:var(--primary)">Envoyez un message</h2>
+        <input type="text" id="c-name" placeholder="Votre Nom">
+        <input type="tel" id="c-phone" placeholder="Votre Téléphone">
+        <textarea id="c-message" rows="5" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+        <button onclick="handleContact()" class="btn-submit">ENVOYER LE MESSAGE</button>
+    </div>
+</div>
+
+<a href="https://wa.me/2250152917584" class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+    <p>&copy; 2026 Superlife Officiel Côte d'Ivoire</p>
+</footer>
+
+<script>
+    const TELEGRAM_CONFIG = {
+        TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
+        CHAT_ID: '8441274889'
+    };
+
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+    }
+
+    async function handleContact() {
+        const name = document.getElementById('c-name').value;
+        const phone = document.getElementById('c-phone').value;
+        const message = document.getElementById('c-message').value;
+
+        if(!name || !phone || !message) return alert("Merci de remplir tous les champs.");
+
+        const fullMessage = `📩 NOUVEAU CONTACT SITE\n--------------------------\n👤 Nom: ${name}\n📞 Tél: ${phone}\n💬 Message: ${message}`;
+
+        try {
+            await fetch(`https://api.telegram.org/bot${TELEGRAM_CONFIG.TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: TELEGRAM_CONFIG.CHAT_ID, text: fullMessage })
+            });
+            alert("Message envoyé ! Nous vous recontacterons bientôt.");
+            location.reload();
+        } catch (e) { alert("Erreur. Veuillez utiliser WhatsApp."); }
+    }
+</script>
+
+</body>
+</html>
