@@ -20,13 +20,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --primary: #2A6A3B; /* Vert Superlife */
-            --gold: #c9a96e; /* Or Luxury */
-            --dark: #08080c; /* Noir Luxury */
+            --primary: #004d3d; /* Vert Sapin Officiel Superlife */
+            --secondary: #002b5c; /* Bleu Nuit Officiel Superlife */
+            --gold: #d4af37; /* Or Luxury */
+            --dark: #050a09; /* Fond très sombre */
             --white: #ffffff;
             --light-gray: #f8f9fa;
             --whatsapp: #25D366;
-            --telegram: #0088cc;
         }
 
         /* RESET & BASE STYLES */
@@ -39,7 +39,7 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* NAVIGATION MINIMALISTE */
+        /* NAVIGATION */
         nav { 
             background: #fff; 
             padding: 12px 20px; 
@@ -53,20 +53,18 @@
         }
         .logo-img { height: 45px; width: auto; }
 
-        /* CONTAINER GLOBAL */
         .container { 
             padding: 20px 15px; 
-            max-width: 600px; /* Optimisé pour mobile */
+            max-width: 600px; 
             margin: 0 auto; 
         }
 
-        /* HERO PRODUIT (PREMIER BLOC) */
+        /* HERO PRODUIT */
         .product-hero { text-align: center; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .product-hero h1 { color: var(--gold); font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
         .product-img { width: 100%; max-width: 400px; margin-bottom: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .product-desc { font-weight: 300; font-size: 1.1rem; opacity: 0.9; margin-bottom: 25px; }
 
-        /* BARRE DE CONFIANCE (TRUST BAR) */
         .trust-bar { 
             display: flex; 
             justify-content: center; 
@@ -77,26 +75,23 @@
             font-size: 0.7rem; 
             font-weight: 600; 
             text-transform: uppercase; 
-            letter-spacing: 1px;
             color: var(--light-gray);
         }
         .trust-bar i { color: var(--gold); }
 
-        /* TITRES DE SECTION OR LUXURY */
         .section-title { 
             color: var(--gold); 
             font-size: 1.3rem; 
             font-weight: 700; 
             margin: 40px 0 20px; 
             text-transform: uppercase; 
-            letter-spacing: 1.5px; 
             text-align: center;
         }
 
-        /* SECTION PRIX & PACKS */
+        /* PACKS */
         .pack-card { 
-            background: rgba(255,255,255,0.02); 
-            border: 1px solid rgba(201,169,110,0.1); 
+            background: linear-gradient(145deg, rgba(0,77,61,0.1), rgba(0,43,92,0.1)); 
+            border: 1px solid rgba(212,175,55,0.2); 
             border-radius: 15px; 
             padding: 20px; 
             margin-bottom: 15px; 
@@ -104,68 +99,51 @@
             justify-content: space-between; 
             align-items: center; 
             cursor: pointer; 
-            transition: 0.3s;
         }
-        .pack-card.recommended { border: 2px solid var(--gold); background: rgba(201,169,110,0.05); }
-        .pack-title { font-weight: 600; font-size: 1rem; margin-bottom: 5px; color: var(--white); }
+        .pack-card.recommended { border: 2px solid var(--gold); background: rgba(212,175,55,0.08); }
+        .pack-title { font-weight: 600; color: var(--white); }
         .pack-price { color: var(--gold); font-weight: 900; font-size: 1.2rem; }
 
-        /* EFFETS SECONDAIRES (REVERSE MARKETING) */
+        /* EFFETS SECONDAIRES */
         .effects-container { 
-            background: rgba(201,169,110,0.05); 
+            background: rgba(0,77,61,0.15); 
             padding: 25px; 
             border-radius: 20px; 
-            border: 1px solid rgba(201,169,110,0.2); 
+            border: 1px solid var(--primary); 
             margin: 30px 0; 
         }
-        .effect-item { 
-            display: flex; 
-            align-items: flex-start; 
-            margin-bottom: 15px; 
-            font-size: 0.9rem; 
-            color: var(--light-gray);
-        }
-        .effect-item i { color: var(--gold); margin-right: 15px; font-size: 1.2rem; margin-top: 3px; }
+        .effect-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 0.9rem; }
+        .effect-item i { color: var(--gold); margin-right: 15px; font-size: 1.2rem; }
 
-        /* TÉMOIGNAGES VIDÉOS */
+        /* VIDÉOS */
         .video-wrapper { 
             position: relative; 
-            padding-bottom: 56.25%; /* Ratio 16:9 */
+            padding-bottom: 56.25%; 
             height: 0; 
             overflow: hidden; 
             border-radius: 15px; 
             margin-bottom: 20px; 
             background: #000; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
-        .video-wrapper iframe { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            border: 0; 
-        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* FAQ ACCORDÉON LUXURY */
-        details { background: rgba(255,255,255,0.02); padding: 18px; border-radius: 12px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.05); }
-        summary { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; outline: none; color: var(--white); font-size: 0.95rem; }
-        summary::after { content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--gold); font-size: 1.2rem; transition: 0.3s; }
-        details[open] summary::after { transform: rotate(180deg); }
+        /* FAQ */
+        details { background: rgba(255,255,255,0.03); padding: 18px; border-radius: 12px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.05); }
+        summary { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--white); }
+        summary::after { content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--gold); }
 
-        /* BOUTON FLOTTANT STICKY (THUMB-ZONE) */
+        /* STICKY ACTIONS */
         .sticky-action-bar { 
             position: fixed; 
             bottom: 0; 
             left: 0; 
             width: 100%; 
-            background: rgba(8,8,12,0.95); /* Effet flouté luxury */
+            background: rgba(5,10,9,0.95); 
             padding: 15px; 
             display: flex; 
             gap: 12px; 
             z-index: 9999; 
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.3); 
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
         .action-btn { 
             flex: 1; 
@@ -176,8 +154,6 @@
             text-decoration: none; 
             text-align: center; 
             font-size: 0.9rem; 
-            cursor: pointer; 
-            transition: 0.3s; 
             text-transform: uppercase; 
             display: flex; 
             align-items: center; 
@@ -186,205 +162,115 @@
         }
         .btn-whats { background-color: var(--whatsapp); color: var(--white); }
         .btn-order { background-color: var(--gold); color: var(--dark); }
-        .action-btn:active { transform: scale(0.97); }
 
-        /* MODAL DE COMMANDE */
-        #orderModal { 
-            display:none; 
-            position:fixed; 
-            inset:0; 
-            background:rgba(0,0,0,0.9); 
-            z-index:10000; 
-            align-items:center; 
-            justify-content:center; 
-            padding:15px; 
-        }
-        .modal-content { 
-            background:var(--white); 
-            width:100%; 
-            max-width:450px; 
-            border-radius:20px; 
-            padding:30px; 
-            color: var(--dark);
-        }
-        .modal-content h3 { color: var(--primary); font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; text-align: center; }
-        .modal-form input, .modal-form select, .modal-form textarea { 
-            width: 100%; 
-            padding: 14px; 
-            margin-bottom: 12px; 
-            border: 1px solid #ddd; 
-            border-radius: 12px; 
-            font-size: 16px; /* Taille pour mobile sans zoom */
-            background: var(--light-gray);
-        }
-        .modal-form textarea { resize: none; }
-        .modal-form button.submit { 
-            width:100%; 
-            padding:18px; 
-            background: var(--primary); 
-            color:var(--white); 
-            border:none; 
-            border-radius:15px; 
-            font-weight:bold; 
-            cursor:pointer; 
-            font-size:1rem; 
-            text-transform:uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
+        /* MODAL */
+        #orderModal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.95); z-index:10000; align-items:center; justify-content:center; padding:15px; }
+        .modal-content { background:var(--white); width:100%; max-width:450px; border-radius:20px; padding:30px; color: var(--dark); }
+        .modal-content h3 { color: var(--primary); font-weight: 800; margin-bottom: 20px; text-align: center; }
+        .modal-form input, .modal-form select, .modal-form textarea { width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 12px; font-size: 16px; background: var(--light-gray); }
+        .modal-form button.submit { width:100%; padding:18px; background: var(--primary); color:var(--white); border:none; border-radius:15px; font-weight:bold; font-size:1rem; text-transform:uppercase; }
 
-        /* TEXTES COMPLÉMENTAIRES */
-        .info-text-block { 
-            background: rgba(255,255,255,0.02); 
-            padding: 20px; 
-            border-radius: 15px; 
-            margin-top: 20px; 
-            font-size: 0.95rem; 
-            color: var(--light-gray); 
-            opacity: 0.9;
-        }
-        .info-text-block strong { color: var(--gold); font-weight: 600; }
-
-        /* ESPACEUR FINAL */
+        .info-text-block { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 0.95rem; }
+        .info-text-block strong { color: var(--gold); }
         .page-spacer { height: 110px; }
-
     </style>
 </head>
 <body>
 
     <nav>
         <a href="/"><img src="logo.png" class="logo-img" alt="Superlife Officiel CI"></a>
-        <div style="color:var(--gold); font-weight:700; font-size:0.75rem;"><i class="fas fa-certificate"></i> DISTRIBUTEUR AGRÉÉ</div>
+        <div style="color:var(--primary); font-weight:700; font-size:0.75rem;"><i class="fas fa-certificate"></i> DISTRIBUTEUR AGRÉÉ</div>
     </nav>
 
     <div class="container">
-        
         <section class="product-hero">
             <h1>Activez vos cellules souches avec le STC30</h1>
-            <img src="https://i.ibb.co/CKxjdJ1s/IMG-2262.png" alt="STC30 Superlife Côte d'Ivoire" class="product-img">
-            
-            <p class="product-desc">
-                Le secret pour régénérer vos organes et combattre les maladies chroniques naturellement, grâce à la puissance des cellules souches végétales.
-            </p>
-            
+            <img src="https://i.ibb.co/CKxjdJ1s/IMG-2262.png" alt="STC30 Superlife CI" class="product-img">
+            <p class="product-desc">Régénérez vos organes et combattez les maladies chroniques naturellement avec la puissance des cellules souches végétales.</p>
             <div class="trust-bar">
                 <span><i class="fas fa-truck"></i> Livraison 24h CI</span>
-                <span><i class="fas fa-money-bill-wave"></i> Paiement à la livraison</span>
+                <span><i class="fas fa-check-circle"></i> Produit Original</span>
             </div>
         </section>
 
         <section class="section-title">Qu'est-ce que le STC30 ?</section>
         <div class="info-text-block">
-            <p>Le <strong>Superlife STC30</strong> est un complément alimentaire révolutionnaire à base de cellules souches végétales (PhytoCellTec). Il aide à réparer, restaurer et rajeunir les cellules de votre corps, agissant sur les causes profondes des maladies pour une guérison naturelle.</p>
+            <p>Le <strong>Superlife STC30</strong> est un complément alimentaire révolutionnaire à base de cellules souches végétales. Il aide à réparer et rajeunir les cellules de votre corps, agissant sur les causes profondes des maladies pour une guérison naturelle.</p>
         </div>
 
         <section class="section-title">Nos Packs Promotionnels CI</section>
-        
         <div class="pack-card" onclick="openModal('1 Boîte', 45000)">
-            <div>
-                <h3 class="pack-title">Pack Découverte (1 Boîte)</h3>
-                <p style="font-size:0.8rem; color:var(--light-gray);">Idéal pour tester les bienfaits</p>
-            </div>
+            <div><h3 class="pack-title">Pack 1 Boîte</h3><p style="font-size:0.8rem; color:gray;">Entretien</p></div>
             <div class="pack-price">45 000 F</div>
         </div>
-
         <div class="pack-card recommended" onclick="openModal('2 Boîtes', 80000)">
-            <div>
-                <h3 class="pack-title">Pack Traitement (2 Boîtes)</h3>
-                <p style="font-size:0.8rem; color:var(--light-gray);">Début de régénération</p>
-            </div>
+            <div><h3 class="pack-title">Pack Traitement (2 Boîtes)</h3><p style="font-size:0.8rem; color:gray;">Régénération</p></div>
             <div class="pack-price">80 000 F</div>
         </div>
-
         <div class="pack-card" onclick="openModal('4 Boîtes', 150000)">
-            <div>
-                <h3 class="pack-title">Pack Guérison (4 Boîtes)</h3>
-                <p style="font-size:0.8rem; color:var(--light-gray);">Cure complète (Recommandé)</p>
-            </div>
+            <div><h3 class="pack-title">Pack Guérison (4 Boîtes)</h3><p style="font-size:0.8rem; color:gray;">Cure complète</p></div>
             <div class="pack-price">150 000 F</div>
         </div>
 
         <section class="effects-container">
-            <h2 style="color:var(--gold); margin-bottom:15px; font-weight:700;">À quoi s'attendre pendant votre cure ?</h2>
-            
-            <div class="effect-item"><i class="fas fa-check-circle"></i> <p>Augmentation de l'appétit (Signe de métabolisme activé)</p></div>
-            <div class="effect-item"><i class="fas fa-check-circle"></i> <p>Sommeil plus profond et réparateur (Récupération cellulaire)</p></div>
-            <div class="effect-item"><i class="fas fa-check-circle"></i> <p>Peau plus jeune, élastique et éclatante</p></div>
-            <div class="effect-item"><i class="fas fa-check-circle"></i> <p>Élimination progressive des problèmes cutanés</p></div>
+            <h2 style="color:var(--gold); margin-bottom:15px; font-weight:700;">Effets de régénération observés :</h2>
+            <div class="effect-item"><i class="fas fa-plus-circle"></i> <p>Augmentation de l'appétit (Métabolisme activé)</p></div>
+            <div class="effect-item"><i class="fas fa-moon"></i> <p>Sommeil plus profond et réparateur</p></div>
+            <div class="effect-item"><i class="fas fa-sparkles"></i> <p>Peau plus éclatante et rajeunie</p></div>
+            <div class="effect-item"><i class="fas fa-shield-alt"></i> <p>Élimination des problèmes cutanés</p></div>
         </section>
 
-        <section class="section-title">Comment l'utiliser pour un résultat maximal ?</section>
+        <section class="section-title">Comment l'utiliser ?</section>
         <div class="info-text-block">
-            <p>Consommez <strong>un sachet par jour</strong>, de préférence le matin à jeun. Versez le contenu du sachet <strong>sous la langue</strong> (voie sublinguale) et laissez fondre complètement sans avaler immédiatement pour une absorption directe par l'organisme.</p>
+            <p>Consommez <strong>un sachet par jour</strong> le matin à jeun. Versez le contenu <strong>sous la langue</strong> et laissez fondre complètement sans avaler immédiatement.</p>
         </div>
 
-        <section class="section-title">Témoignages réels en Côte d'Ivoire</section>
-        
+        <section class="section-title">Témoignages en Côte d'Ivoire</section>
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/3zFTiwPWNDM?modestbranding=1&rel=0&iv_load_policy=3" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/3zFTiwPWNDM" allowfullscreen></iframe>
         </div>
-        <p style="font-size:0.8rem; font-style:italic; margin-bottom:20px; text-align:center;">Infection pulmonaire et insuffisance rénale évitée.</p>
-
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/fA_IskHAb8Y?modestbranding=1&rel=0&iv_load_policy=3" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/dash9-uxhNc" allowfullscreen></iframe>
         </div>
-        <p style="font-size:0.8rem; font-style:italic; text-align:center;">Vision améliorée et tension stabilisée.</p>
 
         <section class="section-title">Questions Fréquentes</section>
-        
         <details>
-            <summary>Y a-t-il des contre-indications ?</summary>
-            <p style="padding-top:10px; color:var(--light-gray); font-size:0.9rem;">Le STC30 est naturel. Cependant, nous conseillons aux femmes enceintes ou allaitantes de consulter un médecin avant utilisation.</p>
+            <summary>Livrez-vous à l'intérieur du pays ?</summary>
+            <p style="padding-top:10px; color:#ccc;">Oui, expédition partout en CI via Massa, UTB ou ST.</p>
+        </details>
+        <details>
+            <summary>Comment payer ?</summary>
+            <p style="padding-top:10px; color:#ccc;">À Abidjan, vous payez à la livraison (Espèces, Wave ou Orange Money).</p>
         </details>
 
-        <details>
-            <summary>Comment puis-on s'assurer que c'est l'original ?</summary>
-            <p style="padding-top:10px; color:var(--light-gray); font-size:0.9rem;">En commandant sur Superlife Officiel CI, vous recevez un produit scellé avec un QR Code d'authentification unique. Payez à la livraison après vérification.</p>
-        </details>
-
-        <details>
-            <summary>Faites-vous des livraisons à Bouaké ?</summary>
-            <p style="padding-top:10px; color:var(--light-gray); font-size:0.9rem;">Oui, nous expédions partout en Côte d'Ivoire via les compagnies de transport fiables (Massa, UTB, etc.).</p>
-        </details>
-
-        <div class="page-spacer"></div> </div>
+        <div class="page-spacer"></div>
+    </div>
 
     <div class="sticky-action-bar">
-        <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20un%20conseil%20personnalisé%20sur%20le%20STC30" class="action-btn btn-whats" target="_blank">
-            <i class="fab fa-whatsapp"></i> CONSEIL
-        </a>
-        <button onclick="openModal()" class="action-btn btn-order">
-            <i class="fas fa-shopping-cart"></i> COMMANDER
-        </button>
+        <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20un%20conseil%20STC30" class="action-btn btn-whats" target="_blank"><i class="fab fa-whatsapp"></i> CONSEIL</a>
+        <button onclick="openModal()" class="action-btn btn-order"><i class="fas fa-shopping-cart"></i> COMMANDER</button>
     </div>
 
     <div id="orderModal">
         <div class="modal-content">
-            <h3>Finaliser votre commande</h3>
+            <h3>Votre Commande</h3>
             <div class="modal-form">
                 <select id="m-pack">
-                    <option value="45000">Pack 1 Boîte - 45 000 F</option>
-                    <option value="80000" selected>Pack Traitement (2 Boîtes) - 80 000 F</option>
-                    <option value="150000">Pack Cure Complète (4 Boîtes) - 150 000 F</option>
+                    <option value="45000">1 Boîte - 45 000 F</option>
+                    <option value="80000" selected>2 Boîtes - 80 000 F</option>
+                    <option value="150000">4 Boîtes - 150 000 F</option>
                 </select>
-                <input type="text" id="m-name" placeholder="Nom Complet" required>
-                <input type="tel" id="m-phone" placeholder="Numéro de téléphone (ex: 070809...)" required>
-                <textarea id="m-addr" placeholder="Lieu précis de livraison (Ville, Quartier...)" rows="3" required></textarea>
-                
-                <button onclick="sendOrder()" class="submit">CONFIRMER LA COMMANDE</button>
-                <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer; font-size:0.9rem;">Annuler</button>
+                <input type="text" id="m-name" placeholder="Nom Complet">
+                <input type="tel" id="m-phone" placeholder="Téléphone">
+                <textarea id="m-addr" placeholder="Lieu de livraison" rows="3"></textarea>
+                <button onclick="sendOrder()" class="submit">CONFIRMER</button>
+                <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:10px;">Annuler</button>
             </div>
         </div>
     </div>
 
     <script>
-        // FONCTION MENU MOBILE (si nécessaire pour le header final)
-        function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
-        }
-
-        function openModal(packText = '', price = 0) {
+        function openModal(packText = '') {
             document.getElementById('orderModal').style.display = 'flex';
             if(packText) {
                 const select = document.getElementById('m-pack');
@@ -399,30 +285,23 @@
             const name = document.getElementById('m-name').value;
             const phone = document.getElementById('m-phone').value;
             const addr = document.getElementById('m-addr').value;
-            const packText = document.getElementById('m-pack').selectedOptions[0].text;
-            const priceVal = document.getElementById('m-pack').value;
+            const pack = document.getElementById('m-pack').selectedOptions[0].text;
+            if(!name || !phone || !addr) return alert("Remplissez tout.");
 
-            if(!name || !phone || !addr) { return alert("Veuillez remplir tous les champs de livraison."); }
+            const msg = `📦 COMMANDE STC30\nClient: ${name}\nTel: ${phone}\nPack: ${pack}\nLieu: ${addr}`;
 
-            const msgText = `📦 NOUVELLE COMMANDE STC30 CI\n------------------\nClient: ${name}\nTel: ${phone}\nPack: ${packText}\nTotal: ${priceVal} FCFA\nLieu: ${addr}`;
-
-            // --- INTÉGRATION TELEGRAM (n8n/Bot) ---
             try {
                 await fetch(`https://api.telegram.org/bot8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg/sendMessage`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: '8441274889', text: msgText })
+                    body: JSON.stringify({ chat_id: '8441274889', text: msg })
                 });
-                alert("Félicitations ! Votre commande est bien transmise à notre service de livraison.");
+                alert("Commande transmise !");
                 closeModal();
-                gtag('event', 'purchase', { "value": priceVal, "currency": "XOF" }); // Conversion Tracking
-            } catch (error) {
-                // Backup WhatsApp si Telegram échoue
-                console.error("Erreur Telegram:", error);
-                window.open(`https://wa.me/2250152917584?text=${encodeURIComponent(msgText)}`, '_blank');
+            } catch (e) {
+                window.open(`https://wa.me/2250152917584?text=${encodeURIComponent(msg)}`, '_blank');
             }
         }
     </script>
-
 </body>
 </html>
