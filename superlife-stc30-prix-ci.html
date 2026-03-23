@@ -20,20 +20,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --primary: #004d3d; /* Vert Sapin Officiel Superlife */
-            --secondary: #002b5c; /* Bleu Nuit Officiel Superlife */
-            --gold: #d4af37; /* Or Luxury */
-            --dark: #050a09; /* Fond très sombre */
+            --primary: #2A6A3B; /* Vert de l'ancien code */
+            --primary-dark: #1D4D29; /* Vert foncé de l'ancien code */
+            --gold: #2A6A3B; /* Remplacé par le vert pour respecter l'ancienne charte */
+            --dark: #1a1a1a; 
             --white: #ffffff;
-            --light-gray: #f8f9fa;
+            --light-gray: #f4f7f6;
             --whatsapp: #25D366;
         }
 
         /* RESET & BASE STYLES */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            background: var(--dark); 
-            color: var(--white); 
+            background: var(--white); 
+            color: var(--dark); 
             font-family: 'Poppins', sans-serif; 
             line-height: 1.6; 
             -webkit-font-smoothing: antialiased;
@@ -49,7 +49,7 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.2); 
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1); 
         }
         .logo-img { height: 45px; width: auto; }
 
@@ -60,38 +60,40 @@
         }
 
         /* HERO PRODUIT */
-        .product-hero { text-align: center; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .product-hero h1 { color: var(--gold); font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
-        .product-img { width: 100%; max-width: 400px; margin-bottom: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .product-hero { text-align: center; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+        .product-hero h1 { color: var(--primary); font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
+        .product-img { width: 100%; max-width: 400px; margin-bottom: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .product-desc { font-weight: 300; font-size: 1.1rem; opacity: 0.9; margin-bottom: 25px; }
 
         .trust-bar { 
             display: flex; 
             justify-content: center; 
             gap: 15px; 
-            background: rgba(255,255,255,0.05); 
+            background: var(--light-gray); 
             padding: 10px; 
             border-radius: 10px; 
             font-size: 0.7rem; 
             font-weight: 600; 
             text-transform: uppercase; 
-            color: var(--light-gray);
+            color: var(--primary);
         }
-        .trust-bar i { color: var(--gold); }
+        .trust-bar i { color: var(--primary); }
 
         .section-title { 
-            color: var(--gold); 
+            color: var(--primary); 
             font-size: 1.3rem; 
             font-weight: 700; 
             margin: 40px 0 20px; 
             text-transform: uppercase; 
             text-align: center;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
         }
 
         /* PACKS */
         .pack-card { 
-            background: linear-gradient(145deg, rgba(0,77,61,0.1), rgba(0,43,92,0.1)); 
-            border: 1px solid rgba(212,175,55,0.2); 
+            background: var(--white); 
+            border: 2px solid #eee; 
             border-radius: 15px; 
             padding: 20px; 
             margin-bottom: 15px; 
@@ -99,21 +101,22 @@
             justify-content: space-between; 
             align-items: center; 
             cursor: pointer; 
+            transition: 0.3s;
         }
-        .pack-card.recommended { border: 2px solid var(--gold); background: rgba(212,175,55,0.08); }
-        .pack-title { font-weight: 600; color: var(--white); }
-        .pack-price { color: var(--gold); font-weight: 900; font-size: 1.2rem; }
+        .pack-card.recommended { border: 2px solid var(--primary); background: #f0f7f1; }
+        .pack-title { font-weight: 600; color: var(--dark); }
+        .pack-price { color: var(--primary); font-weight: 900; font-size: 1.2rem; }
 
         /* EFFETS SECONDAIRES */
         .effects-container { 
-            background: rgba(0,77,61,0.15); 
+            background: #f9fbf9; 
             padding: 25px; 
             border-radius: 20px; 
-            border: 1px solid var(--primary); 
+            border: 1px solid #eee; 
             margin: 30px 0; 
         }
         .effect-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 0.9rem; }
-        .effect-item i { color: var(--gold); margin-right: 15px; font-size: 1.2rem; }
+        .effect-item i { color: var(--primary); margin-right: 15px; font-size: 1.2rem; }
 
         /* VIDÉOS */
         .video-wrapper { 
@@ -128,9 +131,9 @@
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         /* FAQ */
-        details { background: rgba(255,255,255,0.03); padding: 18px; border-radius: 12px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.05); }
-        summary { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--white); }
-        summary::after { content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--gold); }
+        details { background: var(--light-gray); padding: 18px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #eee; }
+        summary { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--dark); }
+        summary::after { content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--primary); }
 
         /* STICKY ACTIONS */
         .sticky-action-bar { 
@@ -138,12 +141,13 @@
             bottom: 0; 
             left: 0; 
             width: 100%; 
-            background: rgba(5,10,9,0.95); 
+            background: rgba(255,255,255,0.95); 
             padding: 15px; 
             display: flex; 
             gap: 12px; 
             z-index: 9999; 
             backdrop-filter: blur(8px);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
         }
         .action-btn { 
             flex: 1; 
@@ -161,24 +165,24 @@
             gap: 10px;
         }
         .btn-whats { background-color: var(--whatsapp); color: var(--white); }
-        .btn-order { background-color: var(--gold); color: var(--dark); }
+        .btn-order { background-color: var(--primary); color: var(--white); }
 
         /* MODAL */
-        #orderModal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.95); z-index:10000; align-items:center; justify-content:center; padding:15px; }
+        #orderModal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center; padding:15px; }
         .modal-content { background:var(--white); width:100%; max-width:450px; border-radius:20px; padding:30px; color: var(--dark); }
         .modal-content h3 { color: var(--primary); font-weight: 800; margin-bottom: 20px; text-align: center; }
         .modal-form input, .modal-form select, .modal-form textarea { width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 12px; font-size: 16px; background: var(--light-gray); }
         .modal-form button.submit { width:100%; padding:18px; background: var(--primary); color:var(--white); border:none; border-radius:15px; font-weight:bold; font-size:1rem; text-transform:uppercase; }
 
-        .info-text-block { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 0.95rem; }
-        .info-text-block strong { color: var(--gold); }
+        .info-text-block { background: var(--light-gray); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 0.95rem; border-left: 4px solid var(--primary); }
+        .info-text-block strong { color: var(--primary); }
         .page-spacer { height: 110px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="/"><img src="logo.png" class="logo-img" alt="Superlife Officiel CI"></a>
+        <a href="/"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife Officiel CI"></a>
         <div style="color:var(--primary); font-weight:700; font-size:0.75rem;"><i class="fas fa-certificate"></i> DISTRIBUTEUR AGRÉÉ</div>
     </nav>
 
@@ -213,7 +217,7 @@
         </div>
 
         <section class="effects-container">
-            <h2 style="color:var(--gold); margin-bottom:15px; font-weight:700;">Effets de régénération observés :</h2>
+            <h2 style="color:var(--primary); margin-bottom:15px; font-weight:700;">Effets de régénération observés :</h2>
             <div class="effect-item"><i class="fas fa-plus-circle"></i> <p>Augmentation de l'appétit (Métabolisme activé)</p></div>
             <div class="effect-item"><i class="fas fa-moon"></i> <p>Sommeil plus profond et réparateur</p></div>
             <div class="effect-item"><i class="fas fa-sparkles"></i> <p>Peau plus éclatante et rajeunie</p></div>
@@ -236,11 +240,11 @@
         <section class="section-title">Questions Fréquentes</section>
         <details>
             <summary>Livrez-vous à l'intérieur du pays ?</summary>
-            <p style="padding-top:10px; color:#ccc;">Oui, expédition partout en CI via Massa, UTB ou ST.</p>
+            <p style="padding-top:10px; color:#555;">Oui, expédition partout en CI via Massa, UTB ou ST.</p>
         </details>
         <details>
             <summary>Comment payer ?</summary>
-            <p style="padding-top:10px; color:#ccc;">À Abidjan, vous payez à la livraison (Espèces, Wave ou Orange Money).</p>
+            <p style="padding-top:10px; color:#555;">À Abidjan, vous payez à la livraison (Espèces, Wave ou Orange Money).</p>
         </details>
 
         <div class="page-spacer"></div>
