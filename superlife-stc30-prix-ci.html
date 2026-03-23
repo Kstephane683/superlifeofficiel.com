@@ -42,7 +42,7 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* NAVIGATION & MENU MOBILE */
+        /* NAVIGATION & MENU */
         nav { 
             background: #fff; 
             padding: 12px 20px; 
@@ -56,7 +56,7 @@
         }
         .logo-img { height: 45px; width: auto; }
         .menu-toggle { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
-        
+
         .nav-menu {
             position: fixed; top: 69px; left: -100%; width: 80%; height: 100vh;
             background: var(--white); z-index: 999; transition: 0.3s;
@@ -71,83 +71,141 @@
             margin: 0 auto; 
         }
 
-        /* SECTIONS STYLES */
         .product-hero { text-align: center; padding-bottom: 30px; border-bottom: 1px solid #eee; }
         .product-hero h1 { color: var(--primary); font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
         .product-img { width: 100%; max-width: 400px; margin-bottom: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .product-desc { font-weight: 300; font-size: 1.1rem; opacity: 0.9; margin-bottom: 25px; }
 
         .trust-bar { 
-            display: flex; justify-content: center; gap: 15px; background: var(--light-gray); 
-            padding: 10px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; 
-            text-transform: uppercase; color: var(--primary);
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            background: var(--light-gray); 
+            padding: 10px; 
+            border-radius: 10px; 
+            font-size: 0.7rem; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            color: var(--primary);
         }
+        .trust-bar i { color: var(--primary); }
 
         .section-title { 
-            color: var(--primary); font-size: 1.3rem; font-weight: 700; margin: 40px 0 20px; 
-            text-transform: uppercase; text-align: center; border-bottom: 2px solid var(--light-gray); padding-bottom: 10px;
+            color: var(--primary); 
+            font-size: 1.3rem; 
+            font-weight: 700; 
+            margin: 40px 0 20px; 
+            text-transform: uppercase; 
+            text-align: center;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
         }
 
-        /* PACKS */
         .pack-card { 
-            background: var(--white); border: 2px solid #eee; border-radius: 15px; 
-            padding: 20px; margin-bottom: 15px; display: flex; justify-content: space-between; 
-            align-items: center; cursor: pointer; transition: 0.3s;
+            background: var(--white); 
+            border: 2px solid #eee; 
+            border-radius: 15px; 
+            padding: 20px; 
+            margin-bottom: 15px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            cursor: pointer; 
+            transition: 0.3s;
         }
         .pack-card.recommended { border: 2px solid var(--primary); background: #f0f7f1; }
         .pack-title { font-weight: 600; color: var(--dark); }
         .pack-price { color: var(--primary); font-weight: 900; font-size: 1.2rem; }
 
-        /* BLOCKS INFO */
-        .info-text-block { background: var(--light-gray); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 0.95rem; border-left: 4px solid var(--primary); }
-        .composition-list { list-style: none; margin-top: 15px; }
-        .composition-list li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.9rem; }
-        .composition-list li::before { content: "\f067"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--primary); font-size: 0.8rem; }
-        
-        .cert-card { background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 15px; margin-bottom: 15px; }
-        .cert-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-
-        .effects-container { background: #f9fbf9; padding: 25px; border-radius: 20px; border: 1px solid #eee; margin: 30px 0; }
+        .effects-container { 
+            background: #f9fbf9; 
+            padding: 25px; 
+            border-radius: 20px; 
+            border: 1px solid #eee; 
+            margin: 30px 0; 
+        }
         .effect-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 0.9rem; }
         .effect-item i { color: var(--primary); margin-right: 15px; font-size: 1.2rem; }
 
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; margin-bottom: 10px; background: #000; }
+        .video-wrapper { 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden; 
+            border-radius: 15px; 
+            margin-bottom: 10px; 
+            background: #000; 
+        }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         details { background: var(--light-gray); padding: 18px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #eee; }
         summary { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--dark); }
         summary::after { content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--primary); }
 
-        /* FOOTER */
-        footer { background: #1a1a1a; color: #aaa; padding: 40px 20px 120px; text-align: center; font-size: 0.8rem; }
-        .footer-logo { height: 35px; filter: grayscale(1); margin-bottom: 20px; opacity: 0.6; }
+        /* FOOTER STYLES */
+        footer { 
+            background: #1a1a1a; color: #aaa; padding: 40px 20px 120px; 
+            text-align: center; font-size: 0.8rem; 
+        }
+        .footer-logo { height: 35px; filter: grayscale(1); margin-bottom: 20px; opacity: 0.7; }
         .social-links { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
-        .social-links a { color: #fff; font-size: 1.5rem; transition: 0.3s; }
+        .social-links a { color: #fff; font-size: 1.5rem; }
         .social-links .fa-facebook { color: var(--facebook); }
         .social-links .fa-instagram { color: var(--instagram); }
         .social-links .fa-whatsapp { color: var(--whatsapp); }
         .gmb-link { display: inline-block; margin-top: 15px; color: #fff; text-decoration: underline; font-size: 0.85rem; }
         .disclaimer { border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; line-height: 1.4; }
 
-        /* ACTIONS STICKY */
         .sticky-action-bar { 
-            position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); 
-            padding: 15px; display: flex; gap: 12px; z-index: 9999; backdrop-filter: blur(8px); box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            position: fixed; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            background: rgba(255,255,255,0.95); 
+            padding: 15px; 
+            display: flex; 
+            gap: 12px; 
+            z-index: 9999; 
+            backdrop-filter: blur(8px);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
         }
         .action-btn { 
-            flex: 1; padding: 16px; border-radius: 15px; border: none; font-weight: 700; 
-            text-decoration: none; text-align: center; font-size: 0.9rem; text-transform: uppercase; 
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            flex: 1; 
+            padding: 16px; 
+            border-radius: 15px; 
+            border: none; 
+            font-weight: 700; 
+            text-decoration: none; 
+            text-align: center; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px;
         }
         .btn-whats { background-color: var(--whatsapp); color: var(--white); }
         .btn-order { background-color: var(--primary); color: var(--white); }
 
-        /* MODAL */
         #orderModal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center; padding:15px; }
         .modal-content { background:var(--white); width:100%; max-width:450px; border-radius:20px; padding:30px; color: var(--dark); }
+        .modal-content h3 { color: var(--primary); font-weight: 800; margin-bottom: 20px; text-align: center; }
         .modal-form input, .modal-form select, .modal-form textarea { width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 12px; font-size: 16px; background: var(--light-gray); }
-        .modal-form button.submit { width:100%; padding:18px; background: var(--primary); color:var(--white); border:none; border-radius:15px; font-weight:bold; }
+        .modal-form button.submit { width:100%; padding:18px; background: var(--primary); color:var(--white); border:none; border-radius:15px; font-weight:bold; font-size:1rem; text-transform:uppercase; }
 
+        .info-text-block { background: var(--light-gray); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 0.95rem; border-left: 4px solid var(--primary); }
+        .info-text-block strong { color: var(--primary); }
+        
+        .composition-list { list-style: none; margin-top: 15px; }
+        .composition-list li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.9rem; }
+        .composition-list li::before { content: "\f067"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--primary); font-size: 0.8rem; }
+        
+        .cert-card { background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 15px; margin-bottom: 15px; }
+        .cert-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .cert-card p { font-size: 0.85rem; color: #555; }
+        
+        .testimonial-desc { font-style: italic; font-size: 0.9rem; margin-bottom: 8px; color: #444; border-left: 3px solid #ddd; padding-left: 10px; }
+        
         .page-spacer { height: 110px; }
     </style>
 </head>
@@ -156,12 +214,14 @@
     <nav>
         <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
         <a href="/"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife Officiel CI"></a>
-        <div style="color:var(--primary); font-weight:700; font-size:0.65rem;"><i class="fas fa-certificate"></i> DISTRIBUTEUR AGRÉÉ</div>
+        <div style="color:var(--primary); font-weight:700; font-size:0.75rem;"><i class="fas fa-certificate"></i> DISTRIBUTEUR AGRÉÉ</div>
     </nav>
 
     <div class="nav-menu" id="mobileMenu">
         <a href="/" onclick="toggleMenu()">Accueil</a>
+        <a href="#stc30" onclick="toggleMenu()">C'est quoi le STC30 ?</a>
         <a href="#packs" onclick="toggleMenu()">Nos Packs</a>
+        <a href="#certs" onclick="toggleMenu()">Certifications</a>
         <a href="https://www.facebook.com/superlifeofficiels/" target="_blank">Facebook</a>
         <a href="https://www.instagram.com/superlifeofficiel/" target="_blank">Instagram</a>
         <a href="https://wa.me/2250152917584" onclick="toggleMenu()">Contact WhatsApp</a>
@@ -178,14 +238,17 @@
             </div>
         </section>
 
-        <section class="section-title">Qu'est-ce que le STC30 ?</section>
+        <section id="stc30" class="section-title">Qu'est-ce que le STC30 ?</section>
         <div class="info-text-block">
-            <p>Le <strong>Superlife STC30</strong> est un complément alimentaire révolutionnaire à base de cellules souches végétales. Il aide à réparer et rajeunir les cellules de votre corps.</p>
+            <p>Le <strong>Superlife STC30</strong> est un complément alimentaire révolutionnaire à base de cellules souches végétales. Il aide à réparer et rajeunir les cellules de votre corps, agissant sur les causes profondes des maladies pour une guérison naturelle.</p>
+            
             <ul class="composition-list">
-                <li><strong>Malus domestica (Pomme) :</strong> Régénération cellulaire.</li>
-                <li><strong>PhytoCellTec Solar Vitis (Raisin) :</strong> Protection contre le stress oxydatif.</li>
-                <li><strong>Kiwi doré :</strong> Stimulant antioxydant.</li>
-                <li><strong>SOD & GliSODin® :</strong> Neutralisation des radicaux libres.</li>
+                <li><strong>Malus domestica (Pomme) :</strong> Standard d'excellence pour la longévité et la régénération cellulaire.</li>
+                <li><strong>PhytoCellTec Solar Vitis (Raisin) :</strong> Protège les cellules souches de la peau du stress oxydatif.</li>
+                <li><strong>Kiwi doré :</strong> Stimule la défense antioxydante naturelle de l'organisme.</li>
+                <li><strong>SOD & GliSODin® :</strong> Les "rois des antioxydants" neutralisant les radicaux libres destructeurs.</li>
+                <li><strong>Vitamine C :</strong> Double concentration pour le collagène et l'immunité.</li>
+                <li><strong>Bilberry, Myrtille et Cassis :</strong> Synergie pour la vision, la circulation et la détox.</li>
             </ul>
         </div>
 
@@ -203,28 +266,44 @@
             <div class="pack-price">300 000 F</div>
         </div>
 
-        <section class="section-title">CERTIFICATIONS</section>
+        <section id="certs" class="section-title">CERTIFICATIONS ET APPROBATIONS</section>
         <div class="cert-card">
-            <h4><i class="fas fa-shield-virus"></i> LNSP (Côte d'Ivoire)</h4>
-            <p>Certificat N° 17040-20-LAB-2018 : Produit sûr et conforme aux standards ivoiriens.</p>
+            <h4><i class="fas fa-shield-virus"></i> Approbation LNSP (Côte d'Ivoire)</h4>
+            <p>Le certificat (N° 17040-20-LAB-2018) atteste du contrôle microbien par le Laboratoire National de la Santé Publique, garantissant un produit sûr et conforme aux standards ivoiriens.</p>
         </div>
         <div class="cert-card">
-            <h4><i class="fas fa-check-circle"></i> FDA (USA)</h4>
-            <p>Enregistrement FDA N° 10798739104 : Normes strictes de fabrication respectées.</p>
+            <h4><i class="fas fa-check-circle"></i> Enregistrement FDA (USA)</h4>
+            <p>L'enregistrement FDA N° 10798739104 confirme que Superlife respecte les normes strictes de fabrication et de traçabilité du marché américain.</p>
+        </div>
+        <div class="cert-card">
+            <h4><i class="fas fa-globe"></i> SGS, Halal, Swiss Quality</h4>
+            <p>Ces labels garantissent aux consommateurs une pureté totale, une fabrication éthique et une qualité de grade médical international.</p>
         </div>
 
         <section class="effects-container">
-            <h2 style="color:var(--primary); margin-bottom:15px; font-weight:700;">Effets observés :</h2>
-            <div class="effect-item"><i class="fas fa-heartbeat"></i> <p>Régénération et soutien des fonctions vitales.</p></div>
-            <div class="effect-item"><i class="fas fa-dna"></i> <p>Réparation profonde au niveau cellulaire.</p></div>
+            <h2 style="color:var(--primary); margin-bottom:15px; font-weight:700;">Effets de régénération observés :</h2>
+            <div class="effect-item"><i class="fas fa-shield-alt"></i> <p><strong>Action préventive globale :</strong> renforcer les fondations de votre santé.</p></div>
+            <div class="effect-item"><i class="fas fa-heartbeat"></i> <p><strong>Conditions chroniques :</strong> régénération et soutien des fonctions vitales.</p></div>
+            <div class="effect-item"><i class="fas fa-dna"></i> <p><strong>Tissus et organes :</strong> réparation profonde au niveau cellulaire.</p></div>
+            <div class="effect-item"><i class="fas fa-moon"></i> <p>Sommeil plus profond et réparateur.</p></div>
             <div class="effect-item"><i class="fas fa-sparkles"></i> <p>Peau éclatante et rajeunie.</p></div>
         </section>
 
-        <section class="section-title">TÉMOIGNAGES EN CI</section>
+        <section class="section-title">COMMENT L'UTILISER ?</section>
+        <div class="info-text-block">
+            <p><i class="fas fa-clock"></i> <strong>Moment idéal :</strong> À consommer impérativement le matin à jeun pour une absorption optimale.</p>
+            <p style="margin-top:10px;"><i class="fas fa-tongue"></i> <strong>Méthode :</strong> Verser la poudre <strong>sous la langue</strong>. Laisser fondre complètement (voie sublinguale).</p>
+            <p style="margin-top:10px;"><i class="fas fa-tint-slash"></i> <strong>Important :</strong> Ne pas boire d'eau, ne pas fumer et ne pas manger durant l'heure qui suit la prise.</p>
+        </div>
+
+        <section class="section-title">TÉMOIGNAGES EN CÔTE d'IVOIRE</section>
+        <p class="testimonial-desc">Découvrez comment le STC30 a aidé à réguler la tension et le métabolisme chez ce patient à Abidjan.</p>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/3zFTiwPWNDM" allowfullscreen></iframe>
         </div>
-        <div class="video-wrapper" style="margin-top:20px;">
+        
+        <p class="testimonial-desc" style="margin-top:20px;">Retour d'expérience sur la régénération tissulaire et le regain d'énergie après une cure complète.</p>
+        <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/dash9-uxhNc" allowfullscreen></iframe>
         </div>
 
@@ -232,6 +311,10 @@
         <details>
             <summary>Livrez-vous à l'intérieur du pays ?</summary>
             <p style="padding-top:10px; color:#555;">Oui, expédition partout en CI via Massa, UTB ou ST.</p>
+        </details>
+        <details>
+            <summary>Comment payer ?</summary>
+            <p style="padding-top:10px; color:#555;">À Abidjan, vous payez à la livraison (Espèces, Wave ou Orange Money).</p>
         </details>
 
         <div class="page-spacer"></div>
@@ -247,12 +330,12 @@
         </div>
 
         <a href="https://share.google/y29dZwWEn5aDD1HlQ" target="_blank" class="gmb-link">
-            <i class="fas fa-map-marker-alt"></i> Retrouvez-nous sur Google Maps
+            <i class="fas fa-map-marker-alt"></i> Retrouvez-nous sur Google Maps (ID: 17825388617888444853)
         </a>
 
         <div class="disclaimer">
-            <p>&copy; 2026 Superlife Officiel Côte d'Ivoire. Tous droits réservés.</p>
-            <p style="margin-top:10px; font-size:0.7rem; opacity:0.6;"><strong>Avis FDA :</strong> Ces produits ne sont pas destinés à diagnostiquer, traiter, guérir ou prévenir une maladie. Les résultats varient selon les individus.</p>
+            <p>&copy; 2026 Superlife Officiel Côte d'Ivoire. Merchant Center ID: 5735182675.</p>
+            <p style="margin-top:10px; font-size:0.7rem; opacity:0.6;"><strong>Avis FDA :</strong> Ces déclarations n'ont pas été évaluées par la Food and Drug Administration. Ce produit n'est pas destiné à diagnostiquer, traiter, guérir ou prévenir une maladie.</p>
         </div>
     </footer>
 
@@ -281,6 +364,7 @@
 
     <script>
         function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+        
         function openModal(packText = '') {
             document.getElementById('orderModal').style.display = 'flex';
             if(packText) {
@@ -303,13 +387,13 @@
             const msg = `📦 COMMANDE STC30\nClient: ${name}\nTel: ${phone}\nPack: ${pack}\nTotal: ${price} F\nLieu: ${addr}`;
 
             try {
-                // Utilisation de votre Token Bot et Chat ID Telegram fournis
+                // Utilisation de votre Bot Token et Chat ID Telegram fournis
                 await fetch(`https://api.telegram.org/bot8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg/sendMessage`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ chat_id: '8441274889', text: msg })
                 });
-                alert("Commande transmise avec succès !");
+                alert("Commande transmise !");
                 closeModal();
             } catch (e) {
                 window.open(`https://wa.me/2250152917584?text=${encodeURIComponent(msg)}`, '_blank');
