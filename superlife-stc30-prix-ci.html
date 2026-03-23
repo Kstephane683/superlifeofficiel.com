@@ -20,16 +20,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --primary: #2A6A3B; /* Vert de l'ancien code */
-            --primary-dark: #1D4D29; /* Vert foncé de l'ancien code */
-            --gold: #2A6A3B; /* Remplacé par le vert pour respecter l'ancienne charte */
+            --primary: #2A6A3B; 
+            --primary-dark: #1D4D29; 
+            --gold: #2A6A3B; 
             --dark: #1a1a1a; 
             --white: #ffffff;
             --light-gray: #f4f7f6;
             --whatsapp: #25D366;
         }
 
-        /* RESET & BASE STYLES */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             background: var(--white); 
@@ -39,7 +38,6 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* NAVIGATION */
         nav { 
             background: #fff; 
             padding: 12px 20px; 
@@ -59,7 +57,6 @@
             margin: 0 auto; 
         }
 
-        /* HERO PRODUIT */
         .product-hero { text-align: center; padding-bottom: 30px; border-bottom: 1px solid #eee; }
         .product-hero h1 { color: var(--primary); font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
         .product-img { width: 100%; max-width: 400px; margin-bottom: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -90,7 +87,6 @@
             padding-bottom: 10px;
         }
 
-        /* PACKS */
         .pack-card { 
             background: var(--white); 
             border: 2px solid #eee; 
@@ -107,7 +103,6 @@
         .pack-title { font-weight: 600; color: var(--dark); }
         .pack-price { color: var(--primary); font-weight: 900; font-size: 1.2rem; }
 
-        /* EFFETS SECONDAIRES */
         .effects-container { 
             background: #f9fbf9; 
             padding: 25px; 
@@ -118,24 +113,21 @@
         .effect-item { display: flex; align-items: flex-start; margin-bottom: 15px; font-size: 0.9rem; }
         .effect-item i { color: var(--primary); margin-right: 15px; font-size: 1.2rem; }
 
-        /* VIDÉOS */
         .video-wrapper { 
             position: relative; 
             padding-bottom: 56.25%; 
             height: 0; 
             overflow: hidden; 
             border-radius: 15px; 
-            margin-bottom: 20px; 
+            margin-bottom: 10px; 
             background: #000; 
         }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* FAQ */
         details { background: var(--light-gray); padding: 18px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #eee; }
         summary { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--dark); }
         summary::after { content: '\f107'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--primary); }
 
-        /* STICKY ACTIONS */
         .sticky-action-bar { 
             position: fixed; 
             bottom: 0; 
@@ -167,7 +159,6 @@
         .btn-whats { background-color: var(--whatsapp); color: var(--white); }
         .btn-order { background-color: var(--primary); color: var(--white); }
 
-        /* MODAL */
         #orderModal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center; padding:15px; }
         .modal-content { background:var(--white); width:100%; max-width:450px; border-radius:20px; padding:30px; color: var(--dark); }
         .modal-content h3 { color: var(--primary); font-weight: 800; margin-bottom: 20px; text-align: center; }
@@ -176,6 +167,17 @@
 
         .info-text-block { background: var(--light-gray); padding: 20px; border-radius: 15px; margin-top: 20px; font-size: 0.95rem; border-left: 4px solid var(--primary); }
         .info-text-block strong { color: var(--primary); }
+        
+        .composition-list { list-style: none; margin-top: 15px; }
+        .composition-list li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.9rem; }
+        .composition-list li::before { content: "\f067"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--primary); font-size: 0.8rem; }
+        
+        .cert-card { background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 15px; margin-bottom: 15px; }
+        .cert-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .cert-card p { font-size: 0.85rem; color: #555; }
+        
+        .testimonial-desc { font-style: italic; font-size: 0.9rem; margin-bottom: 8px; color: #444; border-left: 3px solid #ddd; padding-left: 10px; }
+        
         .page-spacer { height: 110px; }
     </style>
 </head>
@@ -200,9 +202,18 @@
         <section class="section-title">Qu'est-ce que le STC30 ?</section>
         <div class="info-text-block">
             <p>Le <strong>Superlife STC30</strong> est un complément alimentaire révolutionnaire à base de cellules souches végétales. Il aide à réparer et rajeunir les cellules de votre corps, agissant sur les causes profondes des maladies pour une guérison naturelle.</p>
+            
+            <ul class="composition-list">
+                <li><strong>Malus domestica (Pomme) :</strong> Standard d'excellence pour la longévité et la régénération cellulaire.</li>
+                <li><strong>PhytoCellTec Solar Vitis (Raisin) :</strong> Protège les cellules souches de la peau du stress oxydatif.</li>
+                <li><strong>Kiwi doré :</strong> Stimule la défense antioxydante naturelle de l'organisme.</li>
+                <li><strong>SOD & GliSODin® :</strong> Les "rois des antioxydants" neutralisant les radicaux libres destructeurs.</li>
+                <li><strong>Vitamine C :</strong> Double concentration pour le collagène et l'immunité.</li>
+                <li><strong>Bilberry, Myrtille et Cassis :</strong> Synergie pour la vision, la circulation et la détox.</li>
+            </ul>
         </div>
 
-        <section class="section-title">Nos Packs Promotionnels CI</section>
+        <section class="section-title">NOS PACKS PROMOTIONNELS CI</section>
         <div class="pack-card" onclick="openModal('1 Boîte', 45000)">
             <div><h3 class="pack-title">Pack 1 Boîte</h3><p style="font-size:0.8rem; color:gray;">Entretien</p></div>
             <div class="pack-price">45 000 F</div>
@@ -211,28 +222,48 @@
             <div><h3 class="pack-title">Pack Traitement (2 Boîtes)</h3><p style="font-size:0.8rem; color:gray;">Régénération</p></div>
             <div class="pack-price">80 000 F</div>
         </div>
-        <div class="pack-card" onclick="openModal('4 Boîtes', 150000)">
-            <div><h3 class="pack-title">Pack Guérison (4 Boîtes)</h3><p style="font-size:0.8rem; color:gray;">Cure complète</p></div>
-            <div class="pack-price">150 000 F</div>
+        <div class="pack-card" onclick="openModal('8 Boîtes', 300000)">
+            <div><h3 class="pack-title">Pack Guérison (8 Boîtes)</h3><p style="font-size:0.8rem; color:gray;">Cure complète</p></div>
+            <div class="pack-price">300 000 F</div>
+        </div>
+
+        <section class="section-title">CERTIFICATIONS ET APPROBATIONS</section>
+        <div class="cert-card">
+            <h4><i class="fas fa-shield-virus"></i> Approbation LNSP (Côte d'Ivoire)</h4>
+            <p>Le certificat (N° 17040-20-LAB-2018) atteste du contrôle microbien par le Laboratoire National de la Santé Publique, garantissant un produit sûr et conforme aux standards ivoiriens.</p>
+        </div>
+        <div class="cert-card">
+            <h4><i class="fas fa-check-circle"></i> Enregistrement FDA (USA)</h4>
+            <p>L'enregistrement FDA N° 10798739104 confirme que Superlife respecte les normes strictes de fabrication et de traçabilité du marché américain.</p>
+        </div>
+        <div class="cert-card">
+            <h4><i class="fas fa-globe"></i> SGS, Halal, Swiss Quality</h4>
+            <p>Ces labels garantissent aux consommateurs une pureté totale, une fabrication éthique et une qualité de grade médical international.</p>
         </div>
 
         <section class="effects-container">
             <h2 style="color:var(--primary); margin-bottom:15px; font-weight:700;">Effets de régénération observés :</h2>
-            <div class="effect-item"><i class="fas fa-plus-circle"></i> <p>Augmentation de l'appétit (Métabolisme activé)</p></div>
-            <div class="effect-item"><i class="fas fa-moon"></i> <p>Sommeil plus profond et réparateur</p></div>
-            <div class="effect-item"><i class="fas fa-sparkles"></i> <p>Peau plus éclatante et rajeunie</p></div>
-            <div class="effect-item"><i class="fas fa-shield-alt"></i> <p>Élimination des problèmes cutanés</p></div>
+            <div class="effect-item"><i class="fas fa-shield-alt"></i> <p><strong>Action préventive globale :</strong> renforcer les fondations de votre santé.</p></div>
+            <div class="effect-item"><i class="fas fa-heartbeat"></i> <p><strong>Conditions chroniques :</strong> régénération et soutien des fonctions vitales.</p></div>
+            <div class="effect-item"><i class="fas fa-dna"></i> <p><strong>Tissus et organes :</strong> réparation profonde au niveau cellulaire.</p></div>
+            <div class="effect-item"><i class="fas fa-moon"></i> <p>Sommeil plus profond et réparateur.</p></div>
+            <div class="effect-item"><i class="fas fa-sparkles"></i> <p>Peau éclatante et rajeunie.</p></div>
         </section>
 
-        <section class="section-title">Comment l'utiliser ?</section>
+        <section class="section-title">COMMENT L'UTILISER ?</section>
         <div class="info-text-block">
-            <p>Consommez <strong>un sachet par jour</strong> le matin à jeun. Versez le contenu <strong>sous la langue</strong> et laissez fondre complètement sans avaler immédiatement.</p>
+            <p><i class="fas fa-clock"></i> <strong>Moment idéal :</strong> À consommer impérativement le matin à jeun pour une absorption optimale.</p>
+            <p style="margin-top:10px;"><i class="fas fa-tongue"></i> <strong>Méthode :</strong> Verser la poudre <strong>sous la langue</strong>. Laisser fondre complètement (voie sublinguale).</p>
+            <p style="margin-top:10px;"><i class="fas fa-tint-slash"></i> <strong>Important :</strong> Ne pas boire d'eau, ne pas fumer et ne pas manger durant l'heure qui suit la prise.</p>
         </div>
 
-        <section class="section-title">Témoignages en Côte d'Ivoire</section>
+        <section class="section-title">TÉMOIGNAGES EN CÔTE D'IVOIRE</section>
+        <p class="testimonial-desc">Découvrez comment le STC30 a aidé à réguler la tension et le métabolisme chez ce patient à Abidjan.</p>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/3zFTiwPWNDM" allowfullscreen></iframe>
         </div>
+        
+        <p class="testimonial-desc" style="margin-top:20px;">Retour d'expérience sur la régénération tissulaire et le regain d'énergie après une cure complète.</p>
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/dash9-uxhNc" allowfullscreen></iframe>
         </div>
@@ -262,7 +293,7 @@
                 <select id="m-pack">
                     <option value="45000">1 Boîte - 45 000 F</option>
                     <option value="80000" selected>2 Boîtes - 80 000 F</option>
-                    <option value="150000">4 Boîtes - 150 000 F</option>
+                    <option value="300000">8 Boîtes - 300 000 F</option>
                 </select>
                 <input type="text" id="m-name" placeholder="Nom Complet">
                 <input type="tel" id="m-phone" placeholder="Téléphone">
@@ -290,9 +321,10 @@
             const phone = document.getElementById('m-phone').value;
             const addr = document.getElementById('m-addr').value;
             const pack = document.getElementById('m-pack').selectedOptions[0].text;
+            const price = document.getElementById('m-pack').value;
             if(!name || !phone || !addr) return alert("Remplissez tout.");
 
-            const msg = `📦 COMMANDE STC30\nClient: ${name}\nTel: ${phone}\nPack: ${pack}\nLieu: ${addr}`;
+            const msg = `📦 COMMANDE STC30\nClient: ${name}\nTel: ${phone}\nPack: ${pack}\nTotal: ${price} F\nLieu: ${addr}`;
 
             try {
                 await fetch(`https://api.telegram.org/bot8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg/sendMessage`, {
