@@ -2,8 +2,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Superlife Officiel CI | Boutique Santé & Cellules Souches</title>
+    
     <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
     <meta name="description" content="Distributeur Officiel Superlife en Côte d'Ivoire. Retrouvez le STC30, SCC+, SNC et SIC aux prix officiels. Livraison rapide à Abidjan et partout en CI.">
     <link rel="canonical" href="https://superlifeofficiel.com/">
@@ -16,91 +17,157 @@
       gtag('config', 'G-VY50YCRQNS');
     </script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --whatsapp: #25D366; --telegram: #0088cc; --dark: #1a1a1a; --gold: #c9a96e; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #fff; color: var(--dark); line-height: 1.6; }
-        
-        /* NAVIGATION MISE À JOUR */
-        nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        
-        /* Bouton Menu Mobile */
-        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
+        :root { 
+            --primary: #2A6A3B; 
+            --primary-dark: #1D4D29; 
+            --whatsapp: #25D366; 
+            --telegram: #0088cc; 
+            --dark: #1a1a1a; 
+            --white: #ffffff;
+            --light: #f4f7f6;
+        }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .hero { text-align: center; padding: 40px 20px; background: #f9fbf9; border-radius: 20px; margin-bottom: 30px; border: 1px solid #eef2ee; }
-        h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 10px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 80px; }
         
+        /* NAVIGATION */
+        nav { 
+            background: var(--white); 
+            padding: 12px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .logo-img { height: 45px; width: auto; }
+        .menu-btn { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+
+        /* MENU LATÉRAL MOBILE */
+        .side-menu {
+            position: fixed; top: 0; left: -100%; width: 80%; height: 100vh;
+            background: var(--white); z-index: 2000; transition: 0.4s;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1); padding: 30px 20px;
+        }
+        .side-menu.active { left: 0; }
+        .side-menu a { display: block; padding: 15px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; }
+        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1999; }
+        .overlay.active { display: block; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        /* HERO SECTION */
+        .hero { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: linear-gradient(135deg, #f0f7f2 0%, #ffffff 100%);
+            border-radius: 25px; 
+            margin-bottom: 30px; 
+            border: 1px solid #eef2ee; 
+        }
+        .hero h1 { color: var(--primary); font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+        .hero p { font-size: 0.95rem; color: #555; }
+
         /* GRILLE PRODUITS */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .product-card { border: 1px solid #eee; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: 0.4s; background: white; }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .img-box { height: 280px; padding: 20px; display: flex; align-items: center; justify-content: center; background: #fff; }
-        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s ease; }
-        .info-box { padding: 20px; text-align: center; flex-grow: 1; }
-        .info-box h3 { font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 5px; }
-        .price-footer { padding: 20px; background: #fafafa; border-top: 1px solid #eee; }
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .btn-order { background: var(--primary); color: white; border: none; padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; font-size: 0.95rem; }
-        .btn-details { background: #fff; color: var(--primary); border: 2px solid var(--primary); padding: 14px; border-radius: 12px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; transition: 0.3s; font-size: 0.95rem; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
+        .product-card { 
+            border: 1px solid #eee; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            background: white;
+            transition: 0.3s;
+        }
+        .img-box { height: 180px; padding: 15px; display: flex; align-items: center; justify-content: center; background: #fff; }
+        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
         
-        /* MODAL COMMANDE */
-        #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
-        .modal-card { background: #fff; width: 95%; max-width: 450px; border-radius: 25px; padding: 30px; position: relative; }
-        input, select, textarea { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem; outline: none; }
-        .btn-submit { width: 100%; padding: 16px; border-radius: 12px; border: none; color: white; font-weight: bold; cursor: pointer; margin-bottom: 10px; font-size: 1rem; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        
-        footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; margin-top: 60px; }
-        .footer-links a { color: white; margin: 0 10px; text-decoration: none; opacity: 0.8; font-size: 0.9rem; }
+        .info-box { padding: 12px; text-align: center; }
+        .info-box h3 { font-size: 0.95rem; color: var(--primary-dark); font-weight: 700; }
+        .price-tag { color: var(--primary); font-weight: 800; font-size: 1.1rem; margin-top: 5px; display: block; }
 
-        /* RESPONSIVE MOBILE - MENU BURGER */
-        @media (max-width: 768px) {
-            .menu-btn { display: block; }
-            .nav-links { 
-                display: none; 
-                flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background: #fff; 
-                padding: 20px; 
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                gap: 15px;
-                text-align: center;
-            }
-            .nav-links.active { display: flex; }
-            h1 { font-size: 1.7rem; }
-            .product-grid { gap: 20px; }
+        .card-actions { padding: 10px; display: grid; grid-template-columns: 1fr; gap: 8px; }
+        .btn-buy-now { 
+            background: var(--primary); 
+            color: white; 
+            border: none; 
+            padding: 12px; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        /* BARRE D'ACTION FIXE MOBILE */
+        .mobile-action-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--white); display: flex; padding: 12px;
+            gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.08); z-index: 1500;
+        }
+        .action-item {
+            flex: 1; padding: 14px; border-radius: 12px;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem;
+            text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .ai-wa { background: var(--whatsapp); color: white; }
+        .ai-tg { background: var(--telegram); color: white; }
+
+        /* MODAL */
+        #order-modal { 
+            display: none; position: fixed; inset: 0; 
+            background: rgba(0,0,0,0.8); z-index: 3000; 
+            align-items: center; justify-content: center; padding: 15px;
+        }
+        .modal-card { 
+            background: #fff; width: 100%; max-width: 400px; 
+            border-radius: 25px; padding: 25px; 
+        }
+        .modal-card input, .modal-card select, .modal-card textarea { 
+            width: 100%; padding: 14px; margin-bottom: 12px; 
+            border: 1px solid #ddd; border-radius: 12px; font-size: 16px;
+            background: #f9f9f9;
+        }
+
+        footer { background: var(--dark); color: white; padding: 40px 20px 100px; text-align: center; }
+        .footer-links a { color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.8rem; }
+
+        @media (min-width: 768px) {
+            .product-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+            .hero h1 { font-size: 2.5rem; }
+            .img-box { height: 250px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="55" alt="Superlife CI"></a>
-    
-    <div class="menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Boutique</a></li>
-        <li><a href="conseils-sante-cellulaire-superlife.html">Conseils Santé</a></li>
-        <li><a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Partenaire</a></li>
-        <li><a href="contact-superlife-cote-divoire.html">Contact</a></li>
-    </ul>
+    <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife CI"></a>
+    <a href="https://wa.me/2250152917584" style="color:var(--primary); font-size: 1.3rem;"><i class="fas fa-phone-alt"></i></a>
 </nav>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+    <h3 style="color:var(--primary); margin-bottom: 20px;">Menu Superlife</h3>
+    <a href="index.html">Boutique</a>
+    <a href="conseils-sante-cellulaire-superlife.html">Conseils Santé</a>
+    <a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Partenaire</a>
+    <a href="contact-superlife-cote-divoire.html">Contact & Aide</a>
+</div>
 
 <div class="container">
     <div class="hero">
-        <h1>Boutique Officielle Superlife CI</h1>
-        <p>Améliorez votre santé avec la thérapie par cellules souches. <br>Produits authentiques, livraison express sécurisée.</p>
+        <h1>Votre Santé Cellulaire, Notre Priorité.</h1>
+        <p>Distributeur Officiel en Côte d'Ivoire. Produits 100% Bio & Authentiques.</p>
     </div>
+    
     <div class="product-grid" id="main-shop"></div>
 </div>
 
@@ -108,48 +175,47 @@
     <div class="modal-card">
         <h3 id="m-title" style="margin-bottom:15px; color:var(--primary); text-align:center;"></h3>
         <select id="m-pack" onchange="updatePrice()"></select>
-        <div style="text-align:center; margin-bottom:20px; font-size:1.8rem; font-weight:800; color:var(--primary)"><span id="m-price">0</span> FCFA</div>
+        <div style="text-align:center; margin-bottom:20px; font-size:1.5rem; font-weight:800; color:var(--primary)"><span id="m-price">0</span> FCFA</div>
         <input type="text" id="m-name" placeholder="Nom complet">
-        <input type="tel" id="m-phone" placeholder="Numéro WhatsApp">
-        <textarea id="m-address" placeholder="Ville et Quartier de livraison" rows="2"></textarea>
-        <button onclick="sendOrder('direct')" class="btn-submit" style="background:var(--telegram)"><i class="fab fa-telegram-plane"></i> VALIDER MA COMMANDE</button>
-        <button onclick="sendOrder('whatsapp')" class="btn-submit" style="background:var(--whatsapp)"><i class="fab fa-whatsapp"></i> COMMANDER SUR WHATSAPP</button>
-        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer; margin-top:10px;">Fermer</button>
+        <input type="tel" id="m-phone" placeholder="Numéro de téléphone">
+        <textarea id="m-address" placeholder="Ville / Quartier de livraison" rows="2"></textarea>
+        <button onclick="sendOrder('direct')" class="btn-buy-now" style="width:100%; background:var(--primary); margin-bottom:10px;">VALIDER LA COMMANDE</button>
+        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer;">Annuler</button>
     </div>
+</div>
+
+<div class="mobile-action-bar">
+    <a href="https://wa.me/2250152917584" class="action-item ai-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="tel:2250152917584" class="action-item ai-tg" style="background:var(--primary-dark)"><i class="fas fa-phone-alt"></i> Appeler</a>
 </div>
 
 <footer>
     <div class="footer-links">
         <a href="index.html">Accueil</a>
-        <a href="devenir-distributeur-superlife-cote-divoire.html">Distributeur</a>
-        <a href="contact-superlife-cote-divoire.html">Aide</a>
+        <a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Distributeur</a>
+        <a href="contact-superlife-cote-divoire.html">Contact</a>
     </div>
-    <div style="margin: 25px 0;">
-        <a href="https://www.facebook.com/superlifeofficiels/" target="_blank" style="color:white; font-size:1.5rem; margin:0 10px"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/superlifeofficiel/" target="_blank" style="color:white; font-size:1.5rem; margin:0 10px"><i class="fab fa-instagram"></i></a>
-    </div>
-    <p style="font-size:0.75rem; opacity:0.6">© 2026 Superlife Officiel CI - Distributeur Agréé</p>
+    <p style="font-size:0.7rem; opacity:0.5; margin-top:20px;">© 2026 Superlife Officiel CI - GMB: ID17825388617888444853</p>
 </footer>
 
 <script>
-    // FONCTION POUR OUVRIR/FERMER LE MENU MOBILE
     function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        nav.classList.toggle('active');
+        document.getElementById('sideMenu').classList.toggle('active');
+        document.getElementById('overlay').classList.toggle('active');
     }
 
     const CONFIG = {
         WA: '2250152917584',
-        TG_TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
+        TG_TOKEN: '8760593501:AAFky23ITJHGGOi96V-dbGEFHL_0_4vPg',
         TG_CHAT_ID: '8441274889'
     };
 
     const PRODUCTS = [
-        { id: 'stc30', name: 'Superlife STC30', link: 'superlife-stc30-prix-ci.html', img: 'https://i.ibb.co/nNCc3NRP/IMG-2262.png', packs: [{n: '1 Boîte (15 sachets)', p: 45000}, {n: '2 Boîtes', p: 80000}] },
-        { id: 'scc', name: 'Superlife SCC+', link: 'superlife-scc-plus-colon.html', img: 'https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', packs: [{n: '1 Boîte (15 sachets)', p: 55000}, {n: '2 Boîtes', p: 100000}] },
-        { id: 'snc', name: 'Superlife SNC', link: 'superlife-snc-cerveau-vision.html', img: 'https://i.ibb.co/Xk6sgfCK/IMG-2265.png', packs: [{n: '1 Boîte (15 sachets)', p: 50000}, {n: '2 Boîtes', p: 90000}] },
-        { id: 'sic', name: 'Superlife SIC', link: 'superlife-sic-immunite.html', img: 'https://i.ibb.co/rGYnfVwM/IMG-2264.png', packs: [{n: '1 Boîte (15 sachets)', p: 50000}, {n: '2 Boîtes', p: 90000}] },
-        { id: 'coffee', name: 'Super Root Coffee', link: 'super-root-coffee-puissance.html', img: 'https://i.ibb.co/6R1mLbyh/IMG-2263.png', packs: [{n: '1 Boîte (15 sachets)', p: 25000}, {n: '2 Boîtes', p: 45000}] }
+        { id: 'stc30', name: 'Superlife STC30', img: 'https://i.ibb.co/nNCc3NRP/IMG-2262.png', packs: [{n: '1 Boîte', p: 45000}, {n: '2 Boîtes', p: 80000}] },
+        { id: 'scc', name: 'Superlife SCC+', img: 'https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', packs: [{n: '1 Boîte', p: 55000}, {n: '2 Boîtes', p: 100000}] },
+        { id: 'snc', name: 'Superlife SNC', img: 'https://i.ibb.co/Xk6sgfCK/IMG-2265.png', packs: [{n: '1 Boîte', p: 50000}, {n: '2 Boîtes', p: 90000}] },
+        { id: 'sic', name: 'Superlife SIC', img: 'https://i.ibb.co/rGYnfVwM/IMG-2264.png', packs: [{n: '1 Boîte', p: 50000}, {n: '2 Boîtes', p: 90000}] },
+        { id: 'coffee', name: 'Super Root Coffee', img: 'https://i.ibb.co/6R1mLbyh/IMG-2263.png', packs: [{n: '1 Boîte', p: 25000}, {n: '2 Boîtes', p: 45000}] }
     ];
 
     function init() {
@@ -159,17 +225,10 @@
                 <div class="img-box"><img src="${p.img}" alt="${p.name}"></div>
                 <div class="info-box">
                     <h3>${p.name}</h3>
-                    <p style="font-size:0.85rem; color:#777">Régénération Cellulaire</p>
+                    <span class="price-tag">${p.packs[0].p.toLocaleString()} F</span>
                 </div>
-                <div class="price-footer">
-                    <div style="display:flex; justify-content:space-between; align-items:center; font-weight:800;">
-                        <span style="font-size:0.8rem; color:gray; font-weight:400">Dès</span>
-                        <span style="color:var(--primary); font-size:1.15rem">${p.packs[0].p.toLocaleString()} FCFA</span>
-                    </div>
-                    <div class="btn-group">
-                        <a href="${p.link}" class="btn-details" onclick="trackClick('view_item', '${p.name}')">Détails</a>
-                        <button class="btn-order" onclick="openOrder('${p.id}')">Commander</button>
-                    </div>
+                <div class="card-actions">
+                    <button class="btn-buy-now" onclick="openOrder('${p.id}')">Commander</button>
                 </div>
             </div>
         `).join('');
@@ -191,10 +250,6 @@
 
     function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
 
-    function trackClick(evt, label) {
-        gtag('event', evt, { 'item_name': label });
-    }
-
     async function sendOrder(type) {
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
@@ -202,34 +257,24 @@
         const packText = document.getElementById('m-pack').selectedOptions[0].text;
         const priceVal = document.getElementById('m-pack').value;
 
-        if(!name || !phone || !addr) return alert("Veuillez remplir vos informations de livraison.");
+        if(!name || !phone || !addr) return alert("Veuillez remplir vos informations.");
 
-        const msg = `🛒 *NOUVELLE COMMANDE*\n--------------------------\n*Produit:* ${activeProduct.name}\n*Option:* ${packText}\n*Prix:* ${Number(priceVal).toLocaleString()} FCFA\n\n*Client:* ${name}\n*Tel:* ${phone}\n*Adresse:* ${addr}`;
+        const msg = `📦 *BOUTIQUE INDEX*\n--------------------------\n*Produit:* ${activeProduct.name}\n*Option:* ${packText}\n*Prix:* ${Number(priceVal).toLocaleString()} FCFA\n\n*Client:* ${name}\n*Tel:* ${phone}\n*Adresse:* ${addr}`;
 
-        if(type === 'direct') {
-            try {
-                await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
-                });
-                gtag('event', 'purchase', { "value": parseFloat(priceVal), "currency": "XOF", "items": [{ "item_name": activeProduct.name }] });
-                alert("Commande reçue ! Nous vous contacterons sous peu pour la livraison.");
-                closeModal();
-            } catch (e) { alert("Erreur de connexion. Essayez via WhatsApp."); }
-        } else {
-            gtag('event', 'generate_lead', { 'item_name': activeProduct.name });
+        try {
+            await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
+            });
+            gtag('event', 'purchase', { "value": parseFloat(priceVal), "currency": "XOF", "items": [{ "item_name": activeProduct.name }] });
+            alert("Votre commande a été transmise ! Nous vous rappelons pour confirmer la livraison.");
+            closeModal();
+        } catch (e) {
             window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     }
     init();
-</script>
-
-<script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
-<script>
-  merchantWidgetScript.addEventListener('load', function () {
-    merchantwidget.start({ merchant_id: 5735182675, position: 'BOTTOM_RIGHT', region: 'CI' });
-  });
 </script>
 </body>
 </html>
