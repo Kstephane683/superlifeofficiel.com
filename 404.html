@@ -2,162 +2,157 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Introuvable | Superlife Officiel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Page Introuvable | Superlife Officiel CI</title>
     
     <meta name="robots" content="noindex, follow">
     
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --gold: #c9a96e;
-            --dark: #08080c;
+            --primary: #2A6A3B;
+            --primary-dark: #1D4D29;
+            --dark: #1a1a1a;
             --white: #ffffff;
-            --gray: #a8a8a8;
+            --light: #f4f7f6;
+            --whatsapp: #25D366;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
         body {
-            background-color: var(--dark);
-            color: var(--white);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--dark);
             height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            overflow: hidden;
+            padding: 20px;
         }
 
-        .container {
-            padding: 30px;
-            max-width: 600px;
-            z-index: 2;
+        /* Correction Logo : Utilisation du chemin absolu /logo.png */
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
         }
-
+        
         .logo {
-            height: 85px; /* Optimisé pour ton logo Premium */
+            height: 50px;
             width: auto;
-            margin-bottom: 40px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        .content-404 {
+            margin-top: -50px;
         }
 
         h1 {
-            font-size: 9rem;
-            font-weight: 900;
-            color: var(--gold);
-            line-height: 0.8;
-            margin-bottom: 20px;
-            letter-spacing: -5px;
-            opacity: 0.9;
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-            color: var(--white);
+            letter-spacing: 2px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
         }
 
         p {
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 45px;
+            font-size: 1rem;
+            color: #666;
+            max-width: 400px;
+            margin: 0 auto 30px;
             line-height: 1.6;
         }
 
-        .btn-group {
+        /* Mobile First Sticky Bar */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            padding: 15px;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            gap: 10px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
         }
 
         .btn-home {
-            display: inline-block;
-            padding: 16px 45px;
-            background-color: var(--gold);
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            width: 300px;
-            letter-spacing: 1px;
+            background-color: var(--primary);
+            color: var(--white);
         }
 
-        .btn-whatsapp {
-            display: inline-block;
-            padding: 16px 45px;
-            background-color: transparent;
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 700;
-            border: 2px solid var(--gold);
-            border-radius: 50px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            width: 300px;
-            letter-spacing: 1px;
+        .btn-wa {
+            background-color: var(--whatsapp);
+            color: var(--white);
         }
 
-        .btn-home:hover {
-            transform: translateY(-3px);
-            background-color: var(--white);
-            box-shadow: 0 10px 20px rgba(201, 169, 110, 0.2);
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-3px);
-            background-color: rgba(201, 169, 110, 0.1);
-            box-shadow: 0 10px 20px rgba(201, 169, 110, 0.1);
-        }
-
-        /* Décoration d'arrière-plan rappelant la nature/santé */
-        .bg-icon {
+        /* Icône de fond discrète */
+        .bg-leaf {
             position: absolute;
-            z-index: 1;
-            font-size: 30rem;
-            opacity: 0.02;
-            color: var(--gold);
-            bottom: -150px;
-            left: -100px;
-            transform: rotate(-15deg);
+            font-size: 20rem;
+            color: var(--primary);
+            opacity: 0.03;
+            bottom: 10%;
+            right: -50px;
+            transform: rotate(-20deg);
+            z-index: -1;
         }
     </style>
 </head>
 <body>
 
-    <i class="fas fa-leaf bg-icon"></i>
+    <i class="fas fa-leaf bg-leaf"></i>
 
-    <div class="container">
-        <a href="/">
-            <img src="logo.png" alt="Superlife Officiel Logo" class="logo">
+    <div class="logo-container">
+        <a href="/index.html">
+            <img src="/logo.png" alt="Superlife Officiel" class="logo">
         </a>
-        
+    </div>
+
+    <div class="content-404">
         <h1>404</h1>
-        <h2>Destination introuvable</h2>
+        <h2>Lien expiré ou introuvable</h2>
         
         <p>
-            Nous avons apporté des améliorations à notre site internet pour une expérience plus fluide. Le lien que vous avez suivi a été modifié. 
-            Nous avons des produits 100 % bio adaptés à tout type de problème.
+            Nous avons optimisé notre plateforme. La page que vous cherchez a été déplacée pour mieux vous servir avec nos solutions 100% bio.
         </p>
-        
-        <div class="btn-group">
-            <a href="/" class="btn-home">
-                <i class="fas fa-th-large"></i> Voir nos produits
-            </a>
-            <a href="https://wa.me/2250152917584" class="btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> Conseiller WhatsApp
-            </a>
-        </div>
+    </div>
+
+    <div class="sticky-bar">
+        <a href="https://wa.me/2250152917584" class="btn-action btn-wa">
+            <i class="fab fa-whatsapp"></i> Aide
+        </a>
+        <a href="/index.html" class="btn-action btn-home">
+            <i class="fas fa-home"></i> Accueil
+        </a>
     </div>
 
 </body>
