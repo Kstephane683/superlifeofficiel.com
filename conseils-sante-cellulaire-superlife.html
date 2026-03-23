@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Conseils Santé Cellulaire Superlife | Blog Officiel Côte d'Ivoire</title>
     
     <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
-    <meta name="description" content="Explorez nos conseils sur la santé cellulaire, la régénération par les cellules souches et les produits Superlife. Plus de 50 articles pour votre bien-être en Côte d'Ivoire.">
+    <meta name="description" content="Découvrez comment le STC30 et les cellules souches végétales traitent le diabète insipide et d'autres pathologies. Guide expert Superlife en Côte d'Ivoire.">
     <link rel="canonical" href="https://superlifeofficiel.com/conseils-sante-cellulaire-superlife.html">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY50YCRQNS"></script>
@@ -18,68 +18,67 @@
     </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --primary: #2A6A3B; --accent: #c62828; --bg: #f8fbf9; --white: #ffffff; --text: #2d3436; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        :root { 
+            --primary: #2A6A3B; 
+            --primary-dark: #1D4D29; 
+            --accent: #c62828; 
+            --bg: #f4f7f5; 
+            --white: #ffffff; 
+            --text: #1a1a1a; 
+            --whatsapp: #25D366;
+        }
 
-        /* HEADER & NAVIGATION */
-        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
-        .logo img { height: 45px; }
-        
-        /* Menu Desktop */
-        .nav-links { display: flex; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; margin-left: 25px; font-size: 0.9rem; transition: 0.3s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 80px; }
+
+        /* NAVIGATION */
+        nav { background: var(--white); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 40px; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
+        .menu-btn { display: none; font-size: 1.4rem; color: var(--primary); cursor: pointer; }
 
-        /* Bouton Menu Mobile */
-        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
-
-        .hero-blog { background: linear-gradient(rgba(42, 106, 59, 0.9), rgba(42, 106, 59, 0.9)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: white; padding: 60px 5%; text-align: center; }
-        .hero-blog h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        /* HERO */
+        .hero-blog { background: linear-gradient(rgba(29, 77, 41, 0.85), rgba(29, 77, 41, 0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: white; padding: 50px 5%; text-align: center; }
+        .hero-blog h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+        .hero-blog p { font-size: 0.9rem; opacity: 0.9; }
 
         /* FILTRES */
-        .filter-container { display: flex; justify-content: center; gap: 10px; margin: 30px 0; flex-wrap: wrap; padding: 0 5%; }
-        .filter-btn { padding: 8px 20px; border-radius: 30px; border: 1px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; font-weight: 600; transition: 0.3s; }
+        .filter-container { display: flex; justify-content: center; gap: 8px; margin: 25px 0; flex-wrap: wrap; padding: 0 5%; }
+        .filter-btn { padding: 6px 15px; border-radius: 20px; border: 1.5px solid var(--primary); background: white; color: var(--primary); cursor: pointer; font-weight: 600; font-size: 0.75rem; transition: 0.3s; }
         .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; }
 
         /* GRID ARTICLES */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 5% 60px 5%; }
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        .article-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.4s; display: flex; flex-direction: column; border: 1px solid #edf2ef; }
-        .article-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .card-img { height: 200px; background: #e8f0eb; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 3rem; position: relative; }
-        .card-tag { position: absolute; top: 15px; left: 15px; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
-        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-body h2 { font-size: 1.3rem; margin-bottom: 12px; color: #1e272e; line-height: 1.3; }
-        .card-body p { font-size: 0.9rem; color: #636e72; margin-bottom: 20px; flex-grow: 1; }
-        .btn-read { color: var(--primary); text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px 40px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .article-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column; border: 1px solid #eef2ef; }
+        .article-card:hover { transform: translateY(-5px); }
+        .card-img { height: 180px; background: #edf3ef; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; position: relative; }
+        .card-tag { position: absolute; top: 12px; left: 12px; background: var(--accent); color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.65rem; font-weight: 800; }
+        .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-body h2 { font-size: 1.1rem; margin-bottom: 10px; color: #1e272e; font-weight: 700; line-height: 1.3; }
+        .card-body p { font-size: 0.85rem; color: #555; margin-bottom: 15px; flex-grow: 1; }
+        .btn-read { color: var(--primary); text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
 
-        /* FOOTER & CTA */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); z-index: 1000; text-decoration: none; }
-        footer { background: #1d4d29; color: white; padding: 50px 5% 20px 5%; text-align: center; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; opacity: 0.7; }
+        /* STICKY ACTIONS BAR (Mobile First) */
+        .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--white); display: flex; padding: 12px; gap: 10px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 2000; border-radius: 20px 20px 0 0; }
+        .action-btn { flex: 1; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; color: white; border: none; }
+        .btn-wa { background: var(--whatsapp); }
+        .btn-tg { background: #0088cc; }
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) { 
-            .hero-blog h1 { font-size: 1.8rem; } 
+        footer { background: var(--primary-dark); color: white; padding: 40px 5% 100px; text-align: center; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: left; margin-bottom: 30px; }
+        .footer-bottom { font-size: 0.75rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+
+        @media (max-width: 768px) {
             .menu-btn { display: block; }
-            .nav-links { 
-                display: none; 
-                flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background: var(--white); 
-                padding: 20px; 
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                text-align: center;
-                gap: 15px;
-            }
-            .nav-links a { margin-left: 0; font-size: 1rem; }
+            .nav-links { display: none; width: 100%; position: absolute; top: 100%; left: 0; background: white; flex-direction: column; padding: 20px; text-align: center; box-shadow: 0 10px 10px rgba(0,0,0,0.05); }
             .nav-links.active { display: flex; }
+            .blog-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -87,31 +86,26 @@
 
 <nav>
     <a href="index.html" class="logo">
-        <img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" alt="Superlife CI Logo">
+        <img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" alt="Superlife Logo">
     </a>
-    
-    <div class="menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
-
+    <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     <div class="nav-links" id="navLinks">
         <a href="index.html">Boutique</a>
         <a href="superlife-stc30-prix-ci.html">STC30</a>
-        <a href="devenir-distributeur-superlife-cote-divoire.html">Opportunité</a>
         <a href="contact-superlife-cote-divoire.html">Contact</a>
     </div>
 </nav>
 
 <header class="hero-blog">
-    <h1>Conseils & Actualités Santé Cellulaire</h1>
-    <p>Le guide officiel des utilisateurs Superlife en Côte d'Ivoire</p>
+    <h1>Santé Cellulaire & Régénération</h1>
+    <p>Le guide expert pour votre bien-être avec Superlife</p>
 </header>
 
 <div class="filter-container">
     <button class="filter-btn active" onclick="filterArticles('Tous')">Tous</button>
     <button class="filter-btn" onclick="filterArticles('STC30')">STC30</button>
-    <button class="filter-btn" onclick="filterArticles('SCC+')">Détox & Côlon</button>
-    <button class="filter-btn" onclick="filterArticles('SNC')">Cerveau & Vision</button>
+    <button class="filter-btn" onclick="filterArticles('SCC+')">Détox</button>
+    <button class="filter-btn" onclick="filterArticles('SNC')">Cerveau</button>
     <button class="filter-btn" onclick="filterArticles('SIC')">Immunité</button>
 </div>
 
@@ -119,41 +113,38 @@
     <div class="blog-grid" id="article-grid"></div>
 </div>
 
-<a href="https://wa.me/2250152917584" class="wa-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+<div class="sticky-bar">
+    <a href="https://wa.me/2250152917584" class="action-btn btn-wa"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+    <a href="https://t.me/+8760593501" class="action-btn btn-tg"><i class="fab fa-telegram"></i> TELEGRAM</a>
+</div>
 
 <footer>
     <div class="footer-grid">
         <div>
-            <h3>Superlife Officiel CI</h3>
-            <p>Leader en phytothérapie cellulaire et régénération par les cellules souches végétales.</p>
+            <h4 style="margin-bottom:10px;">Superlife Officiel CI</h4>
+            <p style="font-size:0.8rem; opacity:0.8;">Leader de la santé cellulaire en Côte d'Ivoire. GMB ID: 17825388617888444853</p>
         </div>
         <div>
-            <h3>Liens Utiles</h3>
-            <p><a href="index.html" style="color:white; text-decoration:none;">Boutique Officielle</a></p>
-            <p><a href="contact-superlife-cote-divoire.html" style="color:white; text-decoration:none;">Assistance 24h/7</a></p>
-        </div>
-        <div>
-            <h3>Identifiants</h3>
-            <p>GMB: ID17825388617888444853</p>
-            <p>Merchant: ID5735182675</p>
+            <h4 style="margin-bottom:10px;">Réseaux Sociaux</h4>
+            <div style="display:flex; gap:15px; font-size:1.2rem;">
+                <a href="https://www.facebook.com/superlifeofficiels/" style="color:white;"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/superlifeofficiel/" style="color:white;"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; 2026 Conseils Santé Cellulaire Superlife - Abidjan, Côte d'Ivoire.
+        &copy; 2026 Superlife Officiel - Propulsé par ePerformance.pro
     </div>
 </footer>
 
 <script>
-    // FONCTION MENU MOBILE
     function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        nav.classList.toggle('active');
+        document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // Base de données des 50 articles stratégiques
+    // Base de données mise à jour avec l'article Diabète Insipide (Dossier /blog/)
     const articles = [
+        { t: "Diabète Insipide : Comment le STC30 aide à réguler l'équilibre hydrique", c: "STC30", s: "diabete-insipide-efficacite-stc30" },
         { t: "STC30 et Diabète : Comment réguler son taux de sucre", c: "STC30", s: "stc30-diabete-regule-sucre" },
         { t: "Pourquoi nettoyer son côlon avec le SCC+ ?", c: "SCC+", s: "bienfaits-nettoyage-colon-scc" },
         { t: "Améliorer sa vue naturellement avec le SNC", c: "SNC", s: "ameliorer-vision-naturellement-snc" },
@@ -209,7 +200,6 @@
     function renderArticles(filter = 'Tous') {
         const grid = document.getElementById('article-grid');
         grid.innerHTML = '';
-        
         const filtered = filter === 'Tous' ? articles : articles.filter(a => a.c === filter);
 
         filtered.forEach(art => {
@@ -222,8 +212,8 @@
                 </div>
                 <div class="card-body">
                     <h2>${art.t}</h2>
-                    <p>Découvrez nos conseils d'experts sur la santé cellulaire et comment les produits Superlife transforment la vie de milliers d'ivoiriens...</p>
-                    <a href="blog/${art.s}.html" class="btn-read">Lire l'article <i class="fas fa-chevron-right"></i></a>
+                    <p>Découvrez comment les cellules souches végétales Superlife aident à traiter naturellement cette pathologie...</p>
+                    <a href="blog/${art.s}.html" class="btn-read">Lire la solution <i class="fas fa-chevron-right"></i></a>
                 </div>
             `;
             grid.appendChild(card);
@@ -236,7 +226,6 @@
         renderArticles(cat);
     }
 
-    // Initialisation
     renderArticles();
 </script>
 
