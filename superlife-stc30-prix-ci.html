@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superlife STC30 Prix Côte d'Ivoire | Site Officiel & Commande</title>
     
-    <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
-    <meta name="description" content="Découvrez le prix officiel du Superlife STC30 en Côte d'Ivoire. Régénération cellulaire par cellules souches. Livraison rapide à Abidjan et partout en CI.">
+    <meta name="description" content="Découvrez le prix officiel du STC30 en Côte d'Ivoire. Témoignages réels, bienfaits et livraison rapide à Abidjan. Commandez votre cure de cellules souches.">
     <link rel="canonical" href="https://superlifeofficiel.com/superlife-stc30-prix-ci.html">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY50YCRQNS"></script>
@@ -19,226 +18,217 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --whatsapp: #25D366; --telegram: #0088cc; --dark: #1a1a1a; --light: #f4f7f6; }
+        :root { 
+            --primary: #2A6A3B; 
+            --gold: #c9a96e;
+            --dark: #08080c; 
+            --light: #f4f7f6; 
+            --whatsapp: #25D366;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background: #fff; color: var(--dark); line-height: 1.6; }
+        body { background: #fff; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+
+        /* HEADER OPTIMISÉ */
+        nav { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo { height: 40px; }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 15px; }
+
+        /* HERO SECTION MOBILE-FIRST */
+        .product-hero { text-align: center; padding: 20px 0; }
+        .product-hero h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 15px; line-height: 1.2; font-weight: 800; }
+        .product-img img { width: 100%; max-width: 400px; border-radius: 15px; margin-bottom: 20px; }
         
-        /* NAVIGATION */
-        nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
+        .trust-bar { display: flex; justify-content: space-around; background: var(--light); padding: 10px; border-radius: 10px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; }
+        .trust-bar i { color: var(--primary); margin-right: 5px; }
 
-        /* Mobile Menu Toggle */
-        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
-
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        /* PRIX & PACKS */
+        .section-title { color: var(--primary); font-size: 1.4rem; margin: 30px 0 15px; border-left: 4px solid var(--gold); padding-left: 10px; }
         
-        /* HERO PRODUIT */
-        .product-hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; padding: 40px 0; }
-        .product-img img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .product-info h1 { color: var(--primary); font-size: 2rem; margin-bottom: 15px; line-height: 1.2; }
-        .price-badge { font-size: 1.8rem; font-weight: 900; color: var(--primary); margin: 15px 0; }
+        .pack-card { background: white; border: 2px solid #eee; border-radius: 15px; padding: 15px; margin-bottom: 12px; position: relative; transition: 0.3s; }
+        .pack-card.recommended { border-color: var(--primary); background: #f0f7f1; }
+        .badge { position: absolute; top: -10px; right: 10px; background: var(--gold); color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
+        .pack-price { color: var(--primary); font-weight: 900; font-size: 1.2rem; }
 
-        /* SECTIONS CONTENU */
-        .section { margin: 40px 0; }
-        .section h2 { color: var(--primary); border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
-        .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .benefit-item { background: #f9fbf9; padding: 15px; border-radius: 10px; font-weight: 500; font-size: 0.9rem; }
+        /* TÉMOIGNAGES VIDÉOS (LAZY LOADING) */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; margin-bottom: 15px; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* PACKS DE PRIX */
-        .pack-card { background: white; border: 2px solid #eee; border-radius: 15px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; }
-        .pack-card:hover, .pack-card.active { border-color: var(--primary); background: #f0f7f1; }
-        .pack-card h3 { font-size: 1.1rem; }
+        /* EFFETS SECONDAIRES (REVERSE MARKETING) */
+        .side-effects { background: var(--dark); color: white; padding: 25px; border-radius: 20px; margin: 30px 0; }
+        .effect-item { display: flex; align-items: center; margin-bottom: 12px; font-size: 0.95rem; }
+        .effect-item i { color: var(--gold); margin-right: 12px; font-size: 1.1rem; }
 
-        /* BOUTON WHATSAPP FLOTTANT ANIMÉ */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37,211,102,0.4); z-index: 9999; text-decoration: none; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37,211,102, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); } }
+        /* FAQ ACCORDÉON */
+        details { background: var(--light); padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '+'; color: var(--primary); font-size: 1.2rem; }
 
-        /* MODAL COMMANDE */
-        #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center; padding: 10px; }
-        .modal-card { background: #fff; width: 100%; max-width: 450px; border-radius: 20px; padding: 25px; }
-        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 10px; }
-        .btn-submit { width: 100%; padding: 15px; border-radius: 10px; border: none; color: white; font-weight: bold; cursor: pointer; margin-bottom: 10px; font-size: 1rem; }
+        /* BOUTON FLOTTANT STICKY */
+        .sticky-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: white; padding: 10px 20px; box-shadow: 0 -5px 15px rgba(0,0,0,0.1); display: flex; gap: 10px; z-index: 999; }
+        .btn { flex: 1; padding: 15px; border-radius: 12px; border: none; font-weight: 800; text-decoration: none; text-align: center; font-size: 0.9rem; cursor: pointer; }
+        .btn-wa { background: var(--whatsapp); color: white; }
+        .btn-order { background: var(--primary); color: white; }
 
-        footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        .footer-links a { color: white; margin: 0 10px; text-decoration: none; font-size: 0.8rem; opacity: 0.8; }
+        /* MODAL */
+        #modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:10000; align-items:center; justify-content:center; padding:15px; }
+        .modal-content { background:white; width:100%; max-width:450px; border-radius:20px; padding:25px; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px; }
 
-        @media (max-width: 768px) { 
-            .benefits-grid { grid-template-columns: 1fr; } 
-            .menu-btn { display: block; }
-            .nav-links { 
-                display: none; 
-                flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background: white; 
-                padding: 20px; 
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
-                text-align: center;
-                gap: 15px;
-            }
-            .nav-links.active { display: flex; }
+        @media (min-width: 768px) {
+            .container { padding: 40px; }
+            .sticky-cta { display: none; }
+            .desktop-btns { display: flex; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="45" alt="Superlife Logo"></a>
-    
-    <div class="menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Boutique</a></li>
-        <li><a href="conseils-sante-cellulaire-superlife.html">Blog</a></li>
-        <li><a href="devenir-distributeur-superlife-cote-divoire.html">Opportunité</a></li>
-        <li><a href="contact-superlife-cote-divoire.html">Contact</a></li>
-    </ul>
+    <a href="/"><img src="logo.png" class="logo" alt="Superlife Logo"></a>
+    <div style="color:var(--primary); font-weight:bold; font-size:0.8rem;"><i class="fas fa-certificate"></i> DISTRIBUTEUR AGRÉÉ</div>
 </nav>
 
 <div class="container">
-    <div class="product-hero">
-        <div class="product-img">
-            <img src="https://i.ibb.co/CKxjdJ1s/IMG-2262.png" alt="Boîte Superlife STC30 Officielle">
+    
+    <section class="product-hero">
+        <h1>Activez vos cellules souches avec le STC30</h1>
+        <img src="https://i.ibb.co/CKxjdJ1s/IMG-2262.png" alt="STC30 Superlife Côte d'Ivoire">
+        
+        <div class="trust-bar">
+            <span><i class="fas fa-truck"></i> Livraison 24h</span>
+            <span><i class="fas fa-hand-holding-usd"></i> Payez à la livraison</span>
+            <span><i class="fas fa-check-shield"></i> 100% Original</span>
         </div>
-        <div class="product-info">
-            <h1>Superlife STC30 : le secret de la régénération cellulaire</h1>
-            <p>Le STC30 est un complément alimentaire révolutionnaire à base de cellules souches végétales (PhytoCellTec). Il aide à réparer, restaurer et rajeunir les cellules de votre corps.</p>
-            <div class="price-badge">À partir de 45 000 FCFA</div>
-            <button onclick="openModal()" class="btn-submit" style="background:var(--primary); font-size: 1.2rem;">COMMANDER MAINTENANT</button>
-        </div>
-    </div>
+        
+        <p style="font-size: 1.1rem; color: #555;">Le secret pour régénérer vos organes et combattre les maladies chroniques naturellement.</p>
+    </section>
 
-    <div class="section">
-        <h2>Pourquoi choisir le STC30 ?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-item"><i class="fas fa-check-circle"></i> Renforce le système immunitaire</div>
-            <div class="benefit-item"><i class="fas fa-check-circle"></i> Régule la tension et le diabète</div>
-            <div class="benefit-item"><i class="fas fa-check-circle"></i> Améliore la vision et la peau</div>
-            <div class="benefit-item"><i class="fas fa-check-circle"></i> Détoxification profonde du corps</div>
-            <div class="benefit-item"><i class="fas fa-check-circle"></i> Combat la fatigue chronique</div>
-            <div class="benefit-item"><i class="fas fa-check-circle"></i> Soutient la santé cardiovasculaire</div>
+    <section class="section">
+        <h2 class="section-title">Preuves et Témoignages en Côte d'Ivoire</h2>
+        <p style="margin-bottom:15px;">Découvrez comment le STC30 a aidé nos patients à Abidjan :</p>
+        
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/3zFTiwPWNDM" allowfullscreen></iframe>
         </div>
-    </div>
+        <p style="font-size:0.85rem; font-style:italic; margin-bottom:20px;">Cas d'infection pulmonaire sévère et insuffisance rénale évité.</p>
 
-    <div class="section">
-        <h2>Prix officiels en Côte d'Ivoire</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/fA_IskHAb8Y" allowfullscreen></iframe>
+        </div>
+        <p style="font-size:0.85rem; font-style:italic;">Amélioration de la vision et régulation de l'hypertension.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Nos Packs Promotionnels</h2>
+        
         <div class="pack-card" onclick="openModal('1 Boîte', 45000)">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <h3>Pack découverte (1 Boîte)</h3>
-                    <p>Idéal pour tester les bienfaits</p>
+                    <h3 style="font-size:1rem;">Pack Découverte (1 Boîte)</h3>
+                    <p style="font-size:0.8rem; color:gray;">Entretien & Prévention</p>
                 </div>
-                <div style="font-weight:900; color:var(--primary)">45 000 FCFA</div>
+                <div class="pack-price">45 000 F</div>
             </div>
         </div>
-        <div class="pack-card" onclick="openModal('2 Boîtes', 80000)">
+
+        <div class="pack-card recommended" onclick="openModal('2 Boîtes', 80000)">
+            <span class="badge">LE PLUS POPULAIRE</span>
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div>
-                    <h3>Pack traitement (2 Boîtes)</h3>
-                    <p>Recommandé pour un début de cure</p>
+                    <h3 style="font-size:1rem;">Pack Traitement (2 Boîtes)</h3>
+                    <p style="font-size:0.8rem; color:gray;">Début de régénération</p>
                 </div>
-                <div style="font-weight:900; color:var(--primary)">80 000 FCFA</div>
+                <div class="pack-price">80 000 F</div>
             </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Comment utiliser le STC30 ? (Posologie)</h2>
-        <p>Pour une efficacité maximale, consommez <strong>un sachet par jour</strong>, de préférence le matin à jeun. Versez le contenu du sachet <strong>sous la langue</strong> (voie sublinguale) et laissez fondre complètement sans avaler immédiatement.</p>
-    </div>
-</div>
+        <div class="pack-card" onclick="openModal('4 Boîtes', 150000)">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <h3 style="font-size:1rem;">Pack Guérison (4 Boîtes)</h3>
+                    <p style="font-size:0.8rem; color:gray;">Cure complète (Recommandé)</p>
+                </div>
+                <div class="pack-price">150 000 F</div>
+            </div>
+        </div>
+    </section>
 
-<a href="https://wa.me/2250152917584?text=Bonjour%20Superlife%20Officiel,%20je%20souhaite%20commander%20le%20STC30" class="wa-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<div id="order-modal">
-    <div class="modal-card">
-        <h3 style="margin-bottom:15px; color:var(--primary)">Finaliser votre commande</h3>
-        <select id="m-pack">
-            <option value="45000">1 Boîte STC30 - 45 000 FCFA</option>
-            <option value="80000">2 Boîtes STC30 - 80 000 FCFA</option>
-        </select>
-        <input type="text" id="m-name" placeholder="Nom Complet" required>
-        <input type="tel" id="m-phone" placeholder="Numéro WhatsApp (ex: 07...)" required>
-        <textarea id="m-address" placeholder="Lieu de livraison (Ville et quartier)" rows="2" required></textarea>
+    <section class="side-effects">
+        <h2 style="color:var(--gold); margin-bottom:15px;">À quoi s'attendre pendant la cure ?</h2>
+        <p style="margin-bottom:20px; font-size:0.9rem; opacity:0.9;">Le STC30 travaille en profondeur. Voici les signes positifs de régénération souvent observés :</p>
         
-        <button onclick="sendOrder('telegram')" class="btn-submit" style="background:var(--telegram)">CONFIRMER SUR LE SITE</button>
-        <button onclick="sendOrder('whatsapp')" class="btn-submit" style="background:var(--whatsapp)">COMMANDER VIA WHATSAPP</button>
-        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer; font-size:0.9rem;">Annuler</button>
-    </div>
+        <div class="effect-item"><i class="fas fa-utensils"></i> Augmentation de l'appétit (Métabolisme activé)</div>
+        <div class="effect-item"><i class="fas fa-moon"></i> Sommeil plus profond et réparateur</div>
+        <div class="effect-item"><i class="fas fa-sparkles"></i> Peau plus jeune et éclatante</div>
+        <div class="effect-item"><i class="fas fa-shield-virus"></i> Élimination des impuretés cutanées</div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Questions Fréquentes (FAQ)</h2>
+        
+        <details>
+            <summary>Comment prendre le STC30 ?</summary>
+            <p style="padding-top:10px;">Verser 1 sachet sous la langue à jeun le matin. Laisser fondre complètement. Ne pas boire d'eau pendant 15-30 min.</p>
+        </details>
+
+        <details>
+            <summary>Peut-on l'utiliser pour les poumons ou les reins ?</summary>
+            <p style="padding-top:10px;">Oui, le STC30 aide à la réparation des tissus endommagés par les infections. De nombreux utilisateurs en Côte d'Ivoire ont évité la dialyse grâce à une cure sérieuse.</p>
+        </details>
+
+        <details>
+            <summary>Livrez-vous à l'intérieur du pays ?</summary>
+            <p style="padding-top:10px;">Oui, nous expédions par Massa, UTB ou ST partout en Côte d'Ivoire (Bouaké, San-Pedro, Yamoussoukro, etc.).</p>
+        </details>
+    </section>
+
+    <div style="height: 100px;"></div> </div>
+
+<div class="sticky-cta">
+    <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20un%20conseil%20STC30" class="btn btn-wa"><i class="fab fa-whatsapp"></i> CONSEILLER</a>
+    <button onclick="openModal()" class="btn btn-order">COMMANDER</button>
 </div>
 
-<footer>
-    <div class="footer-links">
-        <a href="index.html">Accueil</a> | 
-        <a href="conseils-sante-cellulaire-superlife.html">Blog</a> | 
-        <a href="contact-superlife-cote-divoire.html">Contact</a>
+<div id="modal">
+    <div class="modal-content">
+        <h3 style="color:var(--primary); margin-bottom:15px;">Votre Commande</h3>
+        <select id="m-pack">
+            <option value="45000">1 Boîte - 45 000 F</option>
+            <option value="80000" selected>2 Boîtes - 80 000 F</option>
+            <option value="150000">4 Boîtes - 150 000 F</option>
+        </select>
+        <input type="text" id="m-name" placeholder="Nom Complet">
+        <input type="tel" id="m-phone" placeholder="Numéro de téléphone">
+        <textarea id="m-addr" placeholder="Quartier ou Ville de livraison" rows="2"></textarea>
+        
+        <button onclick="sendOrder()" class="btn btn-order" style="width:100%; margin-bottom:10px;">CONFIRMER LA COMMANDE</button>
+        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer;">Annuler</button>
     </div>
-    <div style="margin:20px 0;">
-        <a href="https://www.facebook.com/superlifeofficiels/" target="_blank" style="color:white; font-size:1.5rem; margin:0 10px;"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/superlifeofficiel/" target="_blank" style="color:white; font-size:1.5rem; margin:0 10px;"><i class="fab fa-instagram"></i></a>
-    </div>
-    <p style="font-size:0.8rem; opacity:0.6;">&copy; 2026 Superlife Officiel CI - Distributeur Agréé</p>
-</footer>
+</div>
 
 <script>
-    const CONFIG = {
-        WA: '2250152917584',
-        TG_TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
-        TG_CHAT_ID: '8441274889'
-    };
-
-    // FONCTION MENU MOBILE AJOUTÉE
-    function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        nav.classList.toggle('active');
+    function openModal(pack = '', price = 0) {
+        document.getElementById('modal').style.display = 'flex';
+        // Auto-sélection si clic sur un pack
     }
+    function closeModal() { document.getElementById('modal').style.display = 'none'; }
 
-    function openModal(packName = '', price = 0) {
-        document.getElementById('order-modal').style.display = 'flex';
-        if(packName) {
-             const select = document.getElementById('m-pack');
-             for(let i=0; i<select.options.length; i++) {
-                 if(select.options[i].text.includes(packName)) select.selectedIndex = i;
-             }
-        }
-    }
-
-    function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
-
-    async function sendOrder(type) {
+    function sendOrder() {
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
-        const addr = document.getElementById('m-address').value;
+        const addr = document.getElementById('m-addr').value;
         const pack = document.getElementById('m-pack').selectedOptions[0].text;
-        const total = document.getElementById('m-pack').value;
+        
+        if(!name || !phone || !addr) return alert("Remplissez tous les champs.");
 
-        if(!name || !phone || !addr) return alert("Veuillez remplir tous les champs.");
-
-        const msg = `📦 COMMANDE STC30\n--------------------------\nProduit: STC30\nPack: ${pack}\nTotal: ${total} FCFA\n\nClient: ${name}\nTel: ${phone}\nLieu: ${addr}`;
-
-        if(type === 'telegram') {
-            try {
-                await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg })
-                });
-                alert("Commande transmise ! Nous allons vous appeler pour la livraison.");
-                closeModal();
-                gtag('event', 'purchase', { "value": total, "currency": "XOF" });
-            } catch (e) { alert("Erreur d'envoi. Essayez via WhatsApp."); }
-        } else {
-            window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
+        const text = `NOUVELLE COMMANDE STC30\n------------------\nClient: ${name}\nTel: ${phone}\nPack: ${pack}\nLieu: ${addr}`;
+        window.open(`https://wa.me/2250152917584?text=${encodeURIComponent(text)}`, '_blank');
+        gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX'});
+        closeModal();
     }
 </script>
+
 </body>
 </html>
