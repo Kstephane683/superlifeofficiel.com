@@ -34,7 +34,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 80px; }
         
-        /* NAVIGATION */
         nav { 
             background: var(--white); 
             padding: 12px 20px; 
@@ -49,7 +48,6 @@
         .logo-img { height: 45px; width: auto; }
         .menu-btn { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
 
-        /* MENU LATÉRAL MOBILE */
         .side-menu {
             position: fixed; top: 0; left: -100%; width: 80%; height: 100vh;
             background: var(--white); z-index: 2000; transition: 0.4s;
@@ -95,16 +93,29 @@
 
         .card-actions { padding: 10px; display: grid; grid-template-columns: 1fr; gap: 8px; }
         .btn-buy-now { 
-            background: var(--primary); 
-            color: white; 
-            border: none; 
-            padding: 12px; 
-            border-radius: 12px; 
-            font-weight: 700; 
-            font-size: 0.8rem; 
-            text-transform: uppercase;
-            cursor: pointer;
+            background: var(--primary); color: white; border: none; padding: 12px; 
+            border-radius: 12px; font-weight: 700; font-size: 0.8rem; 
+            text-transform: uppercase; cursor: pointer;
         }
+
+        #order-modal { 
+            display: none; position: fixed; inset: 0; 
+            background: rgba(0,0,0,0.8); z-index: 3000; 
+            align-items: center; justify-content: center; padding: 15px;
+        }
+        .modal-card { 
+            background: #fff; width: 100%; max-width: 450px; 
+            border-radius: 25px; padding: 25px; max-height: 90vh; overflow-y: auto;
+        }
+        .modal-card label { font-size: 0.75rem; font-weight: 800; color: var(--primary); display: block; margin: 10px 0 5px 5px; }
+        .modal-card input, .modal-card select { 
+            width: 100%; padding: 10px; margin-bottom: 10px; 
+            border: 1px solid #ddd; border-radius: 10px; font-size: 15px;
+            background: #f9f9f9;
+        }
+        .qty-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; background: #f4f7f6; padding: 8px 12px; border-radius: 10px; }
+        .qty-row span { font-size: 0.85rem; font-weight: 600; }
+        .qty-row select { width: 80px; margin-bottom: 0; }
 
         .mobile-action-bar {
             position: fixed; bottom: 0; left: 0; width: 100%;
@@ -118,22 +129,6 @@
         }
         .ai-wa { background: var(--whatsapp); color: white; }
         .ai-tg { background: var(--primary-dark); color: white; }
-
-        #order-modal { 
-            display: none; position: fixed; inset: 0; 
-            background: rgba(0,0,0,0.8); z-index: 3000; 
-            align-items: center; justify-content: center; padding: 15px;
-        }
-        .modal-card { 
-            background: #fff; width: 100%; max-width: 400px; 
-            border-radius: 25px; padding: 25px; max-height: 90vh; overflow-y: auto;
-        }
-        .modal-card label { font-size: 0.75rem; font-weight: 700; color: #777; margin-left: 5px; }
-        .modal-card input, .modal-card select, .modal-card textarea { 
-            width: 100%; padding: 12px; margin-bottom: 12px; 
-            border: 1px solid #ddd; border-radius: 10px; font-size: 15px;
-            background: #f9f9f9;
-        }
 
         footer { background: var(--dark); color: white; padding: 40px 20px 100px; text-align: center; }
         .footer-links a { color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.8rem; }
@@ -157,14 +152,12 @@
 <div class="side-menu" id="sideMenu">
     <h3 style="color:var(--primary); margin-bottom: 10px;">Menu Superlife</h3>
     <a href="index.html">Boutique Accueil</a>
-    
     <div class="submenu-title">Nos Produits</div>
     <a href="superlife-stc30-prix-ci.html">Superlife STC30</a>
     <a href="superlife-scc-plus-colon.html">Superlife SCC+</a>
     <a href="superlife-sic-immunite.html">Superlife SIC</a>
     <a href="superlife-snc-cerveau-vision.html">Superlife SNC</a>
     <a href="super-root-coffee-puissance.html">Super Root Coffee</a>
-
     <div class="submenu-title">Infos & Contact</div>
     <a href="conseils-sante-cellulaire-superlife.html">Conseils Santé</a>
     <a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Partenaire</a>
@@ -181,23 +174,21 @@
 
 <div id="order-modal">
     <div class="modal-card">
-        <h3 id="m-title" style="margin-bottom:15px; color:var(--primary); text-align:center;"></h3>
+        <h3 style="margin-bottom:15px; color:var(--primary); text-align:center;">Finaliser votre Commande</h3>
         
-        <label>Choisir le Pack (Quantité) :</label>
-        <select id="m-pack" onchange="updatePrice()"></select>
+        <div id="qty-selectors">
+            </div>
 
-        <label>Ajouter d'autres produits ? (Optionnel)</label>
-        <textarea id="m-cross" placeholder="Ex: Ajoutez 1 boîte de SIC et 2 SNC..." rows="2"></textarea>
-
-        <div style="text-align:center; margin-bottom:20px; font-size:1.5rem; font-weight:800; color:var(--primary)">
-            Total: <span id="m-price">0</span> FCFA
+        <div style="text-align:center; margin:20px 0; padding:15px; background:var(--light); border-radius:15px; border: 2px dashed var(--primary);">
+            <span style="font-weight:600; font-size:0.9rem;">TOTAL À PAYER :</span><br>
+            <span id="m-price" style="font-size:1.8rem; font-weight:800; color:var(--primary)">0</span> <span style="font-weight:800; color:var(--primary)">FCFA</span>
         </div>
 
         <input type="text" id="m-name" placeholder="Nom complet">
         <input type="tel" id="m-phone" placeholder="Numéro de téléphone">
-        <textarea id="m-address" placeholder="Ville / Quartier de livraison" rows="2"></textarea>
+        <textarea id="m-address" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:10px; margin-bottom:12px;" placeholder="Ville / Quartier de livraison" rows="2"></textarea>
         
-        <button onclick="sendOrder('direct')" class="btn-buy-now" style="width:100%; background:var(--primary); margin-bottom:10px;">VALIDER LA COMMANDE</button>
+        <button onclick="sendOrder()" class="btn-buy-now" style="width:100%; background:var(--primary); margin-bottom:10px;">CONFIRMER MA COMMANDE</button>
         <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer;">Annuler</button>
     </div>
 </div>
@@ -229,11 +220,11 @@
     };
 
     const PRODUCTS = [
-        { id: 'stc30', name: 'Superlife STC30', img: 'https://i.ibb.co/nNCc3NRP/IMG-2262.png', unitP: 45000 },
-        { id: 'scc', name: 'Superlife SCC+', img: 'https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', unitP: 55000 },
-        { id: 'snc', name: 'Superlife SNC', img: 'https://i.ibb.co/Xk6sgfCK/IMG-2265.png', unitP: 50000 },
-        { id: 'sic', name: 'Superlife SIC', img: 'https://i.ibb.co/rGYnfVwM/IMG-2264.png', unitP: 50000 },
-        { id: 'coffee', name: 'Super Root Coffee', img: 'https://i.ibb.co/6R1mLbyh/IMG-2263.png', unitP: 25000 }
+        { id: 'stc30', name: 'Superlife STC30', img: 'https://i.ibb.co/nNCc3NRP/IMG-2262.png', unit: 45000, p2: 80000, p8: 300000, p20: 750000 },
+        { id: 'scc', name: 'Superlife SCC+', img: 'https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', unit: 55000, p2: 95000, p8: 355000, p18: 815000 },
+        { id: 'snc', name: 'Superlife SNC', img: 'https://i.ibb.co/Xk6sgfCK/IMG-2265.png', unit: 50000, p2: 90000, p8: 330000, p19: 785000 },
+        { id: 'sic', name: 'Superlife SIC', img: 'https://i.ibb.co/rGYnfVwM/IMG-2264.png', unit: 50000, p2: 90000, p8: 330000, p19: 785000 },
+        { id: 'coffee', name: 'Super Root Coffee', img: 'https://i.ibb.co/6R1mLbyh/IMG-2263.png', unit: 25000, unitBulk: 20000 }
     ];
 
     function init() {
@@ -243,59 +234,89 @@
                 <div class="img-box"><img src="${p.img}" alt="${p.name}"></div>
                 <div class="info-box">
                     <h3>${p.name}</h3>
-                    <span class="price-tag">${p.unitP.toLocaleString()} F</span>
+                    <span class="price-tag">${p.unit.toLocaleString()} F</span>
                 </div>
                 <div class="card-actions">
                     <button class="btn-buy-now" onclick="openOrder('${p.id}')">Commander</button>
                 </div>
             </div>
         `).join('');
+
+        const container = document.getElementById('qty-selectors');
+        container.innerHTML = PRODUCTS.map(p => `
+            <div class="qty-row">
+                <span>${p.name}</span>
+                <select id="qty-${p.id}" onchange="updatePrice()">
+                    ${Array.from({length: 21}, (_, i) => `<option value="${i}">${i}</option>`).join('')}
+                </select>
+            </div>
+        `).join('');
     }
 
-    let activeProduct = null;
-    function openOrder(id) {
-        activeProduct = PRODUCTS.find(p => p.id === id);
-        document.getElementById('m-title').innerText = activeProduct.name;
-        
-        // Génération dynamique des packs 1 à 20
-        let packHtml = '';
-        for(let i=1; i<=20; i++) {
-            let price = i * activeProduct.unitP;
-            // Exemple de dégressivité simple si 2 boîtes (optionnel selon vos besoins passés)
-            if(i === 2 && activeProduct.id === 'stc30') price = 80000;
-            if(i === 2 && activeProduct.id === 'scc') price = 100000;
-            if(i === 2 && activeProduct.id === 'snc') price = 90000;
-            if(i === 2 && activeProduct.id === 'sic') price = 90000;
-            if(i === 2 && activeProduct.id === 'coffee') price = 45000;
-            
-            packHtml += `<option value="${price}">${i} Boîte(s) - ${price.toLocaleString()} FCFA</option>`;
+    function calculateProductTotal(id, qty) {
+        if (qty === 0) return 0;
+        const p = PRODUCTS.find(item => item.id === id);
+        let total = 0;
+        let remaining = qty;
+
+        if (id === 'coffee') {
+            return (qty >= 2) ? qty * p.unitBulk : qty * p.unit;
         }
-        
-        document.getElementById('m-pack').innerHTML = packHtml;
-        document.getElementById('m-cross').value = "";
-        updatePrice();
-        document.getElementById('order-modal').style.display = 'flex';
-        gtag('event', 'begin_checkout', { items: [{ item_name: activeProduct.name }] });
+
+        // Logique Paliers (Ordre décroissant pour maximiser les packs)
+        const pMax = p.p20 || p.p19 || p.p18;
+        const qtyMax = p.p20 ? 20 : (p.p19 ? 19 : 18);
+
+        if (remaining >= qtyMax) {
+            total += pMax; remaining -= qtyMax;
+        }
+        while (remaining >= 8) {
+            total += p.p8; remaining -= 8;
+        }
+        while (remaining >= 2) {
+            total += p.p2; remaining -= 2;
+        }
+        if (remaining > 0) {
+            total += remaining * p.unit;
+        }
+        return total;
     }
 
     function updatePrice() {
-        const totalPrice = Number(document.getElementById('m-pack').value);
-        document.getElementById('m-price').innerText = totalPrice.toLocaleString();
+        let grandTotal = 0;
+        PRODUCTS.forEach(p => {
+            const qty = parseInt(document.getElementById(`qty-${p.id}`).value);
+            grandTotal += calculateProductTotal(p.id, qty);
+        });
+        document.getElementById('m-price').innerText = grandTotal.toLocaleString();
+    }
+
+    function openOrder(targetId) {
+        PRODUCTS.forEach(p => document.getElementById(`qty-${p.id}`).value = 0);
+        document.getElementById(`qty-${targetId}`).value = 1;
+        updatePrice();
+        document.getElementById('order-modal').style.display = 'flex';
     }
 
     function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
 
-    async function sendOrder(type) {
+    async function sendOrder() {
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
-        const packText = document.getElementById('m-pack').selectedOptions[0].text;
         const total = document.getElementById('m-price').innerText;
-        const extras = document.getElementById('m-cross').value;
 
         if(!name || !phone || !addr) return alert("Veuillez remplir vos informations.");
 
-        const msg = `📦 *NOUVELLE COMMANDE*\n--------------------------\n*Produit principal:* ${activeProduct.name}\n*Sélection:* ${packText}\n*TOTAL:* ${total} FCFA\n\n*Produits Additionnels:* ${extras || 'Aucun'}\n\n*Client:* ${name}\n*Tel:* ${phone}\n*Adresse:* ${addr}`;
+        let itemsList = "";
+        PRODUCTS.forEach(p => {
+            const q = document.getElementById(`qty-${p.id}`).value;
+            if(q > 0) itemsList += `• ${p.name}: ${q}\n`;
+        });
+
+        if(itemsList === "") return alert("Veuillez choisir au moins 1 produit.");
+
+        const msg = `📦 *NOUVELLE COMMANDE*\n--------------------------\n*DÉTAILS PANIER :*\n${itemsList}\n*TOTAL:* ${total} FCFA\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
 
         try {
             await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
@@ -303,8 +324,7 @@
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
             });
-            gtag('event', 'purchase', { "value": parseFloat(total.replace(/\s/g, '')), "currency": "XOF", "items": [{ "item_name": activeProduct.name }] });
-            alert("Commande transmise ! Nous vous rappelons pour confirmer la livraison.");
+            alert("Commande transmise avec succès ! Nous vous recontacterons sous peu.");
             closeModal();
         } catch (e) {
             window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
