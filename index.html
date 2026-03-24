@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Superlife Officiel CI | Boutique Santé & Cellules Souches</title>
     
+    <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
+    <meta name="description" content="Distributeur Officiel Superlife en Côte d'Ivoire. Retrouvez le STC30, SCC+, SNC et SIC aux prix officiels. Livraison rapide à Abidjan et partout en CI.">
+    <link rel="canonical" href="https://superlifeofficiel.com/">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY50YCRQNS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -21,6 +25,7 @@
             --primary: #2A6A3B; 
             --primary-dark: #1D4D29; 
             --whatsapp: #25D366; 
+            --telegram: #0088cc; 
             --dark: #1a1a1a; 
             --white: #ffffff;
             --light: #f4f7f6;
@@ -31,43 +36,97 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 80px; }
         
-        nav { background: var(--white); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        nav { 
+            background: var(--white); padding: 12px 20px; display: flex; 
+            justify-content: space-between; align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; 
+        }
         .logo-img { height: 45px; width: auto; }
+        .menu-btn { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+
+        .side-menu {
+            position: fixed; top: 0; left: -100%; width: 80%; height: 100vh;
+            background: var(--white); z-index: 2000; transition: 0.4s;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1); padding: 30px 20px;
+            overflow-y: auto;
+        }
+        .side-menu.active { left: 0; }
+        .side-menu a { display: block; padding: 15px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .side-menu .submenu-title { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; margin-top: 20px; font-weight: 800; }
+        
+        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1999; }
+        .overlay.active { display: block; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        .hero { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #f0f7f2 0%, #ffffff 100%); border-radius: 25px; margin-bottom: 30px; border: 1px solid #eef2ee; }
-        .hero h1 { color: var(--primary); font-size: 1.8rem; font-weight: 800; }
+        
+        .hero { 
+            text-align: center; padding: 40px 20px; 
+            background: linear-gradient(135deg, #f0f7f2 0%, #ffffff 100%);
+            border-radius: 25px; margin-bottom: 30px; border: 1px solid #eef2ee; 
+        }
+        .hero h1 { color: var(--primary); font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
 
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
-        .product-card { border: 1px solid #eee; border-radius: 20px; overflow: hidden; background: white; transition: 0.3s; text-align: center; padding-bottom: 15px; }
-        .img-box { height: 160px; padding: 10px; display: flex; align-items: center; justify-content: center; }
+        .product-card { 
+            border: 1px solid #eee; border-radius: 20px; overflow: hidden; 
+            display: flex; flex-direction: column; background: white; transition: 0.3s;
+        }
+        .img-box { height: 180px; padding: 15px; display: flex; align-items: center; justify-content: center; }
         .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .price-tag { color: var(--primary); font-weight: 800; font-size: 1.1rem; display: block; margin: 5px 0; }
+        
+        .info-box { padding: 12px; text-align: center; }
+        .price-tag { color: var(--primary); font-weight: 800; font-size: 1.1rem; }
 
-        /* MODAL & REORGANISATION PRO */
-        #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 3000; align-items: center; justify-content: center; padding: 15px; }
-        .modal-card { background: #fff; width: 100%; max-width: 450px; border-radius: 25px; padding: 20px; max-height: 90vh; overflow-y: auto; }
-        
-        .main-selection-box { background: #f0f7f2; padding: 15px; border-radius: 20px; border: 2px solid var(--primary); margin-bottom: 20px; position: relative; }
-        .badge-main { position: absolute; top: -12px; left: 20px; background: var(--primary); color: white; font-size: 0.65rem; padding: 4px 12px; border-radius: 20px; font-weight: 700; text-transform: uppercase; }
-        
-        .promo-msg { background: #fff; color: var(--red); font-size: 0.75rem; font-weight: 700; padding: 8px; border-radius: 10px; margin-top: 10px; display: none; border: 1px dashed var(--red); text-align: center; }
+        /* MODAL REORGANISÉE */
+        #order-modal { 
+            display: none; position: fixed; inset: 0; 
+            background: rgba(0,0,0,0.8); z-index: 3000; 
+            align-items: center; justify-content: center; padding: 15px;
+        }
+        .modal-card { 
+            background: #fff; width: 100%; max-width: 450px; 
+            border-radius: 25px; padding: 25px; max-height: 90vh; overflow-y: auto;
+        }
 
-        .upsell-section { border-top: 1px solid #eee; padding-top: 15px; margin-top: 10px; }
-        .upsell-title { font-size: 0.85rem; font-weight: 700; color: #666; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        
+        .main-selection-box { 
+            background: #f0f7f2; padding: 15px; border-radius: 20px; 
+            border: 2px solid var(--primary); margin-bottom: 20px; position: relative; 
+        }
+        .badge-main { 
+            position: absolute; top: -12px; left: 20px; background: var(--gold); 
+            color: var(--dark); font-size: 0.65rem; padding: 4px 12px; 
+            border-radius: 20px; font-weight: 800; text-transform: uppercase;
+        }
+        .promo-msg { 
+            background: #fff; color: var(--red); font-size: 0.75rem; font-weight: 700; 
+            padding: 8px; border-radius: 10px; margin-top: 10px; border: 1px dashed var(--red); text-align: center;
+        }
+        .instruction-text { font-size: 0.7rem; color: #666; font-style: italic; margin-top: 5px; display: block; }
+
+        .upsell-section { border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px; }
+        .upsell-title { font-size: 0.85rem; font-weight: 700; color: #555; margin-bottom: 10px; }
+
         .qty-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
         .qty-row span { font-size: 0.85rem; font-weight: 600; }
-        .qty-row select { width: 100px; padding: 8px; border-radius: 10px; border: 1px solid #ddd; background: #fff; font-weight: 700; }
+        .qty-row select { width: 100px; padding: 8px; border-radius: 10px; border: 1px solid #ddd; font-weight: 700; }
 
-        .total-box { text-align: center; margin: 20px 0; padding: 15px; background: var(--dark); color: white; border-radius: 15px; }
-        .total-box span#m-price { font-size: 1.6rem; color: var(--gold); font-weight: 800; }
+        .total-box { 
+            text-align: center; margin: 20px 0; padding: 15px; 
+            background: var(--dark); color: white; border-radius: 15px; 
+        }
+        .total-footer { font-size: 0.65rem; color: #aaa; text-transform: uppercase; display: block; margin-top: 5px; }
 
-        .btn-buy-now { background: var(--primary); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer; text-transform: uppercase; font-size: 0.9rem; }
-        input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 12px; margin-bottom: 10px; font-size: 14px; background: #fafafa; }
+        .btn-confirm { 
+            background: var(--primary); color: white; border: none; padding: 16px; 
+            border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer; font-size: 0.9rem;
+        }
 
-        .mobile-action-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--white); display: flex; padding: 12px; gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.08); z-index: 1500; }
-        .action-item { flex: 1; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; text-align: center; font-size: 0.8rem; color: white; }
+        .mobile-action-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--white); display: flex; padding: 12px;
+            gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.08); z-index: 1500;
+        }
+        .action-item { flex: 1; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-align: center; }
 
         @media (min-width: 768px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
     </style>
@@ -75,56 +134,80 @@
 <body>
 
 <nav>
+    <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife CI"></a>
-    <a href="tel:2250152917584" style="color:var(--primary);"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://wa.me/2250152917584" style="color:var(--primary); font-size: 1.3rem;"><i class="fas fa-phone-alt"></i></a>
 </nav>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+    <h3 style="color:var(--primary); margin-bottom: 10px;">Menu Superlife</h3>
+    <a href="index.html">Boutique Accueil</a>
+    <div class="submenu-title">Nos Produits</div>
+    <a href="superlife-stc30-prix-ci.html">Superlife STC30</a>
+    <a href="superlife-scc-plus-colon.html">Superlife SCC+</a>
+    <a href="superlife-sic-immunite.html">Superlife SIC</a>
+    <a href="superlife-snc-cerveau-vision.html">Superlife SNC</a>
+    <a href="super-root-coffee-puissance.html">Super Root Coffee</a>
+    <div class="submenu-title">Infos & Contact</div>
+    <a href="conseils-sante-cellulaire-superlife.html">Conseils Santé</a>
+    <a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Partenaire</a>
+    <a href="contact-superlife-cote-divoire.html">Contact & Aide</a>
+</div>
 
 <div class="container">
     <div class="hero">
-        <h1>Boutique Officielle Superlife</h1>
-        <p>Commandez vos produits et payez à la livraison</p>
+        <h1>Votre Santé Cellulaire, Notre Priorité.</h1>
+        <p>Distributeur Officiel Côte d'Ivoire. Payez à la livraison.</p>
     </div>
     <div class="product-grid" id="main-shop"></div>
 </div>
 
 <div id="order-modal">
     <div class="modal-card">
-        <h3 style="text-align:center; margin-bottom:20px; font-weight:800;">Détails de votre cure</h3>
+        <h3 style="text-align:center; margin-bottom:20px; font-weight:800; color:var(--primary);">Ma Cure Santé</h3>
         
-        <div class="main-selection-box" id="main-prod-box">
-            <div class="badge-main">Produit Vedette</div>
-            <div class="qty-row" style="margin-bottom: 0;">
-                <span id="main-prod-name" style="font-size: 1rem; color: var(--primary-dark); font-weight: 700;">Produit...</span>
+        <div class="main-selection-box">
+            <div class="badge-main">Choix principal</div>
+            <div class="qty-row" style="margin-bottom:0;">
+                <span id="main-prod-name" style="font-size:1rem; color:var(--primary-dark); font-weight:800;">Produit...</span>
                 <select id="main-qty-select" onchange="updatePrice()"></select>
             </div>
-            <div id="promo-display" class="promo-msg"></div>
+            <span class="instruction-text">Indiquez le nombre de boîtes souhaitées pour ce produit.</span>
+            <div id="promo-display" class="promo-msg" style="display:none;"></div>
         </div>
 
         <div class="upsell-section">
-            <div class="upsell-title"><i class="fas fa-plus-circle" style="color: var(--gold);"></i> Ajouter d'autres produits (Optionnel)</div>
-            <div id="upsell-container">
-                </div>
+            <div class="upsell-title"><i class="fas fa-plus-circle" style="color:var(--gold);"></i> Compléter ma cure (Optionnel)</div>
+            <span class="instruction-text" style="margin-bottom:10px;">Associez d'autres produits pour une efficacité renforcée.</span>
+            <div id="upsell-container"></div>
         </div>
 
         <div class="total-box">
-            TOTAL : <span id="m-price">0</span> <small>FCFA</small>
+            TOTAL : <span id="m-price" style="font-size:1.6rem; color:var(--gold); font-weight:800;">0</span> <small>FCFA</small>
+            <span class="total-footer"><i class="fas fa-truck"></i> Livraison Gratuite Partout en CI</span>
         </div>
 
-        <input type="text" id="m-name" placeholder="Nom complet">
-        <input type="tel" id="m-phone" placeholder="Numéro de téléphone">
-        <textarea id="m-address" placeholder="Quartier & Ville de livraison" rows="2"></textarea>
+        <input type="text" id="m-name" placeholder="Nom complet" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:12px; margin-bottom:10px;">
+        <input type="tel" id="m-phone" placeholder="Numéro de téléphone" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:12px; margin-bottom:10px;">
+        <textarea id="m-address" placeholder="Ville / Quartier de livraison exact" rows="2" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:12px; margin-bottom:12px;"></textarea>
         
-        <button onclick="sendOrder()" class="btn-buy-now"><i class="fas fa-shopping-cart"></i> Valider ma commande</button>
-        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:10px; cursor:pointer; font-size: 0.8rem;">Continuer mes achats</button>
+        <button onclick="sendOrder()" class="btn-confirm"><i class="fas fa-lock"></i> CONFIRMER MA COMMANDE</button>
+        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:10px; cursor:pointer; font-size:0.8rem;">Continuer mes achats</button>
     </div>
 </div>
 
 <div class="mobile-action-bar">
-    <a href="https://wa.me/2250152917584" class="action-item" style="background:var(--whatsapp);"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    <a href="tel:2250152917584" class="action-item" style="background:var(--primary-dark);"><i class="fas fa-phone-alt"></i> Appeler</a>
+    <a href="https://wa.me/2250152917584" class="action-item" style="background:var(--whatsapp); color:white;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="tel:2250152917584" class="action-item" style="background:var(--primary-dark); color:white;"><i class="fas fa-phone-alt"></i> Appeler</a>
 </div>
 
 <script>
+    function toggleMenu() {
+        document.getElementById('sideMenu').classList.toggle('active');
+        document.getElementById('overlay').classList.toggle('active');
+    }
+
     const CONFIG = {
         WA: '2250152917584',
         TG_TOKEN: '8760593501:AAFky23ITJHGGOi96V-dbGEFHL_0_4vPg',
@@ -146,37 +229,19 @@
         grid.innerHTML = PRODUCTS.map(p => `
             <div class="product-card">
                 <div class="img-box"><img src="${p.img}" alt="${p.name}"></div>
-                <h3 style="font-size:0.9rem;">${p.name}</h3>
-                <span class="price-tag">${p.unit.toLocaleString()} F</span>
-                <button class="btn-buy-now" style="width:85%; padding:10px; font-size:0.75rem;" onclick="openOrder('${p.id}')">Commander</button>
+                <div class="info-box">
+                    <h3>${p.name}</h3>
+                    <span class="price-tag">${p.unit.toLocaleString()} F</span>
+                </div>
+                <div style="padding:10px;"><button class="btn-confirm" onclick="openOrder('${p.id}')">Commander</button></div>
             </div>
         `).join('');
 
-        const qtyOptions = Array.from({length: 21}, (_, i) => `<option value="${i}">${i} boîtes</option>`).join('');
-        document.getElementById('main-qty-select').innerHTML = qtyOptions.replace('value="0"', 'value="0" disabled');
+        const qtyOpts = Array.from({length: 21}, (_, i) => `<option value="${i}">${i} boîte(s)</option>`).join('');
+        document.getElementById('main-qty-select').innerHTML = qtyOpts.replace('value="0"', 'value="0" disabled');
     }
 
-    function openOrder(id) {
-        currentMainId = id;
-        const mainP = PRODUCTS.find(p => p.id === id);
-        document.getElementById('main-prod-name').innerText = mainP.name;
-        document.getElementById('main-qty-select').value = 1;
-
-        const upsellContainer = document.getElementById('upsell-container');
-        upsellContainer.innerHTML = PRODUCTS.filter(p => p.id !== id).map(p => `
-            <div class="qty-row">
-                <span style="font-size:0.8rem;">${p.name}</span>
-                <select id="upsell-qty-${p.id}" class="upsell-select" onchange="updatePrice()">
-                    ${Array.from({length: 21}, (_, i) => `<option value="${i}">${i === 0 ? '+ Ajouter' : i + ' boîtes'}</option>`).join('')}
-                </select>
-            </div>
-        `).join('');
-
-        updatePrice();
-        document.getElementById('order-modal').style.display = 'flex';
-    }
-
-    function calculatePriceDetails(id, qty) {
+    function calculateDetails(id, qty) {
         if (qty === 0) return { total: 0, saving: 0 };
         const p = PRODUCTS.find(item => item.id === id);
         const normalPrice = qty * p.unit;
@@ -197,23 +262,38 @@
 
     function updatePrice() {
         const mainQty = parseInt(document.getElementById('main-qty-select').value);
-        const mainDetails = calculatePriceDetails(currentMainId, mainQty);
+        const mainRes = calculateDetails(currentMainId, mainQty);
         
-        // Affichage promo
         const promoDiv = document.getElementById('promo-display');
-        if (mainDetails.saving > 0) {
+        if (mainRes.saving > 0) {
             promoDiv.style.display = 'block';
-            promoDiv.innerHTML = `<i class="fas fa-gift"></i> Félicitations ! Vous économisez <b>${mainDetails.saving.toLocaleString()} FCFA</b> sur ce pack.`;
-        } else {
-            promoDiv.style.display = 'none';
-        }
+            promoDiv.innerHTML = `<i class="fas fa-gift"></i> Félicitations ! Vous économisez <b>${mainRes.saving.toLocaleString()} FCFA</b> sur ce pack.`;
+        } else { promoDiv.style.display = 'none'; }
 
-        let grandTotal = mainDetails.total;
-        document.querySelectorAll('.upsell-select').forEach(select => {
-            const id = select.id.replace('upsell-qty-', '');
-            grandTotal += calculatePriceDetails(id, parseInt(select.value)).total;
+        let grandTotal = mainRes.total;
+        document.querySelectorAll('.upsell-select').forEach(s => {
+            grandTotal += calculateDetails(s.id.replace('up-',''), parseInt(s.value)).total;
         });
         document.getElementById('m-price').innerText = grandTotal.toLocaleString();
+    }
+
+    function openOrder(id) {
+        currentMainId = id;
+        document.getElementById('main-prod-name').innerText = PRODUCTS.find(p => p.id === id).name;
+        document.getElementById('main-qty-select').value = 2; // Réglé sur 2 par défaut
+
+        const upsellContainer = document.getElementById('upsell-container');
+        upsellContainer.innerHTML = PRODUCTS.filter(p => p.id !== id).map(p => `
+            <div class="qty-row">
+                <span>${p.name}</span>
+                <select id="up-${p.id}" class="upsell-select" onchange="updatePrice()">
+                    ${Array.from({length: 21}, (_, i) => `<option value="${i}">${i === 0 ? '+ Ajouter' : i + ' boîte(s)'}</option>`).join('')}
+                </select>
+            </div>
+        `).join('');
+
+        updatePrice();
+        document.getElementById('order-modal').style.display = 'flex';
     }
 
     function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
@@ -222,14 +302,14 @@
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
-        if(!name || !phone || !addr) return alert("Veuillez remplir vos coordonnées.");
+        if(!name || !phone || !addr) return alert("Veuillez remplir vos infos.");
 
         let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
         document.querySelectorAll('.upsell-select').forEach(s => {
-            if(s.value > 0) list += `• ${PRODUCTS.find(p => p.id === s.id.replace('upsell-qty-','')).name}: ${s.value}\n`;
+            if(s.value > 0) list += `• ${PRODUCTS.find(p => p.id === s.id.replace('up-','')).name}: ${s.value}\n`;
         });
 
-        const msg = `📦 *COMMANDE SUPERLIFE*\n----------\n${list}\n*TOTAL:* ${document.getElementById('m-price').innerText} FCFA\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
+        const msg = `📦 *NOUVELLE COMMANDE*\n----------\n${list}\n*TOTAL:* ${document.getElementById('m-price').innerText} FCFA\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
 
         try {
             await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
@@ -237,7 +317,7 @@
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
             });
-            alert("Commande transmise avec succès !");
+            alert("Commande reçue !");
             closeModal();
         } catch (e) {
             window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
