@@ -77,7 +77,6 @@
         .info-box { padding: 12px; text-align: center; }
         .price-tag { color: var(--primary); font-weight: 800; font-size: 1.1rem; }
 
-        /* MODAL REORGANISÉE */
         #order-modal { 
             display: none; position: fixed; inset: 0; 
             background: rgba(0,0,0,0.8); z-index: 3000; 
@@ -98,7 +97,7 @@
             border-radius: 20px; font-weight: 800; text-transform: uppercase;
         }
         .promo-msg { 
-            background: #fff; color: var(--red); font-size: 0.75rem; font-weight: 700; 
+            background: #fff; color: var(--red); font-size: 0.8rem; font-weight: 800; 
             padding: 8px; border-radius: 10px; margin-top: 10px; border: 1px dashed var(--red); text-align: center;
         }
         .instruction-text { font-size: 0.7rem; color: #666; font-style: italic; margin-top: 5px; display: block; }
@@ -128,6 +127,9 @@
         }
         .action-item { flex: 1; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-align: center; }
 
+        footer { background: var(--dark); color: white; padding: 40px 20px 100px; text-align: center; }
+        .footer-links a { color: #aaa; margin: 0 10px; text-decoration: none; font-size: 0.8rem; }
+
         @media (min-width: 768px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
     </style>
 </head>
@@ -136,7 +138,7 @@
 <nav>
     <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife CI"></a>
-    <a href="https://wa.me/2250152917584" style="color:var(--primary); font-size: 1.3rem;"><i class="fas fa-phone-alt"></i></a>
+    <a href="tel:2250152917584" style="color:var(--primary); font-size: 1.3rem;"><i class="fas fa-phone-alt"></i></a>
 </nav>
 
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
@@ -149,8 +151,10 @@
     <a href="superlife-sic-immunite.html">Superlife SIC</a>
     <a href="superlife-snc-cerveau-vision.html">Superlife SNC</a>
     <a href="super-root-coffee-puissance.html">Super Root Coffee</a>
+    <div class="submenu-title">Suivez-nous</div>
+    <a href="https://www.facebook.com/superlifeofficiels/" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/superlifeofficiel/" target="_blank">Instagram</a>
     <div class="submenu-title">Infos & Contact</div>
-    <a href="conseils-sante-cellulaire-superlife.html">Conseils Santé</a>
     <a href="devenir-distributeur-superlife-cote-divoire.html">Devenir Partenaire</a>
     <a href="contact-superlife-cote-divoire.html">Contact & Aide</a>
 </div>
@@ -173,19 +177,17 @@
                 <span id="main-prod-name" style="font-size:1rem; color:var(--primary-dark); font-weight:800;">Produit...</span>
                 <select id="main-qty-select" onchange="updatePrice()"></select>
             </div>
-            <span class="instruction-text">Indiquez le nombre de boîtes souhaitées pour ce produit.</span>
             <div id="promo-display" class="promo-msg" style="display:none;"></div>
         </div>
 
         <div class="upsell-section">
             <div class="upsell-title"><i class="fas fa-plus-circle" style="color:var(--gold);"></i> Compléter ma cure (Optionnel)</div>
-            <span class="instruction-text" style="margin-bottom:10px;">Associez d'autres produits pour une efficacité renforcée.</span>
             <div id="upsell-container"></div>
         </div>
 
         <div class="total-box">
             TOTAL : <span id="m-price" style="font-size:1.6rem; color:var(--gold); font-weight:800;">0</span> <small>FCFA</small>
-            <span class="total-footer"><i class="fas fa-truck"></i> Livraison Gratuite Partout en CI</span>
+            <span class="total-footer"><i class="fas fa-truck"></i> Livraison : 1 000 FCFA incluse</span>
         </div>
 
         <input type="text" id="m-name" placeholder="Nom complet" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:12px; margin-bottom:10px;">
@@ -202,6 +204,14 @@
     <a href="tel:2250152917584" class="action-item" style="background:var(--primary-dark); color:white;"><i class="fas fa-phone-alt"></i> Appeler</a>
 </div>
 
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="https://share.google/y29dZwWEn5aDD1HlQ">Localisation GMB</a>
+    </div>
+    <p style="font-size:0.7rem; opacity:0.5; margin-top:20px;">© 2026 Superlife Officiel CI - GMB: ID17825388617888444853</p>
+</footer>
+
 <script>
     function toggleMenu() {
         document.getElementById('sideMenu').classList.toggle('active');
@@ -210,8 +220,9 @@
 
     const CONFIG = {
         WA: '2250152917584',
-        TG_TOKEN: '8760593501:AAFky23ITJHGGOi96V-dbGEFHL_0_4vPg',
-        TG_CHAT_ID: '8441274889'
+        TG_TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
+        TG_CHAT_ID: '8441274889',
+        DELIVERY: 1000
     };
 
     const PRODUCTS = [
@@ -267,20 +278,22 @@
         const promoDiv = document.getElementById('promo-display');
         if (mainRes.saving > 0) {
             promoDiv.style.display = 'block';
-            promoDiv.innerHTML = `<i class="fas fa-gift"></i> Félicitations ! Vous économisez <b>${mainRes.saving.toLocaleString()} FCFA</b> sur ce pack.`;
+            promoDiv.innerHTML = `<i class="fas fa-tag"></i> Réduction : - <b>${mainRes.saving.toLocaleString()} FCFA</b>`;
         } else { promoDiv.style.display = 'none'; }
 
         let grandTotal = mainRes.total;
         document.querySelectorAll('.upsell-select').forEach(s => {
             grandTotal += calculateDetails(s.id.replace('up-',''), parseInt(s.value)).total;
         });
-        document.getElementById('m-price').innerText = grandTotal.toLocaleString();
+
+        // Ajout systématique des 1000F de livraison
+        document.getElementById('m-price').innerText = (grandTotal + CONFIG.DELIVERY).toLocaleString();
     }
 
     function openOrder(id) {
         currentMainId = id;
         document.getElementById('main-prod-name').innerText = PRODUCTS.find(p => p.id === id).name;
-        document.getElementById('main-qty-select').value = 2; // Réglé sur 2 par défaut
+        document.getElementById('main-qty-select').value = 2;
 
         const upsellContainer = document.getElementById('upsell-container');
         upsellContainer.innerHTML = PRODUCTS.filter(p => p.id !== id).map(p => `
@@ -302,25 +315,32 @@
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
-        if(!name || !phone || !addr) return alert("Veuillez remplir vos infos.");
+        const total = document.getElementById('m-price').innerText;
+
+        if(!name || !phone || !addr) return alert("Veuillez remplir vos coordonnées.");
 
         let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
         document.querySelectorAll('.upsell-select').forEach(s => {
             if(s.value > 0) list += `• ${PRODUCTS.find(p => p.id === s.id.replace('up-','')).name}: ${s.value}\n`;
         });
 
-        const msg = `📦 *NOUVELLE COMMANDE*\n----------\n${list}\n*TOTAL:* ${document.getElementById('m-price').innerText} FCFA\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
+        const msg = `📦 *NOUVELLE COMMANDE*\n----------\n${list}\n*TOTAL:* ${total} FCFA (Livraison incluse)\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
 
         try {
-            await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
+            const response = await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
             });
-            alert("Commande reçue !");
-            closeModal();
+            
+            if (response.ok) {
+                alert("Commande transmise avec succès ! Nous vous recontacterons.");
+                closeModal();
+            } else {
+                throw new Error('Telegram Error');
+            }
         } catch (e) {
-            window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
+            window.open(`https://wa.me/${CONFIG.WA.replace('+','')}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     }
     init();
