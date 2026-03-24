@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Redirection en cours... | Superlife Officiel CI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2A6A3B; }
+        body { font-family: 'Poppins', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #666; }
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="loader"></div>
+        <p>Redirection vers votre produit santé...</p>
+    </div>
+
+    <script>
+        // Analyse du mot-clé dans l'URL actuelle
+        const path = window.location.href.toLowerCase();
+        
+        // Liste des redirections (Identique à ton PHP)
+        const rules = {
+            'stc30': '/superlife-stc30-prix-ci.html',
+            'scc': '/superlife-scc-plus-colon.html',
+            'sic': '/superlife-sic-immunite.html',
+            'snc': '/superlife-snc-cerveau-vision.html',
+            'coffee': '/super-root-coffee-puissance.html',
+            'perle': '/super-root-coffee-puissance.html',
+            'blog': '/conseils-sante-cellulaire-superlife.html',
+            'contact': '/contact-superlife-cote-divoire.html'
+        };
+
+        let target = "/index.html"; // Par défaut, retour accueil
+
+        // On cherche si un mot-clé est présent dans l'URL cassée
+        for (let key in rules) {
+            if (path.indexOf(key) !== -1) {
+                target = rules[key];
+                break;
+            }
+        }
+
+        // Redirection instantanée
+        window.location.replace(target);
+    </script>
+</body>
+</html>
