@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Superlife SCC+ Prix Côte d'Ivoire : 55 000 FCFA | Nettoyage du Côlon & Minceur</title>
-    <meta name="description" content="Achetez le Superlife SCC+ à 55 000 FCFA. Nettoyage du côlon, détox et perte de poids. Livraison Abidjan & Intérieur. Distributeur Agréé Superlife Côte d'Ivoire.">
+    <meta name="description" content="Achetez le Superlife SCC+ à 55 000 FCFA en Côte d'Ivoire. Nettoyage du côlon, détox et perte de poids naturelle. Livraison Abidjan & Intérieur. Distributeur Agréé.">
     <link rel="canonical" href="https://superlifeofficiel.com/superlife-scc-plus-colon.html">
 
     <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
@@ -25,6 +25,7 @@
             --primary: #2A6A3B; 
             --primary-dark: #1D4D29; 
             --whatsapp: #25D366; 
+            --telegram: #0088cc;
             --dark: #1a1a1a; 
             --white: #ffffff;
             --light: #f4f7f6;
@@ -34,7 +35,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 90px; overflow-x: hidden; }
         
-        /* 🎨 IDENTITÉ VISUELLE & UI (PROTOCOLE DESIGN) */
+        /* 🎨 IDENTITÉ VISUELLE & UI */
         nav { 
             background: var(--white); padding: 12px 20px; display: flex; 
             justify-content: space-between; align-items: center; 
@@ -51,8 +52,8 @@
         }
         .side-menu.active { left: 0; }
         .side-menu a { display: flex; align-items: center; padding: 15px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-        .side-menu a i { width: 20px; margin-right: 15px; color: var(--primary); text-align: center; } /* Largeur fixe 20px pour alignement */
-        .side-menu .submenu-title { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; margin-top: 20px; font-weight: 800; }
+        .side-menu a i { width: 20px; margin-right: 15px; color: var(--primary); text-align: center; } /* Alignement fixe 20px */
+        .side-menu .submenu-title { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; margin-top: 20px; font-weight: 800; border-bottom: none; }
         
         .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1999; }
         .overlay.active { display: block; }
@@ -62,22 +63,21 @@
         /* H1 DOUBLE IMPACT */
         .product-hero { text-align: center; padding: 20px 0; margin-bottom: 30px; }
         .product-hero h1 { color: var(--primary); font-size: 1.7rem; font-weight: 800; line-height: 1.2; margin-bottom: 10px; }
-        
         .main-img { max-width: 280px; height: auto; border-radius: 20px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); margin-bottom: 20px; }
         
-        /* COMPOSANTS UI SPECIFIQUES */
         .badge-gold { background: var(--gold); color: var(--dark); padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 15px; }
 
         .benefits-list { list-style: none; margin: 20px 0; }
         .benefits-list li { background: #f9fdfa; padding: 18px; border-radius: 15px; margin-bottom: 12px; border: 1px solid #edf7f0; display: flex; align-items: start; gap: 15px; }
         .benefits-list li i { color: var(--gold); font-size: 1.2rem; }
 
-        /* PACKS DE PRIX */
         .pack-card { background: white; border: 2px solid #eee; border-radius: 20px; padding: 20px; margin-bottom: 15px; cursor: pointer; position: relative; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
         .pack-card.popular { border-color: var(--gold); background: #fffdf9; }
         .popular-tag { position: absolute; top: -11px; right: 20px; background: var(--gold); color: var(--dark); padding: 3px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
 
-        /* BARRE D'ACTION FIXE */
+        /* BOUTONS ACTIONS */
+        .btn-telegram { background: var(--telegram); color: white; text-decoration: none; padding: 18px; border-radius: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
         .mobile-action-bar {
             position: fixed; bottom: 0; left: 0; width: 100%;
             background: var(--white); display: flex; padding: 12px;
@@ -85,7 +85,6 @@
         }
         .action-item { flex: 1; padding: 16px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: uppercase; color: white; }
 
-        /* MODALE COMMANDE */
         #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 3000; align-items: center; justify-content: center; padding: 15px; }
         .modal-card { background: #fff; width: 100%; max-width: 450px; border-radius: 25px; padding: 25px; position: relative; }
         .total-box { text-align: center; margin: 15px 0 20px; padding: 15px; background: var(--dark); color: white; border-radius: 15px; }
@@ -104,80 +103,78 @@
 <div class="side-menu" id="sideMenu">
     <h3 style="color:var(--primary); font-weight: 800; margin-bottom: 10px;">Menu Superlife</h3>
     <a href="/index.html"><i class="fas fa-store"></i> Boutique Accueil</a>
+    
     <div class="submenu-title">Nos Solutions Santé</div>
     <a href="/superlife-stc30-prix-ci.html"><i class="fas fa-capsules"></i> Superlife STC30</a>
     <a href="/superlife-scc-plus-colon.html" style="color:var(--primary); font-weight:700;"><i class="fas fa-vial"></i> Superlife SCC+ (Côlon)</a>
     <a href="/superlife-sic-immunite.html"><i class="fas fa-shield-alt"></i> Superlife SIC (Immunité)</a>
+    <a href="/superlife-snc-cerveau-vision.html"><i class="fas fa-brain"></i> Superlife SNC (Cerveau)</a>
+    <a href="/super-root-coffee-puissance.html"><i class="fas fa-coffee"></i> Super Root Coffee</a>
+    
+    <div class="submenu-title">Infos & Partenariat</div>
+    <a href="/conseils-sante-cellulaire-superlife.html"><i class="fas fa-heartbeat"></i> Conseils Santé</a>
+    <a href="/devenir-distributeur-superlife-cote-divoire.html"><i class="fas fa-handshake"></i> Devenir Distributeur</a>
+    <a href="/contact-superlife-cote-divoire.html"><i class="fas fa-headset"></i> Contact & Aide</a>
 </div>
 
 <div class="container">
     
     <div class="product-hero">
         <span class="badge-gold">Produit 100% Original</span>
-        <h1>Superlife SCC+ : Nettoyage du Côlon & Perte de Poids en Côte d'Ivoire</h1>
-        <p style="color:#666; margin-bottom: 20px;">Nettoyez votre système digestif, éliminez la constipation et brûlez les graisses naturellement.</p>
-        <img src="https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png" alt="Superlife SCC+ Prix Côte d'Ivoire" class="main-img">
+        <h1>Superlife SCC+ : Nettoyage du Côlon & Minceur en Côte d'Ivoire</h1>
+        <p style="color:#666; margin-bottom: 20px;">Nettoyez votre système digestif, éliminez la constipation et perdez du poids durablement grâce au psyllium et aux cellules souches.</p>
+        <img src="https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png" alt="Superlife SCC+ Colon Care" class="main-img">
     </div>
 
-    <div class="section" style="margin-bottom: 30px;">
-        <h2 style="color:var(--primary); font-weight: 800; margin-bottom: 10px;">Votre ventre vous fait souffrir ?</h2>
-        <p>Ballonnements, constipation chronique, fatigue ou difficulté à perdre du poids ? Ces signes indiquent souvent un côlon encrassé. Le <strong>Superlife SCC+ (Colon Care)</strong> est la solution technologique à base de cellules souches et de psyllium pour une détox profonde.</p>
+    <div class="section">
+        <h2 style="color:var(--primary); font-weight: 800; margin-bottom: 10px;">Le secret d'un ventre plat et sain</h2>
+        <p>Souffrez-vous de <strong>constipation chronique</strong> ou de ballonnements ? Un côlon encrassé empêche la perte de poids. Le Superlife SCC+ combine le <strong>Psyllium</strong> et la <strong>Chlorophylle</strong> pour une détoxification complète de l'organisme.</p>
     </div>
 
-    <h2 style="color:var(--primary); font-weight: 800; margin-bottom: 15px;">Les Bienfaits (Ce que vous allez ressentir)</h2>
     <ul class="benefits-list">
-        <li><i class="fas fa-feather-pointed"></i> <div><b>Légèreté Immédiate :</b> Retrouvez un ventre plat et une digestion fluide sans ballonnements.</div></li>
-        <li><i class="fas fa-battery-full"></i> <div><b>Énergie Retrouvée :</b> En éliminant les toxines, votre corps cesse de s'épuiser inutilement.</div></li>
-        <li><i class="fas fa-check-double"></i> <div><b>Minceur Visible :</b> Le psyllium et le Sinetrol® favorisent la satiété et la combustion des graisses.</div></li>
+        <li><i class="fas fa-leaf"></i> <div><b>Détox & Minceur :</b> Nettoie le côlon et active la combustion des graisses abdominales.</div></li>
+        <li><i class="fas fa-shield-virus"></i> <div><b>Santé Digestive :</b> Élimine les toxines et régule le transit intestinal (fini la constipation).</div></li>
+        <li><i class="fas fa-star"></i> <div><b>Bien-être Global :</b> Améliore l'absorption des nutriments et renforce l'énergie.</div></li>
     </ul>
 
-    <div class="section" style="background: var(--light); padding: 20px; border-radius: 20px; border: 1px dashed var(--primary); margin-bottom: 30px; text-align: center;">
-        <h2 style="color:var(--primary); font-weight: 800; margin-bottom: 15px;"><i class="fas fa-mortar-pestle"></i> Posologie & Mode d'emploi</h2>
-        <p style="font-weight: 600;">1 Sachet par jour, à prendre le soir après le dernier repas.</p>
-        <p style="font-size: 0.9rem;">Mélangez dans 200ml d'eau, remuez et buvez immédiatement. Buvez beaucoup d'eau en journée.</p>
-    </div>
-
-    <div style="background: var(--primary-dark); color: white; padding: 20px; border-radius: 20px; margin-bottom: 30px;">
-        <p><i class="fas fa-certificate" style="color:var(--gold);"></i> <b>Distributeur Agréé Superlife</b></p>
-        <p><i class="fas fa-truck-fast" style="color:var(--gold);"></i> <b>Paiement à la livraison</b></p>
-        <p><i class="fas fa-check-shield" style="color:var(--gold);"></i> <b>Livraison Abidjan & Intérieur</b></p>
+    <div style="background: var(--light); padding: 20px; border-radius: 20px; border: 1px dashed var(--primary); margin-bottom: 30px; text-align: center;">
+        <h2 style="color:var(--primary); font-weight: 800; margin-bottom: 10px;">Comment prendre le SCC+ ?</h2>
+        <p><b>1 Sachet par jour :</b> À mélanger dans 200ml d'eau. Remuez et buvez immédiatement, de préférence le soir après le repas.</p>
     </div>
 
     <h2 style="color:var(--primary); font-weight: 800; margin-bottom: 15px;">Prix Officiels SCC+ CI</h2>
-    <div class="pack-card" onclick="openModal('1 Boîte SCC+ (Détox)', 55000)">
+    <div class="pack-card" onclick="openModal('1 Boîte SCC+', 55000)">
         <div>
-            <h3 style="font-size: 1rem;">Cure Détox (1 Boîte)</h3>
-            <p style="font-size: 0.8rem; color: #777;">15 Sachets pour un nettoyage complet.</p>
+            <h3 style="font-size: 1rem;">Cure Découverte (1 Boîte)</h3>
+            <p style="font-size: 0.8rem; color: #777;">Nettoyage de base (15 jours).</p>
         </div>
         <div style="font-weight: 800; color: var(--primary);">55 000 FCFA</div>
     </div>
 
-    <div class="pack-card popular" onclick="openModal('2 Boîtes SCC+ (Minceur)', 95000)">
+    <div class="pack-card popular" onclick="openModal('2 Boîtes SCC+', 95000)">
         <div class="popular-tag">Recommandé Minceur</div>
         <div>
             <h3 style="font-size: 1rem;">Cure Minceur (2 Boîtes)</h3>
-            <p style="font-size: 0.8rem; color: #777;">30 Sachets pour une perte de poids durable.</p>
+            <p style="font-size: 0.8rem; color: #777;">Détox profonde & Perte de poids.</p>
         </div>
         <div style="font-weight: 800; color: var(--primary);">95 000 FCFA</div>
     </div>
 
+    <a href="https://t.me/superlifeofficielbot" class="btn-telegram">
+        <i class="fab fa-telegram-plane"></i> Commander via Telegram
+    </a>
+
     <div class="section" style="margin-top: 40px;">
-        <h2 style="color:var(--primary); font-weight: 800; margin-bottom: 15px;">Questions Fréquentes (FAQ)</h2>
-        <div style="margin-bottom: 15px;">
-            <p style="font-weight: 700;">Le SCC+ a-t-il des effets secondaires ?</p>
-            <p style="font-size: 0.9rem;">C'est un produit 100% naturel. Vous irez plus souvent à la selle au début, ce qui prouve l'évacuation des déchets.</p>
-        </div>
-        <div style="margin-bottom: 15px;">
-            <p style="font-weight: 700;">En combien de temps voit-on les résultats ?</p>
-            <p style="font-size: 0.9rem;">Le soulagement digestif est ressenti dès les premières 24h. Pour la minceur, les résultats sont visibles après 15 à 30 jours.</p>
-        </div>
+        <h2 style="color:var(--primary); font-weight: 800; margin-bottom: 15px;">Questions Fréquentes</h2>
+        <p><strong>Le psyllium dans le SCC+ fait-il maigrir ?</strong><br>Oui, il crée une sensation de satiété et aide à évacuer les graisses stockées dans le côlon.</p>
+        <p style="margin-top:10px;"><strong>Quels sont les effets secondaires ?</strong><br>Il s'agit d'une détox naturelle. Vous irez plus souvent à la selle pour éliminer les déchets accumulés.</p>
     </div>
 
 </div>
 
 <div class="mobile-action-bar">
     <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20commander%20le%20SCC+" class="action-item" style="background:var(--whatsapp);">
-        <i class="fab fa-whatsapp"></i> Commander
+        <i class="fab fa-whatsapp"></i> WhatsApp
     </a>
     <a href="tel:2250152917584" class="action-item" style="background:var(--primary-dark);">
         <i class="fas fa-phone"></i> Appeler
@@ -189,7 +186,7 @@
         <h3 style="text-align: center; color: var(--primary); margin-bottom: 20px;">Ma Commande SCC+</h3>
         <input type="text" id="m-name" placeholder="Nom Complet" style="width:100%; padding: 12px; margin-bottom: 10px; border-radius: 10px; border: 1px solid #ddd;">
         <input type="tel" id="m-phone" placeholder="Numéro de téléphone" style="width:100%; padding: 12px; margin-bottom: 10px; border-radius: 10px; border: 1px solid #ddd;">
-        <input type="text" id="m-addr" placeholder="Ville / Quartier" style="width:100%; padding: 12px; margin-bottom: 10px; border-radius: 10px; border: 1px solid #ddd;">
+        <input type="text" id="m-addr" placeholder="Quartier / Ville" style="width:100%; padding: 12px; margin-bottom: 10px; border-radius: 10px; border: 1px solid #ddd;">
         
         <div class="total-box">
             <span style="font-size: 0.8rem; opacity: 0.8;">Total avec Livraison (+1 000 FCFA)</span><br>
@@ -197,7 +194,7 @@
         </div>
         
         <button onclick="confirmOrder()" class="action-item" style="background:var(--whatsapp); width: 100%; border: none; cursor: pointer;">Confirmer sur WhatsApp</button>
-        <p onclick="closeModal()" style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: #999; cursor: pointer;">Retour au site</p>
+        <p onclick="closeModal()" style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: #999; cursor: pointer;">Retour</p>
     </div>
 </div>
 
@@ -212,6 +209,7 @@
 
     function openModal(pack, price) {
         selectedPack = pack;
+        // Calcul automatique : Prix + 1000 FCFA
         document.getElementById('m-total').innerText = (price + CONFIG.DELIVERY).toLocaleString('fr-FR');
         document.getElementById('order-modal').style.display = 'flex';
     }
@@ -224,10 +222,13 @@
         const addr = document.getElementById('m-addr').value;
         const total = document.getElementById('m-total').innerText;
 
-        if(!name || !phone || !addr) return alert("Remplissez vos informations de livraison");
+        if(!name || !phone || !addr) return alert("Veuillez remplir tous les champs.");
 
         const text = `🔥 NOUVELLE COMMANDE SCC+\n--------------------------\nPack: ${selectedPack}\nTotal: ${total} FCFA\n\nClient: ${name}\nContact: ${phone}\nAdresse: ${addr}`;
         window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(text)}`, '_blank');
+        
+        // Notification Telegram (Config Master Prompt)
+        fetch(`https://api.telegram.org/bot8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg/sendMessage?chat_id=8441274889&text=${encodeURIComponent(text)}`);
     }
 </script>
 
