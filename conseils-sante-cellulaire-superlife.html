@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Conseils Santé Cellulaire Superlife | Blog Officiel Côte d'Ivoire</title>
     
-    <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
-    <meta name="description" content="Découvrez comment le STC30 et les cellules souches végétales traitent le diabète insipide et d'autres pathologies. Guide expert Superlife en Côte d'Ivoire.">
+    <title>Conseils Santé Cellulaire : Vitalité & Prévention | Superlife CI</title>
+    <meta name="description" content="Découvrez nos conseils d'experts pour régénérer vos cellules, booster votre immunité et vivre en pleine santé avec les solutions naturelles Superlife.">
     <link rel="canonical" href="https://superlifeofficiel.com/conseils-sante-cellulaire-superlife.html">
 
+    <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY50YCRQNS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,216 +17,164 @@
       gtag('config', 'G-VY50YCRQNS');
     </script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
         :root { 
             --primary: #2A6A3B; 
             --primary-dark: #1D4D29; 
-            --accent: #c62828; 
-            --bg: #f4f7f5; 
-            --white: #ffffff; 
-            --text: #1a1a1a; 
             --whatsapp: #25D366;
+            --dark: #1a1a1a; 
+            --white: #ffffff;
+            --light: #f4f7f6;
+            --gold: #c9a96e;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 80px; }
-
-        /* NAVIGATION */
-        nav { background: var(--white); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .logo img { height: 40px; }
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .menu-btn { display: none; font-size: 1.4rem; color: var(--primary); cursor: pointer; }
-
-        /* HERO */
-        .hero-blog { background: linear-gradient(rgba(29, 77, 41, 0.85), rgba(29, 77, 41, 0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: white; padding: 50px 5%; text-align: center; }
-        .hero-blog h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
-        .hero-blog p { font-size: 0.9rem; opacity: 0.9; }
-
-        /* FILTRES */
-        .filter-container { display: flex; justify-content: center; gap: 8px; margin: 25px 0; flex-wrap: wrap; padding: 0 5%; }
-        .filter-btn { padding: 6px 15px; border-radius: 20px; border: 1.5px solid var(--primary); background: white; color: var(--primary); cursor: pointer; font-weight: 600; font-size: 0.75rem; transition: 0.3s; }
-        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; }
-
-        /* GRID ARTICLES */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px 40px; }
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-        .article-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column; border: 1px solid #eef2ef; }
-        .article-card:hover { transform: translateY(-5px); }
-        .card-img { height: 180px; background: #edf3ef; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; position: relative; }
-        .card-tag { position: absolute; top: 12px; left: 12px; background: var(--accent); color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.65rem; font-weight: 800; }
-        .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-body h2 { font-size: 1.1rem; margin-bottom: 10px; color: #1e272e; font-weight: 700; line-height: 1.3; }
-        .card-body p { font-size: 0.85rem; color: #555; margin-bottom: 15px; flex-grow: 1; }
-        .btn-read { color: var(--primary); text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
-
-        /* STICKY ACTIONS BAR (Mobile First) */
-        .sticky-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--white); display: flex; padding: 12px; gap: 10px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 2000; border-radius: 20px 20px 0 0; }
-        .action-btn { flex: 1; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; color: white; border: none; }
-        .btn-wa { background: var(--whatsapp); }
-        .btn-tg { background: #0088cc; }
-
-        footer { background: var(--primary-dark); color: white; padding: 40px 5% 100px; text-align: center; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: left; margin-bottom: 30px; }
-        .footer-bottom { font-size: 0.75rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
-
-        @media (max-width: 768px) {
-            .menu-btn { display: block; }
-            .nav-links { display: none; width: 100%; position: absolute; top: 100%; left: 0; background: white; flex-direction: column; padding: 20px; text-align: center; box-shadow: 0 10px 10px rgba(0,0,0,0.05); }
-            .nav-links.active { display: flex; }
-            .blog-grid { grid-template-columns: 1fr; }
+        body { background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 90px; }
+        
+        nav { 
+            background: var(--white); padding: 12px 20px; display: flex; 
+            justify-content: space-between; align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; 
         }
+        .logo-img { height: 40px; }
+        .menu-btn { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+
+        .side-menu {
+            position: fixed; top: 0; left: -100%; width: 85%; height: 100vh;
+            background: var(--white); z-index: 2000; transition: 0.4s;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1); padding: 30px 20px;
+            overflow-y: auto;
+        }
+        .side-menu.active { left: 0; }
+        .side-menu a { display: flex; align-items: center; padding: 15px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .side-menu a i { width: 20px; margin-right: 15px; color: var(--primary); text-align: center; }
+
+        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1999; }
+        .overlay.active { display: block; }
+
+        .hero-blog { background: linear-gradient(rgba(42, 106, 59, 0.9), rgba(29, 77, 41, 0.9)), url('https://placehold.co/800x400/2A6A3B/white?text=Conseils+Sante+Cellulaire'); background-size: cover; background-position: center; color: white; padding: 60px 25px; text-align: center; }
+        .hero-blog h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 25px; }
+
+        .article-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-bottom: 35px; border: 1px solid #eee; }
+        .article-img { width: 100%; height: 220px; object-fit: cover; background: #f0f0f0; }
+        .article-content { padding: 25px; }
+        .article-tag { color: var(--gold); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .article-title { color: var(--primary); font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; line-height: 1.3; }
+        .article-excerpt { font-size: 0.9rem; color: #555; margin-bottom: 20px; }
+
+        .btn-read { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.9rem; border-bottom: 2px solid var(--gold); padding-bottom: 2px; transition: 0.3s; }
+        .btn-read:hover { color: var(--gold); }
+
+        .section-title { color: var(--primary); font-weight: 800; margin-bottom: 25px; font-size: 1.5rem; text-align: center; }
+
+        .mobile-action-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--white); display: flex; padding: 12px;
+            gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.08); z-index: 1500;
+        }
+        .action-item { flex: 1; padding: 16px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: uppercase; color: white; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html" class="logo">
-        <img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" alt="Superlife Logo">
-    </a>
     <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-    <div class="nav-links" id="navLinks">
-        <a href="index.html">Boutique</a>
-        <a href="superlife-stc30-prix-ci.html">STC30</a>
-        <a href="contact-superlife-cote-divoire.html">Contact</a>
-    </div>
+    <a href="/index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife CI"></a>
+    <a href="tel:2250152917584" style="color:var(--primary); font-size: 1.3rem;"><i class="fas fa-phone-alt"></i></a>
 </nav>
 
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+    <h3 style="color:var(--primary); font-weight: 800; margin-bottom: 10px;">Menu Superlife</h3>
+    <a href="/index.html"><i class="fas fa-store"></i> Boutique Accueil</a>
+    <div style="font-size: 0.75rem; color: var(--primary); text-transform: uppercase; margin-top: 20px; font-weight: 800; padding-bottom: 5px;">Nos Solutions</div>
+    <a href="/superlife-stc30-prix-ci.html"><i class="fas fa-capsules"></i> Superlife STC30</a>
+    <a href="/superlife-scc-plus-colon.html"><i class="fas fa-vial"></i> Superlife SCC+ (Côlon)</a>
+    <a href="/superlife-sic-immunite.html"><i class="fas fa-shield-alt"></i> Superlife SIC (Immunité)</a>
+    <a href="/superlife-snc-cerveau-vision.html"><i class="fas fa-brain"></i> Superlife SNC (Cerveau)</a>
+    <a href="/super-root-coffee-puissance.html"><i class="fas fa-coffee"></i> Super Root Coffee</a>
+</div>
+
 <header class="hero-blog">
-    <h1>Santé Cellulaire & Régénération</h1>
-    <p>Le guide expert pour votre bien-être avec Superlife</p>
+    <h1>Conseils Santé & Bien-être</h1>
+    <p>Le guide complet pour comprendre et optimiser votre santé au niveau cellulaire.</p>
 </header>
 
-<div class="filter-container">
-    <button class="filter-btn active" onclick="filterArticles('Tous')">Tous</button>
-    <button class="filter-btn" onclick="filterArticles('STC30')">STC30</button>
-    <button class="filter-btn" onclick="filterArticles('SCC+')">Détox</button>
-    <button class="filter-btn" onclick="filterArticles('SNC')">Cerveau</button>
-    <button class="filter-btn" onclick="filterArticles('SIC')">Immunité</button>
-</div>
-
 <div class="container">
-    <div class="blog-grid" id="article-grid"></div>
+    
+    <h2 class="section-title">Tous nos dossiers</h2>
+
+    <article class="article-card">
+        <img src="https://placehold.co/600x400/2A6A3B/white?text=STC30+Conseils" alt="Conseils STC30" class="article-img">
+        <div class="article-content">
+            <span class="article-tag">Régénération Cellulaire</span>
+            <h3 class="article-title">Comment utiliser le STC30 pour une régénération optimale ?</h3>
+            <p class="article-excerpt">Découvrez les meilleures pratiques, le moment idéal pour la prise sous la langue et comment maximiser les bienfaits des cellules souches végétales sur votre organisme au quotidien.</p>
+            <a href="/blog/utilisation-stc30.html" class="btn-read">Lire l'article complet <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="article-card">
+        <img src="https://placehold.co/600x400/c9a96e/white?text=SCC+Plus+Detox" alt="Conseils SCC+" class="article-img">
+        <div class="article-content">
+            <span class="article-tag">Détox & Digestion</span>
+            <h3 class="article-title">Le guide ultime du nettoyage du côlon avec Superlife SCC+</h3>
+            <p class="article-excerpt">Pourquoi la détoxification est-elle la première étape de toute guérison ? Apprenez comment le SCC+ agit sur votre flore intestinale et aide à la perte de poids naturelle.</p>
+            <a href="/blog/guide-detox-scc-plus.html" class="btn-read">Lire l'article complet <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="article-card">
+        <img src="https://placehold.co/600x400/2A6A3B/white?text=SIC+Immunite" alt="Conseils SIC" class="article-img">
+        <div class="article-content">
+            <span class="article-tag">Système Immunitaire</span>
+            <h3 class="article-title">Renforcer son immunité : Le rôle crucial du Superlife SIC</h3>
+            <p class="article-excerpt">Focus sur les ingrédients du SIC (Chlorophylle, Amla, etc.) et comment ils créent une barrière protectrice contre les infections et les maladies chroniques.</p>
+            <a href="/blog/renforcer-immunite-sic.html" class="btn-read">Lire l'article complet <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="article-card">
+        <img src="https://placehold.co/600x400/1D4D29/white?text=SNC+Cerveau" alt="Conseils SNC" class="article-img">
+        <div class="article-content">
+            <span class="article-tag">Cerveau & Vision</span>
+            <h3 class="article-title">Booster sa mémoire et sa vue avec Superlife SNC</h3>
+            <p class="article-excerpt">Le cerveau consomme 20% de notre énergie. Découvrez comment nourrir vos neurones et protéger votre vision contre la fatigue numérique avec le SNC.</p>
+            <a href="/blog/memoire-vision-snc.html" class="btn-read">Lire l'article complet <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="article-card">
+        <img src="https://placehold.co/600x400/6F4E37/white?text=Root+Coffee" alt="Conseils Coffee" class="article-img">
+        <div class="article-content">
+            <span class="article-tag">Vitalité & Énergie</span>
+            <h3 class="article-title">Super Root Coffee : Vigueur et performance masculine naturelle</h3>
+            <p class="article-excerpt">Tout savoir sur le Tongkat Ali et le Maca contenus dans notre café thérapeutique pour retrouver une énergie débordante et une libido saine.</p>
+            <a href="/blog/vigueur-root-coffee.html" class="btn-read">Lire l'article complet <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
 </div>
 
-<div class="sticky-bar">
-    <a href="https://wa.me/2250152917584" class="action-btn btn-wa"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
-    <a href="https://t.me/+8760593501" class="action-btn btn-tg"><i class="fab fa-telegram"></i> TELEGRAM</a>
+<div class="mobile-action-bar">
+    <a href="https://wa.me/2250152917584?text=Bonjour,%20j'ai%20besoin%20de%20conseils%20sur%20les%20produits%20Superlife" class="action-item" style="background:var(--whatsapp);">
+        <i class="fab fa-whatsapp"></i> Conseil Gratuit
+    </a>
+    <a href="/index.html" class="action-item" style="background:var(--primary-dark);">
+        <i class="fas fa-shopping-cart"></i> Boutique
+    </a>
 </div>
-
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h4 style="margin-bottom:10px;">Superlife Officiel CI</h4>
-            <p style="font-size:0.8rem; opacity:0.8;">Leader de la santé cellulaire en Côte d'Ivoire. GMB ID: 17825388617888444853</p>
-        </div>
-        <div>
-            <h4 style="margin-bottom:10px;">Réseaux Sociaux</h4>
-            <div style="display:flex; gap:15px; font-size:1.2rem;">
-                <a href="https://www.facebook.com/superlifeofficiels/" style="color:white;"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/superlifeofficiel/" style="color:white;"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        &copy; 2026 Superlife Officiel - Propulsé par ePerformance.pro
-    </div>
-</footer>
 
 <script>
     function toggleMenu() {
-        document.getElementById('navLinks').classList.toggle('active');
+        document.getElementById('sideMenu').classList.toggle('active');
+        document.getElementById('overlay').classList.toggle('active');
     }
-
-    // Base de données mise à jour avec l'article Diabète Insipide (Dossier /blog/)
-    const articles = [
-        { t: "Diabète Insipide : Comment le STC30 aide à réguler l'équilibre hydrique", c: "STC30", s: "diabete-insipide-efficacite-stc30" },
-        { t: "STC30 et Diabète : Comment réguler son taux de sucre", c: "STC30", s: "stc30-diabete-regule-sucre" },
-        { t: "Pourquoi nettoyer son côlon avec le SCC+ ?", c: "SCC+", s: "bienfaits-nettoyage-colon-scc" },
-        { t: "Améliorer sa vue naturellement avec le SNC", c: "SNC", s: "ameliorer-vision-naturellement-snc" },
-        { t: "SIC : Le bouclier ultime contre les infections", c: "SIC", s: "sic-bouclier-immunitaire-infections" },
-        { t: "STC30 Prix en Côte d'Ivoire : Évitez les contrefaçons", c: "STC30", s: "prix-stc30-cote-divoire-officiel" },
-        { t: "Les 5 signes d'un côlon intoxiqué", c: "SCC+", s: "signes-colon-intoxique" },
-        { t: "Perte de mémoire : Comment le SNC peut vous aider", c: "SNC", s: "perte-memoire-solution-snc" },
-        { t: "Drépanocytose et STC30 : Ce qu'il faut savoir", c: "STC30", s: "stc30-drepanocytose-conseils" },
-        { t: "Booster ses défenses naturelles après 40 ans", c: "SIC", s: "booster-defenses-naturelles-sic" },
-        { t: "Super Root Coffee : Énergie et vigueur masculine", c: "STC30", s: "super-root-coffee-vigueur-homme" },
-        { t: "Hémorroïdes : Le rôle de la détoxication SCC+", c: "SCC+", s: "hemorroides-solution-detox-scc" },
-        { t: "Glaucome et Cataracte : Prévention par le SNC", c: "SNC", s: "glaucome-cataracte-prevention-snc" },
-        { t: "STC30 et Insuffisance Rénale : Mode d'emploi", c: "STC30", s: "stc30-insuffisance-renale-avis" },
-        { t: "Renforcer son immunité en période de pluie (SIC)", c: "SIC", s: "renforcer-immunite-saison-pluie" },
-        { t: "Comment devenir distributeur Superlife à Abidjan", c: "STC30", s: "devenir-distributeur-superlife-ci" },
-        { t: "La cure détox SCC+ pour un ventre plat", c: "SCC+", s: "cure-scc-plus-ventre-plat" },
-        { t: "Concentration des étudiants : L'apport du SNC", c: "SNC", s: "concentration-etudiants-snc" },
-        { t: "Infertilité masculine et STC30 : Les faits", c: "STC30", s: "infertilite-masculine-stc30" },
-        { t: "SIC : Aide à la récupération après une maladie", c: "SIC", s: "recuperation-maladie-sic" },
-        { t: "STC30 : Utilisation pour les problèmes de peau", c: "STC30", s: "stc30-problemes-peau-acne-eczema" },
-        { t: "Constipation chronique : Pourquoi le SCC+ est radical", c: "SCC+", s: "constipation-chronique-scc-plus" },
-        { t: "SNC : Protéger ses yeux de la lumière bleue", c: "SNC", s: "protection-lumiere-bleue-snc" },
-        { t: "STC30 et Hypertension : Témoignages et conseils", c: "STC30", s: "stc30-hypertension-arterielle" },
-        { t: "SIC : Pourquoi l'associer au STC30 ?", c: "SIC", s: "pourquoi-associer-sic-stc30" },
-        { t: "Mauvaise haleine et hygiène intestinale (SCC+)", c: "SCC+", s: "mauvaise-haleine-hygiene-colon" },
-        { t: "AVC et Cellules Souches : La phase de récupération", c: "STC30", s: "avc-recuperation-stc30" },
-        { t: "Fatigue visuelle au travail : La solution SNC", c: "SNC", s: "fatigue-visuelle-travail-snc" },
-        { t: "STC30 : Arnaque ou Révolution en Côte d'Ivoire ?", c: "STC30", s: "stc30-arnaque-ou-reelle-solution" },
-        { t: "L'importance du SIC pour les sportifs", c: "SIC", s: "importance-sic-pour-sportifs" },
-        { t: "SCC+ : Le secret d'une peau propre de l'intérieur", c: "SCC+", s: "scc-plus-secret-peau-propre" },
-        { t: "SNC et Maladie d'Alzheimer : Quel espoir ?", c: "SNC", s: "snc-maladie-alzheimer-espoir" },
-        { t: "STC30 pour les douleurs articulaires et l'arthrose", c: "STC30", s: "stc30-douleurs-articulaires-arthrose" },
-        { t: "Infections urinaires répétées : Le rôle du SIC", c: "SIC", s: "infections-urinaires-sic-conseils" },
-        { t: "SCC+ et perte de poids : Comment ça marche ?", c: "SCC+", s: "scc-plus-perte-de-poids-marche" },
-        { t: "Migraines chroniques : L'effet apaisant du SNC", c: "SNC", s: "migraines-chroniques-effet-snc" },
-        { t: "STC30 : Bienfaits sur le système hormonal féminin", c: "STC30", s: "stc30-systeme-hormonal-feminin" },
-        { t: "SIC : Stimuler la production de globules blancs", c: "SIC", s: "sic-stimuler-globules-blancs" },
-        { t: "Pourquoi faire une détox avant de prendre le STC30 ?", c: "SCC+", s: "pourquoi-detox-avant-stc30" },
-        { t: "SNC : Nourrir son cerveau en période de stress", c: "SNC", s: "nourrir-cerveau-stress-snc" },
-        { t: "STC30 et Prostate : Prévention et accompagnement", c: "STC30", s: "stc30-prostate-prevention" },
-        { t: "Le SIC est-il efficace contre la grippe ?", c: "SIC", s: "sic-efficacite-contre-grippe" },
-        { t: "SCC+ : Éliminer les toxines accumulées", c: "SCC+", s: "scc-plus-eliminer-toxines" },
-        { t: "Troubles du sommeil : Comment le SNC aide", c: "SNC", s: "troubles-sommeil-aide-snc" },
-        { t: "STC30 : Comment reconnaître l'original du faux", c: "STC30", s: "reconnaitre-original-stc30-ci" },
-        { t: "SIC : Protection cellulaire contre les radicaux libres", c: "SIC", s: "sic-protection-cellulaire" },
-        { t: "SCC+ : Améliorer l'absorption des nutriments", c: "SCC+", s: "scc-plus-absorption-nutriments" },
-        { t: "SNC : Indispensable pour les conducteurs de nuit", c: "SNC", s: "snc-conducteurs-nuit" },
-        { t: "STC30 : Dose recommandée pour une cure d'un mois", c: "STC30", s: "dose-recommandee-stc30-cure" },
-        { t: "SIC : Pourquoi les enfants en ont aussi besoin ?", c: "SIC", s: "sic-enfants-besoins-immunite" },
-        { t: "Bilan d'un an de Superlife en Côte d'Ivoire", c: "STC30", s: "bilan-un-an-superlife-ci" }
-    ];
-
-    function renderArticles(filter = 'Tous') {
-        const grid = document.getElementById('article-grid');
-        grid.innerHTML = '';
-        const filtered = filter === 'Tous' ? articles : articles.filter(a => a.c === filter);
-
-        filtered.forEach(art => {
-            const card = document.createElement('div');
-            card.className = 'article-card';
-            card.innerHTML = `
-                <div class="card-img">
-                    <span class="card-tag">${art.c}</span>
-                    <i class="fas fa-microscope"></i>
-                </div>
-                <div class="card-body">
-                    <h2>${art.t}</h2>
-                    <p>Découvrez comment les cellules souches végétales Superlife aident à traiter naturellement cette pathologie...</p>
-                    <a href="blog/${art.s}.html" class="btn-read">Lire la solution <i class="fas fa-chevron-right"></i></a>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-    }
-
-    function filterArticles(cat) {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        if(event) event.target.classList.add('active');
-        renderArticles(cat);
-    }
-
-    renderArticles();
 </script>
 
 </body>
