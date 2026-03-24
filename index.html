@@ -222,6 +222,7 @@
         WA: '2250152917584',
         TG_TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
         TG_CHAT_ID: '8441274889',
+        CAPI_URL: 'https://api.superlifeofficiel.com/capi.php',
         DELIVERY: 1000
     };
 
@@ -286,7 +287,6 @@
             grandTotal += calculateDetails(s.id.replace('up-',''), parseInt(s.value)).total;
         });
 
-        // Ajout systématique des 1000F de livraison
         document.getElementById('m-price').innerText = (grandTotal + CONFIG.DELIVERY).toLocaleString();
     }
 
@@ -315,17 +315,29 @@
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
-        const total = document.getElementById('m-price').innerText;
+        const totalStr = document.getElementById('m-price').innerText;
+        const totalVal = parseInt(totalStr.replace(/\s/g, ''));
 
         if(!name || !phone || !addr) return alert("Veuillez remplir vos coordonnées.");
 
+        // 1. Envoi à l'API Conversions (LWS)
+        try {
+            fetch(CONFIG.CAPI_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ name: name, phone: phone, total: totalVal })
+            });
+        } catch(e) { console.error("CAPI Error"); }
+
+        // 2. Préparation Message Telegram
         let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
         document.querySelectorAll('.upsell-select').forEach(s => {
             if(s.value > 0) list += `• ${PRODUCTS.find(p => p.id === s.id.replace('up-','')).name}: ${s.value}\n`;
         });
 
-        const msg = `📦 *NOUVELLE COMMANDE*\n----------\n${list}\n*TOTAL:* ${total} FCFA (Livraison incluse)\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
+        const msg = `📦 *NOUVELLE COMMANDE*\n----------\n${list}\n*TOTAL:* ${totalStr} FCFA (Livraison incluse)\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
 
+        // 3. Envoi Telegram
         try {
             const response = await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
                 method: 'POST',
@@ -336,9 +348,7 @@
             if (response.ok) {
                 alert("Commande transmise avec succès ! Nous vous recontacterons.");
                 closeModal();
-            } else {
-                throw new Error('Telegram Error');
-            }
+            } else { throw new Error(); }
         } catch (e) {
             window.open(`https://wa.me/${CONFIG.WA.replace('+','')}?text=${encodeURIComponent(msg)}`, '_blank');
         }
