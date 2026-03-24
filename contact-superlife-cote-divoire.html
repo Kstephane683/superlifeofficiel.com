@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactez Superlife Officiel Côte d'Ivoire | Support & Commandes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
-    <meta name="description" content="Besoin d'aide ou d'informations sur les produits Superlife (STC30, SCC+, SIC) en Côte d'Ivoire ? Contactez notre service client officiel par WhatsApp, Telegram ou visitez notre fiche GMB.">
+    <title>Contactez Superlife Officiel Côte d'Ivoire | Support & Commandes</title>
+    <meta name="description" content="Besoin d'aide ou d'informations sur les produits Superlife (STC30, SCC+, SIC) en Côte d'Ivoire ? Contactez notre service client officiel par WhatsApp ou formulaire.">
     <link rel="canonical" href="https://superlifeofficiel.com/contact-superlife-cote-divoire.html">
 
+    <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY50YCRQNS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,125 +17,180 @@
       gtag('config', 'G-VY50YCRQNS');
     </script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --whatsapp: #25D366; --telegram: #0088cc; --dark: #1a1a1a; --light: #f4f7f6; --fb: #1877F2; --ig: #E4405F; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background: var(--light); color: var(--dark); line-height: 1.6; }
-        
-        /* NAVIGATION */
-        nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        
-        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        .contact-header { text-align: center; margin-bottom: 50px; }
-        .contact-header h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 10px; }
-        
-        /* GRILLE DE CONTACT */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .contact-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; }
-        .contact-card:hover { transform: translateY(-5px); }
-        .icon-circle { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; color: #fff; }
-
-        /* FORMULAIRE */
-        .form-section { background: #fff; border-radius: 20px; padding: 30px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem; outline: none; transition: 0.3s; }
-        input:focus, textarea:focus { border-color: var(--primary); }
-        .btn-submit { width: 100%; padding: 15px; border-radius: 10px; border: none; color: white; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.3s; background: var(--primary); }
-
-        /* WHATSAPP FLOAT */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37,211,102,0.4); z-index: 9999; text-decoration: none; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37,211,102, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); } }
-
-        footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-
-        /* RESPONSIVE MOBILE - RÉPARÉ */
-        @media (max-width: 768px) {
-            .menu-btn { display: block; }
-            .nav-links { 
-                display: none; 
-                flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background: #fff; 
-                padding: 20px; 
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
-                text-align: center;
-                gap: 15px;
-            }
-            .nav-links.active { display: flex; }
-            .contact-header h1 { font-size: 1.8rem; }
+        :root { 
+            --primary: #2A6A3B; 
+            --primary-dark: #1D4D29; 
+            --whatsapp: #25D366;
+            --telegram: #0088cc;
+            --dark: #1a1a1a; 
+            --white: #ffffff;
+            --light: #f4f7f6;
+            --gold: #c9a96e;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 90px; overflow-x: hidden; }
+        
+        nav { 
+            background: var(--white); padding: 12px 20px; display: flex; 
+            justify-content: space-between; align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo-img { height: 40px; width: auto; }
+        .menu-btn { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+
+        .side-menu {
+            position: fixed; top: 0; left: -100%; width: 85%; height: 100vh;
+            background: var(--white); z-index: 2000; transition: 0.4s;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1); padding: 30px 20px;
+            overflow-y: auto;
+        }
+        .side-menu.active { left: 0; }
+        .side-menu a { display: flex; align-items: center; padding: 15px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .side-menu a i { width: 20px; margin-right: 15px; color: var(--primary); text-align: center; }
+        .side-menu .submenu-title { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; margin-top: 20px; font-weight: 800; border-bottom: none; }
+        
+        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1999; }
+        .overlay.active { display: block; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 25px; }
+        
+        .product-hero { text-align: center; padding: 20px 0; margin-bottom: 30px; }
+        .product-hero h1 { color: var(--primary); font-size: 1.7rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
+        
+        .badge-gold { background: var(--gold); color: var(--dark); padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 15px; }
+
+        .section-title { color: var(--primary); font-weight: 800; margin: 30px 0 15px; font-size: 1.3rem; border-left: 4px solid var(--gold); padding-left: 15px; text-transform: uppercase; }
+        
+        /* Contact Cards */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+        .contact-card { background: #f9fdfa; padding: 20px; border-radius: 20px; border: 1px solid #edf7f0; text-align: center; text-decoration: none; color: inherit; }
+        .contact-card i { font-size: 2rem; margin-bottom: 10px; }
+        .contact-card h3 { font-size: 0.9rem; color: var(--primary); margin-bottom: 5px; }
+        .contact-card p { font-size: 0.75rem; color: #777; }
+
+        /* Form Styling */
+        .form-box { background: var(--light); padding: 25px; border-radius: 25px; margin-top: 20px; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 12px; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 0.95rem; outline: none; }
+        input:focus, textarea:focus { border-color: var(--primary); }
+        
+        .btn-submit { background: var(--primary); color: white; text-decoration: none; padding: 18px; border-radius: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; text-transform: uppercase; border: none; width: 100%; cursor: pointer; }
+
+        .mobile-action-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--white); display: flex; padding: 12px;
+            gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.08); z-index: 1500;
+        }
+        .action-item { flex: 1; padding: 16px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: uppercase; color: white; }
+
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; padding: 15px; background: white; border-radius: 15px; border: 1px solid #eee; }
+        .info-item i { color: var(--gold); font-size: 1.2rem; }
+        .info-item div { font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="45" alt="Superlife Logo"></a>
-    <div class="menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Boutique</a></li>
-        <li><a href="superlife-stc30-prix-ci.html">STC30</a></li>
-        <li><a href="conseils-sante-cellulaire-superlife.html">Blog</a></li>
-        <li><a href="contact-superlife-cote-divoire.html" style="color:var(--primary)">Contact</a></li>
-    </ul>
+    <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <a href="/index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife Logo"></a>
+    <a href="tel:2250152917584" style="color:var(--primary); font-size: 1.3rem;"><i class="fas fa-phone-alt"></i></a>
 </nav>
 
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+    <h3 style="color:var(--primary); font-weight: 800; margin-bottom: 10px;">Menu Superlife</h3>
+    <a href="/index.html"><i class="fas fa-store"></i> Boutique Accueil</a>
+    <div class="submenu-title">Nos Solutions Santé</div>
+    <a href="/superlife-stc30-prix-ci.html"><i class="fas fa-capsules"></i> Superlife STC30</a>
+    <a href="/superlife-scc-plus-colon.html"><i class="fas fa-vial"></i> Superlife SCC+ (Côlon)</a>
+    <a href="/superlife-sic-immunite.html"><i class="fas fa-shield-alt"></i> Superlife SIC (Immunité)</a>
+    <a href="/superlife-snc-cerveau-vision.html"><i class="fas fa-brain"></i> Superlife SNC (Cerveau)</a>
+    <a href="/super-root-coffee-puissance.html"><i class="fas fa-coffee"></i> Super Root Coffee</a>
+    <div class="submenu-title">Infos & Partenariat</div>
+    <a href="/conseils-sante-cellulaire-superlife.html"><i class="fas fa-heartbeat"></i> Conseils Santé</a>
+    <a href="/devenir-distributeur-superlife-cote-divoire.html"><i class="fas fa-handshake"></i> Devenir Distributeur</a>
+    <a href="/contact-superlife-cote-divoire.html" style="color:var(--primary); font-weight:700;"><i class="fas fa-headset"></i> Contact & Aide</a>
+</div>
+
 <div class="container">
-    <div class="contact-header">
-        <h1>Contactez-nous</h1>
-        <p>Une question ? Besoin d'un conseil ? Notre équipe est à votre écoute.</p>
+    
+    <div class="product-hero">
+        <span class="badge-gold">Service Client 7j/7</span>
+        <h1>Contactez l'Équipe Superlife Côte d'Ivoire</h1>
+        <p style="color:#666;">Une question sur nos produits ou votre commande ? Nous sommes là pour vous accompagner vers un meilleur bien-être.</p>
     </div>
 
     <div class="contact-grid">
-        <div class="contact-card">
-            <div class="icon-circle" style="background:var(--whatsapp)"><i class="fab fa-whatsapp"></i></div>
+        <a href="https://wa.me/2250152917584" class="contact-card">
+            <i class="fab fa-whatsapp" style="color: var(--whatsapp);"></i>
             <h3>WhatsApp</h3>
-            <p>Réponse rapide pour vos commandes</p>
-            <a href="https://wa.me/2250152917584" style="color:var(--whatsapp); font-weight:bold; text-decoration:none;">+225 01 52 91 75 84</a>
-        </div>
-        <div class="contact-card">
-            <div class="icon-circle" style="background:var(--telegram)"><i class="fab fa-telegram"></i></div>
+            <p>Réponse Instantanée</p>
+        </a>
+        <a href="https://t.me/@superlifeofficiels" class="contact-card">
+            <i class="fab fa-telegram" style="color: var(--telegram);"></i>
             <h3>Telegram</h3>
-            <p>Support client 7j/7</p>
-            <a href="https://t.me/@superlifeofficiels" style="color:var(--telegram); font-weight:bold; text-decoration:none;">@superlifeofficiels</a>
+            <p>Support Officiel</p>
+        </a>
+    </div>
+
+    <h2 class="section-title">Informations de contact</h2>
+    
+    <div class="info-item">
+        <i class="fas fa-phone-volume"></i>
+        <div>
+            <strong>Téléphone / WhatsApp</strong><br>
+            +225 01 52 91 75 84
         </div>
     </div>
 
-    <div class="form-section">
-        <h2 style="margin-bottom:20px; color:var(--primary)">Envoyez un message</h2>
-        <input type="text" id="c-name" placeholder="Votre Nom">
-        <input type="tel" id="c-phone" placeholder="Votre Téléphone">
-        <textarea id="c-message" rows="5" placeholder="Comment pouvons-nous vous aider ?"></textarea>
-        <button onclick="handleContact()" class="btn-submit">ENVOYER LE MESSAGE</button>
+    <div class="info-item">
+        <i class="fas fa-clock"></i>
+        <div>
+            <strong>Heures d'ouverture</strong><br>
+            Lundi - Dimanche : 08:00 - 21:00
+        </div>
     </div>
+
+    <div class="info-item">
+        <i class="fas fa-truck-fast"></i>
+        <div>
+            <strong>Zone de Livraison</strong><br>
+            Abidjan (24h) & Intérieur de la CI (48h)
+        </div>
+    </div>
+
+    <h2 class="section-title">Envoyez-nous un message</h2>
+    <div class="form-box">
+        <input type="text" id="c-name" placeholder="Votre Nom Complet">
+        <input type="tel" id="c-phone" placeholder="Votre Numéro de Téléphone">
+        <textarea id="c-message" rows="5" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+        
+        <button onclick="handleContact()" class="btn-submit">
+            <i class="fas fa-paper-plane"></i> Envoyer le message
+        </button>
+    </div>
+
 </div>
 
-<a href="https://wa.me/2250152917584" class="wa-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<footer>
-    <p>&copy; 2026 Superlife Officiel Côte d'Ivoire</p>
-</footer>
+<div class="mobile-action-bar">
+    <a href="https://wa.me/2250152917584?text=Bonjour,%20j'ai%20une%20question" class="action-item" style="background:var(--whatsapp);">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="tel:2250152917584" class="action-item" style="background:var(--primary-dark);">
+        <i class="fas fa-phone"></i> Appeler
+    </a>
+</div>
 
 <script>
-    const TELEGRAM_CONFIG = {
-        TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
-        CHAT_ID: '8441274889'
-    };
+    const CONFIG = { TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg', CHAT_ID: '8441274889' };
 
     function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        nav.classList.toggle('active');
+        document.getElementById('sideMenu').classList.toggle('active');
+        document.getElementById('overlay').classList.toggle('active');
     }
 
     async function handleContact() {
@@ -143,19 +198,21 @@
         const phone = document.getElementById('c-phone').value;
         const message = document.getElementById('c-message').value;
 
-        if(!name || !phone || !message) return alert("Merci de remplir tous les champs.");
+        if(!name || !phone || !message) return alert("Veuillez remplir tous les champs.");
 
-        const fullMessage = `📩 NOUVEAU CONTACT SITE\n--------------------------\n👤 Nom: ${name}\n📞 Tél: ${phone}\n💬 Message: ${message}`;
+        const text = `📩 NOUVEAU CONTACT SITE\n--------------------------\n👤 Client: ${name}\n📞 Tél: ${phone}\n💬 Message: ${message}`;
 
         try {
-            await fetch(`https://api.telegram.org/bot${TELEGRAM_CONFIG.TOKEN}/sendMessage`, {
+            await fetch(`https://api.telegram.org/bot${CONFIG.TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chat_id: TELEGRAM_CONFIG.CHAT_ID, text: fullMessage })
+                body: JSON.stringify({ chat_id: CONFIG.CHAT_ID, text: text })
             });
-            alert("Message envoyé ! Nous vous recontacterons bientôt.");
+            alert("Merci ! Votre message a été envoyé. Nous vous recontacterons rapidement.");
             location.reload();
-        } catch (e) { alert("Erreur. Veuillez utiliser WhatsApp."); }
+        } catch (error) {
+            alert("Une erreur est survenue. Merci de nous contacter via WhatsApp.");
+        }
     }
 </script>
 
