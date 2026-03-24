@@ -320,14 +320,16 @@
 
         if(!name || !phone || !addr) return alert("Veuillez remplir vos coordonnées.");
 
-        // 1. Envoi à l'API Conversions (LWS)
+        // 1. Envoi à l'API Conversions (LWS) - Modification : forcer l'attente (await)
         try {
-            fetch(CONFIG.CAPI_URL, {
+            const capiResponse = await fetch(CONFIG.CAPI_URL, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ name: name, phone: phone, total: totalVal })
             });
-        } catch(e) { console.error("CAPI Error"); }
+            const capiResult = await capiResponse.json();
+            console.log("Retour API Facebook:", capiResult);
+        } catch(e) { console.error("CAPI Error", e); }
 
         // 2. Préparation Message Telegram
         let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
