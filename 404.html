@@ -2,32 +2,32 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Redirection en cours... | Superlife Officiel CI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Redirection | Superlife Officiel CI</title>
     <style>
         :root { --primary: #2A6A3B; }
-        body { font-family: 'Poppins', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #666; }
-        .loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
+        body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #666; margin: 0; }
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 0 auto 15px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
     <div>
         <div class="loader"></div>
-        <p>Redirection vers votre produit santé...</p>
+        <p>Chargement en cours...</p>
     </div>
 
     <script>
-        // 1. Analyse de l'URL actuelle
-        const currentUrl = window.location.href.toLowerCase();
-        const currentPath = window.location.pathname.toLowerCase();
-        
-        // 2. SÉCURITÉ : Si on est déjà à la racine ou sur l'index, on arrête tout pour éviter la boucle
-        if (currentPath === "/" || currentPath === "/index.html" || currentPath === "") {
-            console.log("Déjà sur l'accueil, arrêt de la redirection.");
-        } else {
-            // Liste des règles de redirection
+        (function() {
+            const path = window.location.pathname.toLowerCase();
+            const fullUrl = window.location.href.toLowerCase();
+
+            // --- PROTECTION RADICALE CONTRE LA BOUCLE ---
+            // Si on est sur l'accueil, on ne redirige JAMAIS.
+            if (path === "/" || path === "/index" || path === "/index.html" || path === "") {
+                console.log("Accueil détecté : arrêt du script 404.");
+                return; 
+            }
+
             const rules = {
                 'stc30': '/superlife-stc30-prix-ci.html',
                 'scc': '/superlife-scc-plus-colon.html',
@@ -39,24 +39,29 @@
                 'contact': '/contact-superlife-cote-divoire.html'
             };
 
-            let target = "/index.html"; // Cible par défaut
+            let target = null;
 
-            // 3. On cherche si un mot-clé est présent dans l'URL cassée
-            let found = false;
+            // Vérification des mots-clés
             for (let key in rules) {
-                if (currentUrl.indexOf(key) !== -1) {
+                if (fullUrl.indexOf(key) !== -1) {
                     target = rules[key];
-                    found = true;
                     break;
                 }
             }
 
-            // 4. Redirection uniquement si nécessaire
-            // On vérifie qu'on ne redirige pas vers la page où l'on est déjà
-            if (currentUrl.indexOf(target) === -1) {
+            // Redirection uniquement si un produit est trouvé
+            if (target) {
                 window.location.replace(target);
+            } else {
+                // Si aucune règle ne correspond, on attend 2 secondes et on force l'index
+                // mais seulement si on n'y est pas déjà (double sécurité)
+                setTimeout(() => {
+                    if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
+                        window.location.href = "/index.html";
+                    }
+                }, 2000);
             }
-        }
+        })();
     </script>
 </body>
 </html>
