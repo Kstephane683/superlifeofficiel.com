@@ -19,33 +19,44 @@
     </div>
 
     <script>
-        // Analyse du mot-clé dans l'URL actuelle
-        const path = window.location.href.toLowerCase();
+        // 1. Analyse de l'URL actuelle
+        const currentUrl = window.location.href.toLowerCase();
+        const currentPath = window.location.pathname.toLowerCase();
         
-        // Liste des redirections (Identique à ton PHP)
-        const rules = {
-            'stc30': '/superlife-stc30-prix-ci.html',
-            'scc': '/superlife-scc-plus-colon.html',
-            'sic': '/superlife-sic-immunite.html',
-            'snc': '/superlife-snc-cerveau-vision.html',
-            'coffee': '/super-root-coffee-puissance.html',
-            'perle': '/super-root-coffee-puissance.html',
-            'blog': '/conseils-sante-cellulaire-superlife.html',
-            'contact': '/contact-superlife-cote-divoire.html'
-        };
+        // 2. SÉCURITÉ : Si on est déjà à la racine ou sur l'index, on arrête tout pour éviter la boucle
+        if (currentPath === "/" || currentPath === "/index.html" || currentPath === "") {
+            console.log("Déjà sur l'accueil, arrêt de la redirection.");
+        } else {
+            // Liste des règles de redirection
+            const rules = {
+                'stc30': '/superlife-stc30-prix-ci.html',
+                'scc': '/superlife-scc-plus-colon.html',
+                'sic': '/superlife-sic-immunite.html',
+                'snc': '/superlife-snc-cerveau-vision.html',
+                'coffee': '/super-root-coffee-puissance.html',
+                'perle': '/super-root-coffee-puissance.html',
+                'blog': '/conseils-sante-cellulaire-superlife.html',
+                'contact': '/contact-superlife-cote-divoire.html'
+            };
 
-        let target = "/index.html"; // Par défaut, retour accueil
+            let target = "/index.html"; // Cible par défaut
 
-        // On cherche si un mot-clé est présent dans l'URL cassée
-        for (let key in rules) {
-            if (path.indexOf(key) !== -1) {
-                target = rules[key];
-                break;
+            // 3. On cherche si un mot-clé est présent dans l'URL cassée
+            let found = false;
+            for (let key in rules) {
+                if (currentUrl.indexOf(key) !== -1) {
+                    target = rules[key];
+                    found = true;
+                    break;
+                }
+            }
+
+            // 4. Redirection uniquement si nécessaire
+            // On vérifie qu'on ne redirige pas vers la page où l'on est déjà
+            if (currentUrl.indexOf(target) === -1) {
+                window.location.replace(target);
             }
         }
-
-        // Redirection instantanée
-        window.location.replace(target);
     </script>
 </body>
 </html>
