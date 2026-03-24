@@ -25,7 +25,7 @@
             --white: #ffffff;
             --light: #f4f7f6;
             --gold: #c9a96e;
-            --gray: #777;
+            --red: #e74c3c;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -48,20 +48,20 @@
         #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 3000; align-items: center; justify-content: center; padding: 15px; }
         .modal-card { background: #fff; width: 100%; max-width: 450px; border-radius: 25px; padding: 20px; max-height: 90vh; overflow-y: auto; }
         
-        .main-selection-box { background: #f0f7f2; padding: 15px; border-radius: 20px; border: 1px solid var(--primary); margin-bottom: 20px; position: relative; }
-        .badge-main { position: absolute; top: -10px; left: 20px; background: var(--primary); color: white; font-size: 0.65rem; padding: 4px 12px; border-radius: 20px; font-weight: 700; text-transform: uppercase; }
-        .instruction-text { font-size: 0.7rem; color: var(--gray); font-style: italic; margin-top: 4px; display: block; }
+        .main-selection-box { background: #f0f7f2; padding: 15px; border-radius: 20px; border: 2px solid var(--primary); margin-bottom: 20px; position: relative; }
+        .badge-main { position: absolute; top: -12px; left: 20px; background: var(--primary); color: white; font-size: 0.65rem; padding: 4px 12px; border-radius: 20px; font-weight: 700; text-transform: uppercase; }
+        
+        .promo-msg { background: #fff; color: var(--red); font-size: 0.75rem; font-weight: 700; padding: 8px; border-radius: 10px; margin-top: 10px; display: none; border: 1px dashed var(--red); text-align: center; }
 
         .upsell-section { border-top: 1px solid #eee; padding-top: 15px; margin-top: 10px; }
-        .upsell-title { font-size: 0.85rem; font-weight: 700; color: #666; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+        .upsell-title { font-size: 0.85rem; font-weight: 700; color: #666; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
         
         .qty-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
         .qty-row span { font-size: 0.85rem; font-weight: 600; }
-        .qty-row select { width: 95px; padding: 8px; border-radius: 10px; border: 1px solid #ddd; background: #fff; font-weight: 600; }
+        .qty-row select { width: 100px; padding: 8px; border-radius: 10px; border: 1px solid #ddd; background: #fff; font-weight: 700; }
 
         .total-box { text-align: center; margin: 20px 0; padding: 15px; background: var(--dark); color: white; border-radius: 15px; }
         .total-box span#m-price { font-size: 1.6rem; color: var(--gold); font-weight: 800; }
-        .total-footer { font-size: 0.65rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; display: block; }
 
         .btn-buy-now { background: var(--primary); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer; text-transform: uppercase; font-size: 0.9rem; }
         input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 12px; margin-bottom: 10px; font-size: 14px; background: #fafafa; }
@@ -81,42 +81,40 @@
 
 <div class="container">
     <div class="hero">
-        <h1>Votre Santé Cellulaire</h1>
-        <p>Distributeur Officiel Côte d'Ivoire</p>
+        <h1>Boutique Officielle Superlife</h1>
+        <p>Commandez vos produits et payez à la livraison</p>
     </div>
     <div class="product-grid" id="main-shop"></div>
 </div>
 
 <div id="order-modal">
     <div class="modal-card">
-        <h3 style="text-align:center; margin-bottom:20px; font-weight:800;">Finaliser ma commande</h3>
+        <h3 style="text-align:center; margin-bottom:20px; font-weight:800;">Détails de votre cure</h3>
         
         <div class="main-selection-box" id="main-prod-box">
-            <div class="badge-main">Votre sélection</div>
+            <div class="badge-main">Produit Vedette</div>
             <div class="qty-row" style="margin-bottom: 0;">
-                <span id="main-prod-name" style="font-size: 1rem; color: var(--primary-dark);">Produit...</span>
+                <span id="main-prod-name" style="font-size: 1rem; color: var(--primary-dark); font-weight: 700;">Produit...</span>
                 <select id="main-qty-select" onchange="updatePrice()"></select>
             </div>
-            <span class="instruction-text">💡 Plus vous commandez de boîtes, plus vous économisez.</span>
+            <div id="promo-display" class="promo-msg"></div>
         </div>
 
         <div class="upsell-section">
-            <div class="upsell-title"><i class="fas fa-plus-circle" style="color: var(--gold);"></i> Compléter ma cure (Optionnel)</div>
-            <span class="instruction-text" style="margin-bottom: 15px;">Associez d'autres produits pour un résultat optimal sur votre santé.</span>
+            <div class="upsell-title"><i class="fas fa-plus-circle" style="color: var(--gold);"></i> Ajouter d'autres produits (Optionnel)</div>
             <div id="upsell-container">
                 </div>
         </div>
 
         <div class="total-box">
             TOTAL : <span id="m-price">0</span> <small>FCFA</small>
-            <span class="total-footer"><i class="fas fa-truck"></i> Livraison partout en Côte d'Ivoire</span>
         </div>
 
         <input type="text" id="m-name" placeholder="Nom complet">
         <input type="tel" id="m-phone" placeholder="Numéro de téléphone">
-        <textarea id="m-address" placeholder="Ville / Quartier de livraison exact" rows="2"></textarea>
+        <textarea id="m-address" placeholder="Quartier & Ville de livraison" rows="2"></textarea>
         
-        <button onclick="sendOrder()" class="btn-buy-now"><i class="fas fa-check-circle"></i> Confirmer l'achat</button>
+        <button onclick="sendOrder()" class="btn-buy-now"><i class="fas fa-shopping-cart"></i> Valider ma commande</button>
         <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:10px; cursor:pointer; font-size: 0.8rem;">Continuer mes achats</button>
     </div>
 </div>
@@ -178,27 +176,42 @@
         document.getElementById('order-modal').style.display = 'flex';
     }
 
-    function calculatePrice(id, qty) {
-        if (qty === 0) return 0;
+    function calculatePriceDetails(id, qty) {
+        if (qty === 0) return { total: 0, saving: 0 };
         const p = PRODUCTS.find(item => item.id === id);
-        if (id === 'coffee') return (qty >= 2) ? qty * p.unitBulk : qty * p.unit;
-        
+        const normalPrice = qty * p.unit;
         let total = 0, rem = qty;
-        const pMax = p.p20 || p.p19 || p.p18;
-        const qMax = p.p20 ? 20 : (p.p19 ? 19 : 18);
 
-        if (rem >= qMax) { total += pMax; rem -= qMax; }
-        while (rem >= 8) { total += p.p8; rem -= 8; }
-        while (rem >= 2) { total += p.p2; rem -= 2; }
-        total += rem * p.unit;
-        return total;
+        if (id === 'coffee') {
+            total = (qty >= 2) ? qty * p.unitBulk : qty * p.unit;
+        } else {
+            const pMax = p.p20 || p.p19 || p.p18;
+            const qMax = p.p20 ? 20 : (p.p19 ? 19 : 18);
+            if (rem >= qMax) { total += pMax; rem -= qMax; }
+            while (rem >= 8) { total += p.p8; rem -= 8; }
+            while (rem >= 2) { total += p.p2; rem -= 2; }
+            total += rem * p.unit;
+        }
+        return { total, saving: normalPrice - total };
     }
 
     function updatePrice() {
-        let grandTotal = calculatePrice(currentMainId, parseInt(document.getElementById('main-qty-select').value));
+        const mainQty = parseInt(document.getElementById('main-qty-select').value);
+        const mainDetails = calculatePriceDetails(currentMainId, mainQty);
+        
+        // Affichage promo
+        const promoDiv = document.getElementById('promo-display');
+        if (mainDetails.saving > 0) {
+            promoDiv.style.display = 'block';
+            promoDiv.innerHTML = `<i class="fas fa-gift"></i> Félicitations ! Vous économisez <b>${mainDetails.saving.toLocaleString()} FCFA</b> sur ce pack.`;
+        } else {
+            promoDiv.style.display = 'none';
+        }
+
+        let grandTotal = mainDetails.total;
         document.querySelectorAll('.upsell-select').forEach(select => {
             const id = select.id.replace('upsell-qty-', '');
-            grandTotal += calculatePrice(id, parseInt(select.value));
+            grandTotal += calculatePriceDetails(id, parseInt(select.value)).total;
         });
         document.getElementById('m-price').innerText = grandTotal.toLocaleString();
     }
@@ -209,7 +222,7 @@
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
-        if(!name || !phone || !addr) return alert("Veuillez remplir vos informations de livraison.");
+        if(!name || !phone || !addr) return alert("Veuillez remplir vos coordonnées.");
 
         let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
         document.querySelectorAll('.upsell-select').forEach(s => {
@@ -224,7 +237,7 @@
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
             });
-            alert("Merci ! Votre commande a été transmise. Nous vous contactons pour la livraison.");
+            alert("Commande transmise avec succès !");
             closeModal();
         } catch (e) {
             window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
