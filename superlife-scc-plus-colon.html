@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superlife SCC+ Prix Côte d'Ivoire | Nettoyage du Côlon & Détox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Superlife SCC+ Prix Côte d'Ivoire | Nettoyage du Côlon, Détox & Perte de Poids Saine</title>
     
     <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
-    <meta name="description" content="Découvrez le Superlife SCC+ en Côte d'Ivoire. Le complément naturel pour un nettoyage du côlon efficace, une perte de poids saine et une détox complète. Commandez ici.">
+    <meta name="description" content="Découvrez le Superlife SCC+ en Côte d'Ivoire. Formule naturelle puissante pour un nettoyage du côlon efficace, une perte de poids durable et une détox complète de l'organisme. Régule le métabolisme. Commandez ici.">
     <link rel="canonical" href="https://superlifeofficiel.com/superlife-scc-plus-colon.html">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY50YCRQNS"></script>
@@ -17,164 +17,248 @@
       gtag('config', 'G-VY50YCRQNS');
     </script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --whatsapp: #25D366; --telegram: #0088cc; --accent: #F8B400; --dark: #1a1a1a; --light: #f4f7f6; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background: #fff; color: var(--dark); line-height: 1.6; }
+        :root { 
+            --primary: #2A6A3B; 
+            --primary-dark: #1D4D29; 
+            --whatsapp: #25D366; 
+            --dark: #1a1a1a; 
+            --white: #ffffff;
+            --light: #f4f7f6;
+            --gold: #c9a96e;
+            --red: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 80px; overflow-x: hidden; }
         
-        /* NAVIGATION */
-        nav { background: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
+        /* NAVIGATION & MENU PRO */
+        nav { 
+            background: var(--white); padding: 12px 20px; display: flex; 
+            justify-content: space-between; align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo-img { height: 40px; width: auto; }
+        .menu-btn { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
 
-        /* Mobile Menu Toggle */
-        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
+        .side-menu {
+            position: fixed; top: 0; left: -100%; width: 85%; height: 100vh;
+            background: var(--white); z-index: 2000; transition: 0.4s;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1); padding: 30px 20px;
+            overflow-y: auto;
+        }
+        .side-menu.active { left: 0; }
+        .side-menu a { display: block; padding: 15px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .side-menu .submenu-title { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; margin-top: 20px; font-weight: 800; }
+        
+        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1999; }
+        .overlay.active { display: block; }
 
+        /* STRUCTURE GENERALE */
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
-        /* HERO PRODUIT */
-        .product-hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; padding: 40px 0; }
-        .product-img img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(42,106,59,0.15); }
-        .product-info h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 15px; line-height: 1.2; }
-        .price-badge { font-size: 1.8rem; font-weight: 900; color: var(--primary); margin: 15px 0; }
+        .section { margin-bottom: 35px; }
+        .section-title { color: var(--primary); font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .section-title i { color: var(--gold); }
 
-        /* SECTIONS CONTENU */
-        .section { margin: 40px 0; }
-        .section h2 { color: var(--primary); border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
-        .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .benefit-item { background: #f8fff8; padding: 15px; border-radius: 10px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
-        .benefit-item i { color: var(--primary); }
+        /* HERO PRODUIT */
+        .product-hero { text-align: center; padding: 20px 0; border-bottom: 1px solid #eee; margin-bottom: 30px; }
+        .product-hero h1 { color: var(--primary); font-size: 1.7rem; font-weight: 800; line-height: 1.2; margin-bottom: 10px; }
+        .product-hero .subtitle { font-size: 0.9rem; color: #666; max-width: 500px; margin: 0 auto 20px; }
+        
+        .main-img-container { position: relative; display: inline-block; margin-bottom: 20px; }
+        .main-img { max-width: 100%; height: auto; width: 280px; border-radius: 20px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
+        
+        .price-badge { background: #f0f7f2; color: var(--primary); font-weight: 800; font-size: 1.3rem; padding: 10px 20px; border-radius: 50px; display: inline-block; border: 1px solid #e1eee5; }
+
+        /* BIENFAITS & COMPOSITION */
+        .benefits-list { list-style: none; }
+        .benefits-list li { background: #f9fdfa; padding: 15px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #edf7f0; display: flex; align-items: start; gap: 12px; font-size: 0.9rem; }
+        .benefits-list li i { color: var(--primary); margin-top: 3px; font-size: 1.1rem; }
+        .benefits-list li b { color: var(--primary-dark); font-weight: 700; }
+
+        .comp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-top: 15px; }
+        .comp-item { background: var(--light); padding: 10px; border-radius: 8px; text-align: center; font-size: 0.8rem; font-weight: 600; color: var(--primary-dark); border: 1px solid #e9eceb; }
+
+        /* IMAGE SECONDAIRE ILLUSTRATION */
+        .illustration-box { background: #f0f7f2; border-radius: 20px; padding: 15px; border: 1px dashed var(--primary); text-align: center; margin-top: 20px; }
+        .secondary-img { max-width: 100%; height: auto; border-radius: 10px; }
 
         /* PACKS DE PRIX */
-        .pack-card { background: white; border: 2px solid #eee; border-radius: 15px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; position: relative; }
+        .pack-card { background: white; border: 2px solid #eee; border-radius: 18px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; position: relative; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
         .pack-card:hover { border-color: var(--primary); background: #f9fdfa; transform: translateY(-2px); }
-        .popular-tag { position: absolute; top: -10px; right: 20px; background: var(--accent); color: var(--dark); padding: 2px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; }
+        .pack-card.popular { border-color: var(--gold); background: #fffdf9; }
+        .popular-tag { position: absolute; top: -11px; right: 20px; background: var(--gold); color: var(--dark); padding: 3px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+        
+        .pack-info h3 { font-size: 1rem; color: var(--primary-dark); font-weight: 700; }
+        .pack-info p { font-size: 0.8rem; color: #777; }
+        .pack-price { font-weight: 800; color: var(--primary); font-size: 1.2rem; white-space: nowrap; }
 
-        /* BOUTON WHATSAPP FLOTTANT ANIMÉ */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 25px rgba(37,211,102,0.4); z-index: 9999; text-decoration: none; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37,211,102, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); } }
-
-        /* MODAL COMMANDE */
-        #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center; padding: 10px; }
-        .modal-card { background: #fff; width: 100%; max-width: 450px; border-radius: 20px; padding: 25px; }
-        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem; }
-        .btn-submit { width: 100%; padding: 15px; border-radius: 10px; border: none; color: white; font-weight: bold; cursor: pointer; margin-bottom: 10px; font-size: 1rem; }
-
-        footer { background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        .footer-social a { color: white; margin: 0 10px; font-size: 1.5rem; }
-
-        @media (max-width: 768px) { 
-            .benefits-grid { grid-template-columns: 1fr; } 
-            .menu-btn { display: block; }
-            .nav-links { 
-                display: none; 
-                flex-direction: column; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                width: 100%; 
-                background: white; 
-                padding: 20px; 
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
-                text-align: center;
-                gap: 15px;
-            }
-            .nav-links.active { display: flex; }
+        /* BARRE D'ACTION MOBILE (STICKY) */
+        .mobile-action-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--white); display: flex; padding: 12px;
+            gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.08); z-index: 1500;
         }
+        .action-item { flex: 1; padding: 16px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* MODAL COMMANDE PRO */
+        #order-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 3000; align-items: center; justify-content: center; padding: 15px; }
+        .modal-card { background: #fff; width: 100%; max-width: 450px; border-radius: 25px; padding: 25px; max-height: 90vh; overflow-y: auto; position: relative; }
+        .close-modal { position: absolute; top: 15px; right: 15px; background: none; border: none; color: #aaa; font-size: 1.3rem; cursor: pointer; }
+        
+        .modal-card h3 { text-align:center; margin-bottom:20px; font-weight:800; color:var(--primary); }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: #555; margin-bottom: 5px; }
+        
+        input, select, textarea { width: 100%; padding: 13px; border: 1px solid #ddd; border-radius: 12px; font-size: 0.95rem; background: #fbfbfb; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); background: #fff; }
+        
+        .total-box { text-align: center; margin: 15px 0 20px; padding: 15px; background: var(--dark); color: white; border-radius: 15px; }
+        .total-price { font-size: 1.8rem; color: var(--gold); font-weight: 800; }
+        .delivery-info { font-size: 0.7rem; color: #aaa; text-transform: uppercase; display: block; margin-top: 5px; }
+
+        .btn-confirm { background: var(--primary); color: white; border: none; padding: 18px; border-radius: 15px; font-weight: 700; width: 100%; cursor: pointer; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
+        .btn-confirm:hover { background: var(--primary-dark); }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: white; padding: 40px 20px 100px; text-align: center; font-size: 0.8rem; }
+        .footer-social { margin-bottom: 20px; }
+        .footer-social a { color: #aaa; margin: 0 10px; font-size: 1.3rem; text-decoration: none; transition: 0.3s; }
+        .footer-social a:hover { color: var(--gold); }
+        .footer-links { margin-bottom: 20px; opacity: 0.6; }
+        .footer-links a { color: white; margin: 0 8px; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" height="45" alt="Superlife Logo"></a>
-    
-    <div class="menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Boutique</a></li>
-        <li><a href="superlife-stc30-prix-ci.html">STC30</a></li>
-        <li><a href="conseils-sante-cellulaire-superlife.html">Conseils Santé</a></li>
-        <li><a href="contact-superlife-cote-divoire.html">Contact</a></li>
-    </ul>
+    <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <a href="/index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife CI"></a>
+    <a href="tel:2250152917584" style="color:var(--primary); font-size: 1.3rem;"><i class="fas fa-phone-alt"></i></a>
 </nav>
 
-<div class="container">
-    <div class="product-hero">
-        <div class="product-img">
-            <img src="https://i.ibb.co/YFrdBmMj/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png" alt="Boîte Superlife SCC Plus Officielle">
-        </div>
-        <div class="product-info">
-            <h1>Superlife SCC+ : Nettoyage du Côlon & Santé Digestive</h1>
-            <p>Le SCC+ (Superlife Colon Care) est une formule puissante conçue pour détoxifier votre organisme, favoriser la perte de poids et restaurer votre flore intestinale naturellement.</p>
-            <div class="price-badge">À partir de 55 000 FCFA</div>
-            <button onclick="openModal()" class="btn-submit" style="background:var(--primary); font-size: 1.2rem;">COMMANDER DIRECTEMENT</button>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Les Bienfaits du SCC+</h2>
-        <div class="benefits-grid">
-            <div class="benefit-item"><i class="fas fa-broom"></i> Nettoyage profond du côlon</div>
-            <div class="benefit-item"><i class="fas fa-weight"></i> Aide à la perte de poids naturelle</div>
-            <div class="benefit-item"><i class="fas fa-shield-virus"></i> Renforce le système immunitaire</div>
-            <div class="benefit-item"><i class="fas fa-leaf"></i> Élimine les toxines accumulées</div>
-            <div class="benefit-item"><i class="fas fa-check-circle"></i> Prévient la constipation</div>
-            <div class="benefit-item"><i class="fas fa-heartbeat"></i> Régule le taux de cholestérol</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Tarifs Officiels SCC+ en Côte d'Ivoire</h2>
-        <div class="pack-card" onclick="openModal('1 Boîte', 55000)">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <h3>Pack Découverte (1 Boîte)</h3>
-                    <p>Cure de 15 à 30 jours</p>
-                </div>
-                <div style="font-weight:900; color:var(--primary)">55 000 FCFA</div>
-            </div>
-        </div>
-        <div class="pack-card" onclick="openModal('2 Boîtes', 95000)">
-            <div class="popular-tag">MEILLEUR PRIX</div>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <h3>Pack Optimal (2 Boîtes)</h3>
-                    <p>Recommandé pour une détox complète</p>
-                </div>
-                <div style="font-weight:900; color:var(--primary)">95 000 FCFA</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Pourquoi le nettoyage du côlon est essentiel ?</h2>
-        <p>Un côlon encombré est souvent la cause de la fatigue, des ballonnements et de la prise de poids. Le <strong>Superlife SCC+</strong> utilise des ingrédients comme la Sels de Séné et des fibres naturelles pour évacuer les déchets stagnants, permettant à votre corps d'absorber mieux les nutriments du STC30.</p>
-    </div>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+    <h3 style="color:var(--primary); margin-bottom: 10px; font-weight: 800;">Menu Superlife</h3>
+    <a href="/index.html"><i class="fas fa-store"></i> Boutique Accueil</a>
+    
+    <div class="submenu-title">Nos Solutions Santé</div>
+    <a href="/superlife-stc30-prix-ci.html"><i class="fas fa-capsules"></i> Superlife STC30 (Cellules Souches)</a>
+    <a href="/superlife-scc-plus-colon.html" style="color:var(--primary); font-weight: 700;"><i class="fas fa-vial"></i> Superlife SCC+ (Détox Côlon)</a>
+    <a href="/superlife-sic-immunite.html"><i class="fas fa-shield-alt"></i> Superlife SIC (Immunité)</a>
+    <a href="/superlife-snc-cerveau-vision.html"><i class="fas fa-brain"></i> Superlife SNC (Cerveau & Vision)</a>
+    <a href="/super-root-coffee-puissance.html"><i class="fas fa-coffee"></i> Super Root Coffee (Énergie)</a>
+    
+    <div class="submenu-title">Infos & Partenariat</div>
+    <a href="/conseils-sante-cellulaire-superlife.html"><i class="fas fa-heartbeat"></i> Conseils Santé Cellulaire</a>
+    <a href="/devenir-distributeur-superlife-cote-divoire.html"><i class="fas fa-handshake"></i> Devenir Distributeur Agréé</a>
+    <a href="/contact-superlife-cote-divoire.html"><i class="fas fa-headset"></i> Contact & Aide</a>
+    
+    <div class="submenu-title">Suivez-nous</div>
+    <a href="https://www.facebook.com/superlifeofficiels/" target="_blank"><i class="fab fa-facebook"></i> Facebook CI</a>
+    <a href="https://www.instagram.com/superlifeofficiel/" target="_blank"><i class="fab fa-instagram"></i> Instagram CI</a>
 </div>
 
-<a href="https://wa.me/2250152917584?text=Bonjour%20Superlife%20Officiel,%20je%20souhaite%20commander%20le%20SCC+" class="wa-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<div id="order-modal">
-    <div class="modal-card">
-        <h3 style="margin-bottom:15px; color:var(--primary)">Finaliser votre commande SCC+</h3>
-        <select id="m-pack">
-            <option value="55000">1 Boîte SCC+ - 55 000 FCFA</option>
-            <option value="95000">2 Boîtes SCC+ - 95 000 FCFA</option>
-        </select>
-        <input type="text" id="m-name" placeholder="Nom Complet" required>
-        <input type="tel" id="m-phone" placeholder="Numéro WhatsApp" required>
-        <textarea id="m-address" placeholder="Lieu de livraison (Quartier / Ville)" rows="2" required></textarea>
+<div class="container">
+    
+    <div class="product-hero">
+        <span class="badge-main" style="background:var(--primary); color:white; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;">Solution Côlon & Minceur</span>
+        <h1>Superlife SCC+ (Colon Care)</h1>
+        <p class="subtitle">La formule naturelle puissante pour détoxifier l'organisme, nettoyer le côlon en profondeur et favoriser une perte de poids saine et durable.</p>
         
-        <button onclick="sendOrder('telegram')" class="btn-submit" style="background:var(--telegram)">VALIDER SUR LE SITE</button>
-        <button onclick="sendOrder('whatsapp')" class="btn-submit" style="background:var(--whatsapp)">COMMANDER SUR WHATSAPP</button>
-        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; cursor:pointer; font-size:0.85rem;">Fermer</button>
+        <div class="main-img-container">
+            <img src="https://i.ibb.co/YFrdBmMj/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png" alt="Boîte Officielle Superlife SCC+ Côte d'Ivoire" class="main-img">
+        </div>
+        
+        <br>
+        <div class="price-badge">À partir de 55 000 FCFA</div>
     </div>
+
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-info-circle"></i> Qu'est-ce que le Superlife SCC+ ?</h2>
+        <p>Le <strong>Superlife SCC+</strong> est un complément alimentaire de pointe conçu pour prendre en charge la santé globale de votre système digestif. Il agit efficacement sur toutes les maladies du tractus gastro-intestinal, régule le métabolisme et détoxifie l'organisme en profondeur.</p>
+        <p style="margin-top:10px;">Ce complexe unique combine les meilleurs ingrédients naturels pour assurer un <strong>nettoyage complet du côlon</strong>, tout en favorisant la perte de poids naturelle et la gestion durable du poids corporel.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-star"></i> Les Bienfaits Minceur & Santé</h2>
+        <p style="margin-bottom:15px; font-size:0.9rem; color:#666;">Une cure de SCC+ agit sur l'ensemble de votre métabolisme :</p>
+        
+        <ul class="benefits-list">
+            <li><i class="fas fa-check-circle"></i> <div><b>Détox & Perte de Poids :</b> Combustion des graisses, réduction de l'appétit et augmentation de la satiété pour une perte de poids durable.</div></li>
+            <li><i class="fas fa-check-circle"></i> <div><b>Santé Digestive Complète :</b> Amélioration de la digestion, régularité intestinale (anti-constipation) et élimination efficace des déchets.</div></li>
+            <li><i class="fas fa-check-circle"></i> <div><b>Régulation Métabolique :</b> Équilibre des niveaux de glycémie (sucre), d'insuline et contrôle du cholestérol.</div></li>
+            <li><i class="fas fa-check-circle"></i> <div><b>Prévention :</b> Traitement des problèmes de santé liés au surpoids et renforcement de l'immunité globale.</div></li>
+        </ul>
+    </div>
+
+    <div class="section illustration-box">
+        <p style="font-size:0.8rem; font-weight:600; color:var(--primary); margin-bottom:10px; text-transform:uppercase;">Agissez maintenant pour votre santé digestive</p>
+        <img src="https://ibb.co/bM9fXTr7" alt="Illustration Bienfaits Superlife SCC+ Côlon" class="secondary-img">
+    </div>
+
+    <div class="section" style="margin-top:35px;">
+        <h2 class="section-title"><i class="fas fa-leaf"></i> Une Composition Naturelle Puissante</h2>
+        <p style="font-size:0.9rem;">SCC+ combine des extraits végétaux rigoureusement sélectionnés :</p>
+        
+        <div class="comp-grid">
+            <div class="comp-item">Sinétrol</div>
+            <div class="comp-item">Fibersol-2</div>
+            <div class="comp-item">Chlorophylle</div>
+            <div class="comp-item">Extrait d'Amla</div>
+            <div class="comp-item">Aloe Vera</div>
+            <div class="comp-item">Pépin de Raisin</div>
+            <div class="comp-item">Probiotiques</div>
+            <div class="comp-item">Extrait Pomme Verte</div>
+            <div class="comp-item">Betterave</div>
+            <div class="comp-item">Psyllium</div>
+            <div class="comp-item">Chardon Marie</div>
+            <div class="comp-item">Astaxanthine</div>
+            <div class="comp-item">Vitamines A, B, C, D, E</div>
+        </div>
+    </div>
+
+    <div id="prix" class="section">
+        <h2 class="section-title"><i class="fas fa-tags"></i> Prix Officiels SCC+ Côte d'Ivoire</h2>
+        <p style="margin-bottom:15px; font-size:0.85rem; color:#777;">Paiement cash à la livraison à Abidjan. Expédition possible à l'intérieur.</p>
+        
+        <div class="pack-card" onclick="openModal('Cure Découverte (1 Boîte)', 55000)">
+            <div class="pack-info">
+                <h3>Cure Découverte (1 Boîte)</h3>
+                <p>Détox légère (15-30 jours). Idéal pour tester.</p>
+            </div>
+            <div class="pack-price">55 000 FCFA</div>
+        </div>
+
+        <div class="pack-card popular" onclick="openModal('Cure Optimal (2 Boîtes)', 95000)">
+            <div class="popular-tag">Recommandé Minceur</div>
+            <div class="pack-info">
+                <h3>Cure Optimal (2 Boîtes)</h3>
+                <p>Détox profonde & Minceur. Meilleur résultat.</p>
+            </div>
+            <div class="pack-price">95 000 FCFA</div>
+        </div>
+    </div>
+
+    <div class="section" style="text-align:center; background:#f9f9f9; padding:20px; border-radius:15px; border:1px solid #eee;">
+        <i class="fas fa-truck" style="font-size:2rem; color:var(--gold); margin-bottom:10px;"></i>
+        <p style="font-weight:700; color:var(--primary-dark);">Livraison rapide partout en Côte d'Ivoire.</p>
+        <p style="font-size:0.8rem; color:#666;">Frais de livraison : 1 000 FCFA (Abidjan).</p>
+    </div>
+
+</div>
+
+<div class="mobile-action-bar">
+    <a href="https://wa.me/2250152917584?text=Bonjour%20Superlife%20Officiel,%20je%20souhaite%20commander%20le%20SCC+" class="action-item" style="background:var(--whatsapp); color:white;">
+        <i class="fab fa-whatsapp"></i> Commander
+    </a>
+    <a href="tel:2250152917584" class="action-item" style="background:var(--primary-dark); color:white;">
+        <i class="fas fa-phone-alt"></i> Appeler
+    </a>
 </div>
 
 <footer>
@@ -182,68 +266,119 @@
         <a href="https://www.facebook.com/superlifeofficiels/" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/superlifeofficiel/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-    <p style="margin:15px 0; font-size:0.9rem;">Distributeur Agréé Superlife Côte d'Ivoire</p>
-    <div style="font-size:0.75rem; opacity:0.7;">
-        <a href="index.html" style="color:white; text-decoration:none;">Accueil</a> | 
-        <a href="superlife-stc30-prix-ci.html" style="color:white; text-decoration:none;">STC30</a> | 
-        <a href="contact-superlife-cote-divoire.html" style="color:white; text-decoration:none;">Contact</a>
+    
+    <div class="footer-links">
+        <a href="/index.html">Accueil</a> | 
+        <a href="/superlife-stc30-prix-ci.html">STC30</a> | 
+        <a href="/contact-superlife-cote-divoire.html">Aide</a>
     </div>
-    <p style="font-size:0.7rem; margin-top:20px;">&copy; 2026 Superlife Officiel CI - Tous droits réservés.</p>
+    
+    <p style="opacity:0.7;">Distributeur Agréé Superlife Côte d'Ivoire</p>
+    <p style="font-size:0.65rem; opacity:0.4; margin-top:20px;">&copy; 2026 Superlife Officiel CI - GMB: ID17825388617888444853</p>
 </footer>
+
+<div id="order-modal">
+    <div class="modal-card">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        <h3>Commander mon SCC+</h3>
+        
+        <div class="form-group">
+            <label>Votre Cure SCC+</label>
+            <select id="m-pack" onchange="updateTotalModal()">
+                <option value="55000">1 Boîte SCC+ - 55 000 FCFA</option>
+                <option value="95000" selected>2 Boîtes SCC+ - 95 000 FCFA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Nom complet</label>
+            <input type="text" id="m-name" placeholder="Ex: Jean Koffi">
+        </div>
+        
+        <div class="form-group">
+            <label>Numéro de téléphone</label>
+            <input type="tel" id="m-phone" placeholder="Ex: 0707070707">
+        </div>
+        
+        <div class="form-group">
+            <label>Adresse / Ville / Quartier de livraison</label>
+            <textarea id="m-address" placeholder="Ex: Cocody Angré, Cité Star 1" rows="2"></textarea>
+        </div>
+        
+        <div class="total-box">
+            TOTAL : <span class="total-price" id="m-total">96 000</span> <small>FCFA</small>
+            <span class="delivery-info"><i class="fas fa-truck"></i> Livraison : 1 000 FCFA incluse</span>
+        </div>
+        
+        <button onclick="sendOrder('whatsapp')" class="btn-confirm"><i class="fab fa-whatsapp"></i> CONFIRMER SUR WHATSAPP</button>
+        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:12px; cursor:pointer; font-size:0.8rem;">Continuer ma visite</button>
+    </div>
+</div>
 
 <script>
     const CONFIG = {
         WA: '2250152917584',
-        TG_TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
-        TG_CHAT_ID: '8441274889'
+        DELIVERY: 1000
     };
 
-    // FONCTION MENU MOBILE
+    // FONCTION MENU LATERAL
     function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        nav.classList.toggle('active');
+        document.getElementById('sideMenu').classList.toggle('active');
+        document.getElementById('overlay').classList.toggle('active');
     }
 
+    // GESTION MODAL COMMANDE
     function openModal(packName = '', price = 0) {
         document.getElementById('order-modal').style.display = 'flex';
-        if(packName) {
-             const select = document.getElementById('m-pack');
-             for(let i=0; i<select.options.length; i++) {
-                 if(select.options[i].text.includes(packName)) select.selectedIndex = i;
-             }
+        const select = document.getElementById('m-pack');
+        
+        if(price > 0) {
+            for(let i=0; i<select.options.length; i++) {
+                if(parseInt(select.options[i].value) === price) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
         }
+        updateTotalModal();
     }
 
-    function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
+    function closeModal() {
+        document.getElementById('order-modal').style.display = 'none';
+    }
 
-    async function sendOrder(type) {
+    function updateTotalModal() {
+        const prodPrice = parseInt(document.getElementById('m-pack').value);
+        document.getElementById('m-total').innerText = (prodPrice + CONFIG.DELIVERY).toLocaleString('fr-FR');
+    }
+
+    // ENVOI COMMANDE WHATSAPP
+    function sendOrder(type) {
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
         const pack = document.getElementById('m-pack').selectedOptions[0].text;
-        const total = document.getElementById('m-pack').value;
+        const total = document.getElementById('m-total').innerText;
 
-        if(!name || !phone || !addr) return alert("Merci de remplir tous les champs.");
+        if(!name || !phone || !addr) return alert("Veuillez remplir vos coordonnées de livraison.");
 
-        const msg = `🔥 NOUVELLE COMMANDE SCC+\n--------------------------\nProduit: SCC+\nPack: ${pack}\nPrix: ${total} FCFA\n\nClient: ${name}\nContact: ${phone}\nAdresse: ${addr}`;
+        const msg = `🔥 NOUVELLE COMMANDE SCC+\n--------------------------\n*Produit:* Superlife SCC+\n*Pack:* ${pack}\n*TOTAL (Livraison incluse):* ${total} FCFA\n\n*Client:* ${name}\n*Contact:* ${phone}\n*Adresse:* ${addr}`;
 
-        if(type === 'telegram') {
-            try {
-                await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg })
-                });
-                alert("Votre commande a été reçue ! Un conseiller va vous appeler pour confirmer la livraison.");
-                closeModal();
-                if(typeof gtag === 'function') {
-                    gtag('event', 'purchase', { "value": total, "currency": "XOF" });
-                }
-            } catch (e) { alert("Erreur de connexion. Veuillez commander par WhatsApp."); }
-        } else {
-            window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
+        // Tracking Event (Purchase Google Analytics)
+        if(typeof gtag === 'function') {
+            gtag('event', 'purchase', {
+                "transaction_id": "SCC_" + new Date().getTime(),
+                "value": parseInt(document.getElementById('m-pack').value),
+                "currency": "XOF",
+                "items": [{ "item_name": "Superlife SCC+" }]
+            });
         }
+
+        // Redirection WhatsApp
+        window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
+        closeModal();
     }
 </script>
+
 </body>
 </html>
