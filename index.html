@@ -183,14 +183,10 @@
     <div class="modal-card">
         <h3 id="m-title" style="margin-bottom:15px; color:var(--primary); text-align:center;"></h3>
         
-        <label>Choisir le Pack :</label>
+        <label>Choisir le Pack (Quantité) :</label>
         <select id="m-pack" onchange="updatePrice()"></select>
-        
-        <label>Quantité (Maximum 20) :</label>
-        <select id="m-qty" onchange="updatePrice()">
-            </select>
 
-        <label>Souhaitez-vous ajouter d'autres produits ?</label>
+        <label>Ajouter d'autres produits ? (Optionnel)</label>
         <textarea id="m-cross" placeholder="Ex: Ajoutez 1 boîte de SIC et 2 SNC..." rows="2"></textarea>
 
         <div style="text-align:center; margin-bottom:20px; font-size:1.5rem; font-weight:800; color:var(--primary)">
@@ -233,11 +229,11 @@
     };
 
     const PRODUCTS = [
-        { id: 'stc30', name: 'Superlife STC30', img: 'https://i.ibb.co/nNCc3NRP/IMG-2262.png', packs: [{n: '1 Boîte', p: 45000}, {n: '2 Boîtes', p: 80000}] },
-        { id: 'scc', name: 'Superlife SCC+', img: 'https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', packs: [{n: '1 Boîte', p: 55000}, {n: '2 Boîtes', p: 100000}] },
-        { id: 'snc', name: 'Superlife SNC', img: 'https://i.ibb.co/Xk6sgfCK/IMG-2265.png', packs: [{n: '1 Boîte', p: 50000}, {n: '2 Boîtes', p: 90000}] },
-        { id: 'sic', name: 'Superlife SIC', img: 'https://i.ibb.co/rGYnfVwM/IMG-2264.png', packs: [{n: '1 Boîte', p: 50000}, {n: '2 Boîtes', p: 90000}] },
-        { id: 'coffee', name: 'Super Root Coffee', img: 'https://i.ibb.co/6R1mLbyh/IMG-2263.png', packs: [{n: '1 Boîte', p: 25000}, {n: '2 Boîtes', p: 45000}] }
+        { id: 'stc30', name: 'Superlife STC30', img: 'https://i.ibb.co/nNCc3NRP/IMG-2262.png', unitP: 45000 },
+        { id: 'scc', name: 'Superlife SCC+', img: 'https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png', unitP: 55000 },
+        { id: 'snc', name: 'Superlife SNC', img: 'https://i.ibb.co/Xk6sgfCK/IMG-2265.png', unitP: 50000 },
+        { id: 'sic', name: 'Superlife SIC', img: 'https://i.ibb.co/rGYnfVwM/IMG-2264.png', unitP: 50000 },
+        { id: 'coffee', name: 'Super Root Coffee', img: 'https://i.ibb.co/6R1mLbyh/IMG-2263.png', unitP: 25000 }
     ];
 
     function init() {
@@ -247,29 +243,35 @@
                 <div class="img-box"><img src="${p.img}" alt="${p.name}"></div>
                 <div class="info-box">
                     <h3>${p.name}</h3>
-                    <span class="price-tag">${p.packs[0].p.toLocaleString()} F</span>
+                    <span class="price-tag">${p.unitP.toLocaleString()} F</span>
                 </div>
                 <div class="card-actions">
                     <button class="btn-buy-now" onclick="openOrder('${p.id}')">Commander</button>
                 </div>
             </div>
         `).join('');
-
-        // Init Quantités 1 à 20
-        let qtySelect = document.getElementById('m-qty');
-        for(let i=1; i<=20; i++) {
-            let opt = document.createElement('option');
-            opt.value = i; opt.text = i;
-            qtySelect.appendChild(opt);
-        }
     }
 
     let activeProduct = null;
     function openOrder(id) {
         activeProduct = PRODUCTS.find(p => p.id === id);
         document.getElementById('m-title').innerText = activeProduct.name;
-        document.getElementById('m-pack').innerHTML = activeProduct.packs.map(pk => `<option value="${pk.p}">${pk.n}</option>`).join('');
-        document.getElementById('m-qty').value = "1";
+        
+        // Génération dynamique des packs 1 à 20
+        let packHtml = '';
+        for(let i=1; i<=20; i++) {
+            let price = i * activeProduct.unitP;
+            // Exemple de dégressivité simple si 2 boîtes (optionnel selon vos besoins passés)
+            if(i === 2 && activeProduct.id === 'stc30') price = 80000;
+            if(i === 2 && activeProduct.id === 'scc') price = 100000;
+            if(i === 2 && activeProduct.id === 'snc') price = 90000;
+            if(i === 2 && activeProduct.id === 'sic') price = 90000;
+            if(i === 2 && activeProduct.id === 'coffee') price = 45000;
+            
+            packHtml += `<option value="${price}">${i} Boîte(s) - ${price.toLocaleString()} FCFA</option>`;
+        }
+        
+        document.getElementById('m-pack').innerHTML = packHtml;
         document.getElementById('m-cross').value = "";
         updatePrice();
         document.getElementById('order-modal').style.display = 'flex';
@@ -277,9 +279,8 @@
     }
 
     function updatePrice() {
-        const unitPrice = Number(document.getElementById('m-pack').value);
-        const qty = Number(document.getElementById('m-qty').value);
-        document.getElementById('m-price').innerText = (unitPrice * qty).toLocaleString();
+        const totalPrice = Number(document.getElementById('m-pack').value);
+        document.getElementById('m-price').innerText = totalPrice.toLocaleString();
     }
 
     function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
@@ -289,13 +290,12 @@
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
         const packText = document.getElementById('m-pack').selectedOptions[0].text;
-        const qty = document.getElementById('m-qty').value;
         const total = document.getElementById('m-price').innerText;
         const extras = document.getElementById('m-cross').value;
 
         if(!name || !phone || !addr) return alert("Veuillez remplir vos informations.");
 
-        const msg = `📦 *NOUVELLE COMMANDE*\n--------------------------\n*Produit:* ${activeProduct.name}\n*Option:* ${packText}\n*Quantité:* ${qty}\n*TOTAL:* ${total} FCFA\n\n*Ajouts:* ${extras || 'Aucun'}\n\n*Client:* ${name}\n*Tel:* ${phone}\n*Adresse:* ${addr}`;
+        const msg = `📦 *NOUVELLE COMMANDE*\n--------------------------\n*Produit principal:* ${activeProduct.name}\n*Sélection:* ${packText}\n*TOTAL:* ${total} FCFA\n\n*Produits Additionnels:* ${extras || 'Aucun'}\n\n*Client:* ${name}\n*Tel:* ${phone}\n*Adresse:* ${addr}`;
 
         try {
             await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
@@ -303,7 +303,7 @@
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
             });
-            gtag('event', 'purchase', { "value": parseFloat(total.replace(/\s/g, '')), "currency": "XOF", "items": [{ "item_name": activeProduct.name, "quantity": parseInt(qty) }] });
+            gtag('event', 'purchase', { "value": parseFloat(total.replace(/\s/g, '')), "currency": "XOF", "items": [{ "item_name": activeProduct.name }] });
             alert("Commande transmise ! Nous vous rappelons pour confirmer la livraison.");
             closeModal();
         } catch (e) {
