@@ -24,6 +24,7 @@
         :root { 
             --primary: #2A6A3B; 
             --primary-dark: #1D4D29; 
+            --whatsapp: #25D366;
             --dark: #1a1a1a; 
             --white: #ffffff;
             --light: #f4f7f6;
@@ -217,9 +218,12 @@
 </div>
 
 <div class="mobile-action-bar">
-    <button onclick="openModal('SCC+', 55000)" class="action-item" style="background:var(--primary); border:none; width:100%;">
-        Commander Maintenant
-    </button>
+    <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20commander%20le%20SCC+" class="action-item" style="background:var(--whatsapp);">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="tel:2250152917584" class="action-item" style="background:var(--primary-dark);">
+        <i class="fas fa-phone"></i> Appeler
+    </a>
 </div>
 
 <div id="order-modal">
@@ -267,15 +271,16 @@
         const text = `🛍️ NOUVELLE COMMANDE SCC+\n--------------------------\nPack: ${selectedPack}\nTotal: ${total} FCFA\n\nClient: ${name}\nContact: ${phone}\nAdresse: ${addr}`;
 
         try {
+            // ENVOI TELEGRAM UNIQUEMENT
             await fetch(`https://api.telegram.org/bot${CONFIG.TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ chat_id: CONFIG.CHAT_ID, text: text })
             });
-            // Redirection immédiate vers l'accueil boutique
+            // REDIRECTION VERS L'ACCUEIL (INDEX)
             window.location.href = "index.html"; 
         } catch (error) {
-            alert("Une erreur est survenue lors de la commande. Veuillez nous contacter directement.");
+            alert("Une erreur est survenue lors de la commande.");
         }
     }
 </script>
