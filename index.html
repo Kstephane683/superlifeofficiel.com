@@ -25,6 +25,7 @@
             --white: #ffffff;
             --light: #f4f7f6;
             --gold: #c9a96e;
+            --gray: #777;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -49,19 +50,20 @@
         
         .main-selection-box { background: #f0f7f2; padding: 15px; border-radius: 20px; border: 1px solid var(--primary); margin-bottom: 20px; position: relative; }
         .badge-main { position: absolute; top: -10px; left: 20px; background: var(--primary); color: white; font-size: 0.65rem; padding: 4px 12px; border-radius: 20px; font-weight: 700; text-transform: uppercase; }
-        
+        .instruction-text { font-size: 0.7rem; color: var(--gray); font-style: italic; margin-top: 4px; display: block; }
+
         .upsell-section { border-top: 1px solid #eee; padding-top: 15px; margin-top: 10px; }
-        .upsell-title { font-size: 0.85rem; font-weight: 700; color: #666; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .upsell-title { font-size: 0.85rem; font-weight: 700; color: #666; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
         
-        .qty-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .qty-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
         .qty-row span { font-size: 0.85rem; font-weight: 600; }
-        .qty-row select { width: 90px; padding: 8px; border-radius: 10px; border: 1px solid #ddd; background: #fff; }
+        .qty-row select { width: 95px; padding: 8px; border-radius: 10px; border: 1px solid #ddd; background: #fff; font-weight: 600; }
 
         .total-box { text-align: center; margin: 20px 0; padding: 15px; background: var(--dark); color: white; border-radius: 15px; }
         .total-box span#m-price { font-size: 1.6rem; color: var(--gold); font-weight: 800; }
+        .total-footer { font-size: 0.65rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; display: block; }
 
-        .btn-buy-now { background: var(--primary); color: white; border: none; padding: 14px; border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer; text-transform: uppercase; }
-
+        .btn-buy-now { background: var(--primary); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer; text-transform: uppercase; font-size: 0.9rem; }
         input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 12px; margin-bottom: 10px; font-size: 14px; background: #fafafa; }
 
         .mobile-action-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--white); display: flex; padding: 12px; gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.08); z-index: 1500; }
@@ -87,32 +89,35 @@
 
 <div id="order-modal">
     <div class="modal-card">
-        <h3 style="text-align:center; margin-bottom:20px; font-weight:800;">Détails de la commande</h3>
+        <h3 style="text-align:center; margin-bottom:20px; font-weight:800;">Finaliser ma commande</h3>
         
         <div class="main-selection-box" id="main-prod-box">
             <div class="badge-main">Votre sélection</div>
-            <div class="qty-row">
+            <div class="qty-row" style="margin-bottom: 0;">
                 <span id="main-prod-name" style="font-size: 1rem; color: var(--primary-dark);">Produit...</span>
                 <select id="main-qty-select" onchange="updatePrice()"></select>
             </div>
+            <span class="instruction-text">💡 Plus vous commandez de boîtes, plus vous économisez.</span>
         </div>
 
         <div class="upsell-section">
             <div class="upsell-title"><i class="fas fa-plus-circle" style="color: var(--gold);"></i> Compléter ma cure (Optionnel)</div>
+            <span class="instruction-text" style="margin-bottom: 15px;">Associez d'autres produits pour un résultat optimal sur votre santé.</span>
             <div id="upsell-container">
                 </div>
         </div>
 
         <div class="total-box">
             TOTAL : <span id="m-price">0</span> <small>FCFA</small>
+            <span class="total-footer"><i class="fas fa-truck"></i> Livraison partout en Côte d'Ivoire</span>
         </div>
 
         <input type="text" id="m-name" placeholder="Nom complet">
         <input type="tel" id="m-phone" placeholder="Numéro de téléphone">
-        <textarea id="m-address" placeholder="Ville / Quartier de livraison" rows="2"></textarea>
+        <textarea id="m-address" placeholder="Ville / Quartier de livraison exact" rows="2"></textarea>
         
-        <button onclick="sendOrder()" class="btn-buy-now">Valider ma commande</button>
-        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:10px; cursor:pointer;">Annuler</button>
+        <button onclick="sendOrder()" class="btn-buy-now"><i class="fas fa-check-circle"></i> Confirmer l'achat</button>
+        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:10px; cursor:pointer; font-size: 0.8rem;">Continuer mes achats</button>
     </div>
 </div>
 
@@ -143,13 +148,12 @@
         grid.innerHTML = PRODUCTS.map(p => `
             <div class="product-card">
                 <div class="img-box"><img src="${p.img}" alt="${p.name}"></div>
-                <h3>${p.name}</h3>
+                <h3 style="font-size:0.9rem;">${p.name}</h3>
                 <span class="price-tag">${p.unit.toLocaleString()} F</span>
-                <button class="btn-buy-now" style="width:80%;" onclick="openOrder('${p.id}')">Commander</button>
+                <button class="btn-buy-now" style="width:85%; padding:10px; font-size:0.75rem;" onclick="openOrder('${p.id}')">Commander</button>
             </div>
         `).join('');
 
-        // Options 0 à 20 pour les selects
         const qtyOptions = Array.from({length: 21}, (_, i) => `<option value="${i}">${i} boîtes</option>`).join('');
         document.getElementById('main-qty-select').innerHTML = qtyOptions.replace('value="0"', 'value="0" disabled');
     }
@@ -160,13 +164,12 @@
         document.getElementById('main-prod-name').innerText = mainP.name;
         document.getElementById('main-qty-select').value = 1;
 
-        // Générer les Upsells (tous sauf le principal)
         const upsellContainer = document.getElementById('upsell-container');
         upsellContainer.innerHTML = PRODUCTS.filter(p => p.id !== id).map(p => `
             <div class="qty-row">
-                <span>${p.name}</span>
+                <span style="font-size:0.8rem;">${p.name}</span>
                 <select id="upsell-qty-${p.id}" class="upsell-select" onchange="updatePrice()">
-                    ${Array.from({length: 21}, (_, i) => `<option value="${i}">${i === 0 ? 'Ajouter ?' : i + ' boîtes'}</option>`).join('')}
+                    ${Array.from({length: 21}, (_, i) => `<option value="${i}">${i === 0 ? '+ Ajouter' : i + ' boîtes'}</option>`).join('')}
                 </select>
             </div>
         `).join('');
@@ -206,7 +209,7 @@
         const name = document.getElementById('m-name').value;
         const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
-        if(!name || !phone || !addr) return alert("Infos manquantes.");
+        if(!name || !phone || !addr) return alert("Veuillez remplir vos informations de livraison.");
 
         let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
         document.querySelectorAll('.upsell-select').forEach(s => {
@@ -221,7 +224,7 @@
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
             });
-            alert("Commande reçue !");
+            alert("Merci ! Votre commande a été transmise. Nous vous contactons pour la livraison.");
             closeModal();
         } catch (e) {
             window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
