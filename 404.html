@@ -3,80 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Page Introuvable | Superlife Officiel CI</title>
-    
-    <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
-    <meta name="robots" content="noindex, follow">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY50YCRQNS"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-VY50YCRQNS');
-    </script>
-
+    <title>Redirection en cours... | Superlife Officiel CI</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --dark: #1a1a1a; --white: #ffffff; --whatsapp: #25D366; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background: var(--white); color: var(--dark); height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; overflow: hidden; }
-        
-        nav { background: var(--white); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: fixed; top: 0; width: 100%; z-index: 1000; }
-        .logo-img { height: 40px; width: auto; }
-        .menu-btn { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
-
-        .side-menu { position: fixed; top: 0; left: -100%; width: 85%; height: 100vh; background: var(--white); z-index: 2000; transition: 0.4s; box-shadow: 5px 0 15px rgba(0,0,0,0.1); padding: 30px 20px; text-align: left; }
-        .side-menu.active { left: 0; }
-        .side-menu a { display: block; padding: 15px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1999; }
-        .overlay.active { display: block; }
-
-        h1 { font-size: 7rem; font-weight: 800; color: var(--primary); line-height: 1; }
-        h2 { font-size: 1.1rem; text-transform: uppercase; color: var(--primary-dark); margin-bottom: 20px; }
-        p { font-size: 0.95rem; color: #666; max-width: 350px; margin-bottom: 30px; }
-
-        .mobile-action-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--white); display: flex; padding: 12px; gap: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.08); }
-        .action-item { flex: 1; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        :root { --primary: #2A6A3B; }
+        body { font-family: 'Poppins', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #666; }
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
-
-    <nav>
-        <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-        <a href="/index.html"><img src="https://api.eperformance.pro/uploads_clients/logo_3_1774032354.PNG" class="logo-img" alt="Superlife CI"></a>
-        <a href="tel:2250152917584" style="color:var(--primary); font-size: 1.3rem;"><i class="fas fa-phone-alt"></i></a>
-    </nav>
-
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-    <div class="side-menu" id="sideMenu">
-        <h3 style="color:var(--primary); margin-bottom: 15px;">Menu Boutique</h3>
-        <a href="/index.html">Accueil</a>
-        <a href="/superlife-stc30-prix-ci.html">STC30</a>
-        <a href="/super-root-coffee-puissance.html">Super Root Coffee</a>
-        <a href="/contact-superlife-cote-divoire.html">Aide & Contact</a>
-    </div>
-
     <div>
-        <h1>404</h1>
-        <h2>Lien introuvable</h2>
-        <p>La page a été déplacée. Redirection vers la boutique en cours...</p>
-    </div>
-
-    <div class="mobile-action-bar">
-        <a href="https://wa.me/2250152917584" class="action-item" style="background:var(--whatsapp); color:white;"><i class="fab fa-whatsapp"></i> Aide</a>
-        <a href="/index.html" class="action-item" style="background:var(--primary); color:white;"><i class="fas fa-home"></i> Boutique</a>
+        <div class="loader"></div>
+        <p>Redirection vers votre produit santé...</p>
     </div>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('sideMenu').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
+        // Analyse du mot-clé dans l'URL actuelle
+        const path = window.location.href.toLowerCase();
+        
+        // Liste des redirections (Identique à ton PHP)
+        const rules = {
+            'stc30': '/superlife-stc30-prix-ci.html',
+            'scc': '/superlife-scc-plus-colon.html',
+            'sic': '/superlife-sic-immunite.html',
+            'snc': '/superlife-snc-cerveau-vision.html',
+            'coffee': '/super-root-coffee-puissance.html',
+            'perle': '/super-root-coffee-puissance.html',
+            'blog': '/conseils-sante-cellulaire-superlife.html',
+            'contact': '/contact-superlife-cote-divoire.html'
+        };
+
+        let target = "/index.html"; // Par défaut, retour accueil
+
+        // On cherche si un mot-clé est présent dans l'URL cassée
+        for (let key in rules) {
+            if (path.indexOf(key) !== -1) {
+                target = rules[key];
+                break;
+            }
         }
-        // Redirection automatique après 3 secondes vers l'accueil si on est perdu sur GitHub
-        setTimeout(() => { window.location.href = "/index.html"; }, 3500);
+
+        // Redirection instantanée
+        window.location.replace(target);
     </script>
 </body>
 </html>
