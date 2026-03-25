@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+m<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -15,32 +15,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        :root { --primary: #2A6A3B; --gold: #c9a96e; --dark: #08080c; --light: #f4f7f6; --red: #e74c3c; }
+        :root { --primary: #2A6A3B; --primary-dark: #1D4D29; --gold: #c9a96e; --dark: #08080c; --light: #f4f7f6; --red: #e74c3c; }
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
         body { background: var(--light); color: var(--dark); line-height: 1.7; padding-bottom: 80px; }
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
         
+        /* Navigation & Menu */
         nav { background: white; height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo { height: 40px; }
+        .menu-btn { color: var(--primary); font-size: 1.5rem; cursor: pointer; }
 
+        .side-menu { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: white; z-index: 2000; transition: 0.3s; padding: 20px; box-shadow: 5px 0 15px rgba(0,0,0,0.1); }
+        .side-menu.active { left: 0; }
+        .side-menu h3 { color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
+        .side-menu a { display: block; padding: 12px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 1500; }
+        .overlay.active { display: block; }
+
+        /* Contenu */
         .hero { background: white; padding: 40px 20px; border-radius: 0 0 40px 40px; text-align: center; margin-bottom: 30px; }
-        h1 { color: var(--primary); font-size: 2rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
-        .tagline { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+        h1 { color: var(--primary); font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
+        .tagline { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
         
         .content-section { background: white; padding: 25px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #eee; }
-        h2 { color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1.4rem; }
+        h2 { color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1.3rem; }
         
-        /* Composition Box */
         .ingredient-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
-        .ing-card { background: var(--light); padding: 15px; border-radius: 12px; font-size: 0.85rem; border-left: 4px solid var(--gold); }
+        .ing-card { background: var(--light); padding: 15px; border-radius: 12px; font-size: 0.8rem; border-left: 4px solid var(--gold); }
         .ing-card strong { color: var(--primary); display: block; }
 
-        /* Tarifs */
-        .price-box { display: flex; flex-direction: column; gap: 15px; margin: 20px 0; }
-        .price-item { display: flex; justify-content: space-between; align-items: center; background: white; padding: 20px; border-radius: 15px; border: 2px solid #eee; }
+        .price-box { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+        .price-item { display: flex; justify-content: space-between; align-items: center; background: white; padding: 15px; border-radius: 15px; border: 2px solid #eee; }
         .price-item.best { border-color: var(--gold); background: #fffdf5; position: relative; }
-        .promo-badge { position: absolute; top: -12px; right: 10px; background: var(--red); color: white; padding: 3px 10px; border-radius: 10px; font-size: 0.7rem; font-weight: 800; }
-        .price-val { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
+        .promo-badge { position: absolute; top: -10px; right: 10px; background: var(--red); color: white; padding: 2px 8px; border-radius: 8px; font-size: 0.65rem; font-weight: 800; }
+        .price-val { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
 
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; margin: 20px 0; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0; }
@@ -49,11 +57,27 @@
         .btn { flex: 1; padding: 15px; border-radius: 12px; text-decoration: none; text-align: center; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .btn-wa { background: #25D366; color: white; }
         .btn-shop { background: var(--primary); color: white; }
+
+        @media (max-width: 480px) { .ingredient-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<div class="side-menu" id="sideMenu">
+    <h3>Menu Superlife</h3>
+    <a href="../index.html"><i class="fas fa-home"></i> Accueil Boutique</a>
+    <a href="../superlife-stc30-prix-ci.html"><i class="fas fa-pills"></i> Superlife STC30</a>
+    <a href="../superlife-scc-plus-colon.html"><i class="fas fa-leaf"></i> Superlife SCC+</a>
+    <a href="../super-root-coffee-puissance.html"><i class="fas fa-coffee"></i> Super Root Coffee</a>
+    <a href="../conseils-sante-cellulaire-superlife.html"><i class="fas fa-blog"></i> Conseils Santé</a>
+    <a href="../devenir-distributeur-superlife-cote-divoire.html"><i class="fas fa-user-tie"></i> Devenir Distributeur</a>
+    <a href="../contact-superlife-cote-divoire.html"><i class="fas fa-envelope"></i> Contact</a>
+</div>
+
 <nav>
+    <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     <a href="../index.html"><img src="../logo.png" alt="Superlife CI" class="logo"></a>
     <a href="tel:+2250152917584" style="color:var(--primary); font-size: 1.2rem;"><i class="fas fa-phone-alt"></i></a>
 </nav>
@@ -62,7 +86,7 @@
     <div class="container">
         <p class="tagline">Technologie des Cellules Souches</p>
         <h1>STC30 : Le Guide Complet sur cette Révolution Santé</h1>
-        <img src="https://i.ibb.co/nNCc3NRP/IMG-2262.png" style="width: 100%; max-width: 400px; margin-top: 20px;" alt="Superlife STC30">
+        <img src="https://i.ibb.co/nNCc3NRP/IMG-2262.png" style="width: 100%; max-width: 350px; margin-top: 20px;" alt="Superlife STC30 Pack">
     </div>
 </div>
 
@@ -70,37 +94,26 @@
     
     <div class="content-section">
         <h2><i class="fas fa-microscope"></i> C'est quoi le STC30 ?</h2>
-        <p>Le <strong>Superlife STC30</strong> est un complément alimentaire révolutionnaire basé sur la science des cellules souches végétales. Contrairement aux médicaments classiques qui traitent les symptômes, le STC30 s'attaque à la racine du problème en <strong>régénérant vos propres cellules</strong>.</p>
+        <p>Le <strong>Superlife STC30</strong> est un complément alimentaire révolutionnaire basé sur la science des cellules souches végétales. Il aide le corps à se réparer naturellement en ciblant les cellules endommagées.</p>
     </div>
 
     <div class="content-section">
-        <h2><i class="fas fa-leaf"></i> Une Composition Unique</h2>
-        <p>Le secret de son efficacité réside dans des ingrédients brevetés en Suisse par le laboratoire Mibelle Biochemistry :</p>
+        <h2><i class="fas fa-leaf"></i> Une Composition Scientifique</h2>
         <div class="ingredient-grid">
-            <div class="ing-card"><strong>PhytoCellTec Malus Domestica</strong> Cellules souches de pomme rare pour la longévité cellulaire.</div>
-            <div class="ing-card"><strong>PhytoCellTec Solar Vitis</strong> Cellules de raisin pour protéger contre les rayons UV et l'oxydation.</div>
-            <div class="ing-card"><strong>GliSODin (Canteloup)</strong> Le "Maître antioxydant" qui renforce le système immunitaire.</div>
-            <div class="ing-card"><strong>Extraits de Myrtille</strong> Pour la circulation sanguine et la vision.</div>
+            <div class="ing-card"><strong>PhytoCellTec Malus</strong> Cellules souches de pomme suisse pour la régénération.</div>
+            <div class="ing-card"><strong>GliSODin</strong> Le maître antioxydant qui booste l'immunité.</div>
+            <div class="ing-card"><strong>Solar Vitis</strong> Protection cellulaire contre le stress oxydatif.</div>
+            <div class="ing-card"><strong>Cassis / Myrtille</strong> Riche en vitamines pour la vision et le sang.</div>
         </div>
     </div>
 
     <div class="content-section">
-        <h2><i class="fas fa-check-circle"></i> Pourquoi l'utiliser ?</h2>
-        <ul>
-            <li><strong>Régénération des organes :</strong> Aide à réparer les reins, le pancréas et le foie.</li>
-            <li><strong>Soutien AVC & Nerfs :</strong> Aide à retrouver la mobilité en réparant les tissus nerveux.</li>
-            <li><strong>Équilibre Glycémique :</strong> Soutien naturel pour les personnes diabétiques.</li>
-            <li><strong>Détoxification :</strong> Nettoie le sang et purifie l'organisme.</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h2><i class="fas fa-play-circle"></i> Témoignages Chocs (Côte d'Ivoire)</h2>
-        <p><strong>Cas d'AVC :</strong> Voyez comment ce patient a récupéré après sa cure.</p>
+        <h2><i class="fas fa-play-circle"></i> Témoignages Chocs (AVC & Poumons)</h2>
+        <p><strong>Cas d'AVC :</strong> Récupération de la mobilité.</p>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/dash9-uxhNc" allowfullscreen></iframe>
         </div>
-        <p><strong>Infection Pulmonaire :</strong> Une récupération pulmonaire surprenante.</p>
+        <p><strong>Infection Pulmonaire :</strong></p>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/3zFTiwPWNDM" allowfullscreen></iframe>
         </div>
@@ -110,24 +123,30 @@
         <h2><i class="fas fa-tags"></i> Prix Officiel en Côte d'Ivoire</h2>
         <div class="price-box">
             <div class="price-item">
-                <div><strong>1 Boîte STC30</strong><br><small>Cure de 15 jours</small></div>
+                <div><strong>1 Boîte STC30</strong></div>
                 <div class="price-val">45 000 F</div>
             </div>
             <div class="price-item best">
-                <div class="promo-badge">LE PLUS POPULAIRE</div>
-                <div><strong>Pack 2 Boîtes</strong><br><small>Cure de 1 mois (Recommandé)</small></div>
+                <div class="promo-badge">POPULAIRE (-10.000 F)</div>
+                <div><strong>Pack 2 Boîtes</strong></div>
                 <div class="price-val">80 000 F</div>
             </div>
         </div>
-        <p style="font-size: 0.8rem; text-align: center; color: #666;">⚠️ Attention aux prix trop bas sur internet, exigez l'original !</p>
     </div>
 
 </div>
 
 <div class="cta-fixed">
-    <a href="https://wa.me/2250152917584" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Conseil Express</a>
-    <a href="../index.html" class="btn btn-shop"><i class="fas fa-shopping-cart"></i> Commander</a>
+    <a href="https://wa.me/2250152917584" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="../index.html" class="btn btn-shop"><i class="fas fa-shopping-cart"></i> Boutique</a>
 </div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('sideMenu').classList.toggle('active');
+        document.getElementById('overlay').classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>
