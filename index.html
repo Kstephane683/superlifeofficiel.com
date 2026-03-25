@@ -18,6 +18,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
     <style>
         :root { 
@@ -34,7 +37,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 85px; }
         
-        /* NAV MOBILE-FIRST */
         nav { 
             background: var(--white); padding: 12px 15px; display: flex; 
             justify-content: space-between; align-items: center; 
@@ -43,7 +45,6 @@
         .logo-img { height: 42px; width: auto; }
         .menu-btn { font-size: 1.4rem; color: var(--primary); cursor: pointer; }
 
-        /* MENU LATÉRAL PRO */
         .side-menu {
             position: fixed; top: 0; left: -100%; width: 280px; height: 100vh;
             background: var(--white); z-index: 2001; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,7 +59,6 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
         
-        /* HERO */
         .hero { 
             text-align: center; padding: 35px 15px; 
             background: linear-gradient(135deg, #f0f7f2 0%, #ffffff 100%);
@@ -66,7 +66,6 @@
         }
         .hero h1 { color: var(--primary-dark); font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
 
-        /* PRODUITS */
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
         .product-card { 
             border: 1px solid #eee; border-radius: 20px; overflow: hidden; 
@@ -77,7 +76,6 @@
         .info-box { padding: 12px; text-align: center; flex-grow: 1; }
         .price-tag { color: var(--primary); font-weight: 800; font-size: 1rem; }
 
-        /* MODALE & FORMULAIRE */
         #order-modal { 
             display: none; position: fixed; inset: 0; 
             background: rgba(0,0,0,0.8); z-index: 3000; 
@@ -87,6 +85,10 @@
             background: #fff; width: 100%; max-width: 450px; 
             border-radius: 25px; padding: 20px; max-height: 90vh; overflow-y: auto;
         }
+
+        /* FIX DRAPEAU TELEPHONE */
+        .iti { width: 100% !important; margin-bottom: 10px; }
+        .iti__flag-container { padding: 2px; }
 
         .main-selection-box { 
             background: #f0f7f2; padding: 15px; border-radius: 20px; 
@@ -110,7 +112,6 @@
             border-radius: 15px; font-weight: 700; width: 100%; cursor: pointer; font-size: 1rem;
         }
 
-        /* BARRE FIXE */
         .mobile-action-bar {
             position: fixed; bottom: 0; left: 0; width: 100%; height: 70px;
             background: var(--white); display: flex; padding: 10px;
@@ -153,30 +154,38 @@
 
 <div id="order-modal">
     <div class="modal-card">
-        <h3 style="text-align:center; margin-bottom:20px; font-weight:800; color:var(--primary);">Finaliser ma Commande</h3>
-        
-        <div class="main-selection-box">
-            <div class="badge-main">Choix Principal</div>
-            <div class="qty-row">
-                <span id="main-prod-name" style="font-weight:700; font-size:0.9rem;">Chargement...</span>
-                <select id="main-qty-select" onchange="updatePrice()"></select>
+        <div id="modal-form-content">
+            <h3 style="text-align:center; margin-bottom:20px; font-weight:800; color:var(--primary);">Finaliser ma Commande</h3>
+            
+            <div class="main-selection-box">
+                <div class="badge-main">Choix Principal</div>
+                <div class="qty-row">
+                    <span id="main-prod-name" style="font-weight:700; font-size:0.9rem;">Chargement...</span>
+                    <select id="main-qty-select" onchange="updatePrice()"></select>
+                </div>
+                <div id="promo-display" style="color:var(--red); font-size:0.75rem; font-weight:800; text-align:center; display:none;"></div>
             </div>
-            <div id="promo-display" style="color:var(--red); font-size:0.75rem; font-weight:800; text-align:center; display:none;"></div>
+
+            <div style="margin-top:15px;"><p style="font-size:0.8rem; font-weight:700; margin-bottom:10px;">Compléter ma cure (Optionnel)</p><div id="upsell-container"></div></div>
+
+            <div class="total-box">
+                TOTAL : <span id="m-price" style="font-size:1.5rem; color:var(--gold); font-weight:800;">0</span> <small>FCFA</small>
+                <div style="font-size:0.6rem; opacity:0.7; margin-top:5px;">LIVRAISON 1 000 FCFA INCLUSE</div>
+            </div>
+
+            <input type="text" id="m-name" placeholder="Nom complet" 
+                   oninput="this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '')"
+                   style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; margin-bottom:10px;">
+            
+            <input type="tel" id="m-phone" placeholder="Numéro de téléphone" 
+                   oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                   style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; margin-bottom:10px;">
+            
+            <textarea id="m-address" placeholder="Quartier de livraison" rows="2" style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; margin-bottom:12px;"></textarea>
+            
+            <button onclick="sendOrder()" id="submit-btn" class="btn-confirm">CONFIRMER MA COMMANDE</button>
+            <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:15px; font-size:0.8rem;">Fermer</button>
         </div>
-
-        <div style="margin-top:15px;"><p style="font-size:0.8rem; font-weight:700; margin-bottom:10px;">Compléter ma cure (Optionnel)</p><div id="upsell-container"></div></div>
-
-        <div class="total-box">
-            TOTAL : <span id="m-price" style="font-size:1.5rem; color:var(--gold); font-weight:800;">0</span> <small>FCFA</small>
-            <div style="font-size:0.6rem; opacity:0.7; margin-top:5px;">LIVRAISON 1 000 FCFA INCLUSE</div>
-        </div>
-
-        <input type="text" id="m-name" placeholder="Nom complet" style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; margin-bottom:10px;">
-        <input type="tel" id="m-phone" placeholder="Numéro de téléphone" style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; margin-bottom:10px;">
-        <textarea id="m-address" placeholder="Quartier de livraison" rows="2" style="width:100%; padding:14px; border:1px solid #ddd; border-radius:12px; margin-bottom:12px;"></textarea>
-        
-        <button onclick="sendOrder()" id="submit-btn" class="btn-confirm">CONFIRMER MA COMMANDE</button>
-        <button onclick="closeModal()" style="width:100%; background:none; border:none; color:gray; margin-top:15px; font-size:0.8rem;">Fermer</button>
     </div>
 </div>
 
@@ -191,6 +200,7 @@
 </footer>
 
 <script>
+    let iti;
     function toggleMenu() {
         document.getElementById('sideMenu').classList.toggle('active');
         document.getElementById('overlay').classList.toggle('active');
@@ -200,8 +210,7 @@
         WA: '2250152917584',
         TG_TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
         TG_CHAT_ID: '8441274889',
-        CAPI_URL: 'capi.php', // Liaison avec capi.php
-        REDIRECT: 'redirect.php' // Liaison avec redirect.php
+        CAPI_URL: 'capi.php'
     };
 
     const PRODUCTS = [
@@ -270,7 +279,9 @@
     function openOrder(id) {
         currentMainId = id;
         document.getElementById('main-prod-name').innerText = PRODUCTS.find(p => p.id === id).name;
-        document.getElementById('main-qty-select').value = 1;
+        
+        // PAR DÉFAUT : 2 BOITES
+        document.getElementById('main-qty-select').value = 2;
 
         const upsellContainer = document.getElementById('upsell-container');
         upsellContainer.innerHTML = PRODUCTS.filter(p => p.id !== id).map(p => `
@@ -282,41 +293,69 @@
             </div>
         `).join('');
 
+        // Initialisation de l'indicatif au moment de l'ouverture
+        const phoneInput = document.querySelector("#m-phone");
+        if(iti) iti.destroy();
+        iti = window.intlTelInput(phoneInput, {
+            initialCountry: "auto",
+            geoIpLookup: function(success, failure) {
+                fetch("https://ipapi.co/json").then(res => res.json()).then(data => success(data.country_code)).catch(() => success("CI"));
+            },
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
+
         updatePrice();
         document.getElementById('order-modal').style.display = 'flex';
     }
 
     function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
 
+    function showSuccessState() {
+        const modalInside = document.querySelector('.modal-card');
+        modalInside.innerHTML = `
+            <div style="text-align:center; padding: 20px 10px;">
+                <div style="width:70px; height:70px; background:var(--primary); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin:0 auto 20px; box-shadow: 0 10px 20px rgba(42,106,59,0.2);">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h2 style="color:var(--primary); font-weight:800; margin-bottom:15px; font-size:1.4rem;">Commande Validée !</h2>
+                <p style="font-size:0.85rem; color:#555; margin-bottom:25px; line-height:1.5;">
+                    Votre commande a été transmise. Un conseiller vous contactera par appel pour confirmer la livraison.
+                </p>
+                <div style="background:#f0f7f2; padding:15px; border-radius:15px; margin-bottom:25px; text-align:left; border-left:4px solid var(--gold);">
+                    <p style="font-size:0.75rem; font-weight:700; color:var(--primary-dark);">
+                        <i class="fas fa-truck"></i> Paiement à la livraison.
+                    </p>
+                </div>
+                <a href="devenir-distributeur-superlife-cote-divoire.html" 
+                   style="display:block; background:var(--gold); color:var(--dark); text-decoration:none; padding:16px; border-radius:12px; font-weight:800; font-size:0.9rem; margin-bottom:15px; box-shadow:0 4px 12px rgba(201,169,110,0.3);">
+                    DEVENIR PARTENAIRE
+                </a>
+                <button onclick="location.reload()" style="background:none; border:none; color:gray; cursor:pointer; font-size:0.8rem; font-weight:600;">Retour à la boutique</button>
+            </div>
+        `;
+    }
+
     async function sendOrder() {
         const name = document.getElementById('m-name').value;
-        const phone = document.getElementById('m-phone').value;
         const addr = document.getElementById('m-address').value;
+        const phone = iti.getNumber();
         const totalStr = document.getElementById('m-price').innerText;
         const totalVal = parseInt(totalStr.replace(/\s/g, ''));
 
-        if(!name || !phone || !addr) return alert("Veuillez remplir vos informations.");
+        if(!name || !addr || !iti.isValidNumber()) return alert("Veuillez remplir votre nom, adresse et un numéro de téléphone valide.");
 
         const btn = document.getElementById('submit-btn');
         btn.disabled = true;
-        btn.innerText = "Traitement...";
+        btn.innerText = "Validation...";
 
-        // 1. APPEL API CAPI FACEBOOK (Blindage des données)
         try {
             await fetch(CONFIG.CAPI_URL, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ 
-                    event: 'Purchase', 
-                    name: name, 
-                    phone: phone, 
-                    value: totalVal, 
-                    currency: 'XOF' 
-                })
+                body: JSON.stringify({ event: 'Purchase', name: name, phone: phone, value: totalVal, currency: 'XOF' })
             });
-        } catch(e) { console.error("CAPI Error", e); }
+        } catch(e) {}
 
-        // 2. PRÉPARATION LISTE PRODUITS & TÉLÉGRAM
         let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
         document.querySelectorAll('.upsell-select').forEach(s => {
             if(s.value > 0) list += `• ${PRODUCTS.find(p => p.id === s.id.replace('up-','')).name}: ${s.value}\n`;
@@ -324,18 +363,14 @@
 
         const msg = `📦 *BOUTIQUE SUPERLIFE*\n----------\n${list}\n*TOTAL:* ${totalStr} FCFA\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
 
-        // 3. ENVOI TÉLÉGRAM & REDIRECTION
         try {
             const tg = await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
             });
-            
-            if (tg.ok) {
-                // Liaison avec redirect.php
-                window.location.href = CONFIG.REDIRECT; 
-            } else { throw new Error(); }
+            if (tg.ok) showSuccessState();
+            else throw new Error();
         } catch (e) {
             window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
         }
