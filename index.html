@@ -215,11 +215,11 @@
     };
 
     const PRODUCTS = [
-    { id: 'stc30', name: 'Superlife STC30', img: 'https://i.ibb.co/Fkx6jYwN/superlifeofficiel-stc30.webp', unit: 45000, p2: 80000, p8: 300000, p20: 750000 },
-    { id: 'scc', name: 'Superlife SCC+', img: 'https://i.ibb.co/JwVPrcWF/superlifeofficiel-scc-plus.webp', unit: 55000, p2: 95000, p8: 355000 },
-    { id: 'snc', name: 'Superlife SNC', img: 'https://i.ibb.co/49MVGMd/superlifeofficiel-snc.webp', unit: 50000, p2: 90000, p8: 330000 },
-    { id: 'sic', name: 'Superlife SIC', img: 'https://i.ibb.co/x8SMNdLT/superlifeofficiel-sic.webp', unit: 50000, p2: 90000, p8: 330000 },
-    { id: 'coffee', name: 'Super Root Coffee', img: 'https://i.ibb.co/Xf3kwn04/superlifeofficiel-super-root-coffee.webp', unit: 25000, unitBulk: 20000 }
+    { id: 'stc30_01', name: 'Superlife STC30', img: 'https://i.ibb.co/Fkx6jYwN/superlifeofficiel-stc30.webp', unit: 45000, p2: 80000, p8: 300000, p20: 750000 },
+    { id: 'scc_plus_02', name: 'Superlife SCC+', img: 'https://i.ibb.co/JwVPrcWF/superlifeofficiel-scc-plus.webp', unit: 55000, p2: 95000, p8: 355000 },
+    { id: 'snc_03', name: 'Superlife SNC', img: 'https://i.ibb.co/49MVGMd/superlifeofficiel-snc.webp', unit: 50000, p2: 90000, p8: 330000 },
+    { id: 'sic_04', name: 'Superlife SIC', img: 'https://i.ibb.co/x8SMNdLT/superlifeofficiel-sic.webp', unit: 50000, p2: 90000, p8: 330000 },
+    { id: 'coffee_05', name: 'Super Root Coffee', img: 'https://i.ibb.co/Xf3kwn04/superlifeofficiel-super-root-coffee.webp', unit: 25000, unitBulk: 20000 }
 ];
 
 
@@ -331,49 +331,75 @@
     }
 
     async function sendOrder() {
-        const name = document.getElementById('m-name').value;
-        const phone = document.getElementById('m-phone').value;
-        const addr = document.getElementById('m-address').value;
-        const totalStr = document.getElementById('m-price').innerText;
-        const totalVal = parseInt(totalStr.replace(/\s/g, ''));
+    const name = document.getElementById('m-name').value;
+    const phone = document.getElementById('m-phone').value;
+    const addr = document.getElementById('m-address').value;
+    const totalStr = document.getElementById('m-price').innerText;
+    const totalVal = parseInt(totalStr.replace(/\s/g, '').replace(/,/g, ''));
 
-        if(!name || !phone || !addr) return alert("Veuillez remplir vos informations.");
+    if(!name || !phone || !addr) return alert("Veuillez remplir vos informations.");
 
-        const btn = document.getElementById('submit-btn');
-        btn.disabled = true;
-        btn.innerText = "Validation...";
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerText = "Validation...";
 
-        // 1. CAPI (Données critiques)
-        try {
-            await fetch(CONFIG.CAPI_URL, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ event: 'Purchase', name: name, phone: phone, value: totalVal, currency: 'XOF' })
-            });
-        } catch(e) { console.error("CAPI Error", e); }
+    // --- 1. PRÉPARATION DES DONNÉES CATALOGUE ---
+    let purchasedIds = [];
+    purchasedIds.push(currentMainId); // Ajoute l'ID principal (ex: stc30_01)
 
-        // 2. Telegram
-        let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
-        document.querySelectorAll('.upsell-select').forEach(s => {
-            if(s.value > 0) list += `• ${PRODUCTS.find(p => p.id === s.id.replace('up-','')).name}: ${s.value}\n`;
-        });
-
-        const msg = `📦 *BOUTIQUE SUPERLIFE*\n----------\n${list}\n*TOTAL:* ${totalStr} FCFA\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
-
-        try {
-            const tg = await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
-            });
-            
-            if (tg.ok) {
-                showSuccessState(); // Affiche le succès sans redirection
-            } else { throw new Error(); }
-        } catch (e) {
-            window.open(`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`, '_blank');
+    // Ajoute les IDs des produits complémentaires si sélectionnés
+    document.querySelectorAll('.upsell-select').forEach(s => {
+        if(parseInt(s.value) > 0) {
+            purchasedIds.push(s.id.replace('up-', ''));
         }
+    });
+
+    // --- 2. APPEL CAPI FACEBOOK (Liaison Catalogue) ---
+    try {
+        await fetch(CONFIG.CAPI_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ 
+                event: 'Purchase', 
+                name: name, 
+                phone: phone, 
+                value: totalVal, 
+                currency: 'XOF',
+                content_ids: purchasedIds, 
+                content_type: 'product'
+            })
+        });
+    } catch(e) { console.error("CAPI Error", e); }
+
+    // --- 3. PRÉPARATION DU MESSAGE DE COMMANDE (Telegram/WA) ---
+    let list = `• ${PRODUCTS.find(p => p.id === currentMainId).name}: ${document.getElementById('main-qty-select').value}\n`;
+    document.querySelectorAll('.upsell-select').forEach(s => {
+        if(parseInt(s.value) > 0) {
+            const prod = PRODUCTS.find(p => p.id === s.id.replace('up-',''));
+            list += `• ${prod.name}: ${s.value}\n`;
+        }
+    });
+
+    const msg = `📦 *BOUTIQUE SUPERLIFE*\n----------\n${list}\n*TOTAL:* ${totalStr} FCFA\n\n*CLIENT:* ${name}\n*TEL:* ${phone}\n*ADRESSE:* ${addr}`;
+
+    // --- 4. ENVOI NOTIFICATION ---
+    try {
+        const tg = await fetch(`https://api.telegram.org/bot${CONFIG.TG_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: msg, parse_mode: 'Markdown' })
+        });
+        
+        if (tg.ok) {
+            showSuccessState(); 
+        } else { throw new Error(); }
+    } catch (e) {
+        // Fallback WhatsApp si Telegram échoue ou erreur réseau
+        const waMsg = window.encodeURIComponent(msg.replace(/\*/g, ''));
+        window.open(`https://wa.me/${CONFIG.WA}?text=${waMsg}`, '_blank');
     }
+}
+
     init();
 </script>
 
