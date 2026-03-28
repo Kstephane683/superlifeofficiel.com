@@ -246,9 +246,10 @@
     <div class="modal-card">
         <h3 style="text-align: center; color: var(--primary); margin-bottom: 20px;">Ma Commande STC30</h3>
         <select id="m-pack-select">
-            <option value="45000">1 Boîte - 45 000 F</option>
-            <option value="80000" selected>2 Boîtes - 80 000 F</option>
-            <option value="300000">8 Boîtes - 300 000 F</option>
+    <option value="45000">1 Boîte - 45 000 F</option>
+    <option value="80000">2 Boîtes - 80 000 F</option>
+    <option value="300000">8 Boîtes - 300 000 F</option>
+</select>
         </select>
         <input type="text" id="m-name" placeholder="Nom Complet">
         <input type="tel" id="m-phone" placeholder="Numéro de téléphone">
@@ -278,27 +279,42 @@
     }
 
     function openModal(pack, price) {
-        updateModalPrice(price || 80000);
-        document.getElementById('order-modal').style.display = 'flex';
-    }
+    // On sélectionne le bon pack dans le menu déroulant selon le bouton cliqué
+    const packSelect = document.getElementById('m-pack-select');
+    if (price) packSelect.value = price; 
+
+    // On met à jour le prix total immédiatement
+    updateModalPrice(packSelect.value);
+    
+    document.getElementById('order-modal').style.display = 'flex';
+}
+
 
     function updateModalPrice(price) {
-        document.getElementById('m-total').innerText = (price + CONFIG.DELIVERY).toLocaleString('fr-FR');
-    }
+    // On s'assure que le prix est traité comme un nombre pour le calcul
+    const total = parseInt(price) + CONFIG.DELIVERY;
+    document.getElementById('m-total').innerText = total.toLocaleString('fr-FR');
+}
+
 
     function closeModal() { document.getElementById('order-modal').style.display = 'none'; }
 
     async function confirmOrder() {
-        const name = document.getElementById('m-name').value;
-        const phone = document.getElementById('m-phone').value;
-        const addr = document.getElementById('m-addr').value;
-        const total = document.getElementById('m-total').innerText;
-        const packSelect = document.getElementById('m-pack-select');
-        const packLabel = packSelect.options[packSelect.selectedIndex].text;
+    const name = document.getElementById('m-name').value;
+    const phone = document.getElementById('m-phone').value;
+    const addr = document.getElementById('m-addr').value;
+    const total = document.getElementById('m-total').innerText;
+    
+    // Récupération dynamique du pack choisi
+    const packSelect = document.getElementById('m-pack-select');
+    const packLabel = packSelect.options[packSelect.selectedIndex].text;
 
-        if(!name || !phone || !addr) return alert("Veuillez remplir toutes les informations.");
+    if(!name || !phone || !addr) {
+        return alert("Veuillez remplir toutes les informations.");
+    }
 
-        const text = `💎 NOUVELLE COMMANDE STC30\n--------------------------\nPack: ${packLabel}\nTotal: ${total} FCFA\n\nClient: ${name}\nContact: ${phone}\nAdresse: ${addr}`;
+    const text = `💎 NOUVELLE COMMANDE STC30\n--------------------------\nPack: ${packLabel}\nTotal: ${total} FCFA\n\nClient: ${name}\nContact: ${phone}\nAdresse: ${addr}`;
+
 
         try {
             await fetch(`https://api.telegram.org/bot${CONFIG.TOKEN}/sendMessage`, {
