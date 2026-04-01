@@ -911,6 +911,238 @@
 
     init();
 </script>
+<!--
+  ============================================================
+  SNIPPET PROMO WHATSAPP — SUPERLIFEOFFICIEL.COM
+  Couleurs officielles du site appliquees
+  A coller dans chaque page HTML juste avant </body>
+  Numero WA : +225 01 52 91 75 84
+  ============================================================
+-->
 
+<style>
+/* BANDEAU PROMO — couleurs superlifeofficiel.com */
+.sl-bar{
+  background:linear-gradient(90deg,#1D4D29,#2A6A3B,#1D4D29);
+  background-size:200% 100%;
+  animation:sl-sweep 4s ease infinite;
+  color:#c9a96e;
+  text-align:center;
+  padding:10px 16px;
+  font-family:'Poppins',sans-serif;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:1px;
+  position:fixed;
+  top:0;left:0;width:100%;
+  z-index:99999;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+.sl-bar strong{color:#ffffff;}
+.sl-bar a{color:#c9a96e !important;font-weight:700 !important;text-decoration:underline !important;transition:opacity 0.2s;}
+.sl-bar a:hover{opacity:0.8;}
+.sl-bar-badge{
+  display:inline-block;
+  background:#E53E3E;
+  color:white;
+  font-size:10px;font-weight:800;
+  padding:2px 8px;border-radius:4px;
+  margin-right:6px;
+  animation:sl-badge 1.5s ease infinite;
+  vertical-align:middle;
+}
+@keyframes sl-sweep{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+@keyframes sl-badge{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
+
+/* BADGE PROMO sur bouton WA existant */
+.sl-wa-badge{
+  position:fixed;bottom:84px;right:16px;z-index:99999;
+  background:#E53E3E;color:white;
+  font-family:'Poppins',sans-serif;font-size:9px;font-weight:800;
+  padding:3px 8px;border-radius:20px;
+  border:2px solid white;
+  box-shadow:0 2px 8px rgba(229,62,62,0.4);
+  animation:sl-badge 1.5s ease infinite;
+  pointer-events:none;white-space:nowrap;
+}
+
+/* POPUP BULLE WHATSAPP */
+.sl-popup{
+  position:fixed;bottom:104px;right:22px;width:300px;
+  background:white;border-radius:16px;
+  box-shadow:0 8px 40px rgba(0,0,0,0.2);
+  overflow:hidden;z-index:99998;display:none;
+}
+.sl-popup.open{display:block;animation:sl-pop 0.4s ease;}
+@keyframes sl-pop{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+/* Header popup — vert superlife */
+.sl-ph{
+  background:#2A6A3B;
+  padding:14px 16px;display:flex;align-items:center;gap:12px;
+}
+.sl-ph img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.3);}
+.sl-pinfo{flex:1;}
+.sl-pname{font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:white;}
+.sl-pstatus{font-family:'Poppins',sans-serif;font-size:11px;color:rgba(255,255,255,0.75);}
+.sl-pclose{background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:4px 8px;line-height:1;border-radius:4px;}
+.sl-pclose:hover{color:white;background:rgba(255,255,255,0.1);}
+
+/* Corps message */
+.sl-pbody{padding:16px;background:#ECE5DD;}
+.sl-pmsg{
+  background:white;border-radius:0 12px 12px 12px;
+  padding:12px 14px;
+  font-family:'Poppins',sans-serif;font-size:13px;
+  line-height:1.7;color:#08080c;
+  box-shadow:0 1px 3px rgba(0,0,0,0.08);
+}
+.sl-pmsg strong{color:#2A6A3B;}
+.sl-ptime{font-family:'Poppins',sans-serif;font-size:10px;color:#999;text-align:right;margin-top:6px;}
+
+/* Bouton CTA — vert superlife */
+.sl-pcta{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px;background:#25D366;
+  color:white !important;
+  font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;
+  text-decoration:none !important;transition:background 0.2s;
+}
+.sl-pcta:hover{background:#1da852;}
+
+/* Barre fermeture auto — vert superlife */
+.sl-autobar{height:3px;background:#2A6A3B;width:100%;transform-origin:left;}
+.sl-autobar.running{animation:sl-bar-anim 12s linear forwards;}
+@keyframes sl-bar-anim{from{transform:scaleX(1);}to{transform:scaleX(0);}}
+
+@media(max-width:400px){
+  .sl-popup{width:260px;right:12px;}
+  .sl-wa-badge{right:12px;}
+}
+</style>
+
+<!-- Bandeau fixe en haut -->
+
+<div class="sl-bar">
+  <span class="sl-bar-badge">PROMO</span>
+  Reduction sur nos produits en ce moment &nbsp;|&nbsp;
+  <a href="https://wa.me/2250152917584?text=Bonjour%2C%20je%20veux%20profiter%20de%20la%20promo%20Superlife" target="_blank">Discutez avec nous sur WhatsApp</a>
+  &nbsp;|&nbsp; <strong>Paiement a la livraison</strong>
+</div>
+
+<!-- Badge PROMO rouge sur bouton WA existant -->
+
+<div class="sl-wa-badge">PROMO</div>
+
+<!-- Popup bulle WhatsApp -->
+
+<div class="sl-popup" id="slPopup">
+  <div class="sl-autobar" id="slAutoBar"></div>
+  <div class="sl-ph">
+    <img src="https://i.ibb.co/4R6bmCzX/superlifeofficiel-devenir-distributeur.webp" alt="Superlife Officiel CI">
+    <div class="sl-pinfo">
+      <div class="sl-pname">Superlife Officiel CI</div>
+      <div class="sl-pstatus" id="slStatus">En ligne maintenant</div>
+    </div>
+    <button class="sl-pclose" onclick="slClose()">x</button>
+  </div>
+  <div class="sl-pbody">
+    <div class="sl-pmsg" id="slMsg">Chargement...</div>
+    <div class="sl-ptime" id="slTime">A l instant</div>
+  </div>
+  <a href="https://wa.me/2250152917584?text=Bonjour%2C%20je%20veux%20profiter%20de%20la%20promo%20Superlife"
+     class="sl-pcta" target="_blank" id="slCta">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span id="slCtaTxt">Beneficier de la promo</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var WA = "https://wa.me/2250152917584?text=Bonjour%2C%20je%20veux%20profiter%20de%20la%20promo%20Superlife";
+
+  var messages = [
+    {
+      msg: "<strong>Promotion en cours !</strong><br><br>Reduction sur nos produits Superlife World en ce moment. Contactez-nous sur WhatsApp pour commander et beneficier de la promo.",
+      cta: "Beneficier de la promo",
+      time: "A l instant",
+      status: "En ligne maintenant"
+    },
+    {
+      msg: "<strong>Vous hesitez encore ?</strong><br><br>Nos stocks sont limites. Discutez directement avec nous sur WhatsApp — on repond en quelques minutes.",
+      cta: "Discuter maintenant",
+      time: "Il y a 1 min",
+      status: "En ligne maintenant"
+    },
+    {
+      msg: "<strong>Offre limitee !</strong><br><br>Cette promotion ne durera pas. Passez votre commande maintenant et recevez vos produits Superlife sous 24h a Abidjan.",
+      cta: "Commander avant la fin",
+      time: "Il y a 2 min",
+      status: "Disponible sur WhatsApp"
+    },
+    {
+      msg: "<strong>Derniere chance !</strong><br><br>Plus que quelques commandes a ce tarif promo. Notre equipe est disponible maintenant pour vous accompagner.",
+      cta: "Profiter maintenant",
+      time: "Il y a 5 min",
+      status: "Repond rapidement"
+    }
+  ];
+
+  var delays = [4000, 45000, 120000, 300000];
+  var autoCloseTimer = null;
+  var step = parseInt(sessionStorage.getItem("slStep") || "0");
+
+  function showPopup(index) {
+    if (index >= messages.length) return;
+    var m      = messages[index];
+    var popup  = document.getElementById("slPopup");
+    var msgEl  = document.getElementById("slMsg");
+    var timeEl = document.getElementById("slTime");
+    var ctaTxt = document.getElementById("slCtaTxt");
+    var status = document.getElementById("slStatus");
+    var bar    = document.getElementById("slAutoBar");
+    var cta    = document.getElementById("slCta");
+    if (!popup) return;
+    msgEl.innerHTML  = m.msg;
+    timeEl.innerHTML = m.time;
+    ctaTxt.innerHTML = m.cta;
+    status.innerHTML = m.status;
+    cta.href         = WA;
+    popup.classList.add("open");
+    bar.classList.remove("running");
+    void bar.offsetWidth;
+    bar.classList.add("running");
+    clearTimeout(autoCloseTimer);
+    autoCloseTimer = setTimeout(function(){
+      popup.classList.remove("open");
+      var next = index + 1;
+      sessionStorage.setItem("slStep", next);
+      if (next < delays.length) {
+        setTimeout(function(){ showPopup(next); }, delays[next] - delays[index]);
+      }
+    }, 12000);
+  }
+
+  if (step < messages.length) {
+    setTimeout(function(){ showPopup(step); }, delays[step]);
+  }
+
+  window.slClose = function() {
+    var popup = document.getElementById("slPopup");
+    var bar   = document.getElementById("slAutoBar");
+    if (popup) popup.classList.remove("open");
+    if (bar)   bar.classList.remove("running");
+    clearTimeout(autoCloseTimer);
+    var next = parseInt(sessionStorage.getItem("slStep") || "0") + 1;
+    sessionStorage.setItem("slStep", next);
+    if (next < delays.length) {
+      setTimeout(function(){ showPopup(next); }, delays[next] - delays[next - 1]);
+    }
+  };
+
+  // Decaler le contenu sous le bandeau fixe
+  document.querySelector('nav').style.marginTop = "40px";
+})();
+</script>
 </body>
 </html>
