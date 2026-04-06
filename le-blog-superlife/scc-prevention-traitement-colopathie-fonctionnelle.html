@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Colopathie Fonctionnelle : Prévention et Traitement avec SCC+ | Superlife CI</title>
-    <meta name="description" content="Soulagez les ballonnements et douleurs abdominales naturellement. Découvrez comment le Superlife SCC+ aide au traitement de la colopathie fonctionnelle en Côte d'Ivoire.">
+    <title>L'Art de l'Équilibre Digestif : Protocole SCC+ et Colopathie | Superlife CI</title>
+    <meta name="description" content="Analyse profonde de la colopathie fonctionnelle par Superlife Officiel. Découvrez l'excellence du SCC+ pour une restauration intestinale de prestige.">
     <link rel="canonical" href="https://superlifeofficiel.com/le-blog-superlife/scc-prevention-traitement-colopathie-fonctionnelle.html">
 
     <meta name="google-site-verification" content="Mb-be3chfHcGwvKLoNF7mXr8ieWH3N120LVsu8rUv2A" />
@@ -26,6 +26,7 @@
             --primary: #2A6A3B;
             --primary-dark: #1D4D29;
             --gold: #c9a96e;
+            --gold-light: #e6d5b8;
             --dark: #08080c;
             --white: #ffffff;
             --light: #f4f7f6;
@@ -33,37 +34,48 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; padding-bottom: 90px; }
+        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--dark); line-height: 1.8; padding-bottom: 100px; }
 
-        header { background: var(--white); height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header { background: var(--white); height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 25px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         .nav-toggle { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
-        .logo { height: 40px; }
+        .logo { height: 45px; }
 
-        .article-container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .badge-category { background: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
-        h1 { font-size: 1.8rem; font-weight: 800; margin: 15px 0; color: var(--primary-dark); line-height: 1.2; }
-        .main-img { width: 100%; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        /* Hero Section */
+        .hero-blog { background: linear-gradient(rgba(8, 8, 12, 0.7), rgba(8, 8, 12, 0.7)), url('https://placehold.co/1200x600/1D4D29/white?text=Excellence+Digestive'); background-size: cover; background-position: center; height: 350px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 20px; }
+        .hero-blog h1 { font-size: 2.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+
+        .article-container { max-width: 900px; margin: -50px auto 0; background: white; border-radius: 30px; padding: 40px 30px; position: relative; box-shadow: 0 10px 50px rgba(0,0,0,0.1); }
+        .meta-info { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px; }
+        .badge-premium { background: var(--gold); color: var(--dark); padding: 4px 12px; border-radius: 5px; font-weight: 700; }
+
+        .content h2 { color: var(--primary-dark); margin: 45px 0 20px; font-weight: 700; font-size: 1.6rem; position: relative; }
+        .content h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gold); margin-top: 10px; }
+        .content h3 { color: var(--primary); margin: 30px 0 15px; font-weight: 600; font-size: 1.3rem; }
+        .content p { margin-bottom: 25px; font-size: 1.1rem; color: #333; text-align: justify; }
         
-        .content h2 { color: var(--primary); margin: 30px 0 15px; font-weight: 700; border-left: 4px solid var(--gold); padding-left: 15px; }
-        .content p { margin-bottom: 15px; font-size: 1.05rem; color: #444; }
-        .content ul { margin-bottom: 20px; padding-left: 20px; }
-        .content li { margin-bottom: 10px; }
+        .editorial-note { background: var(--light); padding: 30px; border-radius: 20px; border-left: 6px solid var(--gold); font-style: italic; margin: 40px 0; }
+        
+        .luxury-list { list-style: none; margin: 30px 0; }
+        .luxury-list li { position: relative; padding-left: 35px; margin-bottom: 15px; font-size: 1.1rem; }
+        .luxury-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: var(--gold); font-size: 1.2rem; }
 
-        .product-box { background: var(--light); border-radius: 25px; padding: 25px; border: 1px solid #eee; margin: 40px 0; text-align: center; }
-        .product-box img { width: 180px; margin-bottom: 15px; }
-        .btn-order { background: var(--primary); color: white; text-decoration: none; padding: 15px 30px; border-radius: 15px; display: inline-block; font-weight: 700; margin-top: 15px; }
+        /* Product Showcase */
+        .luxury-card { background: linear-gradient(145deg, #ffffff, #f0f0f0); border-radius: 30px; padding: 40px; text-align: center; border: 1px solid var(--gold-light); margin: 50px 0; box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff; }
+        .luxury-card img { width: 250px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); }
+        .price-tag { font-size: 2rem; font-weight: 800; color: var(--primary-dark); margin: 20px 0; }
+        .cta-premium { background: var(--primary); color: white; text-decoration: none; padding: 20px 45px; border-radius: 50px; display: inline-block; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 10px 30px rgba(42,106,59,0.3); }
+        .cta-premium:hover { background: var(--primary-dark); transform: translateY(-3px); }
 
-        .action-bar { position: fixed; bottom: 0; width: 100%; height: 75px; background: white; display: flex; padding: 10px; gap: 10px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 999; }
-        .action-btn { flex: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; border-radius: 15px; font-weight: 700; font-size: 0.9rem; }
+        /* Action Bar */
+        .action-bar { position: fixed; bottom: 0; width: 100%; height: 80px; background: white; display: flex; padding: 12px; gap: 15px; box-shadow: 0 -5px 25px rgba(0,0,0,0.1); z-index: 999; }
+        .action-btn { flex: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; border-radius: 20px; font-weight: 700; }
         .btn-wa { background: var(--whatsapp); }
         .btn-call { background: var(--primary-dark); }
 
-        #sideMenu { position: fixed; left: -280px; top: 0; width: 280px; height: 100%; background: white; z-index: 2000; transition: 0.3s; padding: 30px 20px; }
+        #sideMenu { position: fixed; left: -300px; top: 0; width: 300px; height: 100%; background: white; z-index: 2000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 40px 25px; }
         #sideMenu.active { left: 0; }
-        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; z-index: 1500; backdrop-filter: blur(2px); }
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; z-index: 1500; backdrop-filter: blur(4px); }
         .overlay.active { display: block; }
-        .menu-link { display: flex; align-items: center; padding: 15px 0; color: var(--dark); text-decoration: none; font-weight: 600; border-bottom: 1px solid #eee; }
-        .menu-link i { width: 25px; color: var(--primary); margin-right: 15px; }
     </style>
 </head>
 <body>
@@ -71,59 +83,87 @@
     <header>
         <div class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         <a href="/"><img src="../logo.png" alt="Superlife CI" class="logo"></a>
-        <a href="tel:+2250152917584" style="color:var(--primary); font-size: 1.2rem;"><i class="fas fa-phone-alt"></i></a>
+        <a href="tel:+2250152917584" style="color:var(--primary); font-size: 1.4rem;"><i class="fas fa-phone-alt"></i></a>
     </header>
 
     <div id="sideMenu">
-        <h3 style="margin-bottom: 20px; color: var(--primary);">Menu</h3>
-        <a href="/" class="menu-link"><i class="fas fa-store"></i> Boutique</a>
-        <a href="/superlife-stc30-prix-ci.html" class="menu-link"><i class="fas fa-pills"></i> Superlife STC30</a>
-        <a href="/superlife-scc-plus-colon.html" class="menu-link"><i class="fas fa-leaf"></i> Superlife SCC+</a>
-        <a href="/conseils-sante-cellulaire-superlife.html" class="menu-link"><i class="fas fa-book-medical"></i> Conseils Santé</a>
-        <a href="/contact-superlife-cote-divoire.html" class="menu-link"><i class="fas fa-envelope"></i> Contactez-nous</a>
+        <h2 style="color: var(--primary); margin-bottom: 30px; font-weight: 800;">Superlife CI</h2>
+        <nav>
+            <a href="/" class="menu-link" style="display:flex; align-items:center; padding:15px 0; color:var(--dark); text-decoration:none; font-weight:600; border-bottom:1px solid #eee;"><i class="fas fa-store" style="width:30px; color:var(--primary);"></i> Boutique</a>
+            <a href="/superlife-stc30-prix-ci.html" class="menu-link" style="display:flex; align-items:center; padding:15px 0; color:var(--dark); text-decoration:none; font-weight:600; border-bottom:1px solid #eee;"><i class="fas fa-pills" style="width:30px; color:var(--primary);"></i> STC30</a>
+            <a href="/superlife-scc-plus-colon.html" class="menu-link" style="display:flex; align-items:center; padding:15px 0; color:var(--dark); text-decoration:none; font-weight:600; border-bottom:1px solid #eee;"><i class="fas fa-leaf" style="width:30px; color:var(--primary);"></i> SCC+</a>
+            <a href="/conseils-sante-cellulaire-superlife.html" class="menu-link" style="display:flex; align-items:center; padding:15px 0; color:var(--dark); text-decoration:none; font-weight:600; border-bottom:1px solid #eee;"><i class="fas fa-book-medical" style="width:30px; color:var(--primary);"></i> Expertise Santé</a>
+        </nav>
     </div>
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
+    <section class="hero-blog">
+        <h1>L'Harmonie Intestinale</h1>
+    </section>
+
     <article class="article-container">
-        <span class="badge-category">Santé Digestive</span>
-        <h1>Colopathie Fonctionnelle : Comment prévenir et soulager naturellement</h1>
-        
-        <img src="https://placehold.co/800x450/2A6A3B/white?text=Sante+du+Colon+SCC+Superlife" alt="Traitement Colopathie Fonctionnelle" class="main-img">
+        <div class="meta-info">
+            <span class="badge-premium">Dossier Spécial</span>
+            <span><i class="far fa-calendar-alt"></i> Avril 2026</span>
+            <span><i class="far fa-clock"></i> 8 min de lecture</span>
+        </div>
 
         <div class="content">
-            <p>La colopathie fonctionnelle, souvent appelée syndrome de l'intestin irritable, touche des milliers de personnes en Côte d'Ivoire. Elle se manifeste par des ballonnements, des douleurs abdominales chroniques et des troubles du transit.</p>
+            <p>Dans l'univers du bien-être de luxe, la santé commence par l'équilibre du "deuxième cerveau". La <strong>colopathie fonctionnelle</strong> n'est pas seulement une gêne ; c'est un signal d'alarme de votre organisme réclamant une restauration profonde.</p>
 
-            <h2>Les causes principales de la colopathie</h2>
-            <p>Bien que les causes précises varient d'un individu à l'autre, plusieurs facteurs favorisent cette inflammation du côlon :</p>
-            <ul>
-                <li>Une alimentation déséquilibrée et pauvre en fibres.</li>
-                <li>Le stress chronique.</li>
-                <li>Le déséquilibre de la flore intestinale.</li>
-            </ul>
-
-            <h2>Le rôle du Superlife SCC+ dans le traitement</h2>
-            <p>Le <strong>Superlife SCC+</strong> est une formule avancée pour détoxifier le côlon et restaurer le système digestif. Il permet de :</p>
-            <ul>
-                <li><strong>Nettoyer</strong> les parois intestinales en profondeur.</li>
-                <li><strong>Réguler</strong> le transit intestinal.</li>
-                <li><strong>Réduire</strong> les gaz et les ballonnements douloureux.</li>
-            </ul>
-
-            <div class="product-box">
-                <img src="https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png" alt="Pack SCC+ Superlife">
-                <h3>Prêt à soulager votre côlon ?</h3>
-                <p>Le SCC+ est disponible en Côte d'Ivoire pour 55 000 FCFA l'unité.</p>
-                <a href="/superlife-scc-plus-colon.html" class="btn-order">Voir le prix et commander</a>
+            <div class="editorial-note">
+                "Le luxe ultime est une santé rayonnante. Comprendre son système digestif, c'est reprendre le contrôle de son énergie vitale et de sa sérénité quotidienne." — La Rédaction.
             </div>
+
+            <h2>L'Énigme de la Colopathie Fonctionnelle</h2>
+            <p>Le Syndrome de l'Intestin Irritable (SII) est une pathologie complexe où la communication entre l'intestin et le cerveau est perturbée. En Côte d'Ivoire, les facteurs environnementaux, le stress lié à la performance et l'alimentation moderne exacerbent ces troubles.</p>
+            
+            <h3>Les piliers de la perturbation :</h3>
+            <ul class="luxury-list">
+                <li><strong>Hypersensibilité du Microbiote :</strong> Une flore intestinale en déséquilibre qui réagit violemment à la moindre fermentation.</li>
+                <li><strong>Micro-Inflammation Silencieuse :</strong> Une irritation constante de la muqueuse, invisible mais handicapante.</li>
+                <li><strong>Dysmotilité :</strong> Des contractions anarchiques provoquant crampes et alternances de transit.</li>
+            </ul>
+
+            <img src="https://placehold.co/800x450/c9a96e/white?text=Bio-Hacking+Digestif" alt="Restauration du colon" style="width:100%; border-radius:20px; margin:30px 0;">
+
+            <h2>Le Protocole SCC+ : La Science au Service du Confort</h2>
+            <p>Le <strong>Superlife SCC+ (Colon Care Plus)</strong> s'établit comme la référence absolue en matière de détoxification cellulaire et de régulation intestinale. Sa formulation exclusive n'agit pas comme un simple agent de transit, mais comme un architecte de la reconstruction intestinale.</p>
+            
+            <h3>Une Formulation d'Exception :</h3>
+            <p>Grâce à l'incorporation de la <strong>Sinetrol®</strong> (technologie de pointe pour le métabolisme) et de la <strong>Chlorophylle</strong> pure, le SCC+ opère une métamorphose en trois étapes :</p>
+            <ol>
+                <li><strong>Épuration Gastrique :</strong> Dissolution des résidus toxiques accumulés.</li>
+                <li><strong>Apaisement Muqueux :</strong> Réduction de l'inflammation grâce aux antioxydants naturels.</li>
+                <li><strong>Restauration de la Vitalité :</strong> Amélioration de l'absorption des nutriments pour un teint éclatant et une énergie décuplée.</li>
+            </ol>
+
+            <div class="luxury-card">
+                <img src="https://i.ibb.co/Q7T0Yhzt/1-B2925-CC-765-B-4126-A396-2-F33-E6-AFFF57.png" alt="Superlife SCC+ Premium">
+                <h3 style="margin-top:20px;">Investissez dans votre Bien-être</h3>
+                <p>Le SCC+ est le choix des connaisseurs pour une détoxification sans compromis.</p>
+                <div class="price-tag">55 000 FCFA</div>
+                <a href="/superlife-scc-plus-colon.html" class="cta-premium">Découvrir l'Expérience SCC+</a>
+            </div>
+
+            <h2>L'Art de la Prévention : Conseils d'Experts</h2>
+            <p>Pour accompagner votre cure SCC+, nos experts recommandent d'adopter les rituels suivants :</p>
+            <ul class="luxury-list">
+                <li><strong>L'Alcalinisation :</strong> Commencez chaque journée par un verre d'eau tiède pour réveiller le péristaltisme.</li>
+                <li><strong>La Conscience Alimentaire :</strong> Privilégiez les aliments à faible index glycémique pour éviter les pics inflammatoires.</li>
+                <li><strong>Le Mouvement Fluide :</strong> Le yoga ou la marche active favorisent l'irrigation sanguine du système digestif.</li>
+            </ul>
+
+            <p>En conclusion, traiter la colopathie avec le SCC+, c'est choisir une approche holistique qui respecte l'intelligence de votre corps tout en lui offrant les meilleurs actifs végétaux disponibles sur le marché mondial.</p>
         </div>
     </article>
 
     <div class="action-bar">
-        <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20en%20savoir%20plus%20sur%20le%20SCC+%20pour%20la%20colopathie" class="action-btn btn-wa" onclick="gtag('event', 'generate_lead', {'method': 'WhatsApp_Blog'});">
-            <i class="fab fa-whatsapp" style="font-size: 1.4rem; margin-right: 8px;"></i> WhatsApp
+        <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20un%20protocole%20SCC+%20personnalisé" class="action-btn btn-wa" onclick="gtag('event', 'generate_lead', {'method': 'WhatsApp_Ultra_Premium'});">
+            <i class="fab fa-whatsapp" style="font-size: 1.6rem; margin-right: 10px;"></i> WhatsApp Conciergerie
         </a>
         <a href="tel:+2250152917584" class="action-btn btn-call">
-            <i class="fas fa-phone-alt" style="font-size: 1.2rem; margin-right: 8px;"></i> Appeler
+            <i class="fas fa-phone-alt" style="font-size: 1.3rem; margin-right: 10px;"></i> Appel Expert
         </a>
     </div>
 
