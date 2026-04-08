@@ -56,7 +56,7 @@
 
         /* ARTICLE LAYOUT */
         .hero-article {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://votre-image-fictive.com/diabete-hero.jpg');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.ibb.co/Y4RnSRwn/Bazaart-5607-EE2-E-AAC3-450-A-88-C5-366-F3-F6-B7462.jpg');
             background-size: cover; background-position: center;
             height: 350px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;
             padding: 20px;
@@ -203,7 +203,7 @@
                 <p>La <b>glucotoxicité</b> est un état où l'excès de sucre dans le sang devient un poison pour les cellules. Le STC30, grâce à ses souches de <b>Malus Domestica</b>, aide à briser ce cycle en neutralisant le <b>stress oxydatif pancréatique</b>.</p>
             </div>
 
-            <img src="https://votre-image-fictive.com/pancreas-schema.jpg" alt="Régénération des îlots de Langerhans" style="width:100%; border-radius:20px; margin:10px 0;">
+            <img src="https://i.ibb.co/PvNb8BLK/Bazaart-7-B52-D2-A5-B10-F-4-E2-D-B982-98-FFF22882-B3.jpg" alt="Régénération des îlots de Langerhans" style="width:100%; border-radius:20px; margin:10px 0;">
             
             <p>En stimulant la <b>régénération des îlots de Langerhans</b>, le STC30 aide le pancréas à retrouver sa fonction originelle.</p>
             <p><small><i>Source scientifique : Études sur la régénération des cellules bêta via les cellules souches - PubMed</i></small></p>
