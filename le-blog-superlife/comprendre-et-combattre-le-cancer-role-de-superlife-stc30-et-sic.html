@@ -16,7 +16,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;})(window,document,'script','dataLayer','G-VY50YCRQNS');</script>
 
     <style>
-        /* 1. VARIABLES & CHARTE GRAPHIQUE */
         :root {
             --primary: #2A6A3B;
             --primary-dark: #1D4D29;
@@ -34,10 +33,9 @@
             color: var(--dark);
             background-color: var(--light-bg);
             line-height: 1.8;
-            text-align: left; /* ALIGNEMENT GAUCHE */
+            text-align: left;
         }
 
-        /* 2. HEADER STICKY */
         header {
             position: sticky;
             top: 0;
@@ -63,7 +61,6 @@
             font-size: 0.8rem;
         }
 
-        /* 3. MENU LATÉRAL (DRAWER) */
         #sideMenu {
             position: fixed;
             left: -320px;
@@ -99,7 +96,6 @@
             border-bottom: 1px solid #eee;
         }
 
-        /* 4. STRUCTURE DE L'ARTICLE */
         .main-container {
             max-width: 900px;
             margin: 40px auto 100px;
@@ -109,7 +105,7 @@
         .article-card {
             background: var(--white);
             padding: 50px;
-            border-radius: 30px; /* ARRONDIS PRONONCÉS */
+            border-radius: 30px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
@@ -141,9 +137,8 @@
             border: 1px dashed var(--gold);
         }
 
-        .img-article { width: 100%; border-radius: 25px; margin: 30px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .img-article { width: 100%; border-radius: 25px; margin: 30px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: block; }
 
-        /* 5. BOUTONS & CTA */
         .btn-gold {
             display: inline-block;
             background: var(--gold);
@@ -151,20 +146,16 @@
             padding: 20px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 800; /* POLICE TRÈS GRASSE */
+            font-weight: 800;
             text-transform: uppercase;
             transition: 0.3s ease;
             text-align: center;
-            border: none;
-            cursor: pointer;
             width: 100%;
             margin-bottom: 15px;
         }
-        .btn-gold:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        .btn-whatsapp { background: var(--whatsapp); color: white; }
+        .btn-whatsapp-cta { background: var(--whatsapp); color: white; }
 
-        /* BOUTON FLOTTANT WHATSAPP */
         .wa-float {
             position: fixed;
             bottom: 100px;
@@ -195,7 +186,6 @@
 
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-        /* BARRE ACTION MOBILE */
         .mobile-action-bar {
             position: fixed;
             bottom: 0;
@@ -212,7 +202,7 @@
 
         .mobile-btn {
             flex: 1;
-            border-radius: 15px; /* COINS ARRONDIS 15PX */
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -267,6 +257,9 @@
 
             <h3>1. La Biologie du Cancer : Pourquoi le corps perd-il le contrôle ?</h3>
             <p>Pour combattre un ennemi, il faut d'abord comprendre comment il opère. Le cancer n'est pas une simple maladie, mais un dérèglement profond de la vie à l'échelle microscopique.</p>
+            
+            <img src="URL_IMAGE_BIOLOGIE" alt="Compréhension du corps" class="img-article">
+
             <ul class="article-list">
                 <li><strong>Le mécanisme du chaos :</strong> En temps normal, nos cellules se divisent de manière ordonnée pour remplacer celles qui meurent. On parle de <strong>division cellulaire anarchique</strong> lorsque ce processus s'emballe. Ce chaos est souvent déclenché par des <strong>mutations génétiques</strong>, des erreurs dans le code "source" de la cellule (l'ADN), qui ordonnent à la cellule de se multiplier sans fin.</li>
                 <li><strong>L'agression invisible :</strong> Notre corps subit quotidiennement l'attaque des <strong>radicaux libres</strong> (molécules instables causées par la pollution, le tabac ou une mauvaise alimentation). Lorsque ces attaques dépassent nos capacités de défense, on entre en <strong>stress oxydatif chronique</strong>. Ce stress prépare le terrain à l'<strong>instabilité de l'ADN</strong>, favorisant l'apparition de cellules anormales.</li>
@@ -278,6 +271,9 @@
 
             <h3>2. Superlife STC30 : L'ingénierie des Cellules Souches au service de la régénération</h3>
             <p>Le <strong>STC30</strong> intervient là où la médecine traditionnelle s'arrête souvent : la réparation profonde des tissus sains.</p>
+            
+            <img src="URL_IMAGE_STC30" alt="Régénération par les cellules souches" class="img-article">
+
             <ul class="article-list">
                 <li><strong>Réparer le vivant :</strong> Grâce au <strong>Phytocelltec Malus Domestica</strong> (pomme suisse) et au <strong>Solar Vitis</strong> (raisin), le STC30 stimule la <strong>régénération des cellules saines</strong>. Ces extraits de cellules souches végétales augmentent la longévité des cellules humaines et protègent leur ADN contre les agressions.</li>
                 <li><strong>Le rétablissement de l'Apoptose :</strong> En biologie, l'<strong>apoptose</strong> est la "mort programmée". C'est le mécanisme qui force une cellule malade à se détruire pour ne pas contaminer les autres. Les cellules cancéreuses bloquent ce mécanisme. La technologie sublinguale du STC30 aide le corps à restaurer ce signal d'autodestruction des cellules défectueuses.</li>
@@ -289,6 +285,9 @@
 
             <h3>3. Superlife SIC : Activer vos "Natural Killers" contre la prolifération</h3>
             <p>Si le STC30 répare, le <strong>SIC (Immune Care)</strong> est le général de votre armée intérieure.</p>
+            
+            <img src="URL_IMAGE_SIC" alt="Défenses immunitaires renforcées" class="img-article">
+
             <ul class="article-list">
                 <li><strong>L'Armée Intérieure :</strong> Focus sur les <strong>cellules tueuses naturelles (NK - Natural Killers)</strong> et les <strong>macrophages</strong> boostés par le complexe de <strong>champignons médicinaux</strong> du SIC. Ces globules blancs spécialisés ont une mission unique : détecter et détruire les cellules anormales ou cancéreuses avant qu'elles ne forment une tumeur solide.</li>
                 <li><strong>Protection Antioxydante :</strong> Le rôle des <strong>Vitamines A, C et E</strong> pour neutraliser les radicaux libres résiduels, empêchant de nouveaux dommages cellulaires.</li>
@@ -310,17 +309,23 @@
             <p>Comment intégrer ces solutions dans votre parcours de soin ?</p>
             <ul class="article-list">
                 <li><strong>Posologie recommandée pour convalescence :</strong> Comment prendre le <strong>Pack Immunité</strong> sans interférer avec votre oncologue. Généralement 1 sachet de chaque par jour.</li>
-                <li><strong>Mode de vie préventif :</strong> Alimentation riche en fibres, gestion du stress et <strong>prévention du cancer</strong> au quotidien.</li>
+                <li><strong>Mode de vie préventif :</strong> La <strong>prévention du cancer</strong> passe par une alimentation riche en fibres, la réduction du sucre raffiné et une hydratation abondante (2 litres d'eau par jour minimum pour évacuer les toxines).</li>
                 <li><strong>Sécurité et Authenticité :</strong> Pourquoi exiger un <strong>Distributeur Agréé Superlife CI</strong> à Abidjan pour éviter les contrefaçons.</li>
             </ul>
 
             <h3>6. Témoignages et Espoir : Reprendre le contrôle</h3>
+            
+            <img src="URL_IMAGE_ESPOIR" alt="Qualité de vie retrouvée" class="img-article">
+
             <p>Le <strong>témoignage Superlife Cancer</strong> le plus fréquent concerne l'amélioration spectaculaire de la <strong>qualité de vie</strong>. Des patients épuisés par la chimiothérapie retrouvent la force de marcher, de manger et de sourire en quelques semaines de cure.</p>
             
             <p><strong>Engagement et Éthique :</strong><br>
             <em>Note : Les produits Superlife sont des compléments alimentaires de haute technologie. Ces informations sont fournies à titre indicatif. Pour obtenir un diagnostic ou un avis médical, nous recommandons à nos clients de consulter impérativement un professionnel de la santé.</em></p>
 
-            
+            <div style="margin-top: 50px;">
+                <a href="https://wa.me/225XXXXXXXXXX" class="btn-gold btn-whatsapp-cta">Parler à un expert Superlife CI</a>
+                <a href="/boutique" class="btn-gold">Commander le Pack Immunité & Régénération</a>
+            </div>
 
         </article>
     </div>
@@ -343,11 +348,6 @@
 
         burger.onclick = () => { sideMenu.classList.add('active'); overlay.style.display = 'block'; }
         closeMenu.onclick = overlay.onclick = () => { sideMenu.classList.remove('active'); overlay.style.display = 'none'; }
-
-        // Popup WhatsApp auto (délai 15s)
-        setTimeout(() => {
-            console.log("Popup WhatsApp activée");
-        }, 15000);
     </script>
 </body>
 </html>
