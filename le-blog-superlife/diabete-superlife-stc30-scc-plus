@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Diabète & Régénération Cellulaire : La solution STC30 + SCC+ | Superlife CI</title>
+    <meta name="description" content="Découvrez comment stabiliser votre glycémie et régénérer votre pancréas grâce à la technologie des cellules souches Superlife. Guide complet pour le diabète en Côte d'Ivoire.">
+    <link rel="canonical" href="https://superlifeofficiel.com/le-blog-superlife/diabete-superlife-stc30-scc-plus.html">
+    
+    <meta property="og:title" content="Vaincre le Diabète par la Régénération Cellulaire">
+    <meta property="og:description" content="STC30 et SCC+ : La synergie révolutionnaire pour réguler la glycémie naturellement.">
+    <meta property="og:image" content="https://votre-image-fictive.com/og-diabete.jpg">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY50YCRQNS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VY50YCRQNS');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2A6A3B;
+            --primary-dark: #1D4D29;
+            --gold: #c9a96e;
+            --dark: #08080c;
+            --white: #ffffff;
+            --light: #f4f7f6;
+            --whatsapp: #25D366;
+            --alert: #d9534f;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--dark); line-height: 1.8; padding-bottom: 100px; }
+
+        /* HEADER */
+        header { 
+            background: var(--white); 
+            height: 70px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+        }
+        .logo { height: 40px; }
+        .nav-toggle { font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+
+        /* ARTICLE LAYOUT */
+        .hero-article {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://votre-image-fictive.com/diabete-hero.jpg');
+            background-size: cover; background-position: center;
+            height: 350px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+            padding: 20px;
+        }
+        .hero-article h1 { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; line-height: 1.2; }
+
+        .content-wrapper { 
+            max-width: 900px; 
+            margin: -50px auto 0; 
+            background: var(--white); 
+            border-radius: 30px; 
+            padding: 40px 25px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .section-tag { background: var(--gold); color: var(--dark); padding: 5px 15px; border-radius: 5px; font-weight: 700; font-size: 0.8rem; display: inline-block; margin-bottom: 20px; }
+
+        h2 { color: var(--primary); margin: 35px 0 15px; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        h3 { color: var(--primary-dark); margin: 25px 0 10px; font-size: 1.2rem; }
+        p { margin-bottom: 20px; font-size: 1.05rem; text-align: left; color: #333; } /* Correction alignement gauche */
+        b, strong { font-weight: 700; color: var(--primary-dark); }
+
+        /* CARDS & BOXES */
+        .synergy-box { 
+            background: var(--light); 
+            border-left: 5px solid var(--gold); 
+            padding: 20px; 
+            border-radius: 15px; 
+            margin: 25px 0;
+        }
+
+        /* VIDEO CONTAINER */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 20px;
+            margin: 25px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .medical-disclaimer {
+            background: #fff5f5;
+            border: 1px solid #feb2b2;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 30px;
+        }
+
+        /* TABLE */
+        .protocol-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95rem; }
+        .protocol-table th { background: var(--primary); color: white; padding: 12px; text-align: left; }
+        .protocol-table td { border: 1px solid #eee; padding: 12px; }
+
+        /* BUTTONS */
+        .btn-gold { 
+            background: var(--gold); color: var(--dark); 
+            padding: 18px 30px; border-radius: 50px; 
+            text-decoration: none; font-weight: 800; 
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            margin: 15px 0; transition: 0.3s; text-align: center;
+        }
+        .btn-whatsapp { background: var(--whatsapp); color: white; }
+
+        /* MOBILE ACTION BAR */
+        .mobile-action-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%; height: 75px;
+            background: white; display: flex; padding: 10px; gap: 10px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 999;
+        }
+        .action-btn { 
+            flex: 1; border-radius: 15px; display: flex; align-items: center; 
+            justify-content: center; text-decoration: none; font-weight: 700; font-size: 0.85rem; color: white;
+        }
+
+        /* SIDE MENU */
+        #sideMenu { position: fixed; left: -280px; top: 0; width: 280px; height: 100%; background: white; z-index: 2000; transition: 0.3s; padding: 30px 20px; }
+        #sideMenu.active { left: 0; }
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; z-index: 1500; }
+        .overlay.active { display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <a href="/"><img src="../logo.png" alt="Superlife Officiel" class="logo"></a>
+        <a href="tel:+2250152917584" style="color:var(--primary); font-size: 1.2rem;"><i class="fas fa-phone-alt"></i></a>
+    </header>
+
+    <div id="sideMenu">
+        <h3 style="margin-bottom:20px; color:var(--primary);">Navigation</h3>
+        <nav>
+            <a href="/" style="display:block; padding:15px 0; text-decoration:none; color:var(--dark); border-bottom:1px solid #eee;">Accueil</a>
+            <a href="/superlife-stc30-prix-ci.html" style="display:block; padding:15px 0; text-decoration:none; color:var(--dark); border-bottom:1px solid #eee;">Acheter STC30</a>
+            <a href="/superlife-scc-plus-colon.html" style="display:block; padding:15px 0; text-decoration:none; color:var(--dark); border-bottom:1px solid #eee;">Acheter SCC+</a>
+            <a href="/contact-superlife-cote-divoire.html" style="display:block; padding:15px 0; text-decoration:none; color:var(--dark);">Contact</a>
+        </nav>
+    </div>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <section class="hero-article">
+        <h1>Diabète : Pourquoi la régénération cellulaire change la donne ?</h1>
+    </section>
+
+    <main class="content-wrapper">
+        <span class="section-tag">SANTÉ CELLULAIRE</span>
+
+        <section id="accroche">
+            <p>Vivre avec le diabète en Côte d'Ivoire est souvent perçu comme un combat quotidien contre la fatigue, les privations alimentaires et la peur des complications. Mais saviez-vous que la science moderne explore désormais une voie bien plus profonde que la simple gestion des symptômes ?</p>
+            
+            <div class="synergy-box">
+                <h3>Le Syndrome de la "Baignoire qui déborde"</h3>
+                <p>Imaginez que votre corps est une baignoire. Le robinet ouvert, c'est votre apport en sucre. La baignoire qui déborde, c'est l'hyperglycémie. Les médicaments classiques agissent comme des seaux : ils vident l'eau pour éviter l'inondation. C'est vital, mais cela ne règle pas le problème du robinet.</p>
+                <p><b>L'approche Superlife</b>, c'est de réparer le mécanisme du robinet (votre pancréas) pour que le niveau d'eau se régule naturellement.</p>
+            </div>
+            
+            <p><strong>Notre Promesse :</strong> Vous aider à stabiliser votre glycémie durablement et à retrouver une énergie débordante, sans agresser votre organisme, en utilisant la puissance de la régénération cellulaire.</p>
+        </section>
+
+        <section id="stc30">
+            <h2><i class="fas fa-microscope"></i> LE PILIER STC30 : Réparer le "Moteur"</h2>
+            <p>Pour comprendre comment le <b>STC30</b> agit, il faut regarder au cœur de notre biologie.</p>
+            
+            <h3>Focus Science : Les îlots de Langerhans</h3>
+            <p>Le pancréas contient de petites usines appelées "îlots de Langerhans". C'est là que résident les cellules bêta, responsables de la fabrication de l'insuline. Chez le diabétique, ces usines sont soit fermées, soit épuisées.</p>
+
+            <div class="synergy-box">
+                <h3>La lutte contre la Glucotoxicité</h3>
+                <p>La <b>glucotoxicité</b> est un état où l'excès de sucre dans le sang devient un poison pour les cellules. Le STC30, grâce à ses souches de <b>Malus Domestica</b>, aide à briser ce cycle en neutralisant le <b>stress oxydatif pancréatique</b>.</p>
+            </div>
+
+            <img src="https://votre-image-fictive.com/pancreas-schema.jpg" alt="Régénération des îlots de Langerhans" style="width:100%; border-radius:20px; margin:10px 0;">
+            
+            <p>En stimulant la <b>régénération des îlots de Langerhans</b>, le STC30 aide le pancréas à retrouver sa fonction originelle.</p>
+            <p><small><i>Source scientifique : Études sur la régénération des cellules bêta via les cellules souches - PubMed</i></small></p>
+        </section>
+
+        <section id="scc">
+            <h2><i class="fas fa-shield-virus"></i> LE PILIER SCC+ : Le "Bouclier" Digestif</h2>
+            <p>On ne peut pas soigner le diabète sans regarder ce qui se passe dans nos intestins. C'est ce qu'on appelle <b>l'axe Intestin-Pancréas</b>.</p>
+            
+            <h3>Pourquoi un colon propre est vital ?</h3>
+            <p>Si votre colon est inflammé ou encrassé, il libère des toxines qui aggravent l'insulino-résistance. Le <b>SCC+</b> contient du <b>Sinetrol</b> et des fibres naturelles qui permettent de :</p>
+            <ul>
+                <li>Ralentir l'<b>indice glycémique</b> des repas.</li>
+                <li>Favoriser l'<b>absorption des nutriments</b> essentiels.</li>
+                <li>Effectuer un <b>nettoyage du sang</b>.</li>
+            </ul>
+            <p><small><i>Source scientifique : Bienfaits du Sinetrol sur le métabolisme - Clinicaltrials.gov</i></small></p>
+        </section>
+
+        <section id="urgence">
+            <h2><i class="fas fa-exclamation-triangle"></i> SECTION "URGENCE" : Éviter l'Irréparable</h2>
+            <p>Le diabète est dangereux par ses complications : <b>vision trouble</b>, perte de sensibilité des pieds (<b>neuropathie diabétique</b>).</p>
+            <h3>La Cicatrisation : Le rôle vital des cellules souches</h3>
+            <p>La <b>cicatrisation difficile du diabète</b> est la cause n°1 des amputations. Le protocole Superlife renforce les cellules souches, jouant un rôle crucial dans la <b>prévention du pied diabétique</b>.</p>
+        </section>
+
+        <section id="protocole">
+            <h2><i class="fas fa-calendar-check"></i> LE PROTOCOLE "30 JOURS RELANCE"</h2>
+            <table class="protocol-table">
+                <thead>
+                    <tr>
+                        <th>Moment</th>
+                        <th>Produit</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Matin (à jeun)</b></td>
+                        <td>STC30 (sous la langue)</td>
+                        <td>Régénération pancréas</td>
+                    </tr>
+                    <tr>
+                        <td><b>Soir (au coucher)</b></td>
+                        <td>SCC+ (dans l'eau)</td>
+                        <td>Détox & Contrôle sucre</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><b>L’importance de l’eau :</b> Buvez au moins <b>2 litres d'eau par jour</b> pour évacuer les toxines. C'est le <b>Pack Diabète Côte d'Ivoire</b> complet qui garantit la meilleure synergie.</p>
+        </section>
+
+        <section id="preuve">
+            <div class="section-tag">TÉMOIGNAGE EXCLUSIF</div>
+            <h3>"On pensait que j'allais être amputé..."</h3>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/iT6Bf0w4kXs" 
+                    title="Témoignage Diabète Superlife STC30" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p style="font-style: italic; font-size: 0.95rem; border-left: 3px solid var(--gold); padding-left: 15px;">
+                "Après 6 mois d'immobilisation et un risque d'amputation, ce patient a retrouvé une vie normale grâce au STC30 dès novembre 2018."
+            </p>
+            <p>Attention aux contrefaçons ! Seul le réseau <b>Superlife Officiel Côte d'Ivoire</b> garantit des produits authentiques.</p>
+        </section>
+
+        <section id="cta">
+            <a href="https://wa.me/2250152917584?text=Bonjour,%20je%20souhaite%20un%20conseil%20expert%20pour%20le%20diabète" class="btn-gold btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> JE VEUX PARLER À UN EXPERT DIABÈTE
+            </a>
+            <a href="/superlife-stc30-prix-ci.html" class="btn-gold">
+                <i class="fas fa-shopping-cart"></i> COMMANDER LE PACK RÉGÉNÉRATION
+            </a>
+            
+            <div class="medical-disclaimer">
+                Note : Les produits Superlife sont des compléments alimentaires. Ils ne remplacent pas l'avis de votre médecin mais l'accompagnent pour une santé cellulaire optimale.
+            </div>
+        </section>
+    </main>
+
+    <div class="mobile-action-bar">
+        <a href="https://wa.me/2250152917584?text=Je%20souhaite%20commander%20le%20pack%20diabète" class="action-btn" style="background: var(--whatsapp);">
+            <i class="fab fa-whatsapp" style="margin-right:5px;"></i> CONSEIL WA
+        </a>
+        <a href="/superlife-stc30-prix-ci.html" class="action-btn" style="background: var(--primary-dark);">
+            <i class="fas fa-shopping-cart" style="margin-right:5px;"></i> COMMANDER
+        </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
