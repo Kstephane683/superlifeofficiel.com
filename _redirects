@@ -1,0 +1,61 @@
+# Redirections 301 — Superlife Officiel
+# Format: old_path new_path status
+
+/boutique-superlife	/index.html	301
+/a-propos	/a-propos.html	301
+/superlife-stc30_1	/superlife-stc30-prix-ci.html	301
+/stc30	/superlife-stc30-prix-ci.html	301
+/stc30-quelle-est-son-origine	/blog_stc30-origine-cellules-souches-vegetales.html	301
+/stc30-comment-le-prendre	/blog_stc30-comment-prendre-posologie.html	301
+/stc30-temoignages-2026	/blog_stc30-temoignages-2026-cote-divoire.html	301
+/stc30-approuve-par-la-fda	/blog_stc30-approuve-fda-certifications.html	301
+/stc30-bienfaits-sur-la-sante-et-temoignages-en-2026	/blog_stc30-bienfaits-sante-temoignages-2026.html	301
+/stc30-bienfaits-sur-la-sant%C3%A9-et-temoignages-en-2026	/blog_stc30-bienfaits-sante-temoignages-2026.html	301
+/stc30-prix-cote-divoire	/superlife-stc30-prix-ci.html	301
+/stc30-diabete	/blog_stc30-diabete-regule-sucre.html	301
+/stc30-complements-alimentaires	/blog_stc30-complements-alimentaires-naturels.html	301
+/superlife-officiel	/index.html	301
+/complements-superlife	/blog_stc30-complements-alimentaires-naturels.html	301
+/stc30-complements-alimentaires_1	/blog_stc30-complements-alimentaires-naturels.html	301
+/stc30-acheter	/blog_stc30-acheter-guide-complet.html	301
+/stc30-douleurs-articulaires	/blog_stc30-arthrose-douleurs-articulaires.html	301
+/stc30-maladies-cardiovasculaires	/blog_stc30-maladies-cardiovasculaires-prevention.html	301
+/stc30-regeneration-cellulaire	/blog_stc30-regeneration-cellulaire-science.html	301
+/stc30-utilisateurs	/blog_stc30-avis-utilisateurs-cote-divoire.html	301
+/stc30-maladies-cardiovasculaires-complements-superlife	/blog_stc30-maladies-cardiovasculaires-prevention.html	301
+/stc30-maladies-respiratoires-complements-superlife	/blog_stc30-maladies-respiratoires-soutien.html	301
+/stc30-variole-du-singe-cote-divoire-prevention	/blog_stc30-variole-singe-prevention-cote-divoire.html	301
+/stc30-hepatite-b-prevention	/blog_stc30-hepatite-b-prevention-naturelle.html	301
+/stc30-azoospermie-prevention-traitement	/blog_stc30-azoospermie-traitement-naturel.html	301
+/politique-de-confidentialite	/politique-de-confidentialite.html	301
+/politique-de-confidentialit%C3%A9	/politique-de-confidentialite.html	301
+/termes-et-conditions	/termes-et-conditions.html	301
+/faq	/faq-superlife-produits-bienfaits.html	301
+/devenir-partenaire-superlife	/devenir-partenaire-superlife.html	301
+/le-blog-superlife	/le-blog-superlife.html	301
+/categoriesnc/les-ingredients-de-superlife-snc-un-coup-de-pouce-naturel-pour-la-sante	/blog_ameliorer-vision-naturellement-snc.html	301
+/categoriesic/renforcez-votre-systeme-immunitaire-avec-superlife-sic	/blog_sic-bouclier-immunitaire-infections.html	301
+/categoriescc/superlife-scc-et-la-perte-de-poids-un-complement-alimentaire	/blog_perte-de-poids-ventre-plat-scc.html	301
+/nos-produitssuperlife-scc_1	/superlife-scc-plus-colon.html	301
+/devenir-distributeur	/devenir-distributeur-superlife-cote-divoire.html	301
+/stc30-prix	/superlife-stc30-prix-ci.html	301
+/stc30-prix-ci	/superlife-stc30-prix-ci.html	301
+/scc	/superlife-scc-plus-colon.html	301
+/scc-plus	/superlife-scc-plus-colon.html	301
+/sic	/superlife-sic-immunite.html	301
+/snc	/superlife-snc-cerveau-vision.html	301
+/coffee	/super-root-coffee-puissance.html	301
+/root-coffee	/super-root-coffee-puissance.html	301
+/blog	/le-blog-superlife.html	301
+/contact	/contact-superlife-cote-divoire.html	301
+/distributeur	/devenir-distributeur-superlife-cote-divoire.html	301
+/partenaire	/devenir-partenaire-superlife.html	301
+/cgv	/termes-et-conditions.html	301
+/confidentialite	/politique-de-confidentialite.html	301
+/about	/a-propos.html	301
+/home	/index.html	301
+
+# Redirections HTTPS (force HTTPS)
+http://superlifeofficiel.com/*	https://superlifeofficiel.com/:splat	301!
+http://www.superlifeofficiel.com/*	https://superlifeofficiel.com/:splat	301!
+https://www.superlifeofficiel.com/*	https://superlifeofficiel.com/:splat	301!
