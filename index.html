@@ -1289,7 +1289,7 @@ $('#orderForm').addEventListener('submit',async e=>{
     `📦 *Produits:*\n`+cart.map(it=>`• ${it.name} (${it.pack}) ×${it.qty} = ${fmt(it.price*it.qty)}`).join('\n')+
     `\n\n💰 *Total: ${fmt(order.total)}*`;
   try{
-    await fetch(CONFIG.CAPI_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({order,source:'superlife_officiel',tg:{token:CONFIG.TG_TOKEN,chat_id:CONFIG.TG_CHAT_ID},message:msg})}).catch(()=>{});
+    await fetch(CONFIG.CAPI_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({order,source:'superlife_officiel',tg:{token:CONFIG.TG_TOKEN,chat_id:CONFIG.TG_CHAT_ID},message:msg})}).then(r=>r.json()).then(d=>{console.log('CAPI:',d);if(!d.success)console.error('CAPI error:',d);}).catch(e=>{console.error('CAPI fetch error:',e);});
   }catch(err){}
   if(window.fbq)fbq('track','Purchase',{value:order.total/6500,currency:'USD',content_name:'Superlife Order'});
   if(window.gtag)gtag('event','purchase',{transaction_id:order.id,value:order.total/6500,currency:'USD'});

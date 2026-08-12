@@ -655,7 +655,10 @@ function submitOrder(){
       tg:{token:CONFIG.TG_TOKEN,chat_id:CONFIG.TG_CHAT_ID},
       message:msg
     })
-  }).catch(()=>{}); /* Silent fail — WhatsApp still works */
+  }).then(r=>r.json()).then(d=>{
+    console.log('CAPI response:',d);
+    if(!d.success) console.error('CAPI error:',d);
+  }).catch(e=>{console.error('CAPI fetch error:',e)});
   
   /* Tracking */
   if(window.fbq)fbq('track','Purchase',{
