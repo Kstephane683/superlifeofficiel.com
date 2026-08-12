@@ -529,17 +529,30 @@ observeReveal();
 </script>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit',function(e){
+document.getElementById('contactForm').addEventListener('submit',async function(e){
   e.preventDefault();
   const fd=new FormData(e.target);
   const data=Object.fromEntries(fd.entries());
-  const msg=`Bonjour Superlife Officiel\n\nNom: ${data.nom}\nTél: ${data.telephone}\nSujet: ${data.sujet}\nProduit: ${data.produit||'N/A'}\n\nMessage: ${data.message}`;
-  const url=`https://wa.me/2250152917584?text=${encodeURIComponent(msg)}`;
+  try{
+    await fetch('https://api.eperformance.pro/commande_telegram.php',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        nom:data.nom,
+        telephone:data.telephone,
+        adresse:'Formulaire de contact',
+        ville:data.produit||'N/A',
+        paiement:data.sujet,
+        boutique:'Superlife Officiel — Contact',
+        total:0,
+        produits:[{nom:data.message,quantite:1,prix:0}]
+      })
+    }).then(r=>r.json()).then(d=>{console.log('Contact Telegram:',d);}).catch(e=>{console.error('Telegram error:',e);});
+  }catch(err){}
   if(window.fbq)fbq('track','Lead',{content_name:'Contact Form Submit',source:'superlifeofficiel'});
   if(window.gtag)gtag('event','generate_lead',{event_category:'Contact',event_label:data.sujet});
-  window.open(url,'_blank');
   e.target.reset();
-  alert('Votre message a été préparé dans WhatsApp. Cliquez sur Envoyer dans WhatsApp pour finaliser.');
+  alert('Votre message a été envoyé. Notre équipe vous contacte sur WhatsApp.');
 });
 /* ============ EPERFORMANCE POPUP v2 ============ */
 (function(){
