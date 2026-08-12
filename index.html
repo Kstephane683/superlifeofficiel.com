@@ -1115,7 +1115,7 @@ const CONFIG = {
   WA: '2250152917584',
   TG_TOKEN: '8760593501:AAFky23ITJHGGOi96D0V-dbGEFHL_0_4vPg',
   TG_CHAT_ID: '8441274889',
-  CAPI_URL: 'https://api.superlifeofficiel.com/capi.php'
+  CAPI_URL: 'https://api.eperformance.pro/commande_telegram.php'
 };
 
 const PRODUCTS = [
@@ -1289,7 +1289,16 @@ $('#orderForm').addEventListener('submit',async e=>{
     `📦 *Produits:*\n`+cart.map(it=>`• ${it.name} (${it.pack}) ×${it.qty} = ${fmt(it.price*it.qty)}`).join('\n')+
     `\n\n💰 *Total: ${fmt(order.total)}*`;
   try{
-    await fetch(CONFIG.CAPI_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({order,source:'superlife_officiel',tg:{token:CONFIG.TG_TOKEN,chat_id:CONFIG.TG_CHAT_ID},message:msg})}).then(r=>r.json()).then(d=>{console.log('CAPI:',d);if(!d.success)console.error('CAPI error:',d);}).catch(e=>{console.error('CAPI fetch error:',e);});
+    await fetch(CONFIG.CAPI_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      nom:order.nom,
+      telephone:order.telephone,
+      adresse:order.adresse,
+      ville:order.ville,
+      paiement:order.paiement,
+      boutique:'Superlife Officiel',
+      total:order.total,
+      produits:cart.map(it=>({nom:it.name,quantite:it.qty,prix:it.price*it.qty}))
+    })}).then(r=>r.json()).then(d=>{console.log('Telegram:',d);}).catch(e=>{console.error('Telegram error:',e);});
   }catch(err){}
   if(window.fbq)fbq('track','Purchase',{value:order.total/6500,currency:'USD',content_name:'Superlife Order'});
   if(window.gtag)gtag('event','purchase',{transaction_id:order.id,value:order.total/6500,currency:'USD'});
