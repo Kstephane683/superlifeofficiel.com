@@ -1232,17 +1232,30 @@ $('#orderForm').addEventListener('submit',async e=>{
     `🆔 ${order.id}\n👤 Nom: ${order.nom}\n📱 Téléphone: ${order.telephone}\n💬 WhatsApp: ${order.whatsapp}\n📍 Adresse: ${order.adresse}\n🏙️ Ville: ${order.ville}\n💳 Paiement: ${order.paiement}\n\n`+
     `📦 *Produits:*\n`+cart.map(it=>`• ${it.name} (${it.pack}) ×${it.qty} = ${fmt(it.price*it.qty)}`).join('\n')+
     `\n\n💰 *Total: ${fmt(order.total)}*`;
-  try{
-    await fetch(CONFIG.CAPI_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
-      nom:order.nom,
-      telephone:order.telephone,
-      adresse:order.adresse,
-      ville:order.ville,
-      paiement:order.paiement,
-      boutique:'Superlife Officiel',
-      total:order.total,
-      produits:cart.map(it=>({nom:it.name,quantite:it.qty,prix:it.price*it.qty}))
-    })}).then(r=>r.json()).then(d=>{console.log('Telegram:',d);}).catch(e=>{console.error('Telegram error:',e);});
+    try{
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    
+    await fetch(CONFIG.CAPI_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        nom:order.nom,
+        telephone:order.telephone,
+        adresse:order.adresse,
+        ville:order.ville,
+        paiement:order.paiement,
+        boutique:'Superlife Officiel',
+        total:order.total,
+        produits:cart.map(it=>({nom:it.name,quantite:it.qty,prix:it.price*it.qty}))
+      }),
+      signal: controller.signal
+    })
+    .then(r=>r.json())
+    .then(d=>{console.log('Telegram:',d);})
+    .catch(e=>{console.warn('Requête annulée ou erreur:',e);});
+    
+    clearTimeout(timeoutId);
   }catch(err){}
   if(window.fbq)fbq('track','Purchase',{value:order.total/6500,currency:'USD',content_name:'Superlife Order'});
   if(window.gtag)gtag('event','purchase',{transaction_id:order.id,value:order.total/6500,currency:'USD'});
