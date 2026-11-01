@@ -1204,6 +1204,19 @@ function renderOrderSummary(){
 }
 $('#orderForm').addEventListener('submit',async e=>{
   e.preventDefault();
+
+  // --- DÉBUT DE LA VALIDATION DE SÉCURITÉ ---
+  const nom = e.target.nom.value.trim();
+  const telephone = e.target.telephone.value.trim();
+  const adresse = e.target.adresse.value.trim();
+  const ville = e.target.ville.value.trim();
+  
+  if (!nom || !telephone || !adresse || !ville) {
+    alert('⚠️ Veuillez remplir correctement tous les champs obligatoires (Nom, Téléphone, Adresse, Ville).');
+    return; // On arrête tout ici, la commande n'est pas envoyée
+  }
+  // --- FIN DE LA VALIDATION DE SÉCURITÉ ---
+
   const fd=new FormData(e.target);
   const data=Object.fromEntries(fd.entries());
   const order={
@@ -1237,19 +1250,6 @@ $('#orderForm').addEventListener('submit',async e=>{
   btn.innerHTML='<i class="fa-solid fa-check"></i> Commande validée';btn.disabled=false;
   e.target.reset();
 });
-function showSuccess(order,msg){
-  closeModal($('#orderModal'));
-  $('#successName').textContent=order.nom.split(' ')[0];
-  $('#successSummary').innerHTML=`
-    <div class="success-row"><span>N° commande</span><b>${order.id}</b></div>
-    <div class="success-row"><span>Livraison à</span><b>${order.ville}</b></div>
-    <div class="success-row"><span>Paiement</span><b>${order.paiement}</b></div>
-    <div class="success-row"><span>Total</span><b>${fmt(order.total)}</b></div>
-  `;
-  $('#successWaBtn').href=`https://wa.me/${CONFIG.WA}?text=${encodeURIComponent(msg)}`;
-  openModal($('#successModal'));
-  cart=[];saveCart();renderCart();
-}
 
 /* ============ MODAL CONTROL ============ */
 function openModal(el){$('#overlay').classList.add('open');el.classList.add('open');document.body.style.overflow='hidden';}
