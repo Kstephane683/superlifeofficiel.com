@@ -771,11 +771,11 @@ const CONFIG = {
 };
 
 const PRODUCTS = [
-  {id:'stc30',name:'Superlife STC30',img:'https://i.ibb.co/Fkx6jYwN/superlifeofficiel-stc30.webp',unit:45000,p2:80000,p8:300000,p20:750000,tagline:'Régénération cellulaire · Immunité · Anti-âge',url:'superlife-stc30-prix-ci.html',description:'Percée scientifique à base de cellules souches végétales. Répare, régénère et rajeunit les cellules de votre corps.',bienfaits:['Régénération complète des tissus','Anti-âge cellulaire','Renforce immunité','Énergie & vitalité','Détox puissant'],ingredients:['PhytoCellTec Malus Domestica','PhytoCellTec Solar Vitis','Extrait de Myrtille','GliSODin® (SOD)'],posologie:'Matin à jeun. Verser sous la langue. Attendre 5 min.',certifs:['LNSP CI N°17040-20','FDA Approved','Halal & GMP'],packs:[{label:'1 Boîte (15j)',val:45000},{label:'2 Boîtes (30j)',val:80000,badge:'Recommandé'},{label:'8 Boîtes',val:300000,badge:'Économie'},{label:'20 Boîtes',val:750000}]},
-  {id:'scc',name:'Superlife SCC+',img:'https://i.ibb.co/7JWGSWgT/officiel-scc-plus-detox.webp',unit:55000,p2:95000,p8:355000,tagline:'Côlon · Détox · Perte de poids',url:'superlife-scc-plus-colon.html',description:'Complément alimentaire pour maintenir un côlon sain, perdre du poids durablement et améliorer la digestion.',bienfaits:['Nettoyage du côlon','Perte de poids durable','Détox gastro-intestinal','Régulation métabolique'],ingredients:['Fibres prébiotiques','Probiotiques','Aloe Vera','Extrait de thé vert'],posologie:'1 sachet dans 200ml d\'eau le soir après le repas.',certifs:['LNSP CI','Halal & GMP'],packs:[{label:'1 Boîte',val:55000},{label:'2 Boîtes',val:95000,badge:'Recommandé'},{label:'8 Boîtes',val:355000}]},
-  {id:'sic',name:'Superlife SIC',img:'https://i.ibb.co/GQvYHzZN/superlife-soin-immunitaire-superlifeofficiel.jpg',unit:50000,p2:90000,tagline:'Bouclier immunitaire · Cellules souches',url:'superlife-sic-immunite.html',description:'Stimule la production de vos cellules souches pour un système immunitaire fort et résistant.',bienfaits:['Renforce immunité','Protection contre infections','Récupération rapide','Vitalité globale'],ingredients:['Mélange de super-baies','Vitamine C naturelle','Antioxydants','Extrait de grenade'],posologie:'1 sachet sous la langue le matin à jeun.',certifs:['LNSP CI','Halal & GMP'],packs:[{label:'1 Boîte',val:50000},{label:'2 Boîtes',val:90000,badge:'Recommandé'}]},
-  {id:'snc',name:'Superlife SNC',img:'images/superlife-SNC-yeux-nerfs-cerveau-superlifeofficiel.jpg',unit:50000,p2:90000,tagline:'Cerveau · Vision · Mémoire',url:'superlife-snc-cerveau-vision.html',description:'Régénère vos neurones et optimise votre acuité visuelle grâce aux cellules souches végétales.',bienfaits:['Améliore mémoire','Protège vision','Régénération neuronale','Concentration'],ingredients:['PhytoCellTec Solar Vitis','Extrait de myrtille','Lutéine','Zeaxanthine'],posologie:'1 sachet sous la langue le matin à jeun.',certifs:['LNSP CI','Halal & GMP'],packs:[{label:'1 Boîte',val:50000},{label:'2 Boîtes',val:90000,badge:'Recommandé'}]},
-  {id:'coffee',name:'Super Root Coffee',img:'https://i.ibb.co/cKSgj93H/superlife-officiel-super-root-coffe.webp',unit:25000,p2:60000,tagline:'Puissance · Libido · Vitalité',url:'super-root-coffee-puissance.html',description:'Café thérapeutique premium pour booster performance physique, mentale et sexuelle.',bienfaits:['Booste énergie','Améliore libido','Performance physique','Réduit fatigue'],ingredients:['Extrait de Tongkat Ali','Maca péruvienne','Ginseng','Café arabica'],posologie:'1 sachet dans 150ml d\'eau chaude.',certifs:['Halal & GMP'],packs:[{label:'1 Boîte',val:25000},{label:'2 Boîtes',val:60000,badge:'Recommandé'}]}
+  {id:'stc30',name:'Superlife STC30',img:'https://i.ibb.co/Fkx6jYwN/superlifeofficiel-stc30.webp',unit:45000,tagline:'Régénération cellulaire · Immunité · Anti-âge',url:'superlife-stc30-prix-ci.html',description:'Percée scientifique à base de cellules souches végétales. Répare, régénère et rajeunit les cellules de votre corps.',bienfaits:['Régénération complète des tissus','Anti-âge cellulaire','Renforce immunité','Énergie & vitalité','Détox puissant'],ingredients:['PhytoCellTec Malus Domestica','PhytoCellTec Solar Vitis','Extrait de Myrtille','GliSODin® (SOD)'],posologie:'Matin à jeun. Verser sous la langue. Attendre 5 min.',certifs:['LNSP CI N°17040-20','FDA Approved','Halal & GMP'],tiers:[{min:1,max:1,price:45000},{min:2,max:7,price:40000},{min:8,max:null,price:37500}],packs:[{label:'1 Boîte (15j)',val:45000,qty:1},{label:'2 Boîtes (30j)',val:80000,badge:'Recommandé',qty:2},{label:'8 Boîtes',val:300000,badge:'Économie',qty:8}]},
+  {id:'scc',name:'Superlife SCC+',img:'https://i.ibb.co/7JWGSWgT/officiel-scc-plus-detox.webp',unit:55000,tagline:'Côlon · Détox · Perte de poids',url:'superlife-scc-plus-colon.html',description:'Complément alimentaire pour maintenir un côlon sain, perdre du poids durablement et améliorer la digestion.',bienfaits:['Nettoyage du côlon','Perte de poids durable','Détox gastro-intestinal','Régulation métabolique'],ingredients:['Fibres prébiotiques','Probiotiques','Aloe Vera','Extrait de thé vert'],posologie:'1 sachet dans 200ml d\'eau le soir après le repas.',certifs:['LNSP CI','Halal & GMP'],tiers:[{min:1,max:1,price:55000},{min:2,max:7,price:47500},{min:8,max:null,price:44375}],packs:[{label:'1 Boîte',val:55000,qty:1},{label:'2 Boîtes',val:95000,badge:'Recommandé',qty:2},{label:'8 Boîtes',val:355000,qty:8}]},
+  {id:'sic',name:'Superlife SIC',img:'https://i.ibb.co/GQvYHzZN/superlife-soin-immunitaire-superlifeofficiel.jpg',unit:50000,tagline:'Bouclier immunitaire · Cellules souches',url:'superlife-sic-immunite.html',description:'Stimule la production de vos cellules souches pour un système immunitaire fort et résistant.',bienfaits:['Renforce immunité','Protection contre infections','Récupération rapide','Vitalité globale'],ingredients:['Mélange de super-baies','Vitamine C naturelle','Antioxydants','Extrait de grenade'],posologie:'1 sachet sous la langue le matin à jeun.',certifs:['LNSP CI','Halal & GMP'],tiers:[{min:1,max:1,price:50000},{min:2,max:null,price:45000}],packs:[{label:'1 Boîte',val:50000,qty:1},{label:'2 Boîtes',val:90000,badge:'Recommandé',qty:2}]},
+  {id:'snc',name:'Superlife SNC',img:'images/superlife-SNC-yeux-nerfs-cerveau-superlifeofficiel.jpg',unit:50000,tagline:'Cerveau · Vision · Mémoire',url:'superlife-snc-cerveau-vision.html',description:'Régénère vos neurones et optimise votre acuité visuelle grâce aux cellules souches végétales.',bienfaits:['Améliore mémoire','Protège vision','Régénération neuronale','Concentration'],ingredients:['PhytoCellTec Solar Vitis','Extrait de myrtille','Lutéine','Zeaxanthine'],posologie:'1 sachet sous la langue le matin à jeun.',certifs:['LNSP CI','Halal & GMP'],tiers:[{min:1,max:1,price:50000},{min:2,max:null,price:45000}],packs:[{label:'1 Boîte',val:50000,qty:1},{label:'2 Boîtes',val:90000,badge:'Recommandé',qty:2}]},
+  {id:'coffee',name:'Super Root Coffee',img:'https://i.ibb.co/cKSgj93H/superlife-officiel-super-root-coffe.webp',unit:25000,tagline:'Puissance · Libido · Vitalité',url:'super-root-coffee-puissance.html',description:'Café thérapeutique premium pour booster performance physique, mentale et sexuelle.',bienfaits:['Booste énergie','Améliore libido','Performance physique','Réduit fatigue'],ingredients:['Extrait de Tongkat Ali','Maca péruvienne','Ginseng','Café arabica'],posologie:'1 sachet dans 150ml d\'eau chaude.',certifs:['Halal & GMP'],tiers:[{min:1,max:1,price:25000},{min:2,max:null,price:20000}],packs:[{label:'1 Boîte',val:25000,qty:1},{label:'2 Boîtes',val:40000,badge:'Recommandé',qty:2}]}
 ];
 
 const $=(s,c=document)=>c.querySelector(s);
@@ -783,6 +783,17 @@ const $$=(s,c=document)=>[...c.querySelectorAll(s)];
 const fmt=n=>n.toLocaleString('fr-FR').replace(/\u202f/g,' ')+' FCFA';
 const fmtShort=n=>n.toLocaleString('fr-FR').replace(/\u202f/g,' ')+' F';
 const getProduct=id=>PRODUCTS.find(p=>p.id===id);
+function getUnitPrice(productId, qty){
+  const p = getProduct(productId);
+  if (!p || !p.tiers) return p ? p.unit : 0;
+  for (const t of p.tiers) {
+    if (qty >= t.min && (t.max === null || qty <= t.max)) return t.price;
+  }
+  return p.tiers[p.tiers.length-1].price;
+}
+function getLineTotal(item){
+  return getUnitPrice(item.id, item.qty) * item.qty;
+}
 const reduceMo=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 function renderProducts(){
@@ -849,51 +860,77 @@ function openProduct(id){
   openModal($('#prodModal'));
 }
 function selectPack(i){selectedPackIdx=i;$$('.pd-pack').forEach((el,j)=>el.classList.toggle('selected',j===i));$('#pdPackPrice').textContent=fmt(currentProduct.packs[i].val);}
-function addPackToCart(){const pk=currentProduct.packs[selectedPackIdx];addToCart(currentProduct.id,pk.label,pk.val);closeModal($('#prodModal'));openCart();}
-function quickAdd(id){const p=getProduct(id);const rec=p.packs.find(x=>x.badge==='Recommandé')||p.packs[0];addToCart(id,rec.label,rec.val);openCart();}
+function addPackToCart(){
+  const pk = currentProduct.packs[selectedPackIdx];
+  addToCart(currentProduct.id, pk.qty);
+  closeModal($('#prodModal'));
+  openCart();
+}
+function quickAdd(id){
+  addToCart(id, 1);
+  openCart();
+}
 
 const CART_KEY='superlife_cart';
 let cart=JSON.parse(localStorage.getItem(CART_KEY)||'[]');
+// Migration : si ancien format (avec 'pack'), on reset
+if (cart.length && cart.some(i => i.pack !== undefined)) {
+  cart = [];
+  localStorage.removeItem(CART_KEY);
+}
 function saveCart(){localStorage.setItem(CART_KEY,JSON.stringify(cart));}
-function addToCart(id,packLabel,price){
-  const ex=cart.find(i=>i.id===id&&i.pack===packLabel);
-  if(ex){ex.qty++;}else{cart.push({id,name:getProduct(id).name,img:getProduct(id).img,pack:packLabel,price,qty:1});}
+function addToCart(productId, qty = 1){
+  const ex = cart.find(i => i.id === productId);
+  if (ex) { ex.qty += qty; }
+  else {
+    const p = getProduct(productId);
+    cart.push({ id: productId, name: p.name, img: p.img, qty: qty });
+  }
   saveCart(); renderCart(); pulseCart();
-  toast(`${getProduct(id).name} ajouté au panier`);
+  toast(`${getProduct(productId).name} ajouté au panier`);
 }
 function changeQty(idx,d){cart[idx].qty+=d;if(cart[idx].qty<1)cart.splice(idx,1);saveCart();renderCart();}
 function removeItem(idx){cart.splice(idx,1);saveCart();renderCart();}
-function cartTotal(){return cart.reduce((s,i)=>s+i.price*i.qty,0);}
+function cartTotal(){
+  return cart.reduce((s, i) => s + getLineTotal(i), 0);
+}
 function renderCart(){
-  const body=$('#cartBody'),foot=$('#cartFoot');
-  if(!cart.length){
-    body.innerHTML=`<div class="cart-empty"><i class="fa-solid fa-bag-shopping"></i><p>Votre panier est vide</p></div>`;
-    foot.style.display='none';
-  }else{
-    body.innerHTML=cart.map((it,i)=>`
-      <div class="cart-item">
-        <img src="${it.img}" alt="${it.name}" loading="lazy">
-        <div class="cart-item-info">
-          <h4>${it.name}</h4>
-          <div class="pack">${it.pack}</div>
-          <div class="price">${fmt(it.price*it.qty)}</div>
-          <div class="qty-ctrl"><button onclick="changeQty(${i},-1)">−</button><span>${it.qty}</span><button onclick="changeQty(${i},1)">+</button></div>
+  const body = $('#cartBody'), foot = $('#cartFoot');
+  if (!cart.length){
+    body.innerHTML = `<div class="cart-empty"><i class="fa-solid fa-bag-shopping"></i><p>Votre panier est vide</p></div>`;
+    foot.style.display = 'none';
+  } else {
+    body.innerHTML = cart.map((it, i) => {
+      const up = getUnitPrice(it.id, it.qty);
+      const lineTotal = up * it.qty;
+      return `
+        <div class="cart-item">
+          <img src="${it.img}" alt="${it.name}" loading="lazy">
+          <div class="cart-item-info">
+            <h4>${it.name}</h4>
+            ${it.qty > 1 ? `<div class="pack">${fmt(up)} / boîte</div>` : ''}
+            <div class="price">${fmt(lineTotal)}</div>
+            <div class="qty-ctrl"><button onclick="changeQty(${i},-1)">−</button><span>${it.qty}</span><button onclick="changeQty(${i},1)">+</button></div>
+          </div>
+          <button class="cart-item-remove" onclick="removeItem(${i})"><i class="fa-solid fa-trash-can"></i></button>
         </div>
-        <button class="cart-item-remove" onclick="removeItem(${i})"><i class="fa-solid fa-trash-can"></i></button>
-      </div>
-    `).join('');
-    foot.style.display='block';
-    $('#cartTotal').textContent=fmt(cartTotal());
+      `;
+    }).join('');
+    foot.style.display = 'block';
+    $('#cartTotal').textContent = fmt(cartTotal());
   }
-  $('#cartCount').textContent=cart.reduce((s,i)=>s+i.qty,0);
-  $('#cartCount').style.display=cart.length?'flex':'none';
+  $('#cartCount').textContent = cart.reduce((s, i) => s + i.qty, 0);
+  $('#cartCount').style.display = cart.length ? 'flex' : 'none';
 }
 function pulseCart(){const b=$('#cartBtn');b.style.transform='scale(1.15)';setTimeout(()=>b.style.transform='',200);}
 
 function openCheckout(){if(!cart.length)return;renderOrderSummary();closeModal($('#cartDrawer'));openModal($('#orderModal'));}
 function renderOrderSummary(){
-  $('#orderSummary').innerHTML=`<h5><i class="fa-solid fa-bag-shopping"></i> Récapitulatif</h5>`+
-    cart.map(it=>`<div class="order-line"><span class="name">${it.name} — ${it.pack} ×${it.qty}</span><span class="val">${fmt(it.price*it.qty)}</span></div>`).join('')+
+  $('#orderSummary').innerHTML = `<h5><i class="fa-solid fa-bag-shopping"></i> Récapitulatif</h5>` +
+    cart.map(it => {
+      const up = getUnitPrice(it.id, it.qty);
+      return `<div class="order-line"><span class="name">${it.name} ×${it.qty} (${fmt(up)}/u)</span><span class="val">${fmt(up * it.qty)}</span></div>`;
+    }).join('') +
     `<div class="order-total"><span>Total</span><span>${fmt(cartTotal())}</span></div>`;
 }
 
@@ -926,7 +963,7 @@ $('#orderForm').addEventListener('submit', e=>{
 
   const msg=`🛒 *NOUVELLE COMMANDE - Superlife Officiel*\n\n`+
     `🆔 ${order.id}\n👤 Nom: ${order.nom}\n📱 Téléphone: ${order.telephone}\n💬 WhatsApp: ${order.whatsapp}\n📍 Adresse: ${order.adresse}\n🏙️ Ville: ${order.ville}\n💳 Paiement: ${order.paiement}\n\n`+
-    `📦 *Produits:*\n`+cart.map(it=>`• ${it.name} (${it.pack}) ×${it.qty} = ${fmt(it.price*it.qty)}`).join('\n')+
+    `📦 *Produits:*\n`+cart.map(it=>{const up=getUnitPrice(it.id,it.qty);return `• ${it.name} ×${it.qty} (${fmt(up)}/u) = ${fmt(up*it.qty)}`;}).join('\n')+
     `\n\n💰 *Total: ${fmt(order.total)}*`;
 
   // Envoi en arrière-plan, SANS attendre la réponse (fire-and-forget)
@@ -941,7 +978,7 @@ $('#orderForm').addEventListener('submit', e=>{
       paiement:order.paiement,
       boutique:'Superlife Officiel',
       total:order.total,
-      produits:cart.map(it=>({nom:it.name,quantite:it.qty,prix:it.price*it.qty}))
+      produits:cart.map(it=>{const up=getUnitPrice(it.id,it.qty);return {nom:it.name,quantite:it.qty,prix:up*it.qty};})
     })
   })
   .then(r=>r.json())
