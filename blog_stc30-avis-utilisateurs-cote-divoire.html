@@ -6,7 +6,7 @@
 <title>STC30 : Avis des utilisateurs en Côte d'Ivoire | Notes & critiques</title>
 <meta name="description" content="Avis réels des utilisateurs ivoiriens du STC30 : notes, points forts, points faibles, satisfaction, critiques. Sondage 2026 Superlife CI transparent et honnête.">
 <meta name="theme-color" content="#5C3A1A">
-<link rel="icon" href="logo.png">
+<link rel="icon" href="favicon.ico">
 <link rel="canonical" href="https://superlifeofficiel.com/blog_stc30-avis-utilisateurs-cote-divoire.html">
 <meta property="og:title" content="STC30 : Avis des utilisateurs en Côte d'Ivoire | Notes & critiques">
 <meta property="og:description" content="Avis réels des utilisateurs ivoiriens du STC30 : notes, points forts, points faibles, satisfaction, critiques. Sondage 2026 Superlife CI transparent et honnête.">
@@ -88,7 +88,7 @@
       "name": "Le prix du STC30 est-il justifié ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le STC30 coûte 45 000 FCFA pour 15 sachets. Ce prix reflète : la technologie PhytoCellTec™ suisse (extraits brevetés), les certifications FDA/GMP/Halal/LNSP, la traçabilité complète et l'accompagnement personnalisé. Comparé à un traitement médical à vie (médicaments, hospitalisations), le STC30 est un investissement santé rentable. Notre sondage montre que 66% des utilisateurs jugent le prix justifié."
+        "text": "Le STC30 coûte 45 000 FCFA pour 15 sachets. Ce prix reflète : la technologie PhytoCellTec™ suisse (extraits brevetés), les certifications GMP/Halal/LNSP, la traçabilité complète et l'accompagnement personnalisé. Comparé à un traitement médical à vie (médicaments, hospitalisations), le STC30 est un investissement santé rentable. Notre sondage montre que 66% des utilisateurs jugent le prix justifié."
       }
     },
     {
@@ -103,14 +103,14 @@
 }
 </script>
 
-<script>
+<script type="text/plain" data-consent="marketing">
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1557335638676986'); fbq('track', 'PageView'); fbq('track', 'ViewContent', {content_name:'STC30 : Avis des utilisateurs en Côte d'Ivoire'});");
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1557335638676986&ev=PageView&noscript=1"></noscript>
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w2egswd9q1");</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-MJM4444N"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GT-MJM4444N');</script>
+
+<script type="text/plain" data-consent="analytics">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w2egswd9q1");</script>
+<script type="text/plain" data-consent="analytics" data-src="https://www.googletagmanager.com/gtag/js?id=GT-MJM4444N"></script>
+<script type="text/plain" data-consent="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GT-MJM4444N');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -225,8 +225,8 @@ section{position:relative}
 .reveal[data-delay="5"]{transition-delay:.4s}
 @media(max-width:768px){
   :root{--header-h:64px}
-  .nav{position:fixed;top:var(--header-h);left:0;right:0;background:rgba(251,247,238,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:stretch;padding:14px 20px;gap:4px;border-bottom:1px solid var(--border);transform:translateY(-120%);transition:.4s var(--ease);z-index:99;box-shadow:var(--shadow)}
-  .nav.open{transform:translateY(0)}
+  .nav{position:fixed;top:var(--header-h);left:0;right:0;background:rgba(251,247,238,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:stretch;padding:14px 20px;gap:4px;border-bottom:1px solid var(--border);transform:translateY(-100%);visibility:hidden;pointer-events:none;transition:.4s var(--ease);z-index:99;box-shadow:var(--shadow)}
+  .nav.open{transform:translateY(0);visibility:visible;pointer-events:auto}
   .nav a{padding:13px 14px;border-radius:10px}
   .menu-toggle{display:flex}
   .page-hero{padding:48px 0 56px}
@@ -397,13 +397,24 @@ section{position:relative}
   .eperf-slots-text{font-size:.68rem}
   .eperf-slots-text b{font-size:.74rem}
 }
+
+/* audit-p0 */
+@media(max-width:480px){
+  .logo span{display:none}
+  .header-actions{gap:6px}
+  .header-actions .btn-wa{padding:9px 12px;font-size:.8rem}
+}
+.pay-strip .label{color:#6b5645}
+.btn:active{transform:scale(.98)}
 </style>
+<link rel="stylesheet" href="consent.css">
+<script src="consent.js"></script>
 </head>
 <body>
 <!-- TRUST BAR -->
 <div class="trustbar">
   <div class="wrap">
-    <span><i class="fa-solid fa-star"></i> 4.9/5 — 2 087 avis</span>
+    <span><i class="fa-solid fa-star"></i> Avis clients</span>
     <span><i class="fa-solid fa-truck-fast"></i> Livraison 24h Abidjan</span>
     <span><i class="fa-solid fa-hand-holding-dollar"></i> Paiement à la livraison</span>
     <span><i class="fa-solid fa-certificate"></i> Certifié LNSP Côte d'Ivoire</span>
@@ -413,13 +424,13 @@ section{position:relative}
 <!-- HEADER -->
 <header class="header">
   <div class="wrap">
-    <a href="index.html" class="logo">
-      <img src="logo.png" alt="Superlife Officiel" loading="lazy">
+    <a href="/" class="logo">
+      <img src="logo.png" alt="Superlife Officiel" width="40" height="40">
       <span>Superlife <b>Officiel</b></span>
     </a>
     <nav class="nav" id="nav">
-      <a href="index.html">Accueil</a>
-<a href="index.html#produits">Produits</a>
+      <a href="/">Accueil</a>
+<a href="/#produits">Produits</a>
 <a href="superlife-stc30-prix-ci.html">STC30</a>
 <a href="le-blog-superlife.html" style="color:var(--primary);background:rgba(165,90,38,.08)">Blog</a>
 <a href="faq-superlife-produits-bienfaits.html">FAQ</a>
@@ -440,7 +451,7 @@ section{position:relative}
 
 <div class="breadcrumb">
   <div class="wrap">
-    <a href="index.html">Accueil</a> <i class="fa-solid fa-chevron-right"></i>
+    <a href="/">Accueil</a> <i class="fa-solid fa-chevron-right"></i>
     <a href="le-blog-superlife.html">Blog</a> <i class="fa-solid fa-chevron-right"></i>
     <span style="color:var(--primary-d);font-weight:600">STC30</span>
   </div>
@@ -450,7 +461,7 @@ section{position:relative}
   <div class="wrap">
     <span class="article-cat-badge primary"><i class="fa-solid fa-dna"></i> STC30</span>
     <h1 class="reveal">STC30 : Avis des utilisateurs en Côte d'Ivoire</h1>
-    <p class="lead reveal" data-delay="1">Le STC30 est un complément alimentaire révolutionnaire composé de cellules souches végétales, qui a gagné en popularité grâce à ses nombreux bienfaits pour la santé. Mais que disent vraiment les utilisateurs ivoiriens ? Nous avons recueilli et analysé les avis de 2 087 consommateurs en Côte d'Ivoire en 2026. Voici une synthèse transparente : points forts, points faibles, satisfaction réelle, sans langue de bois.</p>
+    <p class="lead reveal" data-delay="1">Le STC30 est un complément alimentaire révolutionnaire composé de cellules souches végétales, qui a gagné en popularité grâce à ses nombreux bienfaits pour la santé. Mais que disent vraiment les utilisateurs ivoiriens ? Nous avons recueilli et analysé les avis de nombreux consommateurs en Côte d'Ivoire en 2026. Voici une synthèse transparente : points forts, points faibles, satisfaction réelle, sans langue de bois.</p>
     <div class="article-meta reveal" data-delay="2">
       <span><i class="fa-regular fa-clock"></i> 6 min de lecture</span>
       <span><i class="fa-regular fa-calendar"></i> 9 mars 2026</span>
@@ -468,7 +479,7 @@ section{position:relative}
 
     <div class="article-section reveal">
       <h2>Sondage 2026 : satisfaction globale des utilisateurs ivoiriens</h2>
-      <p>Entre janvier 2025 et février 2026, nous avons recueilli 2 087 avis d'utilisateurs ivoiriens du STC30 via WhatsApp, sondages en ligne et entretiens téléphoniques. Voici les résultats de cette enquête indépendante :</p><p>Note moyenne globale : 4,7 / 5 (94% de satisfaction)</p><p>Répartition des notes :
+      <p>Entre janvier 2025 et février 2026, nous avons recueilli avis clients d'utilisateurs ivoiriens du STC30 via WhatsApp, sondages en ligne et entretiens téléphoniques. Voici les résultats de cette enquête indépendante :</p><p>Note moyenne globale : 4,7 / 5 (94% de satisfaction)</p><p>Répartition des notes :
 - 5 étoiles : 64% (1 336 avis) — Très satisfaits, résultats visibles
 - 4 étoiles : 23% (480 avis) — Satisfaits, résultats partiels
 - 3 étoiles : 8% (167 avis) — Mitigés, effets légers
@@ -494,7 +505,7 @@ section{position:relative}
     </div>
     <div class="article-section reveal">
       <h2>Conseils d'utilisation tirés des avis</h2>
-      <p>Sur la base des 2 087 avis recueillis, voici les conseils pratiques les plus fréquemment partagés par les utilisateurs ivoiriens :</p><p>Conseil n°1 : la régularité avant tout. Les utilisateurs satisfaits (4-5 étoiles) ont tous pris le STC30 tous les jours, à la même heure, sans interruption. Les utilisateurs déçus (1-2 étoiles) ont souvent arrêté après 2-3 semaines ou oublié des prises.</p><p>Conseil n°2 : la prise sublinguale à jeun. Les utilisateurs qui respectent scrupuleusement le protocole sublingual (poudre sous la langue, à jeun, sans manger pendant 30 min) ont des résultats 2 à 3 fois supérieurs à ceux qui l'avale directement.</p><p>Conseil n°3 : boire beaucoup d'eau. La régénération cellulaire nécessite une hydratation suffisante. Les utilisateurs qui boivent 2 L d'eau par jour ont des résultats plus rapides.</p><p>Conseil n°4 : combiner avec une bonne hygiène de vie. Les utilisateurs qui adoptent une alimentation équilibrée, dorment 7h et marchent 30 min/jour ont des résultats nettement supérieurs.</p><p>Conseil n°5 : être patient. Les premiers effets (énergie, sommeil) apparaissent en 2-4 semaines. Pour les pathologies chroniques, il faut 3-6 mois. Les utilisateurs déçus sont souvent ceux qui s'attendaient à des résultats en 1 semaine.</p><p>Conseil n°6 : acheter uniquement auprès de distributeurs agréés. 89% des utilisateurs déçus avaient acheté leur STC30 sur des marchés informels ou via des particuliers non identifiés. Pour 45 000 FCFA, exigez l'authenticité.</p><p>Conseil n°7 : tenir un journal de bord. Notez vos ressentis, symptômes et améliorations semaine par semaine. Cela vous aidera à constater les progrès et à communiquer avec votre médecin.</p><p>Conseil n°8 : contacter l'équipe Superlife en cas de doute. Les utilisateurs qui posent des questions et suivent les conseils personnalisés ont 40% de meilleurs résultats que ceux qui prennent le STC30 "en autodidacte".</p>
+      <p>Sur la base des avis clients recueillis, voici les conseils pratiques les plus fréquemment partagés par les utilisateurs ivoiriens :</p><p>Conseil n°1 : la régularité avant tout. Les utilisateurs satisfaits (4-5 étoiles) ont tous pris le STC30 tous les jours, à la même heure, sans interruption. Les utilisateurs déçus (1-2 étoiles) ont souvent arrêté après 2-3 semaines ou oublié des prises.</p><p>Conseil n°2 : la prise sublinguale à jeun. Les utilisateurs qui respectent scrupuleusement le protocole sublingual (poudre sous la langue, à jeun, sans manger pendant 30 min) ont des résultats 2 à 3 fois supérieurs à ceux qui l'avale directement.</p><p>Conseil n°3 : boire beaucoup d'eau. La régénération cellulaire nécessite une hydratation suffisante. Les utilisateurs qui boivent 2 L d'eau par jour ont des résultats plus rapides.</p><p>Conseil n°4 : combiner avec une bonne hygiène de vie. Les utilisateurs qui adoptent une alimentation équilibrée, dorment 7h et marchent 30 min/jour ont des résultats nettement supérieurs.</p><p>Conseil n°5 : être patient. Les premiers effets (énergie, sommeil) apparaissent en 2-4 semaines. Pour les pathologies chroniques, il faut 3-6 mois. Les utilisateurs déçus sont souvent ceux qui s'attendaient à des résultats en 1 semaine.</p><p>Conseil n°6 : acheter uniquement auprès de distributeurs agréés. 89% des utilisateurs déçus avaient acheté leur STC30 sur des marchés informels ou via des particuliers non identifiés. Pour 45 000 FCFA, exigez l'authenticité.</p><p>Conseil n°7 : tenir un journal de bord. Notez vos ressentis, symptômes et améliorations semaine par semaine. Cela vous aidera à constater les progrès et à communiquer avec votre médecin.</p><p>Conseil n°8 : contacter l'équipe Superlife en cas de doute. Les utilisateurs qui posent des questions et suivent les conseils personnalisés ont 40% de meilleurs résultats que ceux qui prennent le STC30 "en autodidacte".</p>
     </div>
     
     <div class="article-product-cta reveal">
@@ -522,7 +533,7 @@ section{position:relative}
         </div>
         <div class="faq-item reveal">
           <button class="faq-q">Le prix du STC30 est-il justifié ?<i class="fa-solid fa-chevron-down"></i></button>
-          <div class="faq-a"><div class="faq-a-inner">Le STC30 coûte 45 000 FCFA pour 15 sachets. Ce prix reflète : la technologie PhytoCellTec™ suisse (extraits brevetés), les certifications FDA/GMP/Halal/LNSP, la traçabilité complète et l'accompagnement personnalisé. Comparé à un traitement médical à vie (médicaments, hospitalisations), le STC30 est un investissement santé rentable. Notre sondage montre que 66% des utilisateurs jugent le prix justifié.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Le STC30 coûte 45 000 FCFA pour 15 sachets. Ce prix reflète : la technologie PhytoCellTec™ suisse (extraits brevetés), les certifications GMP/Halal/LNSP, la traçabilité complète et l'accompagnement personnalisé. Comparé à un traitement médical à vie (médicaments, hospitalisations), le STC30 est un investissement santé rentable. Notre sondage montre que 66% des utilisateurs jugent le prix justifié.</div></div>
         </div>
         <div class="faq-item reveal">
           <button class="faq-q">Combien de temps faut-il essayer pour juger ?<i class="fa-solid fa-chevron-down"></i></button>
@@ -588,8 +599,8 @@ section{position:relative}
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo">
-          <img src="logo.png" alt="Superlife Officiel" loading="lazy">
+        <a href="/" class="logo">
+          <img src="logo.png" alt="Superlife Officiel" width="40" height="40">
           <span>Superlife <b>Officiel</b></span>
         </a>
         <p>Votre partenaire santé cellulaire en Côte d'Ivoire. Produits authentiques Superlife, livraison rapide et accompagnement personnalisé.</p>
@@ -603,8 +614,8 @@ section{position:relative}
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="index.html#produits">Produits</a></li>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/#produits">Produits</a></li>
           <li><a href="le-blog-superlife.html">Blog</a></li>
           <li><a href="devenir-distributeur-superlife-cote-divoire.html">Distributeur</a></li>
           <li><a href="faq-superlife-produits-bienfaits.html">FAQ</a></li>
@@ -637,7 +648,7 @@ section{position:relative}
       <span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a> · <a href="#">CGV</a></span>
     </div>
   </div>
-</footer>
+<p style="font-size:.78rem;line-height:1.55;opacity:.85;margin:22px auto 0;max-width:900px;text-align:center">Les informations de ce site sont fournies à titre informatif et ne remplacent pas un avis médical. Les compléments alimentaires ne sont pas destinés à diagnostiquer, traiter ou guérir une maladie.</p></footer>
 
 <!-- STICKY CTA MOBILE -->
 <div class="sticky-cta">
