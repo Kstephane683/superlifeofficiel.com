@@ -287,6 +287,7 @@ section{position:relative}
 /* perf-p3 */
 .section{content-visibility:auto;contain-intrinsic-size:auto 900px}
 .spotlight{content-visibility:auto;contain-intrinsic-size:auto 700px}
+.consent-check a{color:var(--primary);text-decoration:underline}
 </style>
 <link rel="stylesheet" href="consent.css">
 <script src="consent.js"></script>
@@ -453,7 +454,7 @@ section{position:relative}
               <textarea name="note" placeholder="Ex: Je souhaite être contacté le matin pour la livraison..." rows="3"></textarea>
             </div>
           </div>
-        </form>
+        <label class="consent-check" style="display:flex;gap:8px;align-items:flex-start;font-size:.82rem;line-height:1.45;margin:10px 0 4px;color:var(--ink-soft)"><input type="checkbox" name="consent" required style="margin-top:3px"><span>J'accepte que mes données soient utilisées pour traiter ma demande. <a href="politique-de-confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a>.</span></label></form>
       </div>
       
       <aside class="order-summary">
@@ -557,7 +558,7 @@ section{position:relative}
     </div>
     <div class="footer-bottom">
       <span>© 2025 Superlife Officiel. Tous droits réservés.</span>
-      <span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a> · <a href="#">CGV</a></span>
+      <span><a href="termes-et-conditions.html">Mentions légales</a> · <a href="politique-de-confidentialite.html">Confidentialité</a> · <a href="termes-et-conditions.html">CGV</a></span>
     </div>
   </div>
 </footer>
