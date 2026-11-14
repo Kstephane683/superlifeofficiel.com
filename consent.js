@@ -56,46 +56,14 @@
     }, 1500);
   }
 
-  function manageLink() {
-    var footer = document.querySelector("footer");
-    if (!footer || document.getElementById("sl-consent-manage")) return;
-    var a = document.createElement("a");
-    a.id = "sl-consent-manage";
-    a.href = "#";
-    a.textContent = "Gérer mes cookies";
-    a.addEventListener("click", function (e) {
-      e.preventDefault();
-      try { localStorage.removeItem(KEY); } catch (err) {}
-      location.reload();
-    });
-    footer.appendChild(a);
-  }
-
   function banner() {
-    if (document.getElementById("sl-consent")) return;
-    var box = document.createElement("div");
-    box.id = "sl-consent";
-    box.setAttribute("role", "dialog");
-    box.setAttribute("aria-label", "Consentement cookies");
-    box.innerHTML =
-      '<p>Nous utilisons des cookies pour la mesure d’audience et la publicité. ' +
-      'Les cookies non essentiels ne sont pas chargés avant ton choix. ' +
-      '<a href="politique-de-confidentialite.html">En savoir plus</a>.</p>' +
-      '<div class="sl-actions">' +
-      '<button type="button" class="sl-refuse">Refuser</button>' +
-      '<button type="button" class="sl-accept">Tout accepter</button>' +
-      '</div>';
-    box.querySelector(".sl-accept").addEventListener("click", function () {
-      write("accepted");
-      box.hidden = true;
-      location.reload();
-    });
-    box.querySelector(".sl-refuse").addEventListener("click", function () {
-      write("refused");
-      box.hidden = true;
-      location.reload();
-    });
-    document.body.appendChild(box);
+    var box = document.getElementById("sl-consent");
+    if (!box) return;
+    box.hidden = false;
+    var accept = box.querySelector(".sl-accept");
+    var refuse = box.querySelector(".sl-refuse");
+    if (accept) accept.addEventListener("click", function () { write("accepted"); box.hidden = true; location.reload(); });
+    if (refuse) refuse.addEventListener("click", function () { write("refused"); box.hidden = true; location.reload(); });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -105,6 +73,5 @@
     } else if (choice !== "refused") {
       banner();
     }
-    manageLink();
   });
 })();
