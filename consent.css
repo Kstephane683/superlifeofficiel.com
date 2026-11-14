@@ -5,32 +5,35 @@ html[data-consent="accepted"] #sl-consent,html[data-consent="refused"] #sl-conse
   right: 16px;
   bottom: 16px;
   z-index: 99999;
-  max-width: 980px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 16px 18px;
-  border-radius: 16px;
+  padding: 10px 14px;
+  border-radius: 14px;
   background: #fffdf7;
   color: #2a1b12;
   border: 1px solid rgba(92, 58, 26, 0.22);
-  box-shadow: 0 18px 50px rgba(92, 58, 26, 0.22);
+  box-shadow: 0 12px 34px rgba(92, 58, 26, 0.2);
   font-family: "DM Sans", system-ui, sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.45;
+  font-size: 0.8rem;
+  line-height: 1.4;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 12px 18px;
+  gap: 8px 12px;
   align-items: center;
+  opacity: 0;
+  animation: sl-consent-in .25s ease .9s forwards;
 }
 #sl-consent[hidden] { display: none; }
 #sl-consent p { margin: 0; }
-#sl-consent a { color: #a55a26; text-decoration: underline; }
-#sl-consent .sl-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+#sl-consent a { color: #a55a26; text-decoration: underline; display: inline-block; padding: 4px 0; }
+#sl-consent .sl-actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 #sl-consent button {
   font-family: inherit;
   font-weight: 700;
-  font-size: 0.86rem;
-  padding: 10px 16px;
-  border-radius: 10px;
+  font-size: 0.78rem;
+  min-height: 36px;
+  padding: 8px 12px;
+  border-radius: 9px;
   cursor: pointer;
   border: 1px solid #5c3a1a;
   background: #5c3a1a;
@@ -40,13 +43,45 @@ html[data-consent="accepted"] #sl-consent,html[data-consent="refused"] #sl-conse
 #sl-consent button:active { transform: scale(0.98); }
 #sl-consent-manage {
   display: inline-block;
-  margin-left: 8px;
-  font-size: 0.78rem;
+  margin-left: 6px;
+  font-size: 0.74rem;
   color: #8a7868;
   text-decoration: underline;
 }
+@keyframes sl-consent-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @media (max-width: 640px) {
-  #sl-consent { grid-template-columns: 1fr; left: 10px; right: 10px; bottom: 10px; padding: 14px; }
+  #sl-consent {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 10px 12px;
+    font-size: 0.76rem;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
   #sl-consent .sl-actions { justify-content: stretch; }
-  #sl-consent button { flex: 1; }
+  #sl-consent button { flex: 1; min-height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #sl-consent { opacity: 1; animation: none; }
+}
+
+/* P0 design: cibles tactiles mobiles */
+@media (max-width: 760px) {
+  .footer a,
+  .footer-bottom a,
+  .breadcrumb a,
+  .nav a {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .footer li { margin: 0; }
+  .footer-bottom { line-height: 1.8; }
+  .footer-bottom a { min-width: 44px; justify-content: center; }
 }
