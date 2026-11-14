@@ -305,6 +305,9 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
 }
 .pay-strip .label{color:#6b5645}
 .btn:active{transform:scale(.98)}
+/* perf-p3 */
+.section{content-visibility:auto;contain-intrinsic-size:auto 900px}
+.spotlight{content-visibility:auto;contain-intrinsic-size:auto 700px}
 </style>
 <link rel="stylesheet" href="consent.css">
 <script src="consent.js"></script>
@@ -950,5 +953,9 @@ $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
   const t=$(id);if(t){e.preventDefault();const y=t.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:'smooth'});}
 }));
 </script>
+<div id="sl-consent" role="dialog" aria-label="Consentement cookies" hidden>
+<p>Nous utilisons des cookies pour la mesure d’audience et la publicité. Les cookies non essentiels ne sont pas chargés avant ton choix. <a href="politique-de-confidentialite.html">En savoir plus</a>.</p>
+<div class="sl-actions"><button type="button" class="sl-refuse">Refuser</button><button type="button" class="sl-accept">Tout accepter</button></div>
+</div>
 </body>
 </html>
