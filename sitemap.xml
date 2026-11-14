@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://superlifeofficiel.com/a-propos.html</loc>
@@ -20,12 +20,6 @@
   </url>
   <url>
     <loc>https://superlifeofficiel.com/blog_devenir-partenaire-superlife-mlm.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/blog_diabete-insipide-efficacite-stc30.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -61,12 +55,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://superlifeofficiel.com/blog_stc30-azoospermie-traitement-naturel.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://superlifeofficiel.com/blog_stc30-bienfaits-composition-achat-cote-divoire.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -97,42 +85,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://superlifeofficiel.com/blog_stc30-diabete-regule-sucre.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/blog_stc30-fertilite-conception-bebe.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/blog_stc30-hepatite-b-prevention-naturelle.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/blog_stc30-hypertension-tension-arterielle.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/blog_stc30-maladies-cardiovasculaires-prevention.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/blog_stc30-maladies-respiratoires-soutien.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://superlifeofficiel.com/blog_stc30-origine-cellules-souches-vegetales.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -146,12 +98,6 @@
   </url>
   <url>
     <loc>https://superlifeofficiel.com/blog_stc30-temoignages-2026-cote-divoire.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/blog_stc30-variole-singe-prevention-cote-divoire.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -205,18 +151,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://superlifeofficiel.com/le-blog-superlife_comprendre-et-combattre-le-cancer-role-de-superlife-stc30-et-sic.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/le-blog-superlife_diabete-superlife-stc30-scc-plus.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://superlifeofficiel.com/le-blog-superlife_pourquoi-choisir-superlife-stc30.html</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -239,36 +173,6 @@
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/super-root-coffee-puissance.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/superlife-scc-plus-colon.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/superlife-sic-immunite.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/superlife-snc-cerveau-vision.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://superlifeofficiel.com/superlife-stc30-prix-ci.html</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://superlifeofficiel.com/termes-et-conditions.html</loc>
