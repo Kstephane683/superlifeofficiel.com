@@ -11,8 +11,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Store","name":"Superlife Officiel","url":"https://superlifeofficiel.com","image":"https://superlifeofficiel.com/logo-512.png","telephone":"+2250152917584","address":{"@type":"PostalAddress","addressLocality":"Abidjan","addressCountry":"CI"}}
@@ -102,7 +102,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
 .mockup-img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:22px;box-shadow:0 12px 30px rgba(92,58,26,.18);background:var(--cream-d)}
 .mockup-tag{position:absolute;top:42px;left:42px;background:linear-gradient(135deg,var(--terracotta),var(--terracotta-d));color:#fff;font-family:'Outfit';font-weight:700;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;padding:7px 14px;border-radius:999px;box-shadow:0 6px 18px rgba(177,59,49,.4)}
 .mockup-meta{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
-.mockup-meta h4{font-size:1.12rem}
+.mockup-meta .mockup-title{font-family:'Outfit',sans-serif;font-weight:800;color:var(--primary-d);line-height:1.1;letter-spacing:-.01em;font-size:1.12rem}
 .mockup-meta .price{font-family:'Outfit';font-weight:800;color:var(--primary);font-size:1.25rem}
 .lnsp-seal{position:absolute;width:104px;height:104px;border-radius:50%;background:radial-gradient(circle,var(--paper),var(--cream-d));border:3px dashed var(--terracotta);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:'Outfit';color:var(--terracotta-d);font-weight:800;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.2;box-shadow:0 8px 24px rgba(177,59,49,.25);transform:rotate(-12deg);z-index:3}
 .lnsp-seal i{font-size:1.4rem;color:var(--terracotta);margin-bottom:2px}
@@ -166,7 +166,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
 .why-card{text-align:center;background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:32px 20px;transition:.35s var(--ease);position:relative}
 .why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--primary)}
 .why-icon{position:relative;width:64px;height:64px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#fff;border-radius:18px;background:linear-gradient(135deg,var(--primary),var(--gold))}
-.why-card h4{font-size:1.05rem;margin-bottom:8px}
+.why-card h3{font-size:1.05rem;margin-bottom:8px}
 .why-card p{font-size:.85rem;color:var(--ink-soft)}
 .packs{background:linear-gradient(180deg,transparent,rgba(165,90,38,.05),transparent)}
 .packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
@@ -213,7 +213,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
 .footer-social{display:flex;gap:10px}
 .footer-social a{width:38px;height:38px;border-radius:10px;background:rgba(255,245,225,.08);display:flex;align-items:center;justify-content:center;transition:.25s;color:#fff}
 .footer-social a:hover{background:var(--gold);transform:translateY(-3px)}
-.footer-col h4{color:#fff;font-size:1.05rem;margin-bottom:16px;font-weight:700}
+.footer-col h3{color:#fff;font-size:1.05rem;margin-bottom:16px;font-weight:700}
 .footer-col ul li{margin-bottom:9px}
 .footer-col ul li a{font-size:.9rem;color:#c7a987;transition:.25s}
 .footer-col ul li a:hover{color:var(--gold);padding-left:4px}
@@ -246,7 +246,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
 .cart-item:last-child{border-bottom:none}
 .cart-item img{width:62px;height:62px;border-radius:10px;object-fit:cover;flex-shrink:0;background:var(--cream-d)}
 .cart-item-info{flex:1;min-width:0}
-.cart-item-info h4{font-size:.92rem;margin-bottom:2px}
+.cart-item-info h3{font-size:.92rem;margin-bottom:2px}
 .cart-item-info .pack{font-size:.76rem;color:var(--ink-mute)}
 .cart-item-info .price{font-family:'Outfit';font-weight:700;color:var(--primary);font-size:.92rem;margin-top:3px}
 .qty-ctrl{display:flex;align-items:center;gap:8px;margin-top:8px}
@@ -356,6 +356,8 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
 <meta name="twitter:image" content="https://superlifeofficiel.com/og-superlife.jpg">
 <link rel="stylesheet" href="consent.css">
 <script src="consent.js"></script>
+<link rel="preload" as="image" href="images/superlife-stc30-hero.webp" fetchpriority="high">
+<link rel="preconnect" href="https://i.ibb.co">
 </head>
 <body>
 
@@ -408,8 +410,8 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
       <div class="lnsp-seal"><i class="fa-solid fa-certificate"></i>APPROUVÉ<br>LNSP CI<small>Halal · GMP</small></div>
       <div class="mockup-card">
         <span class="mockup-tag">Best-seller</span>
-        <img src="https://i.ibb.co/Fkx6jYwN/superlifeofficiel-stc30.webp" alt="Superlife STC30" class="mockup-img" loading="eager" fetchpriority="high" width="600" height="601">
-        <div class="mockup-meta"><div><h4>Superlife STC30</h4><small style="color:var(--ink-mute);font-size:.8rem">Régénération cellulaire</small></div><span class="price">45 000 F</span></div>
+        <img src="images/superlife-stc30-hero.webp" alt="Superlife STC30" class="mockup-img" loading="eager" fetchpriority="high" width="600" height="750">
+        <div class="mockup-meta"><div><div class="mockup-title">Superlife STC30</div><small style="color:var(--ink-mute);font-size:.8rem">Régénération cellulaire</small></div><span class="price">45 000 F</span></div>
       </div>
     </div>
   </div>
@@ -467,10 +469,10 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
     <h2 class="reveal">Pourquoi Superlife, pourquoi nous</h2>
   </div>
   <div class="why-grid">
-    <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-dna"></i></div><h4>Régénération cellulaire</h4><p>Cellules souches végétales PhytoCellTec™.</p></div>
-    <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-leaf"></i></div><h4>100% naturel & sans OGM</h4><p>Ingrédients botaniques, sans additifs.</p></div>
-    <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-certificate"></i></div><h4>Certifié Halal & GMP</h4><p>Certifié LNSP Côte d'Ivoire, Halal et GMP.</p></div>
-    <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-truck-fast"></i></div><h4>Livraison 24h Abidjan</h4><p>Livré chez vous en 24h, paiement à la réception.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-dna"></i></div><h3>Régénération cellulaire</h3><p>Cellules souches végétales PhytoCellTec™.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-leaf"></i></div><h3>100% naturel & sans OGM</h3><p>Ingrédients botaniques, sans additifs.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-certificate"></i></div><h3>Certifié Halal & GMP</h3><p>Certifié LNSP Côte d'Ivoire, Halal et GMP.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-truck-fast"></i></div><h3>Livraison 24h Abidjan</h3><p>Livré chez vous en 24h, paiement à la réception.</p></div>
   </div>
 </div></section>
 
@@ -512,9 +514,9 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{fon
   <a href="https://www.facebook.com/superlifeofficiels/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 </div>
     </div>
-    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="/">Accueil</a></li><li><a href="#produits">Produits</a></li><li><a href="#contact">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Produits</h4><ul id="footerProds"></ul></div>
-    <div class="footer-col"><h4>Contact</h4><ul class="footer-contact">
+    <div class="footer-col"><h3>Navigation</h3><ul><li><a href="/">Accueil</a></li><li><a href="#produits">Produits</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Produits</h3><ul id="footerProds"></ul></div>
+    <div class="footer-col"><h3>Contact</h3><ul class="footer-contact">
       <li><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/2250152917584" target="_blank" rel="noopener">+225 01 52 91 75 84</a></li>
       <li><i class="fa-solid fa-location-dot"></i> Abidjan, Côte d'Ivoire</li>
       <li><i class="fa-solid fa-clock"></i> 7j/7 — 8h à 21h</li>
@@ -618,7 +620,7 @@ const CONFIG = {
 };
 
 const PRODUCTS = [
-  {id:'stc30',name:'Superlife STC30',img:'https://i.ibb.co/Fkx6jYwN/superlifeofficiel-stc30.webp',unit:45000,tagline:'Régénération cellulaire · Immunité · Anti-âge',url:'superlife-stc30-prix-ci.html',description:'Percée scientifique à base de cellules souches végétales.',bienfaits:['Régénération complète des tissus','Anti-âge cellulaire','Renforce immunité','Énergie & vitalité','Détox puissant'],ingredients:['PhytoCellTec Malus Domestica','PhytoCellTec Solar Vitis','Extrait de Myrtille','GliSODin®'],posologie:'Matin à jeun. Verser sous la langue. Attendre 5 min.',certifs:['LNSP CI N°17040-20','GMP · Halal','Halal & GMP'],tiers:[{min:1,max:1,price:45000},{min:2,max:7,price:40000},{min:8,max:null,price:37500}],packs:[{label:'1 Boîte (15j)',val:45000,qty:1},{label:'2 Boîtes (30j)',val:80000,badge:'Recommandé',qty:2},{label:'8 Boîtes',val:300000,badge:'Économie',qty:8}]},
+  {id:'stc30',name:'Superlife STC30',img:'images/superlife-stc30-hero.webp',unit:45000,tagline:'Régénération cellulaire · Immunité · Anti-âge',url:'superlife-stc30-prix-ci.html',description:'Percée scientifique à base de cellules souches végétales.',bienfaits:['Régénération complète des tissus','Anti-âge cellulaire','Renforce immunité','Énergie & vitalité','Détox puissant'],ingredients:['PhytoCellTec Malus Domestica','PhytoCellTec Solar Vitis','Extrait de Myrtille','GliSODin®'],posologie:'Matin à jeun. Verser sous la langue. Attendre 5 min.',certifs:['LNSP CI N°17040-20','GMP · Halal','Halal & GMP'],tiers:[{min:1,max:1,price:45000},{min:2,max:7,price:40000},{min:8,max:null,price:37500}],packs:[{label:'1 Boîte (15j)',val:45000,qty:1},{label:'2 Boîtes (30j)',val:80000,badge:'Recommandé',qty:2},{label:'8 Boîtes',val:300000,badge:'Économie',qty:8}]},
   {id:'scc',name:'Superlife SCC+',img:'https://i.ibb.co/7JWGSWgT/officiel-scc-plus-detox.webp',unit:55000,tagline:'Côlon · Détox · Perte de poids',url:'superlife-scc-plus-colon.html',description:'Complément alimentaire pour côlon sain et digestion.',bienfaits:['Nettoyage du côlon','Perte de poids durable','Détox gastro-intestinal','Régulation métabolique'],ingredients:['Fibres prébiotiques','Probiotiques','Aloe Vera','Thé vert'],posologie:'1 sachet dans 200ml d\'eau le soir.',certifs:['LNSP CI','Halal & GMP'],tiers:[{min:1,max:1,price:55000},{min:2,max:7,price:47500},{min:8,max:null,price:44375}],packs:[{label:'1 Boîte',val:55000,qty:1},{label:'2 Boîtes',val:95000,badge:'Recommandé',qty:2},{label:'8 Boîtes',val:355000,qty:8}]},
   {id:'sic',name:'Superlife SIC',img:'https://i.ibb.co/GQvYHzZN/superlife-soin-immunitaire-superlifeofficiel.jpg',unit:50000,tagline:'Bouclier immunitaire · Cellules souches',url:'superlife-sic-immunite.html',description:'Stimule la production de vos cellules souches.',bienfaits:['Renforce immunité','Protection contre infections','Récupération rapide','Vitalité globale'],ingredients:['Super-baies','Vitamine C naturelle','Antioxydants','Grenade'],posologie:'1 sachet sous la langue le matin à jeun.',certifs:['LNSP CI','Halal & GMP'],tiers:[{min:1,max:1,price:50000},{min:2,max:null,price:45000}],packs:[{label:'1 Boîte',val:50000,qty:1},{label:'2 Boîtes',val:90000,badge:'Recommandé',qty:2}]},
   {id:'snc',name:'Superlife SNC',img:'images/superlife-SNC-yeux-nerfs-cerveau-superlifeofficiel.jpg',unit:50000,tagline:'Cerveau · Vision · Mémoire',url:'superlife-snc-cerveau-vision.html',description:'Régénère vos neurones et optimise votre acuité visuelle.',bienfaits:['Améliore mémoire','Protège vision','Régénération neuronale','Concentration'],ingredients:['PhytoCellTec Solar Vitis','Myrtille','Lutéine','Zeaxanthine'],posologie:'1 sachet sous la langue le matin à jeun.',certifs:['LNSP CI','Halal & GMP'],tiers:[{min:1,max:1,price:50000},{min:2,max:null,price:45000}],packs:[{label:'1 Boîte',val:50000,qty:1},{label:'2 Boîtes',val:90000,badge:'Recommandé',qty:2}]},
@@ -746,7 +748,7 @@ function renderCart(){
         <div class="cart-item">
           <img src="${it.img}" alt="${it.name}" loading="lazy">
           <div class="cart-item-info">
-            <h4>${it.name}</h4>
+            <h3>${it.name}</h3>
             ${it.qty > 1 ? `<div class="pack">${fmt(up)} / boîte</div>` : ''}
             <div class="price">${fmt(up * it.qty)}</div>
             <div class="qty-ctrl"><button onclick="changeQty(${i},-1)">−</button><span>${it.qty}</span><button onclick="changeQty(${i},1)">+</button></div>
