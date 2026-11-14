@@ -1,3 +1,4 @@
+html[data-consent="accepted"] #sl-consent,html[data-consent="refused"] #sl-consent{display:none!important}
 #sl-consent {
   position: fixed;
   left: 16px;

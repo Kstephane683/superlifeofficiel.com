@@ -59,11 +59,10 @@
   function banner() {
     var box = document.getElementById("sl-consent");
     if (!box) return;
-    box.hidden = false;
     var accept = box.querySelector(".sl-accept");
     var refuse = box.querySelector(".sl-refuse");
-    if (accept) accept.addEventListener("click", function () { write("accepted"); box.hidden = true; location.reload(); });
-    if (refuse) refuse.addEventListener("click", function () { write("refused"); box.hidden = true; location.reload(); });
+    if (accept) accept.addEventListener("click", function () { write("accepted"); location.reload(); });
+    if (refuse) refuse.addEventListener("click", function () { write("refused"); location.reload(); });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
